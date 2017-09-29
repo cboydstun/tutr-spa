@@ -1,0 +1,5 @@
+<div class="row" *ngFor="let group of groups">
+	<div class="col-4" *ngFor="let course of group">
+		<uikit-course-card [course]="course"></uikit-course-card>
+	</div>
+</div>
