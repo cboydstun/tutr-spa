@@ -25,6 +25,7 @@
     "aws-sdk": "^2.124.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.2",
+    "tutr-styleguide": "^1.0.2",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

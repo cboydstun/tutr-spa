@@ -1,3 +1,38 @@
-<p>
-  header works!
-</p>
+<header id="header" class="navbar navbar-expand-lg navbar-dark sticky-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#"><img src="https://tichio.s3.amazonaws.com/logos/logo.png" alt="" class="img-fluid"></a>
+
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+			</ul>
+		</div>
+		<div class="profile">
+			<a href="#" id="dropdown-profile" data-toggle="dropdown" aria-haspopup="true" class="profile__btn dropdown-toggle">
+				<div class="profile__photo"><img src="https://www.gravatar.com/avatar/a49306bde3874e83baf97dd49290c900?s=120&amp;d=identicon" alt="teacher"></div>
+				<span class="profile__name">Name Surname</span>
+			</a>
+
+			<ul class="dropdown-menu" aria-labelledby="dropdown-profile">
+				<li><a class="dropdown-item" href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Профіль</a></li>
+				<li><a class="dropdown-item" href="#"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Керування</a></li>
+				<li><a class="dropdown-item" href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Налаштування</a></li>
+				<li><a class="dropdown-item" href="#"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Вийти</a></li>
+			</ul>
+		</div>
+		<a href="#" class="profile__notification">
+			<span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+		</button>
+	</div>
+</header>
