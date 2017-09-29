@@ -12,7 +12,7 @@ import * as AWS from "aws-sdk/global";
 import * as awsservice from "aws-sdk/lib/service";
 import * as CognitoIdentity from "aws-sdk/clients/cognitoidentity";
 
-import { environment } from "../../environments/environment";
+import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class CognitoService {

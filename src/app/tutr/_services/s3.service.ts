@@ -6,7 +6,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { CognitoService } from './cognito.service';
 import { AwsCredentialsService } from './aws-credentials.service';
 
-import { environment } from "../../environments/environment";
+import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class S3Service {

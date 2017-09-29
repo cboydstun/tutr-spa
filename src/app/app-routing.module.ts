@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { MainLayoutComponent } from './layout/components';
+
 const routes: Routes = [
 	{
 		path: '',
-		loadChildren: './tutr/tutr.module#TutrModule'
+		component: MainLayoutComponent,
+		children: [
+			{
+				path: '',
+				loadChildren: './tutr/courses/courses.module#CoursesModule'
+			}
+		]
 	}
 ];
 

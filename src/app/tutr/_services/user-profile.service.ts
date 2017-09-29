@@ -4,7 +4,7 @@ import { AuthenticationDetails, CognitoUser } from "amazon-cognito-identity-js";
 
 import { CognitoService } from './cognito.service';
 
-import { environment } from "../../environments/environment";
+import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class UserProfileService {

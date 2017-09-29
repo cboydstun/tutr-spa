@@ -4,5 +4,31 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+	production: false,
+
+	apiRoot: '',
+
+	apiKey: '',
+
+	sts_endpoint: '',
+
+	region: 'eu-west-1',
+
+	identityPoolId: '',
+
+	userPoolId: '',
+
+	clientId: '',
+
+	cognito_idp_endpoint: '',
+
+	cognito_identity_endpoint: '',
+
+	staticFilesBucket: '',
+
+	staticFilesKeyPrefix: '',
+
+	staticFilesRoot: '',
+
+	s3Endpoint: '',
 };

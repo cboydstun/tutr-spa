@@ -10,12 +10,9 @@ import {
 	AwsCredentialsService,
 } from './services';
 
-import { TutrRoutingModule } from './tutr-routing.module';
-
 @NgModule({
 	imports: [
 		CommonModule,
-		TutrRoutingModule,
 	],
 	declarations: [],
 	providers: [
