@@ -17,8 +17,7 @@ export class CourseCardGridComponent implements OnInit {
 	ngOnInit() {
 		let i,
 			j,
-			temparray,
-			chunk = 3;
+			chunk = 4;
 
 		for (i = 0, j = this.courses.length; i < j; i += chunk) {
 		    this.groups.push(this.courses.slice(i, i + chunk));

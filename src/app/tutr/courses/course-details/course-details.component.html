@@ -1,0 +1,27 @@
+<div class="jumbotron">
+	<h1 class="display-4">{{ course.name }}</h1>
+	<p class="lead">{{ course.description }}</p>
+
+	<hr>
+
+	<ngb-rating [rate]="8"></ngb-rating>
+</div>
+
+<div class="container mb-5">
+	<div class="row">
+		<div class="col-8"></div>
+
+		<div class="col-4">
+			<div class="card">
+				<img class="card-img-top" [src]="course.image">
+				<div class="card-body">
+					<button class="btn btn-secondary btn-block">Enroll</button>
+
+					<a 
+						class="btn btn-outline-secondary btn-block" 
+						[routerLink]="['/courses', 'learn', course.slug]">Goto Course</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

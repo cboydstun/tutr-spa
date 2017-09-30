@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { 
 	CourseCardComponent, 
@@ -8,12 +11,15 @@ import {
 
 @NgModule({
 	imports: [
-		CommonModule
+		CommonModule,
+		NgbModule.forRoot(),
+		RouterModule
 	],
 	declarations: [CourseCardComponent, CourseCardGridComponent],
 	exports: [
 		CourseCardComponent,
-		CourseCardGridComponent
+		CourseCardGridComponent,
+		NgbModule
 	]
 })
 export class UikitModule { }

@@ -4,6 +4,9 @@ import { ChangePasswordService } from './_services/change-password.service';
 import { UserProfileService } from './_services/user-profile.service';
 import { S3Service } from './_services/s3.service';
 import { AwsCredentialsService } from './_services/aws-credentials.service';
+import { CategoryService } from './_services/category.service';
+import { TutrInterceptor } from './_services/tutr-intercept';
+import { CourseService } from './_services/course.service';
 
 export {
 	LoginService,
@@ -12,4 +15,7 @@ export {
 	UserProfileService,
 	S3Service,
 	AwsCredentialsService,
+	CategoryService,
+	TutrInterceptor,
+	CourseService
 }

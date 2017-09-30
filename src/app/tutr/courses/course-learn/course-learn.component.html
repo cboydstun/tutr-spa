@@ -1,0 +1,33 @@
+<div class="jumbotron">
+
+	<div class="float-left mr-3">
+		<img class="img-fluid" [src]="course.image" [alt]="course.name">
+	</div>
+	<div class="">
+		<h1 class="display-4">{{ course.name }}</h1>
+
+		<ngb-rating [rate]="8"></ngb-rating>
+	</div>
+
+</div>
+
+<div class="container mt-5 mb-5">
+	<ul class="nav nav-tabs">
+		<li class="nav-item">
+			<a 
+				class="nav-link" 
+				[routerLink]="['/courses', 'learn', course.slug]" routerLinkActive="active">Overview</a>
+		</li>
+		<li class="nav-item">
+			<a 
+				class="nav-link" 
+				[routerLink]="['/courses', 'learn', course.slug, 'content']" routerLinkActive="active">Content</a>
+		</li>
+		<li class="nav-item dropdown" ngbDropdown>
+			<a class="nav-link dropdown-toggle" href="javascript:void(0);" ngbDropdownToggle>More</a>
+			<div ngbDropdownMenu>
+				<a class="dropdown-item" href="">UnEnroll</a>
+			</div>
+		</li>
+	</ul>
+</div>

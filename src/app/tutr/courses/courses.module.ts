@@ -4,7 +4,12 @@ import { CommonModule } from '@angular/common';
 import { UikitModule } from '../../uikit/uikit.module';
 
 import { CoursesRoutingModule } from './courses-routing.module';
-import { CoursesComponent } from './components';
+import {
+	CoursesCategoryComponent,
+	CoursesSearchComponent,
+	CourseDetailsComponent,
+	CourseLearnComponent
+} from './components';
 
 @NgModule({
 	imports: [
@@ -12,6 +17,11 @@ import { CoursesComponent } from './components';
 		UikitModule,
 		CoursesRoutingModule
 	],
-	declarations: [CoursesComponent]
+	declarations: [
+		CoursesCategoryComponent, 
+		CoursesSearchComponent, 
+		CourseDetailsComponent, 
+		CourseLearnComponent
+	]
 })
 export class CoursesModule { }
