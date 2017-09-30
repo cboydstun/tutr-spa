@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+.jumbotron .nav.nav-pills {
+	margin-bottom: -4em;
+}
+
+.jumbotron .nav.nav-pills .nav-item .nav-link {
+	background: transparent;
+}
+
+.jumbotron .nav.nav-pills .nav-item .nav-link.active {
+	border-bottom: 5px solid white;
+}

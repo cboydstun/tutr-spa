@@ -1,17 +1,17 @@
 <div class="jumbotron">
 	<h1 class="display-4">
-		{{ category.name }}
+		Platon Korzh
 	</h1>
 	<ul class="nav nav-pills">
 		<li class="nav-item">
 			<a 
 				class="nav-link"
 				routerLinkActive="active"
-				[routerLink]="['/courses', 'category', category.slug]">All</a>
+				[routerLink]="['/profile']">Public Profile</a>
 		</li>
 	</ul>
 </div>
 
 <div class="container mt-5 mb-5">
-	<uikit-course-card-grid [courses]="courses"></uikit-course-card-grid>
+
 </div>

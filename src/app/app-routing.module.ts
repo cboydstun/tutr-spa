@@ -20,6 +20,14 @@ const routes: Routes = [
 			{
 				path: 'courses',
 				loadChildren: './tutr/courses/courses.module#CoursesModule'
+			},
+			{
+				path: 'webinars',
+				loadChildren: './tutr/webinars/webinars.module#WebinarsModule'
+			},
+			{
+				path: 'profile',
+				loadChildren: './tutr/public-profile/public-profile.module#PublicProfileModule'
 			}
 		]
 	}
