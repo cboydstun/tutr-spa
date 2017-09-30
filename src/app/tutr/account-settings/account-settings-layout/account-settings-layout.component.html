@@ -1,0 +1,22 @@
+<div class="jumbotron">
+	<h1 class="display-4">
+		Account Settings
+	</h1>
+	<ul class="nav nav-pills">
+		<li class="nav-item">
+			<a 
+				class="nav-link"
+				routerLinkActive="active"
+				[routerLink]="['/account', 'basics']">Basics</a>
+		</li>
+
+		<li class="nav-item">
+			<a 
+				class="nav-link"
+				routerLinkActive="active"
+				[routerLink]="['/account', 'privacy']">Privacy</a>
+		</li>
+	</ul>
+</div>
+
+<router-outlet></router-outlet>

@@ -38,10 +38,17 @@
 			</a>
 
 			<ul class="dropdown-menu" ngbDropdownMenu>
-				<li><a class="dropdown-item" href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Профіль</a></li>
-				<li><a class="dropdown-item" href="#"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Керування</a></li>
-				<li><a class="dropdown-item" href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Налаштування</a></li>
-				<li><a class="dropdown-item" href="#"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Вийти</a></li>
+				<li>
+					<a class="dropdown-item" routerLink="/profile">
+						Public Profile
+					</a>
+				</li>
+				
+				<li>
+					<a class="dropdown-item" routerLink="/account">
+						Account
+					</a>
+				</li>
 			</ul>
 		</div>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">

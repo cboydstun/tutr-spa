@@ -28,6 +28,10 @@ const routes: Routes = [
 			{
 				path: 'profile',
 				loadChildren: './tutr/public-profile/public-profile.module#PublicProfileModule'
+			},
+			{
+				path: 'account',
+				loadChildren: './tutr/account-settings/account-settings.module#AccountSettingsModule'
 			}
 		]
 	}
