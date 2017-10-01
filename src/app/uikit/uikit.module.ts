@@ -6,7 +6,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { 
 	CourseCardComponent, 
-	CourseCardGridComponent 
+	CourseCardGridComponent,
+	InstructorCourseItemComponent,
+	InstructorCourseGroupComponent
 } from './components';
 
 @NgModule({
@@ -15,10 +17,12 @@ import {
 		NgbModule.forRoot(),
 		RouterModule
 	],
-	declarations: [CourseCardComponent, CourseCardGridComponent],
+	declarations: [CourseCardComponent, CourseCardGridComponent, InstructorCourseItemComponent, InstructorCourseGroupComponent],
 	exports: [
 		CourseCardComponent,
 		CourseCardGridComponent,
+		InstructorCourseItemComponent,
+		InstructorCourseGroupComponent,
 		NgbModule
 	]
 })

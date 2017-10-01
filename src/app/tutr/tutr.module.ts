@@ -12,14 +12,18 @@ import {
 	AwsCredentialsService,
 	CategoryService,
 	CourseService,
-	TutrInterceptor
+	TutrInterceptor,
+	InstructorCourseService,
+	CategoryCourseService
 } from './services';
 
 import {
 	PreloadCategoriesResolve,
 	CategoryCoursesResolve,
 	CategoryResolve,
-	CourseResolve
+	CourseResolve,
+	InstructorCoursesResolve,
+	InstructorCourseResolve
 } from './resolvers';
 
 @NgModule({
@@ -44,6 +48,10 @@ import {
 		CourseService,
 		CategoryResolve,
 		CourseResolve,
+		InstructorCourseService,
+		InstructorCoursesResolve,
+		CategoryCourseService,
+		InstructorCourseResolve,
 		{
 			provide: HTTP_INTERCEPTORS,
 			useClass: TutrInterceptor,

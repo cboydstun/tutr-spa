@@ -4,8 +4,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { 
 	DashboardComponent,
 	DashboardCoursesComponent,
-	DashboardWebinarsComponent
+	DashboardWebinarsComponent,
+	CourseManagementComponent,
+	CourseGoalsComponent,
+	CourseLandingPageComponent
 } from './components';
+
+import { 
+	InstructorCoursesResolve,
+	InstructorCourseResolve
+} from '../resolvers';
 
 const routes: Routes = [
 	{
@@ -19,11 +27,36 @@ const routes: Routes = [
 		children: [
 			{
 				path: 'courses',
-				component: DashboardCoursesComponent
+				component: DashboardCoursesComponent,
+				resolve: {
+					courses: InstructorCoursesResolve
+				}
 			},
 			{
 				path: 'webinars',
 				component: DashboardWebinarsComponent
+			}
+		]
+	},
+	{
+		path: 'course/:course',
+		component: CourseManagementComponent,
+		resolve: {
+			course: InstructorCourseResolve
+		},
+		children: [
+			{
+				path: '',
+				redirectTo: 'goals',
+				pathMatch: 'full'
+			},
+			{
+				path: 'goals',
+				component: CourseGoalsComponent
+			},
+			{
+				path: 'landing',
+				component: CourseLandingPageComponent
 			}
 		]
 	}
