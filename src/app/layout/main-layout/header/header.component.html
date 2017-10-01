@@ -14,13 +14,15 @@
 		</form>
 
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav mr-auto">
+			<ul class="navbar-nav">
 				<li class="nav-item" ngbDropdown>
 					<a class="nav-link" href="javascript:void(0);" ngbDropdownToggle>Courses</a>
 
-					<div ngbDropdownMenu style="width:auto;">
-						<a class="dropdown-item" *ngFor="let category of categories" [routerLink]="['/courses', 'category', category.slug]">{{category.name}}</a>
-					</div>
+					<ul ngbDropdownMenu class="dropdown-menu" style="width:auto;">
+						<li>
+							<a class="dropdown-item" *ngFor="let category of categories" [routerLink]="['/courses', 'category', category.slug]">{{category.name}}</a>
+						</li>
+					</ul>
 				</li>
 				<li class="nav-item" routerLinkActive="active">
 					<a class="nav-link" routerLink="/webinars">Webinars</a>
@@ -46,7 +48,13 @@
 				
 				<li>
 					<a class="dropdown-item" routerLink="/account">
-						Account
+						Account Settings
+					</a>
+				</li>
+
+				<li>
+					<a class="dropdown-item" routerLink="/instructor">
+						Instructor
 					</a>
 				</li>
 			</ul>

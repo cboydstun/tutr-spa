@@ -32,6 +32,10 @@ const routes: Routes = [
 			{
 				path: 'account',
 				loadChildren: './tutr/account-settings/account-settings.module#AccountSettingsModule'
+			},
+			{
+				path: 'instructor',
+				loadChildren: './tutr/instructor/instructor.module#InstructorModule'
 			}
 		]
 	}
