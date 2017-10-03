@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { LoginService } from '../../services';
+import { LoginService } from '../../../services';
 
 @Component({
 	selector: 'tutr-login-with-username',

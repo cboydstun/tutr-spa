@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { RegisterService } from '../../services';
+import { RegisterService } from '../../../services';
 
 @Component({
 	selector: 'tutr-register-with-username',

@@ -15,7 +15,7 @@ const routes: Routes = [
 		children: [
 			{
 				path: '',
-				loadChildren: './tutr/dash/dash.module#DashModule'
+				loadChildren: './tutr/homepage/homepage.module#HomepageModule'
 			},
 			{
 				path: 'courses',
@@ -38,13 +38,9 @@ const routes: Routes = [
 				loadChildren: './tutr/instructor/instructor.module#InstructorModule'
 			},
 			{
-				path: 'login',
-				loadChildren: './tutr/login/login.module#LoginModule'
+				path: 'auth',
+				loadChildren: './tutr/authentication-flow/cognito/cognito.module#CognitoModule'
 			},
-			{
-				path: 'register',
-				loadChildren: './tutr/register/register.module#RegisterModule'
-			}
 		]
 	}
 ];
