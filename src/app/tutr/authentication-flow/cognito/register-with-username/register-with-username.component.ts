@@ -25,6 +25,9 @@ export class RegisterWithUsernameComponent implements OnInit {
 			]),
 			'password': new FormControl('', [
 				Validators.required
+			]),
+			'confirmpassword': new FormControl('', [
+				Validators.required
 			])
 		});
 	}

@@ -8,6 +8,7 @@ import {
 	MainLayoutComponent,
 	FooterComponent,
 	HeaderComponent,
+	NakedLayoutComponent
 } from './components';
 
 @NgModule({
@@ -16,6 +17,6 @@ import {
 		RouterModule,
 		UikitModule,
 	],
-	declarations: [MainLayoutComponent, FooterComponent, HeaderComponent]
+	declarations: [MainLayoutComponent, FooterComponent, HeaderComponent, NakedLayoutComponent]
 })
 export class LayoutModule { }

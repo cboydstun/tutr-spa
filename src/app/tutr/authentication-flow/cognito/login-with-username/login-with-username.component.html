@@ -1,6 +1,11 @@
-<div class="container mt-5 mb-5">
-	<div class="d-flex flex-row justify-content-center">
-		<form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form">
+<h4 class="text-center">
+	Login
+</h4>
+
+<div class="card mt-3">
+	<div class="card-body">
+
+		<form [formGroup]="form" (ngSubmit)="onSubmit()">
 			<div class="form-group">
 				<label>Username</label>
 				<input 
@@ -24,5 +29,16 @@
 					[disabled]="!form.valid">Login</button>
 			</div>
 		</form>
+
 	</div>
 </div>
+
+<div class="card mt-5">
+	<div class="card-body">
+		<h6 class="card-title">Dont have an account?</h6>
+		<a routerLink="/auth/register" class="card-link">
+			Create one for free!
+		</a>
+	</div>
+</div>
+

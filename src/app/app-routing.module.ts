@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MainLayoutComponent } from './layout/components';
+import { 
+	MainLayoutComponent, 
+	NakedLayoutComponent 
+} from './layout/components';
 
 import { PreloadCategoriesResolve } from './tutr/resolvers';
 
@@ -36,11 +39,17 @@ const routes: Routes = [
 			{
 				path: 'instructor',
 				loadChildren: './tutr/instructor/instructor.module#InstructorModule'
-			},
+			}
+		]
+	},
+	{
+		path: 'auth',
+		component: NakedLayoutComponent,
+		children: [
 			{
-				path: 'auth',
+				path: '',
 				loadChildren: './tutr/authentication-flow/cognito/cognito.module#CognitoModule'
-			},
+			}
 		]
 	}
 ];
