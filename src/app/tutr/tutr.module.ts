@@ -15,7 +15,9 @@ import {
 	CourseService,
 	TutrInterceptor,
 	InstructorCourseService,
-	CategoryCourseService
+	CategoryCourseService,
+	SubmitCourseService,
+	SubmitRightAwayCourseService
 } from './services';
 
 import {
@@ -67,7 +69,9 @@ import {
 			provide: HTTP_INTERCEPTORS,
 			useClass: TutrInterceptor,
 			multi: true,
-		}
+		},
+		SubmitRightAwayCourseService,
+		[SubmitCourseService, { provide: SubmitCourseService, useExisting: SubmitRightAwayCourseService }]
 	]
 })
 export class TutrModule { }

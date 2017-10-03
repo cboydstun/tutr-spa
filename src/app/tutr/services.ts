@@ -10,6 +10,8 @@ import { TutrInterceptor } from './_services/tutr-intercept';
 import { CourseService } from './_services/course.service';
 import { InstructorCourseService } from './_services/instructor-course.service';
 import { CategoryCourseService } from './_services/category-course.service';
+import { SubmitCourseService } from './_services/submit-course.service';
+import { SubmitRightAwayCourseService } from './_services/submit-right-away-course.service';
 
 export {
 	LoginService,
@@ -23,5 +25,7 @@ export {
 	TutrInterceptor,
 	CourseService,
 	InstructorCourseService,
-	CategoryCourseService
+	CategoryCourseService,
+	SubmitCourseService,
+	SubmitRightAwayCourseService
 }
