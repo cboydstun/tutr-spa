@@ -9,9 +9,11 @@ import { CategoryService } from './_services/category.service';
 import { TutrInterceptor } from './_services/tutr-intercept';
 import { CourseService } from './_services/course.service';
 import { InstructorCourseService } from './_services/instructor-course.service';
+import { InstructorWebinarService } from './_services/instructor-webinar.service';
 import { CategoryCourseService } from './_services/category-course.service';
 import { SubmitCourseService } from './_services/submit-course.service';
 import { SubmitRightAwayCourseService } from './_services/submit-right-away-course.service';
+import { WebinarService } from './_services/webinar.service';
 
 export {
 	LoginService,
@@ -27,5 +29,7 @@ export {
 	InstructorCourseService,
 	CategoryCourseService,
 	SubmitCourseService,
-	SubmitRightAwayCourseService
+	SubmitRightAwayCourseService,
+	InstructorWebinarService,
+	WebinarService
 }

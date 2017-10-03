@@ -8,7 +8,11 @@ import {
 	CourseCardComponent, 
 	CourseCardGridComponent,
 	InstructorCourseItemComponent,
-	InstructorCourseGroupComponent
+	InstructorCourseGroupComponent,
+	InstructorWebinarItemComponent,
+	InstructorWebinarGroupComponent,
+	WebinarCardComponent,
+	WebinarCardGridComponent
 } from './components';
 
 @NgModule({
@@ -17,12 +21,25 @@ import {
 		NgbModule.forRoot(),
 		RouterModule
 	],
-	declarations: [CourseCardComponent, CourseCardGridComponent, InstructorCourseItemComponent, InstructorCourseGroupComponent],
+	declarations: [
+		CourseCardComponent, 
+		CourseCardGridComponent, 
+		InstructorCourseItemComponent,
+		InstructorCourseGroupComponent,
+		InstructorWebinarItemComponent,
+		InstructorWebinarGroupComponent,
+		WebinarCardComponent,
+		WebinarCardGridComponent
+		],
 	exports: [
 		CourseCardComponent,
 		CourseCardGridComponent,
 		InstructorCourseItemComponent,
 		InstructorCourseGroupComponent,
+		InstructorWebinarItemComponent,
+		InstructorWebinarGroupComponent,
+		WebinarCardComponent,
+		WebinarCardGridComponent,
 		NgbModule
 	]
 })

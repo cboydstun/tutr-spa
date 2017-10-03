@@ -3,10 +3,17 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { WebinarsComponent } from './components';
 
+import {
+	AllWebinarsResolve,
+} from '../../tutr/resolvers';
+
 const routes: Routes = [
 	{
 		path: '',
-		component: WebinarsComponent
+		component: WebinarsComponent,
+		resolve: {
+			webinars: AllWebinarsResolve
+		}
 	}
 ];
 

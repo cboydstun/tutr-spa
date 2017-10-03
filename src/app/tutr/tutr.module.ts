@@ -17,7 +17,9 @@ import {
 	InstructorCourseService,
 	CategoryCourseService,
 	SubmitCourseService,
-	SubmitRightAwayCourseService
+	SubmitRightAwayCourseService,
+	InstructorWebinarService,
+	WebinarService
 } from './services';
 
 import {
@@ -27,7 +29,10 @@ import {
 	CourseResolve,
 	InstructorCoursesResolve,
 	InstructorCourseResolve,
-	UserProfileResolve
+	UserProfileResolve,
+	InstructorWebinarsResolve,
+	InstructorWebinarResolve,
+	AllWebinarsResolve
 } from './resolvers';
 
 import {
@@ -65,6 +70,11 @@ import {
 		UserProfileResolve,
 		OnlyInstructorsGuard,
 		OnlyLoggedInUsersGuard,
+		InstructorWebinarsResolve,
+		InstructorWebinarResolve,
+		InstructorWebinarService,
+		AllWebinarsResolve,
+		WebinarService,
 		{
 			provide: HTTP_INTERCEPTORS,
 			useClass: TutrInterceptor,

@@ -6,13 +6,16 @@ import {
 	DashboardCoursesComponent,
 	DashboardWebinarsComponent,
 	CourseManagementComponent,
+	WebinarManagementComponent,
 	CourseGoalsComponent,
 	CourseLandingPageComponent
 } from './components';
 
 import { 
 	InstructorCoursesResolve,
-	InstructorCourseResolve
+	InstructorCourseResolve,
+	InstructorWebinarsResolve,
+	InstructorWebinarResolve,
 } from '../resolvers';
 
 const routes: Routes = [
@@ -34,7 +37,10 @@ const routes: Routes = [
 			},
 			{
 				path: 'webinars',
-				component: DashboardWebinarsComponent
+				component: DashboardWebinarsComponent,
+				resolve: {
+					webinars: InstructorWebinarsResolve
+				}
 			}
 		]
 	},
@@ -59,6 +65,13 @@ const routes: Routes = [
 				component: CourseLandingPageComponent
 			}
 		]
+	},
+	{
+		path: 'webinar/:webinar',
+		component: WebinarManagementComponent,
+		resolve: {
+			webinar: InstructorWebinarResolve
+		}
 	}
 ];
 

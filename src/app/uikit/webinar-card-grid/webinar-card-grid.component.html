@@ -1,0 +1,10 @@
+<div 
+	class="row"
+	*ngFor="let group of groups; let odd=odd" 
+	[ngClass]="{ 'mt-4': odd }">
+
+	<uikit-webinar-card 
+		*ngFor="let webinar of group" [webinar]="webinar" 
+		class="col-3"></uikit-webinar-card>
+
+</div>

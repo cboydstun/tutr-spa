@@ -4,6 +4,7 @@ import { DashboardWebinarsComponent } from './dashboard/dashboard-webinars/dashb
 import { CourseManagementComponent } from './course-management/course-management.component';
 import { CourseGoalsComponent } from './course-management/course-goals/course-goals.component';
 import { CourseLandingPageComponent } from './course-management/course-landing-page/course-landing-page.component';
+import { WebinarManagementComponent } from './webinar-management/webinar-management.component';
 
 export {
 	DashboardComponent,
@@ -11,5 +12,6 @@ export {
 	DashboardWebinarsComponent,
 	CourseManagementComponent,
 	CourseGoalsComponent,
-	CourseLandingPageComponent
+	CourseLandingPageComponent,
+	WebinarManagementComponent
 }
