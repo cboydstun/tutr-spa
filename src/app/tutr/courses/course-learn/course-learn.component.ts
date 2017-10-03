@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Course } from '../../models';
 
 @Component({
-	selector: 'app-course-learn',
+	selector: 'tutr-course-learn',
 	templateUrl: './course-learn.component.html',
 	styleUrls: ['./course-learn.component.css']
 })

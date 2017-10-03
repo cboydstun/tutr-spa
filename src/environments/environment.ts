@@ -14,11 +14,11 @@ export const environment = {
 
 	region: 'eu-west-1',
 
-	identityPoolId: '',
+	identityPoolId: 'eu-west-1:a399eb85-4693-4379-a3c0-80aedb5d4b30	',
 
-	userPoolId: '',
+	userPoolId: 'eu-west-1_zXCZQyNlN',
 
-	clientId: '',
+	clientId: '28gl6g4gf7alku7seqg6so09lm',
 
 	cognito_idp_endpoint: '',
 

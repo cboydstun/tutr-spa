@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'app-account-settings-layout',
+	selector: 'tutr-account-settings-layout',
 	templateUrl: './account-settings-layout.component.html',
 	styleUrls: ['./account-settings-layout.component.css']
 })

@@ -1,4 +1,5 @@
 import { LoginService } from './_services/login.service';
+import { RegisterService } from './_services/register.service';
 import { CognitoService } from './_services/cognito.service';
 import { ChangePasswordService } from './_services/change-password.service';
 import { UserProfileService } from './_services/user-profile.service';
@@ -12,6 +13,7 @@ import { CategoryCourseService } from './_services/category-course.service';
 
 export {
 	LoginService,
+	RegisterService,
 	CognitoService,
 	ChangePasswordService,
 	UserProfileService,

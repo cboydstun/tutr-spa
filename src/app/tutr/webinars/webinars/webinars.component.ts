@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'app-webinars',
+	selector: 'tutr-webinars',
 	templateUrl: './webinars.component.html',
 	styleUrls: ['./webinars.component.css']
 })

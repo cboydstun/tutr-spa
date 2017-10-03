@@ -1,11 +1,14 @@
 import * as AWS from "aws-sdk/global";
 import * as STS from "aws-sdk/clients/sts";
 
-import { BehaviorSubject, Observable } from 'rxjs';
+import { ReplaySubject, Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 
-import { AuthenticationDetails, CognitoUser } from "amazon-cognito-identity-js";
+import { 
+	AuthenticationDetails,  
+	CognitoUser 
+} from "amazon-cognito-identity-js";
 
 import { CognitoService } from './cognito.service';
 
@@ -15,7 +18,7 @@ import { environment } from "../../../environments/environment";
 export class LoginService {
 	public NEW_PASSWORD_REQUIRED: string = 'NEW_PASSWORD_REQUIRED';
 
-	private isAuthenticatedSubject = new BehaviorSubject<boolean>(true);
+	private isAuthenticatedSubject = new ReplaySubject<boolean>();
 
 	public isAuthenticated = this.isAuthenticatedSubject.asObservable();
 

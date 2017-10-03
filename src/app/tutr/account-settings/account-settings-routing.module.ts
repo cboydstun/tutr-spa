@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { OnlyLoggedInUsersGuard } from './../guards';
+
 import { 
 	AccountSettingsBasicsComponent,
 	AccountSettingsPrivacyComponent,
 	AccountSettingsLayoutComponent
 } from './components';
 
+import { UserProfileResolve } from '../resolvers';
+
 const routes: Routes = [
 	{
 		path: '',
 		component: AccountSettingsLayoutComponent,
+		canActivateChild: [OnlyLoggedInUsersGuard],
 		children: [
 			{
 				path: '',
@@ -19,11 +24,17 @@ const routes: Routes = [
 			},
 			{
 				path: 'basics',
-				component: AccountSettingsBasicsComponent
+				component: AccountSettingsBasicsComponent,
+				resolve: {
+					profile: UserProfileResolve
+				}
 			},
 			{
 				path: 'privacy',
-				component: AccountSettingsPrivacyComponent
+				component: AccountSettingsPrivacyComponent,
+				resolve: {
+					profile: UserProfileResolve
+				}
 			}
 		]
 	}

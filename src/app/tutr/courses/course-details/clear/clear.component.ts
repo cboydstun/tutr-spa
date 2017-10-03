@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-clear',
+  selector: 'tutr-clear',
   templateUrl: './clear.component.html',
   styleUrls: ['./clear.component.css']
 })

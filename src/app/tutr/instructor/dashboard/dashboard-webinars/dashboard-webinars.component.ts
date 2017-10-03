@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard-webinars',
+  selector: 'tutr-dashboard-webinars',
   templateUrl: './dashboard-webinars.component.html',
   styleUrls: ['./dashboard-webinars.component.css']
 })

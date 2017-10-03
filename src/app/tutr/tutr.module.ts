@@ -5,6 +5,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import {
 	LoginService,
+	RegisterService,
 	CognitoService,
 	ChangePasswordService,
 	UserProfileService,
@@ -23,13 +24,19 @@ import {
 	CategoryResolve,
 	CourseResolve,
 	InstructorCoursesResolve,
-	InstructorCourseResolve
+	InstructorCourseResolve,
+	UserProfileResolve
 } from './resolvers';
+
+import {
+	OnlyInstructorsGuard,
+	OnlyLoggedInUsersGuard
+} from './guards';
 
 @NgModule({
 	imports: [
 		CommonModule,
-		HttpClientModule,
+		HttpClientModule
 	],
 	exports: [
 		HttpClientModule
@@ -37,6 +44,7 @@ import {
 	declarations: [],
 	providers: [
 		LoginService,
+		RegisterService,
 		CognitoService,
 		ChangePasswordService,
 		UserProfileService,
@@ -52,6 +60,9 @@ import {
 		InstructorCoursesResolve,
 		CategoryCourseService,
 		InstructorCourseResolve,
+		UserProfileResolve,
+		OnlyInstructorsGuard,
+		OnlyLoggedInUsersGuard,
 		{
 			provide: HTTP_INTERCEPTORS,
 			useClass: TutrInterceptor,

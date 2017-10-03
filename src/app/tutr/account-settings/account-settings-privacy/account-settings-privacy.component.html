@@ -1,15 +1,21 @@
 <div class="container mt-5 mb-5">
-	<form>
+	<form [formGroup]="form" (ngSubmit)="onSubmit()">
 		<fieldset class="form-group">
 			<div class="form-check">
 				<label class="form-check-label">
-					<input class="form-check-input" type="checkbox">
+					<input 
+						class="form-check-input" 
+						type="checkbox"
+						[formControlName]="'custom:profile_public'">
 					Show my profile on search results
 				</label>
 			</div>
 			<div class="form-check">
 				<label class="form-check-label">
-					<input class="form-check-input" type="checkbox">
+					<input 
+						class="form-check-input" 
+						type="checkbox"
+						[formControlName]="'custom:courses_public'">
 					Show courses I am taking on my profile page
 				</label>
 			</div>
