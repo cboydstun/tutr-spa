@@ -7,7 +7,15 @@
 			<a 
 				class="nav-link"
 				routerLinkActive="active"
-				[routerLink]="['/webinars']">All Webinars</a>
+				[routerLink]="['/webinars']"
+				[routerLinkActiveOptions]="{exact: true}">Upcoming Webinars</a>
+		</li>
+		<li class="nav-item">
+			<a 
+				class="nav-link"
+				routerLinkActive="active"
+				routerLink="/webinars/archived"
+				[routerLinkActiveOptions]="{exact: true}">Archived</a>
 		</li>
 	</ul>
 </div>

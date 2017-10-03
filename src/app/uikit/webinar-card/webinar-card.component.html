@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [ngClass]="{'border-warning': webinar.archived}">
 	<div class="card-body">
 		<h6 class="card-title">
 			<a [routerLink]="['/webinars', 'details', webinar.slug]">{{webinar.name}}</a>
@@ -6,11 +6,7 @@
 		<p class="card-text">{{webinar.description}}</p>
 	</div>
 	<ul class="list-group list-group-flush">
-		<li class="list-group-item">
-			<i class="fa fa-location-arrow"></i>
-			<a href="">Skype</a>
-		</li>
-		<li class="list-group-item">
+		<li class="list-group-item" [ngClass]="{'text-muted': webinar.archived}">
 			<i class="fa fa-calendar"></i>
 			Tomorrow, 11 am
 		</li>

@@ -10,13 +10,19 @@ import { Webinar } from '../models';
 export class WebinarService {
 	constructor(private httpClient: HttpClient) { }
 
-	all() : Promise<Webinar[]> {
+	archived() : Promise<Webinar[]> {
 		return Promise.resolve([
 			{
 				name: 'The Complete Ember 2 Developer Course',
 				slug: 'the-complete-ember-2-developer-course',
 				description: 'Learn how to build ambitious single-page web applications using the power of Ember.js and Ember CLI.',
-			},
+				archived: true
+			}
+		]);
+	}
+
+	all() : Promise<Webinar[]> {
+		return Promise.resolve([
 			{
 				name: 'Master EmberJS : Learn Ember JS From Scratch',
 				slug: 'master-emberjs-learn-ember-js-from-scratch',

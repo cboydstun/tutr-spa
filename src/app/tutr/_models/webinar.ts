@@ -3,4 +3,5 @@ export class Webinar {
 	slug: string;
 	description: string;
 	image: string;
+	archived: boolean
 }

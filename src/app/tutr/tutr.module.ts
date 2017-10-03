@@ -32,7 +32,8 @@ import {
 	UserProfileResolve,
 	InstructorWebinarsResolve,
 	InstructorWebinarResolve,
-	AllWebinarsResolve
+	AllWebinarsResolve,
+	ArchivedWebinarsResolve
 } from './resolvers';
 
 import {
@@ -74,6 +75,7 @@ import {
 		InstructorWebinarResolve,
 		InstructorWebinarService,
 		AllWebinarsResolve,
+		ArchivedWebinarsResolve,
 		WebinarService,
 		{
 			provide: HTTP_INTERCEPTORS,
