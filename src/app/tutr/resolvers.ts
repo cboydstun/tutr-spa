@@ -16,6 +16,8 @@ import { ArchivedWebinarsResolve } from './_resolvers/archived-webinars.resolver
 import { WebinarResolve } from './_resolvers/webinar.resolver';
 import { UpcomingWebinarsResolve } from './_resolvers/upcoming-webinars.resolver';
 
+import { HomepageResolve } from './_resolvers/homepage.resolver';
+
 export {
 	PreloadCategoriesResolve,
 	CategoryCoursesResolve,
@@ -29,5 +31,6 @@ export {
 	AllWebinarsResolve,
 	ArchivedWebinarsResolve,
 	WebinarResolve,
-	UpcomingWebinarsResolve
+	UpcomingWebinarsResolve,
+	HomepageResolve
 };

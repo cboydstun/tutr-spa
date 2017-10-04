@@ -3,10 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomepageComponent } from './components';
 
+import { HomepageResolve } from '../resolvers';
+
 const routes: Routes = [
 	{
 		path: '',
-		component: HomepageComponent
+		component: HomepageComponent,
+		resolve: {
+			homepage: HomepageResolve
+		}
 	}
 ];
 
