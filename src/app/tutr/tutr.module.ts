@@ -34,7 +34,8 @@ import {
 	InstructorWebinarResolve,
 	AllWebinarsResolve,
 	ArchivedWebinarsResolve,
-	WebinarResolve
+	WebinarResolve,
+	UpcomingWebinarsResolve
 } from './resolvers';
 
 import {
@@ -79,6 +80,7 @@ import {
 		ArchivedWebinarsResolve,
 		WebinarService,
 		WebinarResolve,
+		UpcomingWebinarsResolve,
 		{
 			provide: HTTP_INTERCEPTORS,
 			useClass: TutrInterceptor,

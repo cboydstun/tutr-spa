@@ -1,0 +1,19 @@
+<div class="d-flex flex-row justify-content-center">
+	<form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-50">
+		<div class="form-group">
+			<label>
+				All you need to do is enter a working title
+			</label>
+			<input
+				type="text"
+				class="form-control"
+				[placeholder]="placeholder"
+				[formControlName]="'title'">
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+				Save and Go
+			</button>
+		</div>
+	</form>
+</div>

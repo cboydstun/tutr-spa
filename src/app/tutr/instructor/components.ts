@@ -7,6 +7,8 @@ import { CourseLandingPageComponent } from './course-management/course-landing-p
 import { WebinarManagementComponent } from './webinar-management/webinar-management.component';
 import { WebinarBasicsComponent } from './webinar-management/webinar-basics/webinar-basics.component';
 import { CreateCourseComponent } from './course-management/create-course/create-course.component';
+import { WorkingTitleFormComponent } from './working-title-form/working-title-form.component';
+import { CreateWebinarComponent } from './webinar-management/create-webinar/create-webinar.component';
 
 export {
 	DashboardComponent,
@@ -17,5 +19,7 @@ export {
 	CourseLandingPageComponent,
 	WebinarManagementComponent,
 	WebinarBasicsComponent,
-	CreateCourseComponent
+	CreateCourseComponent,
+	WorkingTitleFormComponent,
+	CreateWebinarComponent
 }

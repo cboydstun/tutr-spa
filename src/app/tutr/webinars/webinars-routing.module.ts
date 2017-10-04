@@ -7,7 +7,7 @@ import {
 } from './components';
 
 import {
-	AllWebinarsResolve,
+	UpcomingWebinarsResolve,
 	ArchivedWebinarsResolve,
 	WebinarResolve
 } from '../../tutr/resolvers';
@@ -18,7 +18,7 @@ const routes: Routes = [
 		pathMatch: 'full',
 		component: WebinarsComponent,
 		resolve: {
-			webinars: AllWebinarsResolve
+			webinars: UpcomingWebinarsResolve
 		}
 	},
 	{

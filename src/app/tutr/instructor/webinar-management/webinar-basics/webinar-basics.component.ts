@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Webinar } from '../../../models';
 
 @Component({
-	selector: 'app-webinar-basics',
+	selector: 'tutr-webinar-basics',
 	templateUrl: './webinar-basics.component.html',
 	styleUrls: ['./webinar-basics.component.css']
 })

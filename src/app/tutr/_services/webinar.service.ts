@@ -10,6 +10,15 @@ import { Webinar } from '../models';
 export class WebinarService {
 	constructor(private httpClient: HttpClient) { }
 
+	create(title: string): Promise<Webinar> {
+		return Promise.resolve({
+			name: 'Learning Path: Mastering Ember.js Application Development',
+			slug: 'learning-path-mastering-emberjs-application-development',
+			description: 'Learn how to build ambitious single-page web applications using the power of Ember.js and Ember CLI.'
+		});
+	}
+
+
 	archived() : Promise<Webinar[]> {
 		return Promise.resolve([
 			{
@@ -17,6 +26,16 @@ export class WebinarService {
 				slug: 'the-complete-ember-2-developer-course',
 				description: 'Learn how to build ambitious single-page web applications using the power of Ember.js and Ember CLI.',
 				archived: true
+			}
+		]);
+	}
+
+	upcoming() : Promise<Webinar[]> {
+		return Promise.resolve([
+			{
+				name: 'The Complete Ember 2 Developer Course',
+				slug: 'the-complete-ember-2-developer-course',
+				description: 'Learn how to build ambitious single-page web applications using the power of Ember.js and Ember CLI.'
 			}
 		]);
 	}
