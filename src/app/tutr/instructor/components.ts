@@ -6,6 +6,7 @@ import { CourseGoalsComponent } from './course-management/course-goals/course-go
 import { CourseLandingPageComponent } from './course-management/course-landing-page/course-landing-page.component';
 import { WebinarManagementComponent } from './webinar-management/webinar-management.component';
 import { WebinarBasicsComponent } from './webinar-management/webinar-basics/webinar-basics.component';
+import { CreateCourseComponent } from './course-management/create-course/create-course.component';
 
 export {
 	DashboardComponent,
@@ -15,5 +16,6 @@ export {
 	CourseGoalsComponent,
 	CourseLandingPageComponent,
 	WebinarManagementComponent,
-	WebinarBasicsComponent
+	WebinarBasicsComponent,
+	CreateCourseComponent
 }

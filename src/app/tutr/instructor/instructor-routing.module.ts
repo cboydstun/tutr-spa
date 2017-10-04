@@ -9,7 +9,8 @@ import {
 	WebinarManagementComponent,
 	CourseGoalsComponent,
 	CourseLandingPageComponent,
-	WebinarBasicsComponent
+	WebinarBasicsComponent,
+	CreateCourseComponent
 } from './components';
 
 import { 
@@ -44,6 +45,10 @@ const routes: Routes = [
 				}
 			}
 		]
+	},
+	{
+		path: 'course/create',
+		component: CreateCourseComponent
 	},
 	{
 		path: 'course/:course',

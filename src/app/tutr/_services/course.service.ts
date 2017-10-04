@@ -19,4 +19,14 @@ export class CourseService {
 		});
 	}
 
+	create(title: string): Promise<Course> {
+		return Promise.resolve({
+			id: 'PPBqWA9',
+			name: 'Learning Path: Mastering Ember.js Application Development',
+			slug: 'learning-path-mastering-emberjs-application-development',
+			description: 'Learn how to build ambitious single-page web applications using the power of Ember.js and Ember CLI.',
+			image: 'https://udemy-images.udemy.com/course/304x171/1263534_780a_4.jpg'
+		});	
+	}
+
 }
