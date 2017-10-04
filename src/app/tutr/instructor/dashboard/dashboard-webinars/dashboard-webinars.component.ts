@@ -15,7 +15,6 @@ export class DashboardWebinarsComponent implements OnInit {
 
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
-			debugger;
 			this.webinars = data.webinars;
 		});
 	}

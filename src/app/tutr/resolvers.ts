@@ -13,6 +13,8 @@ import { UserProfileResolve } from './_resolvers/user-profile.resolver';
 import { AllWebinarsResolve } from './_resolvers/all-webinars.resolver';
 import { ArchivedWebinarsResolve } from './_resolvers/archived-webinars.resolver';
 
+import { WebinarResolve } from './_resolvers/webinar.resolver';
+
 export {
 	PreloadCategoriesResolve,
 	CategoryCoursesResolve,
@@ -24,5 +26,6 @@ export {
 	InstructorWebinarsResolve,
 	InstructorWebinarResolve,
 	AllWebinarsResolve,
-	ArchivedWebinarsResolve
+	ArchivedWebinarsResolve,
+	WebinarResolve
 };

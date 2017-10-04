@@ -4,11 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Webinar } from '../../models';
 
 @Component({
-	selector: 'app-webinar-management',
-	templateUrl: './webinar-management.component.html',
-	styleUrls: ['./webinar-management.component.css']
+	selector: 'app-webinar-details',
+	templateUrl: './webinar-details.component.html',
+	styleUrls: ['./webinar-details.component.css']
 })
-export class WebinarManagementComponent implements OnInit {
+export class WebinarDetailsComponent implements OnInit {
 	public webinar: Webinar;
 
 	constructor(private activatedRoute: ActivatedRoute) { }

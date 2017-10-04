@@ -4,7 +4,10 @@ import { CommonModule } from '@angular/common';
 import { UikitModule } from '../../uikit/uikit.module';
 
 import { WebinarsRoutingModule } from './webinars-routing.module';
-import { WebinarsComponent } from './components';
+import { 
+	WebinarsComponent,
+	WebinarDetailsComponent
+} from './components';
 
 @NgModule({
 	imports: [
@@ -12,6 +15,6 @@ import { WebinarsComponent } from './components';
 		WebinarsRoutingModule,
 		UikitModule
 	],
-	declarations: [WebinarsComponent]
+	declarations: [WebinarsComponent, WebinarDetailsComponent]
 })
 export class WebinarsModule { }

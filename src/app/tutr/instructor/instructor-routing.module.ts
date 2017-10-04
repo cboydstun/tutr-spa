@@ -8,7 +8,8 @@ import {
 	CourseManagementComponent,
 	WebinarManagementComponent,
 	CourseGoalsComponent,
-	CourseLandingPageComponent
+	CourseLandingPageComponent,
+	WebinarBasicsComponent
 } from './components';
 
 import { 
@@ -71,7 +72,18 @@ const routes: Routes = [
 		component: WebinarManagementComponent,
 		resolve: {
 			webinar: InstructorWebinarResolve
-		}
+		},
+		children: [
+			{
+				path: '',
+				redirectTo: 'basics',
+				pathMatch: 'full'
+			},
+			{
+				path: 'basics',
+				component: WebinarBasicsComponent
+			}
+		]
 	}
 ];
 

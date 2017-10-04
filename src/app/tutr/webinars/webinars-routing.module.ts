@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { WebinarsComponent } from './components';
+import { 
+	WebinarsComponent,
+	WebinarDetailsComponent
+} from './components';
 
 import {
 	AllWebinarsResolve,
-	ArchivedWebinarsResolve
+	ArchivedWebinarsResolve,
+	WebinarResolve
 } from '../../tutr/resolvers';
 
 const routes: Routes = [
@@ -22,6 +26,13 @@ const routes: Routes = [
 		component: WebinarsComponent,
 		resolve: {
 			webinars: ArchivedWebinarsResolve
+		}
+	},
+	{
+		path: 'details/:webinar',
+		component: WebinarDetailsComponent,
+		resolve: {
+			webinar: WebinarResolve
 		}
 	}
 ];

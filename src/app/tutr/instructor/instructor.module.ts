@@ -10,9 +10,10 @@ import {
 	DashboardWebinarsComponent,
 	CourseManagementComponent,
 	CourseGoalsComponent,
-	CourseLandingPageComponent
+	CourseLandingPageComponent,
+	WebinarManagementComponent,
+	WebinarBasicsComponent
 } from './components';
-import { WebinarManagementComponent } from './webinar-management/webinar-management.component';
 
 @NgModule({
 	imports: [
@@ -20,6 +21,6 @@ import { WebinarManagementComponent } from './webinar-management/webinar-managem
 		InstructorRoutingModule,
 		UikitModule
 	],
-	declarations: [DashboardComponent, DashboardCoursesComponent, DashboardWebinarsComponent, CourseManagementComponent, CourseGoalsComponent, CourseLandingPageComponent, WebinarManagementComponent]
+	declarations: [DashboardComponent, DashboardCoursesComponent, DashboardWebinarsComponent, CourseManagementComponent, CourseGoalsComponent, CourseLandingPageComponent, WebinarManagementComponent, WebinarBasicsComponent]
 })
 export class InstructorModule { }

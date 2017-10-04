@@ -5,7 +5,7 @@ import { Webinar } from '../models';
 import { WebinarService } from '../services';
 
 @Injectable()
-export class CourseResolve implements Resolve<Webinar> {
+export class WebinarResolve implements Resolve<Webinar> {
 
 	constructor(private webinarService: WebinarService) { }
 
