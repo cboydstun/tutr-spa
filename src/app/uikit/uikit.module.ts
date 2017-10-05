@@ -2,7 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { 
+	FormsModule, 
+	ReactiveFormsModule 
+} from '@angular/forms';
 
 import { 
 	CourseCardComponent, 
@@ -12,14 +19,29 @@ import {
 	InstructorWebinarItemComponent,
 	InstructorWebinarGroupComponent,
 	WebinarCardComponent,
-	WebinarCardGridComponent
+	WebinarCardGridComponent,
+	CurriculumItemComponent,
+	CurriculumGroupComponent,
+	CurriculumAttachOfferComponent,
+	CurriculumAttachArticleComponent,
+	CurriculumAttachVideoComponent,
+	CurriculumEditTitleComponent,
+	CurriculumQuizItemComponent,
+	CurriculumQuizEditBasicsComponent,
+	CurriculumQuizBuilderComponent,
+	QuizQuestionComponent,
+	QuizAnswerComponent,
+	QuizAnswerGroupComponent
 } from './components';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		NgbModule.forRoot(),
-		RouterModule
+		RouterModule,
+		TranslateModule,
+		FormsModule, 
+		ReactiveFormsModule 
 	],
 	declarations: [
 		CourseCardComponent, 
@@ -29,8 +51,20 @@ import {
 		InstructorWebinarItemComponent,
 		InstructorWebinarGroupComponent,
 		WebinarCardComponent,
-		WebinarCardGridComponent
-		],
+		WebinarCardGridComponent,
+		CurriculumItemComponent,
+		CurriculumGroupComponent,
+		CurriculumAttachOfferComponent,
+		CurriculumAttachArticleComponent,
+		CurriculumAttachVideoComponent,
+		CurriculumEditTitleComponent,
+		CurriculumQuizItemComponent,
+		CurriculumQuizEditBasicsComponent,
+		CurriculumQuizBuilderComponent,
+		QuizQuestionComponent,
+		QuizAnswerComponent,
+		QuizAnswerGroupComponent
+	],
 	exports: [
 		CourseCardComponent,
 		CourseCardGridComponent,
@@ -40,6 +74,8 @@ import {
 		InstructorWebinarGroupComponent,
 		WebinarCardComponent,
 		WebinarCardGridComponent,
+		CurriculumItemComponent,
+		CurriculumGroupComponent,
 		NgbModule
 	]
 })

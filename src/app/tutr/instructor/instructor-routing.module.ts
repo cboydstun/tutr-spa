@@ -11,7 +11,8 @@ import {
 	CourseLandingPageComponent,
 	WebinarBasicsComponent,
 	CreateCourseComponent,
-	CreateWebinarComponent
+	CreateWebinarComponent,
+	CourseCurriculumComponent
 } from './components';
 
 import { 
@@ -70,6 +71,10 @@ const routes: Routes = [
 			{
 				path: 'landing',
 				component: CourseLandingPageComponent
+			},
+			{
+				path: 'curriculum',
+				component: CourseCurriculumComponent
 			}
 		]
 	},

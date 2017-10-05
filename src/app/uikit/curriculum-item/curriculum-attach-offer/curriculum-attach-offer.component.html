@@ -1,0 +1,19 @@
+<p class="text-center">
+	{{ 'curriculumItemSelectTheMainTypeOfContent' | translate }}
+</p>
+
+<div class="d-flex flex-row justify-content-around">
+	<button class="btn btn-link" (click)="doAttachVideo()">
+		<i class="fa fa-video-camera"></i>
+		<span class="lead">
+			{{ 'curriculumItemMainTypeOfContentVideo' | translate }}
+		</span>
+	</button>
+
+	<button class="btn btn-link" (click)="doAttachArticle()">
+		<i class="fa fa-file-text-o"></i>
+		<span class="lead">
+			{{ 'curriculumItemMainTypeOfContentArticle' | translate }}
+		</span>
+	</button>
+</div>

@@ -1,0 +1,20 @@
+import { Component, OnInit, Input } from '@angular/core';
+
+@Component({
+	selector: 'uikit-quiz-answer-group',
+	templateUrl: './quiz-answer-group.component.html',
+	styleUrls: ['./quiz-answer-group.component.css']
+})
+export class QuizAnswerGroupComponent implements OnInit {
+	@Input() answers: any[] = [];
+
+	constructor() { }
+
+	ngOnInit() {
+	}
+
+	public addAnswer() {
+		this.answers.push({});
+	}
+
+}

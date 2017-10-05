@@ -1,0 +1,11 @@
+<div *ngFor="let curriculum of curriculums" [ngSwitch]="curriculum.type">
+
+	<uikit-curriculum-item
+		*ngSwitchCase="'lesson'"
+		[curriculum]="curriculum"></uikit-curriculum-item>
+
+	<uikit-curriculum-quiz-item
+		*ngSwitchCase="'quiz'"
+		[curriculum]="curriculum"></uikit-curriculum-quiz-item>
+
+</div>

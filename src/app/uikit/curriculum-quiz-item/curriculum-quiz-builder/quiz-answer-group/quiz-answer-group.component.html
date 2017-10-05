@@ -1,0 +1,7 @@
+<uikit-quiz-answer
+	*ngFor="let answer of answers"
+	[answer]="answer"></uikit-quiz-answer>
+
+<button type="button" class="btn btn-link btn-sm" (click)="addAnswer()">
+	{{ 'quizAnswerGroupAddAnswer' | translate }}
+</button>

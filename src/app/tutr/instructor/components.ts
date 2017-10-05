@@ -9,6 +9,7 @@ import { WebinarBasicsComponent } from './webinar-management/webinar-basics/webi
 import { CreateCourseComponent } from './course-management/create-course/create-course.component';
 import { WorkingTitleFormComponent } from './working-title-form/working-title-form.component';
 import { CreateWebinarComponent } from './webinar-management/create-webinar/create-webinar.component';
+import { CourseCurriculumComponent } from './course-management/course-curriculum/course-curriculum.component';
 
 export {
 	DashboardComponent,
@@ -21,5 +22,6 @@ export {
 	WebinarBasicsComponent,
 	CreateCourseComponent,
 	WorkingTitleFormComponent,
-	CreateWebinarComponent
+	CreateWebinarComponent,
+	CourseCurriculumComponent
 }

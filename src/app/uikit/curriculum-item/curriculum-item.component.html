@@ -1,0 +1,97 @@
+<div class="card">
+	<div class="card-header">
+		<div *ngIf="isNormalMode()" class="d-flex flex-row justify-content-between">
+			<div>
+				{{ curriculum.title }}
+
+				<button class="btn btn-link p-0" (click)="turnOnEditTitleMode()">
+					<i class="fa fa-pencil-square-o"></i>
+				</button>
+			</div>
+			<div>
+				<i 
+					class="fa" 
+					(click)="expanded = !expanded"
+					[class.fa-expand]="!expanded"
+					[class.fa-compress]="expanded"></i>
+			</div>
+		</div>
+
+		<ul class="nav nav-tabs card-header-tabs" *ngIf="!isNormalMode()">
+			<li class="nav-item" *ngIf="isEditTitleMode()">
+				<span class="nav-link active">
+					{{ 'Common_Edit' | translate }}
+				</span>
+			</li>
+			<li class="nav-item" *ngIf="isAttachVideoMode()">
+				<span class="nav-link active">
+					{{ 'curriculumItemAttachVideo' | translate }}
+				</span>
+			</li>
+			<li class="nav-item" *ngIf="isAttachArticleMode()">
+				<span class="nav-link active">
+					{{ 'curriculumItemAttachArticle' | translate }}
+				</span>
+			</li>
+		</ul>
+
+	</div>
+
+	<div class="card-body" *ngIf="isNormalMode() && !isAnyContentType() && expanded">
+		<uikit-curriculum-attach-offer
+			(attachVideo)="turnOnAttachVideoMode()"
+			(attachArticle)="turnOnAttachArticleMode()"></uikit-curriculum-attach-offer>
+	</div>
+
+	<div class="card-body" *ngIf="isNormalMode() && isVideoContentType() && expanded">
+		<p class="lead">
+			{{ 'curriculumItemMainTypeOfContentVideo' | translate }}
+
+			<button class="btn btn-link p-0" (click)="turnOnAttachVideoMode()">
+				<i class="fa fa-pencil-square-o"></i>
+			</button>
+		</p>
+
+		<p>
+			<img src="https://forwardministries.org/wp-content/uploads/2015/02/video-sample-first-frame.jpg" class="img-fluid">
+		</p>
+	</div>
+
+	<div class="card-body" *ngIf="isNormalMode() && isArticleContentType() && expanded">
+		<p class="lead">
+			{{ 'curriculumItemMainTypeOfContentArticle' | translate }}
+
+			<button class="btn btn-link p-0" (click)="turnOnAttachArticleMode()">
+				<i class="fa fa-pencil-square-o"></i>
+			</button>
+		</p>
+
+		<p>
+			{{ articleContentPreview }}...
+		</p>
+	</div>
+
+	<div class="card-body" *ngIf="isAttachVideoMode()">
+		<uikit-curriculum-attach-video
+			(save)="turnOnNormalMode()"
+			(cancel)="turnOnNormalMode()"
+			(delete)="deleteVideo()"
+			[curriculum]="curriculum"></uikit-curriculum-attach-video>
+	</div>
+
+	<div class="card-body" *ngIf="isAttachArticleMode()">
+		<uikit-curriculum-attach-article
+			(save)="turnOnNormalMode()"
+			(cancel)="turnOnNormalMode()"
+			(delete)="deleteVideo()"
+			[curriculum]="curriculum"></uikit-curriculum-attach-article>
+	</div>
+
+	<div class="card-body" *ngIf="isEditTitleMode()">
+		<uikit-curriculum-edit-title
+			(save)="turnOnNormalMode()"
+			(cancel)="turnOnNormalMode()"
+			(delete)="deleteVideo()"
+			[curriculum]="curriculum"></uikit-curriculum-edit-title>
+	</div>
+</div>

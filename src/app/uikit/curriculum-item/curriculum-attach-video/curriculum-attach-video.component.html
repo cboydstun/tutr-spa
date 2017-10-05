@@ -1,0 +1,35 @@
+<form [formGroup]="editVideoForm" (ngSubmit)="onSubmitEditVideoForm()">
+	<div class="form-group">
+		<label class="custom-file">
+			<input 
+				type="file" 
+				class="custom-file-input"
+				(change)="onFileChange($event)" />
+			<span class="custom-file-control"></span>
+		</label>
+
+		<input type="hidden" formControlName="file" />
+	</div>
+	<div class="form-group">
+		<button 
+			type="submit" 
+			class="btn btn-primary btn-sm"
+			[disabled]="!editVideoForm.valid">
+				{{ 'Common_Save' | translate }}
+		</button>
+
+		<button
+			type="button"
+			class="btn btn-secondary btn-sm"
+			(click)="turnOnNormalMode()">
+				{{ 'Common_Cancel' | translate }}
+		</button>
+
+		<button
+			(click)="deleteVideo()"
+			type="button"
+			class="btn btn-link btn-sm text-danger">
+				<i class="fa fa-trash"></i>
+		</button>
+	</div>
+</form>

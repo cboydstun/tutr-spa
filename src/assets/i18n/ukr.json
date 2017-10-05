@@ -2,6 +2,8 @@
 	"Common_Save": "Зберегти",
 	"Common_Ok": "Ok",
 	"Common_Cancel": "Скасувати",
+	"Common_Edit": "Редагувати",
+	"Common_Delete": "Видалити",
 
 	"publicProfileJumbotronHeader": "Загальнодоступний профіль",
 
@@ -64,6 +66,7 @@
 	"courseManagementListItemGoals": "Цілі",
 	"courseManagementListItemCourseLandingPage": "Цільова сторінка курсу",
 	"courseManagementButtonSubmitCourse": "Створити курс",
+	"courseManagementListItemCourseCurriculum": "Навчальний план",
 
 	"courseGoalsAnyPrerequisites": "Чи має ваш курс будь-які передумови?",
 	"courseGoalsAnyPrerequisitesHelpText": "Відокремити кожну записку новою лінією",
@@ -89,5 +92,27 @@
 	"webinarBasicsSubtitleHelpText": "Підзаголовок - це невелика опис, що відображається під заголовком",
 	"webinarBasicsDescription": "Опис",
 
-	"webinarDetailsReserveASeat": "Забронювати місце"
+	"webinarDetailsReserveASeat": "Забронювати місце",
+
+	"courseCurriculumButtonAddCurriculumLesson": "Додати урок",
+	"courseCurriculumButtonAddCurriculumQuiz": "Додати тест",
+
+	"curriculumItemEditTitleFormTitle": "Ім'я",
+	"curriculumItemSelectTheMainTypeOfContent": "Виберіть основний тип вмісту. Файли та посилання можуть бути додані як ресурси",
+	"curriculumItemMainTypeOfContentVideo": "Відео",
+	"curriculumItemMainTypeOfContentArticle": "Стаття",
+	"curriculumItemAttachVideo": "Приєднати відео",
+	"curriculumItemAttachArticle": "Додайте статтю",
+
+	"curriculumQuizItemEditFormTitle": "Назва",
+	"curriculumQuizItemEditFormDescription": "Опис",
+
+	"quizQuestionFormTitle": "Назва",
+	"quizQuestionFormType": "Тип",
+	"quizAnswerTypeAnAnswerPlaceholder": "Введіть відповідь ...",
+	"quizAnswerTypeAnAnswerExplanationPlaceholder": "Поясніть відповідь ...",
+	"quizAnswerGroupAddAnswer": "Додати відповідь",
+	"quizQuestionFormTypeMultiple": "Кілька відповідей",
+	"quizQuestionFormTypeSingle": "Одиночна відповідь",
+	"curriculumQuizBuilderAddQuestion": "Додати запитання"
 }

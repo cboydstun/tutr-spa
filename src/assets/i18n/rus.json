@@ -2,6 +2,8 @@
 	"Common_Save": "Зберегти",
 	"Common_Ok": "Ok",
 	"Common_Cancel": "Скасувати",
+	"Common_Edit": "Редактировать",
+	"Common_Delete": "Удалить",
 
 	"publicProfileJumbotronHeader": "Загальнодоступний профіль",
 
@@ -64,6 +66,7 @@
 	"courseManagementListItemGoals": "Goals",
 	"courseManagementListItemCourseLandingPage": "Course Landing Page",
 	"courseManagementButtonSubmitCourse": "Submit Course",
+	"courseManagementListItemCourseCurriculum": "Curriculum",
 
 	"courseGoalsAnyPrerequisites": "Does your course have any prerequisites?",
 	"courseGoalsAnyPrerequisitesHelpText": "Separate each entry by a new line",
@@ -89,5 +92,27 @@
 	"webinarBasicsSubtitleHelpText": "Webinar Subtitle is a small description displayed under the title",
 	"webinarBasicsDescription": "Description",
 
-	"webinarDetailsReserveASeat": "Reserve a seat"
+	"webinarDetailsReserveASeat": "Reserve a seat",
+
+	"courseCurriculumButtonAddCurriculumLesson": "Добавить урок",
+	"courseCurriculumButtonAddCurriculumQuiz": "Добавить тест",
+
+	"curriculumItemEditTitleFormTitle": "Имя",
+	"curriculumItemSelectTheMainTypeOfContent": "Выберите основной тип контента. Файлы и ссылки могут быть добавлены в качестве ресурсов",
+	"curriculumItemMainTypeOfContentVideo": "Видео",
+	"curriculumItemMainTypeOfContentArticle": "Статья",
+	"curriculumItemAttachVideo": "Добавить видео",
+	"curriculumItemAttachArticle": "Добавить статью",
+
+	"curriculumQuizItemEditFormTitle": "Название",
+	"curriculumQuizItemEditFormDescription": "Описание",
+
+	"quizQuestionFormTitle": "Название",
+	"quizQuestionFormType": "Тип",
+	"quizAnswerTypeAnAnswerPlaceholder": "Введите ответ...",
+	"quizAnswerTypeAnAnswerExplanationPlaceholder": "Обьясните этот ответ...",
+	"quizAnswerGroupAddAnswer": "Добавить ответ",
+	"quizQuestionFormTypeMultiple": "Множественные ответы",
+	"quizQuestionFormTypeSingle": "Один ответ",
+	"curriculumQuizBuilderAddQuestion": "Добавить вопрос"
 }

@@ -1,0 +1,43 @@
+<div class="card border-secondary">
+	<div class="card-header">
+		<div *ngIf="isNormalMode()" class="d-flex flex-row justify-content-between">
+			<div>
+				{{ curriculum.title }}
+
+				<button class="btn btn-link p-0" (click)="turnOnEditMode()">
+					<i class="fa fa-pencil-square-o"></i>
+				</button>
+			</div>
+			<div>
+				<i 
+					class="fa" 
+					(click)="expanded = !expanded"
+					[class.fa-expand]="!expanded"
+					[class.fa-compress]="expanded"></i>
+			</div>
+		</div>
+
+		<ul class="nav nav-tabs card-header-tabs" *ngIf="!isNormalMode()">
+			<li class="nav-item">
+				<span class="nav-link active">
+					{{ 'Common_Edit' | translate }}
+				</span>
+			</li>
+		</ul>
+
+	</div>
+
+	<div class="card-body" *ngIf="isNormalMode() && expanded">
+		<uikit-curriculum-quiz-builder 
+			[curriculum]="curriculum"></uikit-curriculum-quiz-builder>
+	</div>
+
+	<div class="card-body" *ngIf="isEditMode()">
+		<uikit-curriculum-quiz-edit-basics
+			(save)="turnOnNormalMode()"
+			(cancel)="turnOnNormalMode()"
+			(delete)="deleteQuiz()"
+			[curriculum]="curriculum"></uikit-curriculum-quiz-edit-basics>
+	</div>
+
+</div>

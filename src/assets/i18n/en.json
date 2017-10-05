@@ -2,6 +2,8 @@
 	"Common_Save": "Save",
 	"Common_Ok": "Ok",
 	"Common_Cancel": "Cancel",
+	"Common_Edit": "Edit",
+	"Common_Delete": "Delete",
 
 	"publicProfileJumbotronHeader": "Public Profile",
 
@@ -64,6 +66,7 @@
 	"courseManagementListItemGoals": "Goals",
 	"courseManagementListItemCourseLandingPage": "Course Landing Page",
 	"courseManagementButtonSubmitCourse": "Submit Course",
+	"courseManagementListItemCourseCurriculum": "Curriculum",
 
 	"courseGoalsAnyPrerequisites": "Does your course have any prerequisites?",
 	"courseGoalsAnyPrerequisitesHelpText": "Separate each entry by a new line",
@@ -89,5 +92,28 @@
 	"webinarBasicsSubtitleHelpText": "Webinar Subtitle is a small description displayed under the title",
 	"webinarBasicsDescription": "Description",
 
-	"webinarDetailsReserveASeat": "Reserve a seat"
+	"webinarDetailsReserveASeat": "Reserve a seat",
+
+	"courseCurriculumButtonAddCurriculumLesson": "Add Lesson",
+	"courseCurriculumButtonAddCurriculumQuiz": "Add Quiz",
+
+	"curriculumItemEditTitleFormTitle": "Title",
+	"curriculumItemSelectTheMainTypeOfContent": "Select the main type of content. Files and links can be added as resources",
+	"curriculumItemMainTypeOfContentVideo": "Video",
+	"curriculumItemMainTypeOfContentArticle": "Article",
+	"curriculumItemAttachVideo": "Attach Video",
+	"curriculumItemAttachArticle": "Attach Article",
+
+	"curriculumQuizItemEditFormTitle": "Title",
+	"curriculumQuizItemEditFormDescription": "Description",
+
+	"quizQuestionFormTitle": "Title",
+	"quizQuestionFormType": "Type",
+	"quizAnswerTypeAnAnswerPlaceholder": "Type an answer...",
+	"quizAnswerTypeAnAnswerExplanationPlaceholder": "Explain the answer...",
+	"quizAnswerGroupAddAnswer": "Add Answer",
+	"quizQuestionFormTypeMultiple": "Multiple",
+	"quizQuestionFormTypeSingle": "Single",
+	"curriculumQuizBuilderAddQuestion": "Add Question"
+
 }
