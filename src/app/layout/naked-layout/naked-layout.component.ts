@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-naked-layout',
+  selector: 'tutr-naked-layout',
   templateUrl: './naked-layout.component.html',
   styleUrls: ['./naked-layout.component.css']
 })

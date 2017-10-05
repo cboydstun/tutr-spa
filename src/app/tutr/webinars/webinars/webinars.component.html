@@ -1,6 +1,6 @@
 <div class="jumbotron">
 	<h1 class="display-4">
-		Webinars
+		{{ 'webinarsJumbotronHeader' | translate }}
 	</h1>
 	<ul class="nav nav-pills">
 		<li class="nav-item">
@@ -8,14 +8,18 @@
 				class="nav-link"
 				routerLinkActive="active"
 				[routerLink]="['/webinars']"
-				[routerLinkActiveOptions]="{exact: true}">Upcoming Webinars</a>
+				[routerLinkActiveOptions]="{exact: true}">
+					{{ 'webinarsJumbotronNavItemUpcomingWebinars' | translate }}
+				</a>
 		</li>
 		<li class="nav-item">
 			<a 
 				class="nav-link"
 				routerLinkActive="active"
 				routerLink="/webinars/archived"
-				[routerLinkActiveOptions]="{exact: true}">Archived</a>
+				[routerLinkActiveOptions]="{exact: true}">
+					{{ 'webinarsJumbotronNavItemArchived' | translate }}
+				</a>
 		</li>
 	</ul>
 </div>

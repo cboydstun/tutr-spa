@@ -1,5 +1,5 @@
 <h4 class="text-center">
-	Register
+	{{ 'authenticationFlowRegister' | translate }}
 </h4>
 
 <div class="card mt-3">
@@ -7,43 +7,53 @@
 
 		<form [formGroup]="form" (ngSubmit)="onSubmit()">
 			<div class="form-group">
-				<label>Username</label>
+				<label>
+					{{ 'authenticationFlowUsername' | translate }}
+				</label>
 				<input 
 					type="text" 
 					class="form-control"
-					placeholder="Username"
+					[placeholder]="'authenticationFlowUsername' | translate"
 					[formControlName]="'username'"
 					autofocus>
 			</div>
 			<div class="form-group">
-				<label>Email</label>
+				<label>
+					{{ 'authenticationFlowEmail' | translate }}
+				</label>
 				<input 
 					type="email" 
 					class="form-control"
-					placeholder="Email"
+					[placeholder]="'authenticationFlowEmail' | translate"
 					[formControlName]="'email'">
 			</div>
 			<div class="form-group">
-				<label>Password</label>
+				<label>
+					{{ 'authenticationFlowPassword' | translate }}
+				</label>
 				<input 
 					type="password" 
 					class="form-control" 
-					placeholder="Password"
+					[placeholder]="'authenticationFlowPassword' | translate"
 					[formControlName]="'password'">
 			</div>
 			<div class="form-group">
-				<label>Confirm Password</label>
+				<label>
+					{{ 'authenticationFlowConfirmPassword' | translate }}
+				</label>
 				<input 
 					type="password"
 					class="form-control" 
-					placeholder="Password"
+					[placeholder]="'authenticationFlowConfirmPassword' | translate"
 					[formControlName]="'confirmpassword'">
 			</div>
 			<div class="form-group">
 				<button
 					type="submit" 
 					class="btn btn-primary"
-					[disabled]="!form.valid">Register</button>
+					[disabled]="!form.valid">
+						{{ 'authenticationFlowButtonRegister' | translate }}
+				</button>
 			</div>
 		</form>
 

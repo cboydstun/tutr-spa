@@ -1,14 +1,21 @@
 <div class="jumbotron">
 	<div class="d-flex flex-row justify-content-between">
 		<h1 class="display-4">
-			Instructor Dashboard
+			
+			{{ 'instructorDashboardJumbotronHeader' | translate }}
 		</h1>
 
 		<div ngbDropdown class="d-inline-block">
-			<button class="btn btn-light" ngbDropdownToggle>Create a new ...</button>
+			<button class="btn btn-light" ngbDropdownToggle>
+				{{ 'instructorDashboardJumbotronCreateANew' | translate }}
+			</button>
 			<div ngbDropdownMenu style="width: auto;">
-				<a class="dropdown-item" routerLink="/instructor/course/create">Course</a>
-				<a class="dropdown-item" routerLink="/instructor/webinar/create">Webinar</a>
+				<a class="dropdown-item" routerLink="/instructor/course/create">
+					{{ 'instructorDashboardJumbotronCreateANewCourse' | translate }}
+				</a>
+				<a class="dropdown-item" routerLink="/instructor/webinar/create">
+					{{ 'instructorDashboardJumbotronCreateANewWebinar' | translate }}
+				</a>
 			</div>
 		</div>
 	</div>
@@ -18,14 +25,18 @@
 			<a 
 				class="nav-link"
 				routerLinkActive="active"
-				[routerLink]="['/instructor', 'dashboard', 'courses']">Courses</a>
+				[routerLink]="['/instructor', 'dashboard', 'courses']">
+					{{ 'instructorDashboardJumbotronNavItemCourses' | translate }}
+			</a>
 		</li>
 
 		<li class="nav-item">
 			<a 
 				class="nav-link"
 				routerLinkActive="active"
-				[routerLink]="['/instructor', 'dashboard', 'webinars']">Webinars</a>
+				[routerLink]="['/instructor', 'dashboard', 'webinars']">
+					{{ 'instructorDashboardJumbotronNavItemWebinars' | translate }}
+			</a>
 		</li>
 	</ul>
 </div>

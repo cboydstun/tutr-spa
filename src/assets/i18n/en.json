@@ -1,0 +1,93 @@
+{
+	"Common_Save": "Save",
+	"Common_Ok": "Ok",
+	"Common_Cancel": "Cancel",
+
+	"publicProfileJumbotronHeader": "Public Profile",
+
+	"headerNavBarCourses": "Courses",
+	"headerNavBarWebinars": "Webinars",
+	"headerNavBarPublicProfile": "Your Profile",
+	"headerNavBarAccountSettings": "Account Settings",
+	"headerNavBarInstructor": "Instructor",
+	"headerSearchPlaceholder": "Search",
+
+	"footerDescription": "tutr platform",
+
+	"accountSettingsBasicsFormGivenName": "Given Name",
+	"accountSettingsBasicsFormFamilyName": "Family Name",
+
+	"accountSettingsLayoutNavItemBasics": "Basics",
+	"accountSettingsLayoutNavItemPrivacy": "Privacy",
+
+	"accountSettingsPrivacyShowProfileOnSearch": "Show my profile on search results",
+	"accountSettingsPrivacyShowCoursesImTaking": "Show courses I am taking on my profile page",
+
+	"authenticationFlowLogin": "Login",
+	"authenticationFlowUsername": "Username",
+	"authenticationFlowPassword": "Password",
+	"authenticationFlowButtonLogin": "Login",
+	"authenticationFlowDontHaveAccount": "Dont have an account?",
+	"authenticationFlowCreateAccount": "Create one for free!",
+	"authenticationFlowRegister": "Register",
+	"authenticationFlowEmail": "Email",
+	"authenticationFlowConfirmPassword": "Confirm Password",
+	"authenticationFlowButtonRegister": "Register",
+
+	"homepageHeaderRecentCourses": "Recent Courses",
+	"homepageHeaderUpcomingWebinars": "Upcoming Webinars",
+
+	"webinarsJumbotronHeader": "Webinars",
+	"webinarsJumbotronNavItemUpcomingWebinars": "Upcoming Webinars",
+	"webinarsJumbotronNavItemArchived": "Archived",
+
+	"coursesCategoryJumbotronAllCourses": "All Courses",
+
+	"courseDetailsCourseCardEnroll": "Enroll",
+	"courseDetailsCourseCardGotoCourse": "Goto Course",
+
+	"courseLearnNavItemOverview": "Overview",
+	"courseLearnNavItemContent": "Content",
+	"courseLearnNavItemMore": "More",
+	"courseLearnNavItemMoreUnEnroll": "Archive",
+
+	"instructorDashboardJumbotronHeader": "Instructor Dashboard",
+	"instructorDashboardJumbotronCreateANew": "Create a new ...",
+	"instructorDashboardJumbotronCreateANewCourse": "Course",
+	"instructorDashboardJumbotronCreateANewWebinar": "Webinar",
+	"instructorDashboardJumbotronNavItemCourses": "Courses",
+	"instructorDashboardJumbotronNavItemWebinars": "Webinars",
+
+	"workingTitleFormLabel": "All you need to do is enter a working title",
+	"workingTitleFormButtonSave": "Save and Go",
+
+	"courseManagementListItemGoals": "Goals",
+	"courseManagementListItemCourseLandingPage": "Course Landing Page",
+	"courseManagementButtonSubmitCourse": "Submit Course",
+
+	"courseGoalsAnyPrerequisites": "Does your course have any prerequisites?",
+	"courseGoalsAnyPrerequisitesHelpText": "Separate each entry by a new line",
+	"courseGoalsTargetStudent": "Who is your target student?",
+	"courseGoalsTargetStudentHelpText": "Separate each entry by a new line",
+	"courseGoalsWhatWillTheyLearn": "What will they learn? At the end of your course, students will be able to...",
+	"courseGoalsWhatWillTheyLearnHelpText": "Separate each entry by a new line",
+
+	"courseLandingPageTitle": "Title",
+	"courseLandingPageTitleHelpText": "Catchy Course Title",
+	"courseLandingPageSubTitle": "Subtitle",
+	"courseLandingPageSubTitleHelpText": "Course Subtitle is a small description displayed under the title",
+	"courseLandingPageDescription": "Description",
+
+	"createCourseWorkingTitleFormPlaceholder": "e.g. Learn Angular 4 From Scratch",
+	"createWebinarWorkingTitleFormPlaceholder": "e.g. Learn Angular 4 HttpClient",
+
+	"webinarManagementListItemBasics": "Basics",
+
+	"webinarBasicsTitle": "Title",
+	"webinarBasicsTitleHelpText": "Catchy Webinar Title",
+	"webinarBasicsSubtitle": "Subtitle",
+	"webinarBasicsSubtitleHelpText": "Webinar Subtitle is a small description displayed under the title",
+	"webinarBasicsDescription": "Description",
+
+	"webinarDetailsReserveASeat": "Reserve a seat"
+}

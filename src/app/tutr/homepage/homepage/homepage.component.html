@@ -1,11 +1,18 @@
 <div class="container mb-5 mt-5">
-	<h4>Recent Courses</h4>
+	<h4>
+		{{ 'homepageHeaderRecentCourses' | translate }}
+	</h4>
 	<hr>
 
-	<uikit-course-card-grid [courses]="homepage.courses"></uikit-course-card-grid>
+	<uikit-course-card-grid 
+		[courses]="homepage.courses" 
+		[showCategory]="true"></uikit-course-card-grid>
 
-	<h4 class="mt-5">Upcoming Webinars</h4>
+	<h4 class="mt-5">
+		{{ 'homepageHeaderUpcomingWebinars' | translate }}
+	</h4>
 	<hr>
 
-	<uikit-webinar-card-grid [webinars]="homepage.webinars"></uikit-webinar-card-grid>
+	<uikit-webinar-card-grid 
+		[webinars]="homepage.webinars"></uikit-webinar-card-grid>
 </div>

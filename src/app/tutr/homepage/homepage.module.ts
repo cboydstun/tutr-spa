@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { UikitModule } from '../../uikit/uikit.module';
 
 import { HomepageRoutingModule } from './homepage-routing.module';
@@ -10,7 +12,8 @@ import { HomepageComponent } from './components';
 	imports: [
 		CommonModule,
 		HomepageRoutingModule,
-		UikitModule
+		UikitModule,
+		TranslateModule.forChild()
 	],
 	declarations: [HomepageComponent]
 })

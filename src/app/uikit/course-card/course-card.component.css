@@ -1,4 +1,4 @@
-.card-text {
+.card-text, .list-group-item {
 	line-height: 1.2;
-	font-size: 0.9em;
+
 }

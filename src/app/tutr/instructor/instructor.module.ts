@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { 
 	FormsModule, 
 	ReactiveFormsModule 
@@ -29,7 +31,8 @@ import {
 		InstructorRoutingModule,
 		UikitModule,
 		FormsModule, 
-		ReactiveFormsModule 
+		ReactiveFormsModule,
+		TranslateModule
 	],
 	declarations: [DashboardComponent, DashboardCoursesComponent, DashboardWebinarsComponent, CourseManagementComponent, CourseGoalsComponent, CourseLandingPageComponent, WebinarManagementComponent, WebinarBasicsComponent, CreateCourseComponent, WorkingTitleFormComponent, CreateWebinarComponent]
 })

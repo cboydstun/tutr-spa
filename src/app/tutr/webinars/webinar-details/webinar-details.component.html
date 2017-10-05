@@ -9,7 +9,7 @@
 		</div>
 
 		<div class="col-4">
-			<div class="card">
+			<div class="card" [ngClass]="{'border-warning': webinar.archived}">
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item" [ngClass]="{'text-muted': webinar.archived}">
 						<i class="fa fa-calendar"></i>
@@ -21,7 +21,9 @@
 					</li>
 				</ul>
 				<div class="card-body">
-					<button class="btn btn-secondary btn-block">Reserve a seat</button>
+					<button class="btn btn-secondary btn-block">
+						{{ 'webinarDetailsReserveASeat' | translate }}
+					</button>
 				</div>
 			</div>
 		</div>

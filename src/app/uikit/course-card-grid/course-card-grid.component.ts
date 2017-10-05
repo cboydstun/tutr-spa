@@ -9,6 +9,7 @@ import { Course } from '../../tutr/models';
 })
 export class CourseCardGridComponent implements OnInit {
 	@Input() courses: Course[];
+	@Input() showCategory: boolean = false;
 
 	public groups: any[] = [];
 

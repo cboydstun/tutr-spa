@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { 
 	FormsModule, 
 	ReactiveFormsModule 
@@ -21,7 +23,8 @@ import {
 		CognitoRoutingModule,
 		UikitModule,
 		FormsModule, 
-		ReactiveFormsModule 
+		ReactiveFormsModule,
+		TranslateModule.forChild()
 	],
 	declarations: [
 		LoginWithUsernameComponent,

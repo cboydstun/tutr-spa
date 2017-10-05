@@ -4,7 +4,7 @@
 	[ngClass]="{ 'mt-4': odd }">
 
 	<uikit-course-card 
-		*ngFor="let course of group" [course]="course" 
+		*ngFor="let course of group" [course]="course" [showCategory]="showCategory"
 		class="col-3"></uikit-course-card>
 
 </div>

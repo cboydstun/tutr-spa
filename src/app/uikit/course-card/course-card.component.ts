@@ -10,6 +10,8 @@ import { Course } from '../../tutr/models';
 export class CourseCardComponent implements OnInit {
 	@Input() course: Course;
 
+	@Input() showCategory: boolean = false;
+
 	constructor() { }
 
 	ngOnInit() {

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { 
 	FormsModule, 
 	ReactiveFormsModule 
@@ -18,7 +20,8 @@ import {
 		CommonModule,
 		AccountSettingsRoutingModule,
 		FormsModule, 
-		ReactiveFormsModule 
+		ReactiveFormsModule,
+		TranslateModule.forChild()
 	],
 	declarations: [AccountSettingsBasicsComponent, AccountSettingsPrivacyComponent, AccountSettingsLayoutComponent]
 })

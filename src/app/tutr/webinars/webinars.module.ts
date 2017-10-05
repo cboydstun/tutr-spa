@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { UikitModule } from '../../uikit/uikit.module';
 
 import { WebinarsRoutingModule } from './webinars-routing.module';
@@ -13,7 +15,8 @@ import {
 	imports: [
 		CommonModule,
 		WebinarsRoutingModule,
-		UikitModule
+		UikitModule,
+		TranslateModule.forChild()
 	],
 	declarations: [WebinarsComponent, WebinarDetailsComponent]
 })

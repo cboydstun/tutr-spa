@@ -12,17 +12,24 @@
 		<li class="nav-item">
 			<a
 				class="nav-link"
-			[routerLink]="['/courses', 'learn', course.slug]" routerLinkActive="active">Overview</a>
+				[routerLink]="['/courses', 'learn', course.slug]" routerLinkActive="active">
+					{{ 'courseLearnNavItemOverview' | translate }}
+			</a>
 		</li>
 		<li class="nav-item">
 			<a
 				class="nav-link"
-			[routerLink]="['/courses', 'learn', course.slug, 'content']" routerLinkActive="active">Content</a>
+				[routerLink]="['/courses', 'learn', course.slug, 'content']" routerLinkActive="active">
+					{{ 'courseLearnNavItemContent' | translate }}		
+			</a>
 		</li>
 		<li class="nav-item dropdown" ngbDropdown>
-			<a class="nav-link dropdown-toggle" href="javascript:void(0);" ngbDropdownToggle>More</a>
+			<a class="nav-link dropdown-toggle" href="javascript:void(0);" ngbDropdownToggle>
+				{{ 'courseLearnNavItemMore' | translate }}
+			</a>
 			<div ngbDropdownMenu>
-				<a class="dropdown-item" href="">UnEnroll</a>
+				<a class="dropdown-item" href="">
+					{{ 'courseLearnNavItemMoreUnEnroll' | translate }}</a>
 			</div>
 		</li>
 	</ul>

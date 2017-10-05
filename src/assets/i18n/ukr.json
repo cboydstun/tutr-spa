@@ -1,0 +1,93 @@
+{
+	"Common_Save": "Зберегти",
+	"Common_Ok": "Ok",
+	"Common_Cancel": "Скасувати",
+
+	"publicProfileJumbotronHeader": "Загальнодоступний профіль",
+
+	"headerNavBarCourses": "Курси",
+	"headerNavBarWebinars": "Вебінари",
+	"headerNavBarPublicProfile": "Твій профіль",
+	"headerNavBarAccountSettings": "Налаштування аккаунта",
+	"headerNavBarInstructor": "Інструктор",
+	"headerSearchPlaceholder": "Пошук",
+
+	"footerDescription": "tutr platform",
+
+	"accountSettingsBasicsFormGivenName": "Ім'я",
+	"accountSettingsBasicsFormFamilyName": "Прізвище",
+
+	"accountSettingsLayoutNavItemBasics": "Основи",
+	"accountSettingsLayoutNavItemPrivacy": "Конфіденційність",
+
+	"accountSettingsPrivacyShowProfileOnSearch": "Показати мій профіль у результатах пошуку",
+	"accountSettingsPrivacyShowCoursesImTaking": "Показуйте курси на сторінці свого профілю",
+
+	"authenticationFlowLogin": "Увійти",
+	"authenticationFlowUsername": "Ім'я користувача",
+	"authenticationFlowPassword": "Пароль",
+	"authenticationFlowButtonLogin": "Увійти",
+	"authenticationFlowDontHaveAccount": "Не маєте облікового запису?",
+	"authenticationFlowCreateAccount": "Створіть його безкоштовно!",
+	"authenticationFlowRegister": "Реєстрація",
+	"authenticationFlowEmail": "Email",
+	"authenticationFlowConfirmPassword": "Підтвердити пароль",
+	"authenticationFlowButtonRegister": "Зареєструватися",
+
+	"homepageHeaderRecentCourses": "Останні курси",
+	"homepageHeaderUpcomingWebinars": "Майбутні вебінари",
+
+	"webinarsJumbotronHeader": "Вебінари",
+	"webinarsJumbotronNavItemUpcomingWebinars": "Майбутні вебінари",
+	"webinarsJumbotronNavItemArchived": "Архівні",
+
+	"coursesCategoryJumbotronAllCourses": "Всі курси",
+
+	"courseDetailsCourseCardEnroll": "Зареєструватися",
+	"courseDetailsCourseCardGotoCourse": "Перейти до курсу",
+
+	"courseLearnNavItemOverview": "Огляд",
+	"courseLearnNavItemContent": "Вміст",
+	"courseLearnNavItemMore": "Більше",
+	"courseLearnNavItemMoreUnEnroll": "Архівувати",
+
+	"instructorDashboardJumbotronHeader": "Дашбоард інструктора",
+	"instructorDashboardJumbotronCreateANew": "Створіть новий ...",
+	"instructorDashboardJumbotronCreateANewCourse": "Курс",
+	"instructorDashboardJumbotronCreateANewWebinar": "Вебінар",
+	"instructorDashboardJumbotronNavItemCourses": "Курси",
+	"instructorDashboardJumbotronNavItemWebinars": "Вебінари",
+
+	"workingTitleFormLabel": "Все, що вам потрібно зробити, це ввести робочий титул",
+	"workingTitleFormButtonSave": "Зберегти і перейти",
+
+	"courseManagementListItemGoals": "Цілі",
+	"courseManagementListItemCourseLandingPage": "Цільова сторінка курсу",
+	"courseManagementButtonSubmitCourse": "Створити курс",
+
+	"courseGoalsAnyPrerequisites": "Чи має ваш курс будь-які передумови?",
+	"courseGoalsAnyPrerequisitesHelpText": "Відокремити кожну записку новою лінією",
+	"courseGoalsTargetStudent": "Хто ваш цільовий студент?",
+	"courseGoalsTargetStudentHelpText": "Відокремити кожну записку новою лінією",
+	"courseGoalsWhatWillTheyLearn": "Що вони навчаться? В кінці вашого курсу студенти зможуть ...",
+	"courseGoalsWhatWillTheyLearnHelpText": "Відокремити кожну записку новою лінією",
+
+	"courseLandingPageTitle": "Назва",
+	"courseLandingPageTitleHelpText": "Назва курсу",
+	"courseLandingPageSubTitle": "Підзаголовок",
+	"courseLandingPageSubTitleHelpText": "Підзаголовок - це невелика опис, що відображається під заголовком",
+	"courseLandingPageDescription": "Опис",
+
+	"createCourseWorkingTitleFormPlaceholder": "наприклад, Дізнайтеся кутовий 4 з нуля",
+	"createWebinarWorkingTitleFormPlaceholder": "наприклад, Дізнайтеся кутовий 4 HttpClient",
+
+	"webinarManagementListItemBasics": "Основи",
+
+	"webinarBasicsTitle": "Назва",
+	"webinarBasicsTitleHelpText": "Назва вебінару",
+	"webinarBasicsSubtitle": "Підзаголовок",
+	"webinarBasicsSubtitleHelpText": "Підзаголовок - це невелика опис, що відображається під заголовком",
+	"webinarBasicsDescription": "Опис",
+
+	"webinarDetailsReserveASeat": "Забронювати місце"
+}

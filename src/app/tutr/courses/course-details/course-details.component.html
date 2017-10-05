@@ -15,11 +15,15 @@
 			<div class="card">
 				<img class="card-img-top" [src]="course.image">
 				<div class="card-body">
-					<button class="btn btn-secondary btn-block">Enroll</button>
+					<button class="btn btn-secondary btn-block">
+						{{ 'courseDetailsCourseCardEnroll' | translate }}
+					</button>
 
 					<a 
 						class="btn btn-outline-primary btn-block" 
-						[routerLink]="['/courses', 'learn', course.slug]">Goto Course</a>
+						[routerLink]="['/courses', 'learn', course.slug]">
+							{{ 'courseDetailsCourseCardGotoCourse' | translate }}
+						</a>
 				</div>
 			</div>
 		</div>
