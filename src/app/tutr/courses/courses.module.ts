@@ -10,7 +10,9 @@ import {
 	CoursesCategoryComponent,
 	CoursesSearchComponent,
 	CourseDetailsComponent,
-	CourseLearnComponent
+	CourseLearnComponent,
+	CourseContentComponent,
+	CourseOverviewComponent
 } from './components';
 
 @NgModule({
@@ -24,7 +26,7 @@ import {
 		CoursesCategoryComponent, 
 		CoursesSearchComponent, 
 		CourseDetailsComponent, 
-		CourseLearnComponent
+		CourseLearnComponent, CourseContentComponent, CourseOverviewComponent
 	]
 })
 export class CoursesModule { }

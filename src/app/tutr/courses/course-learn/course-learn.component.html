@@ -12,14 +12,17 @@
 		<li class="nav-item">
 			<a
 				class="nav-link"
-				[routerLink]="['/courses', 'learn', course.slug]" routerLinkActive="active">
+				[routerLink]="['/courses', 'learn', course.slug, 'overview']" 
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{exact: true}">
 					{{ 'courseLearnNavItemOverview' | translate }}
 			</a>
 		</li>
 		<li class="nav-item">
 			<a
 				class="nav-link"
-				[routerLink]="['/courses', 'learn', course.slug, 'content']" routerLinkActive="active">
+				[routerLink]="['/courses', 'learn', course.slug, 'content']" routerLinkActive="active"
+				[routerLinkActiveOptions]="{exact: true}">
 					{{ 'courseLearnNavItemContent' | translate }}		
 			</a>
 		</li>
@@ -33,4 +36,6 @@
 			</div>
 		</li>
 	</ul>
+
+	<router-outlet></router-outlet>
 </div>

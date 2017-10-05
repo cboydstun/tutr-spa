@@ -5,7 +5,9 @@ import {
 	CoursesCategoryComponent,
 	CoursesSearchComponent,
 	CourseDetailsComponent,
-	CourseLearnComponent
+	CourseLearnComponent,
+	CourseContentComponent,
+	CourseOverviewComponent
 } from './components';
 
 import {
@@ -39,7 +41,22 @@ const routes: Routes = [
 		component: CourseLearnComponent,
 		resolve: {
 			course: CourseResolve
-		}
+		},
+		children: [
+			{
+				path: '',
+				pathMatch: 'full',
+				redirectTo: 'overview'
+			},
+			{
+				path: 'overview',
+				component: CourseOverviewComponent
+			},
+			{
+				path: 'content',
+				component: CourseContentComponent
+			}
+		]
 	}
 ];
 
