@@ -6,9 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./curriculum-quiz-builder.component.css']
 })
 export class CurriculumQuizBuilderComponent implements OnInit {
-	@Input() curriculum: any;
-
-	public questions: any[] = [];
+	@Input() questions: any[] = [];
 
 	constructor() { }
 
@@ -16,7 +14,9 @@ export class CurriculumQuizBuilderComponent implements OnInit {
 	}
 
 	public addQuestion() {
-		this.questions.push({});
+		this.questions.push({
+			answers: []
+		});
 	}
 
 }

@@ -41,6 +41,7 @@ export class CurriculumQuizEditBasicsComponent implements OnInit {
 
 		this.curriculum.title = this.editForm.value.title;
 		this.curriculum.description = this.editForm.value.description;
+
 		this.save.emit(this.curriculum);
 	}
 

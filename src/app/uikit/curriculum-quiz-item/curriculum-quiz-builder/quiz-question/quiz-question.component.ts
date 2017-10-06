@@ -25,7 +25,7 @@ const MODES = {
 export class QuizQuestionComponent implements OnInit {
 	@Input() question: any;
 
-	private mode: number = MODES.EDIT;
+	private mode: number = MODES.VIEW;
 
 	public editForm: FormGroup;
 
@@ -41,7 +41,9 @@ export class QuizQuestionComponent implements OnInit {
 			])
 		});
 
-		this.question.answers = [{}];
+		if (!this.question.title) {
+			this.mode = MODES.EDIT;
+		}
 	}
 
 	public onSubmitEditForm() {

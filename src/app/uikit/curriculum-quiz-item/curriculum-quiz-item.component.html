@@ -28,8 +28,10 @@
 	</div>
 
 	<div class="card-body" *ngIf="isNormalMode() && expanded">
+		<i>{{ curriculum.description }}</i>
+
 		<uikit-curriculum-quiz-builder 
-			[curriculum]="curriculum"></uikit-curriculum-quiz-builder>
+			[questions]="curriculum.questions"></uikit-curriculum-quiz-builder>
 	</div>
 
 	<div class="card-body" *ngIf="isEditMode()">
