@@ -18,6 +18,7 @@ import { CurriculumQuizBuilderComponent } from './curriculum-quiz-item/curriculu
 import { QuizQuestionComponent } from './curriculum-quiz-item/curriculum-quiz-builder/quiz-question/quiz-question.component';
 import { QuizAnswerComponent } from './curriculum-quiz-item/curriculum-quiz-builder/quiz-answer/quiz-answer.component';
 import { QuizAnswerGroupComponent } from './curriculum-quiz-item/curriculum-quiz-builder/quiz-answer-group/quiz-answer-group.component';
+import { ConversationThreadComponent } from './conversation-thread/conversation-thread.component';
 
 export {
 	CourseCardComponent,
@@ -39,5 +40,6 @@ export {
 	CurriculumQuizBuilderComponent,
 	QuizQuestionComponent,
 	QuizAnswerComponent,
-	QuizAnswerGroupComponent
+	QuizAnswerGroupComponent,
+	ConversationThreadComponent
 }

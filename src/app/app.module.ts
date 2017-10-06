@@ -9,6 +9,7 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { TutrModule } from './tutr/tutr.module';
 import { LayoutModule } from './layout/layout.module';
+import { DisqusModule } from './disqus/disqus.module';
 
 import { 
 	TranslateModule, 
@@ -39,7 +40,8 @@ export function createTranslateLoader(http: HttpClient) {
 				useFactory: (createTranslateLoader),
 				deps: [HttpClient]
 			}
-		})
+		}),
+		DisqusModule.forRoot('tutrio')
 	],
 	providers: [],
 	bootstrap: [AppComponent]

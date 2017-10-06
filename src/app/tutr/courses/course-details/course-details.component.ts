@@ -10,12 +10,8 @@ import { Course } from '../../models';
 })
 export class CourseDetailsComponent implements OnInit {
 	public course: Course;
-	public pageId: string;
 
-	constructor(private activatedRoute: ActivatedRoute,
-				private router: Router) { 
-		this.pageId = router.url;
-	}
+	constructor(private activatedRoute: ActivatedRoute) { }
 
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
