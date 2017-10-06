@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { TranslateModule } from '@ngx-translate/core';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { 
@@ -41,7 +40,7 @@ import {
 		RouterModule,
 		TranslateModule,
 		FormsModule, 
-		ReactiveFormsModule 
+		ReactiveFormsModule
 	],
 	declarations: [
 		CourseCardComponent, 
