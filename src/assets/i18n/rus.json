@@ -114,5 +114,11 @@
 	"quizAnswerGroupAddAnswer": "Добавить ответ",
 	"quizQuestionFormTypeMultiple": "Множественные ответы",
 	"quizQuestionFormTypeSingle": "Один ответ",
-	"curriculumQuizBuilderAddQuestion": "Добавить вопрос"
+	"curriculumQuizBuilderAddQuestion": "Добавить вопрос",
+
+	"courseDetailsCurriculumForThisCourse": "Учебный план для этого курса",
+	"courseDetailsAboutTheInstructor": "О инструкторе",
+	"courseDetailsWhatWillILearn": "Чему я научусь",
+	"courseDetailsRequirements": "Требования",
+	"courseDetailsWhoIsTheTargetAudience": "Кто целевая аудитория?"
 }

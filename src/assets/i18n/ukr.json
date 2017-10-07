@@ -114,5 +114,11 @@
 	"quizAnswerGroupAddAnswer": "Додати відповідь",
 	"quizQuestionFormTypeMultiple": "Кілька відповідей",
 	"quizQuestionFormTypeSingle": "Одиночна відповідь",
-	"curriculumQuizBuilderAddQuestion": "Додати запитання"
+	"curriculumQuizBuilderAddQuestion": "Додати запитання",
+
+	"courseDetailsCurriculumForThisCourse": "Навчальний план для цього курсу",
+	"courseDetailsAboutTheInstructor": "Про Інструктора",
+	"courseDetailsWhatWillILearn": "Чому я навчуся",
+	"courseDetailsRequirements": "Вимоги",
+	"courseDetailsWhoIsTheTargetAudience": "Хто є цільовою аудиторією?"
 }

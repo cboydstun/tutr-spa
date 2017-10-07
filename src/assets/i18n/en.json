@@ -114,6 +114,12 @@
 	"quizAnswerGroupAddAnswer": "Add Answer",
 	"quizQuestionFormTypeMultiple": "Multiple",
 	"quizQuestionFormTypeSingle": "Single",
-	"curriculumQuizBuilderAddQuestion": "Add Question"
+	"curriculumQuizBuilderAddQuestion": "Add Question",
+
+	"courseDetailsCurriculumForThisCourse": "Curriculum For This Course",
+	"courseDetailsAboutTheInstructor": "About The Instructor",
+	"courseDetailsWhatWillILearn": "What Will I Learn",
+	"courseDetailsRequirements": "Requirements",
+	"courseDetailsWhoIsTheTargetAudience": "Who Is The Target Audience"
 
 }
