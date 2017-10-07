@@ -32,7 +32,8 @@ import {
 	QuizQuestionComponent,
 	QuizAnswerComponent,
 	QuizAnswerGroupComponent,
-	ConversationThreadComponent
+	ConversationThreadComponent,
+	InstructorCardComponent
 } from './components';
 
 @NgModule({
@@ -66,7 +67,8 @@ import {
 		QuizQuestionComponent,
 		QuizAnswerComponent,
 		QuizAnswerGroupComponent,
-		ConversationThreadComponent
+		ConversationThreadComponent,
+		InstructorCardComponent
 	],
 	exports: [
 		CourseCardComponent,
@@ -80,6 +82,7 @@ import {
 		CurriculumItemComponent,
 		CurriculumGroupComponent,
 		ConversationThreadComponent,
+		InstructorCardComponent,
 		NgbModule
 	]
 })
