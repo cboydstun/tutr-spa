@@ -51,6 +51,16 @@ const routes: Routes = [
 				loadChildren: './tutr/authentication-flow/cognito/cognito.module#CognitoModule'
 			}
 		]
+	},
+	{
+		path: 'course-player',
+		component: NakedLayoutComponent,
+		children: [
+			{
+				path: '',
+				loadChildren: './tutr/course-player/course-player.module#CoursePlayerModule'
+			}
+		]
 	}
 ];
 
