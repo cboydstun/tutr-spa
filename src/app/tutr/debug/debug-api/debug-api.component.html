@@ -1,0 +1,41 @@
+<div class="container">
+	<p>
+		<strong>accessKeyId</strong>
+		{{ accessKeyId }}
+	</p>
+	
+	<p>
+		<strong>secretAccessKey</strong>
+		{{ secretAccessKey }}
+	</p>
+
+	<div class="card mt-2 border-primary">
+		<div class="card-header">
+			Profile
+		</div>
+		<div class="card-body">
+			{{ profile | json }}
+		</div>
+	</div>
+
+	<div class="card mt-2">
+		<div class="card-header">
+			/CreateCourse
+		</div>
+		<div class="card-body">
+			<form class="form-inline" name="CreateCourse" (ngSubmit)="onSubmit()">
+				<div class="form-group">
+					<label class="sr-only">Course title</label>
+					<input 
+						type="text" 
+						class="form-control" 
+						placeholder="Course title"
+						name="createCourseTitle"
+						[(ngModel)]="createCourseTitle"
+						required>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>

@@ -8,6 +8,8 @@ import {
 
 import { PreloadCategoriesResolve } from './tutr/resolvers';
 
+import { environment } from '../environments/environment';
+
 const routes: Routes = [
 	{
 		path: '',
@@ -63,6 +65,13 @@ const routes: Routes = [
 		]
 	}
 ];
+
+if (!environment.production) {
+	routes.push({
+		path: 'debug',
+		loadChildren: './tutr/debug/debug.module#DebugModule'
+	});
+}
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
