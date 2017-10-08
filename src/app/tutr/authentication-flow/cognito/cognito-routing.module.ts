@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {
 	LoginWithUsernameComponent,
 	RegisterWithUsernameComponent,
-	LayoutComponent
+	LayoutComponent,
+	ChangeTempPasswordWithUsernameComponent
 } from './components';
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
 			{
 				path: 'register',
 				component: RegisterWithUsernameComponent
+			},
+			{
+				path: 'change-temp-password',
+				component: ChangeTempPasswordWithUsernameComponent
 			}
 		]
 	}

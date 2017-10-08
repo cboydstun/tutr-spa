@@ -14,7 +14,7 @@ export class ChangePasswordService {
 
 	constructor(private cognitoService: CognitoService) { }
 
-	newPassword(email: string, existingPassword: string, newPassword: string): Promise<any> {
+	changeTempPassword(email: string, existingPassword: string, newPassword: string): Promise<any> {
 		let authenticationData = {
 			Username: email,
 			Password: existingPassword,

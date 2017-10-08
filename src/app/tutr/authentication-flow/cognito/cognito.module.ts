@@ -14,7 +14,8 @@ import { UikitModule } from '../../../uikit/uikit.module';
 import { 
 	LoginWithUsernameComponent,
 	RegisterWithUsernameComponent ,
-	LayoutComponent
+	LayoutComponent,
+	ChangeTempPasswordWithUsernameComponent
 } from './components';
 
 @NgModule({
@@ -29,7 +30,8 @@ import {
 	declarations: [
 		LoginWithUsernameComponent,
 		RegisterWithUsernameComponent,
-		LayoutComponent
+		LayoutComponent,
+		ChangeTempPasswordWithUsernameComponent
 	]
 })
 export class CognitoModule { }

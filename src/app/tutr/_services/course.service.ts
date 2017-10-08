@@ -20,6 +20,7 @@ export class CourseService {
 	}
 
 	create(title: string): Promise<Course> {
+		debugger
 		return Promise.resolve({
 			id: 'PPBqWA9',
 			name: 'Learning Path: Mastering Ember.js Application Development',

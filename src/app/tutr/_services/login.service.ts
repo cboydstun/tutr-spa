@@ -16,7 +16,7 @@ import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class LoginService {
-	public NEW_PASSWORD_REQUIRED: string = 'NEW_PASSWORD_REQUIRED';
+	public static NEW_PASSWORD_REQUIRED: string = 'NEW_PASSWORD_REQUIRED';
 
 	private isAuthenticatedSubject = new ReplaySubject<boolean>();
 
@@ -77,7 +77,7 @@ export class LoginService {
 		return new Promise((resolve, reject) => {
 			cognitoUser.authenticateUser(authenticationDetails, {
 				newPasswordRequired: (userAttributes, requiredAttributes) => {
-					reject(this.NEW_PASSWORD_REQUIRED);
+					reject(LoginService.NEW_PASSWORD_REQUIRED);
 				},
 				onSuccess: (result) => {
 					const creds = this.cognitoService.buildCognitoCreds(result.getIdToken().getJwtToken());

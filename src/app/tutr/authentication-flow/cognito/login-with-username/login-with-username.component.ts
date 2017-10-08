@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { LoginService } from '../../../services';
 
@@ -12,7 +13,8 @@ import { LoginService } from '../../../services';
 export class LoginWithUsernameComponent implements OnInit {
 	public form: FormGroup;
 
-	constructor(private loginService: LoginService) { }
+	constructor(private loginService: LoginService,
+				private router: Router) { }
 
 	ngOnInit() {
 		this.form = new FormGroup({
@@ -30,7 +32,16 @@ export class LoginWithUsernameComponent implements OnInit {
 			return;
 		}
 
-		this.loginService.authenticate(this.form.value.username, this.form.value.password);
+		this.loginService.authenticate(this.form.value.username, this.form.value.password).then(() => {
+			this.router.navigate(['/']);
+		}).catch((err: string) => {
+			if (err === LoginService.NEW_PASSWORD_REQUIRED) {
+				this.router.navigate(['/auth', 'change-temp-password']);
+			} else {
+				//TODO
+			}
+		})
+
 	}
 
 }
