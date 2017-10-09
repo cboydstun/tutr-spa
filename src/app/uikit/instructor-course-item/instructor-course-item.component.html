@@ -1,15 +1,17 @@
 <a
 	class="list-group-item list-group-item-action flex-column align-items-start"
-	[routerLink]="['/instructor', 'course', course.slug]">
+	[routerLink]="['/instructor', 'course', course.id]">
 	<div class="d-flex w-100 justify-content-start">
-		<img [src]="course.image" *ngIf="course.image" class="mr-2">
+		<div class="w-25 mr-2">
+			<img [src]="course.picture" *ngIf="course.picture" class="img-fluid rounded">
+		</div>
 		<div>
-			<div class="d-flex w-100 justify-content-between">
-				<h5 class="mb-1">{{ course.name }}</h5>
-				<span class="badge badge-warning">Draft</span>
+			<div class="w-100">
+				<h4 class="mb-1 d-block">{{ course.title }}</h4>
+				<h5 class="mb-1 d-block text-muted">{{ course.subtitle }}</h5>
+				<span class="badge badge-warning">{{ course.status }}</span>
 			</div>
 			<p class="mb-1">{{ course.description }}</p>
-			<small>Donec id elit non mi porta.</small>
 		</div>
 	</div>
 </a>

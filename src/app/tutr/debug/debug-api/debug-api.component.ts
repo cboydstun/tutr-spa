@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { 
 	AwsCredentialsService, 
 	CognitoService, 
-	UserProfileService
+	UserProfileService,
+	CourseService
 } from './../../services';
 
 @Component({
@@ -21,7 +22,8 @@ export class DebugApiComponent implements OnInit {
 
 	constructor(private cognitoService: CognitoService,
 				private awsCredentialsService: AwsCredentialsService,
-				private userProfileService: UserProfileService) { }
+				private userProfileService: UserProfileService,
+				private courseService: CourseService) { }
 
 	ngOnInit() {
 		this.cognitoService.getIdToken().then((token) => {
@@ -35,6 +37,7 @@ export class DebugApiComponent implements OnInit {
 	}
 
 	onSubmit() {
+		this.courseService.create(this.createCourseTitle);
 	}
 
 }

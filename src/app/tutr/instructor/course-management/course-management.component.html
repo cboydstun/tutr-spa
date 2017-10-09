@@ -1,8 +1,13 @@
 <div class="container mb-5 mt-5">
 
 	<div class="d-flex w-100 justify-content-start">
-		<img class="img-fluid mr-2" [src]="course.image">
-		<h1 class="display-6">{{ course.name }}</h1>
+		<div class="w-25 mr-2">
+			<img class="img-fluid rounded" [src]="course.picture">
+		</div>
+		<div>
+			<h1 class="display-6">{{ course.title }}</h1>
+			<h2 class="text-muted">{{ course.subtitle }}</h2>
+		</div>
 	</div>
 
 	<hr>
@@ -12,21 +17,21 @@
 			<div class="list-group">
 				<a 
 					class="list-group-item list-group-item-action"
-					[routerLink]="['/instructor', 'course', course.slug, 'goals']"
+					[routerLink]="['/instructor', 'course', course.id, 'goals']"
 					routerLinkActive="active">
 						{{ 'courseManagementListItemGoals' | translate }}
 				</a>
 
 				<a 
 					class="list-group-item list-group-item-action"
-					[routerLink]="['/instructor', 'course', course.slug, 'landing']"
+					[routerLink]="['/instructor', 'course', course.id, 'landing']"
 					routerLinkActive="active">
 						{{ 'courseManagementListItemCourseLandingPage' | translate }}
 				</a>
 
 				<a 
 					class="list-group-item list-group-item-action"
-					[routerLink]="['/instructor', 'course', course.slug, 'curriculum']"
+					[routerLink]="['/instructor', 'course', course.id, 'curriculum']"
 					routerLinkActive="active">
 						{{ 'courseManagementListItemCourseCurriculum' | translate }}
 				</a>

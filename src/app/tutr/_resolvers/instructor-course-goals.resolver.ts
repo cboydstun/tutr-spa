@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 
-import { Course } from '../models';
+import { CourseGoals } from '../models';
 import { InstructorCourseService } from '../services';
 
 @Injectable()
-export class InstructorCourseResolve implements Resolve<Course> {
+export class InstructorCourseGoalsResolve implements Resolve<CourseGoals> {
 
 	constructor(private courseService: InstructorCourseService) { }
 
 	resolve(route: ActivatedRouteSnapshot) {
-		return this.courseService.get(route.params.id);
+		return this.courseService.getGoals(route.parent.params.id);
 	}
 }

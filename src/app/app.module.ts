@@ -11,6 +11,8 @@ import { TutrModule } from './tutr/tutr.module';
 import { LayoutModule } from './layout/layout.module';
 import { DisqusModule } from './disqus/disqus.module';
 
+import { NgProgressModule } from 'ngx-progressbar';
+
 import { 
 	TranslateModule, 
 	TranslateLoader 
@@ -41,7 +43,8 @@ export function createTranslateLoader(http: HttpClient) {
 				deps: [HttpClient]
 			}
 		}),
-		DisqusModule.forRoot('tutrio')
+		DisqusModule.forRoot('tutrio'),
+		NgProgressModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

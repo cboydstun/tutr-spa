@@ -63,15 +63,13 @@ const routes: Routes = [
 				loadChildren: './tutr/course-player/course-player.module#CoursePlayerModule'
 			}
 		]
+	},
+	{
+		path: 'debug',
+		loadChildren: './tutr/debug/debug.module#DebugModule'
 	}
 ];
 
-if (!environment.production) {
-	routes.push({
-		path: 'debug',
-		loadChildren: './tutr/debug/debug.module#DebugModule'
-	});
-}
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],

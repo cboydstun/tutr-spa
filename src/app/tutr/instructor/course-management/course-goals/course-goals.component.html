@@ -1,10 +1,10 @@
-<form>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
 	<div class="form-group">
 		<label>
 			{{ 'courseGoalsAnyPrerequisites' | translate }}
 		</label>
 		<div>
-			<textarea class="form-control"></textarea>
+			<textarea class="form-control" formControlName="prerequisites"></textarea>
 			<small class="form-text text-muted">
 				{{ 'courseGoalsAnyPrerequisitesHelpText' | translate }}
 			</small>
@@ -15,7 +15,7 @@
 			{{ 'courseGoalsTargetStudent' | translate }}
 		</label>
 		<div>
-			<textarea class="form-control"></textarea>
+			<textarea class="form-control" formControlName="targetStudent"></textarea>
 			<small class="form-text text-muted">
 				{{ 'courseGoalsTargetStudentHelpText' | translate }}
 			</small>
@@ -26,14 +26,14 @@
 			{{ 'courseGoalsWhatWillTheyLearn' | translate }}
 		</label>
 		<div>
-			<textarea class="form-control"></textarea>
+			<textarea class="form-control" formControlName="whatWillTheyLearn"></textarea>
 			<small class="form-text text-muted">
 				{{ 'courseGoalsWhatWillTheyLearnHelpText' | translate }}
 			</small>
 		</div>
 	</div>
 	<div class="form-group">
-		<button type="submit" class="btn btn-primary">
+		<button type="submit" class="btn btn-primary" [disabled]="!this.form.valid">
 			{{ 'Common_Save' | translate }}
 		</button>
 	</div>

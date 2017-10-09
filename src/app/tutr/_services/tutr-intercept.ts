@@ -1,3 +1,4 @@
+import * as AWS from "aws-sdk/global";
 import 'rxjs/add/operator/do';
 
 import { Injectable } from '@angular/core';
@@ -5,15 +6,27 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse } fr
 
 import { Observable } from 'rxjs';
 
+import { environment } from "../../../environments/environment";
+
+import { LoginService } from './login.service';
 
 @Injectable()
 export class TutrInterceptor implements HttpInterceptor {
 
-	constructor() {}
+	constructor(private loginService: LoginService) { }
 
 	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-		const dupReq = req.clone({});
+		if (/assets/.test(req.url)) {
+			return next.handle(req.clone({}));
+		} else {
+			const dupReq = req.clone({
+				url: `${environment.apiRoot}${req.url}`,
+				setHeaders: {
+					'Authorization': this.loginService.idToken
+				}
+			});
 
-		return next.handle(dupReq);
+			return next.handle(dupReq);
+		}
 	}
 }

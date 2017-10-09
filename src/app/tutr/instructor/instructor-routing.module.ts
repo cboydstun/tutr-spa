@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { OnlyLoggedInUsersGuard } from './../guards';
+
 import { 
 	DashboardComponent,
 	DashboardCoursesComponent,
@@ -20,6 +22,7 @@ import {
 	InstructorCourseResolve,
 	InstructorWebinarsResolve,
 	InstructorWebinarResolve,
+	InstructorCourseGoalsResolve
 } from '../resolvers';
 
 const routes: Routes = [
@@ -29,74 +32,83 @@ const routes: Routes = [
 		pathMatch: 'full'
 	},
 	{
-		path: 'dashboard',
-		component: DashboardComponent,
+		path: '',
+		canActivateChild: [OnlyLoggedInUsersGuard],
 		children: [
 			{
-				path: 'courses',
-				component: DashboardCoursesComponent,
+				path: 'dashboard',
+				component: DashboardComponent,
+				children: [
+					{
+						path: 'courses',
+						component: DashboardCoursesComponent,
+						resolve: {
+							courses: InstructorCoursesResolve
+						}
+					},
+					{
+						path: 'webinars',
+						component: DashboardWebinarsComponent,
+						resolve: {
+							webinars: InstructorWebinarsResolve
+						}
+					}
+				]
+			},
+			{
+				path: 'course/create',
+				component: CreateCourseComponent
+			},
+			{
+				path: 'course/:id',
+				component: CourseManagementComponent,
 				resolve: {
-					courses: InstructorCoursesResolve
-				}
+					course: InstructorCourseResolve
+				},
+				children: [
+					{
+						path: '',
+						redirectTo: 'goals',
+						pathMatch: 'full'
+					},
+					{
+						path: 'goals',
+						component: CourseGoalsComponent,
+						resolve: {
+							goals: InstructorCourseGoalsResolve
+						}
+					},
+					{
+						path: 'landing',
+						component: CourseLandingPageComponent
+					},
+					{
+						path: 'curriculum',
+						component: CourseCurriculumComponent
+					}
+				]
 			},
 			{
-				path: 'webinars',
-				component: DashboardWebinarsComponent,
+				path: 'webinar/create',
+				component: CreateWebinarComponent
+			},
+			{
+				path: 'webinar/:id',
+				component: WebinarManagementComponent,
 				resolve: {
-					webinars: InstructorWebinarsResolve
-				}
-			}
-		]
-	},
-	{
-		path: 'course/create',
-		component: CreateCourseComponent
-	},
-	{
-		path: 'course/:course',
-		component: CourseManagementComponent,
-		resolve: {
-			course: InstructorCourseResolve
-		},
-		children: [
-			{
-				path: '',
-				redirectTo: 'goals',
-				pathMatch: 'full'
-			},
-			{
-				path: 'goals',
-				component: CourseGoalsComponent
-			},
-			{
-				path: 'landing',
-				component: CourseLandingPageComponent
-			},
-			{
-				path: 'curriculum',
-				component: CourseCurriculumComponent
-			}
-		]
-	},
-	{
-		path: 'webinar/create',
-		component: CreateWebinarComponent
-	},
-	{
-		path: 'webinar/:webinar',
-		component: WebinarManagementComponent,
-		resolve: {
-			webinar: InstructorWebinarResolve
-		},
-		children: [
-			{
-				path: '',
-				redirectTo: 'basics',
-				pathMatch: 'full'
-			},
-			{
-				path: 'basics',
-				component: WebinarBasicsComponent
+					webinar: InstructorWebinarResolve
+				},
+				children: [
+					{
+						path: '',
+						redirectTo: 'basics',
+						pathMatch: 'full'
+					},
+					{
+						path: 'basics',
+						component: WebinarBasicsComponent
+					}
+				]
 			}
 		]
 	}

@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 
-import { Category } from '../models';
+import { Course } from '../models';
 import { CategoryCourseService } from '../services';
 
 @Injectable()
-export class CategoryCoursesResolve implements Resolve<Category[]> {
+export class CategoryCoursesResolve implements Resolve<Course[]> {
 
 	constructor(private courseService: CategoryCourseService) { }
 

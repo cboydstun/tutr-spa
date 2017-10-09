@@ -6,12 +6,16 @@
 export const environment = {
 	production: false,
 
-	apiRoot: '',
-
-	apiKey: '',
+	/**
+	 * AWS API Gateway state root.
+	 */
+	apiRoot: 'https://jkebm4exxg.execute-api.eu-west-1.amazonaws.com/dev',
 
 	sts_endpoint: '',
 
+	/**
+	 * AWS Region
+	 */
 	region: 'eu-west-1',
 
 	identityPoolId: 'eu-west-1:eebb3b9b-f6d1-4f53-ae89-1c22f1629ca8',
@@ -31,4 +35,10 @@ export const environment = {
 	staticFilesRoot: '',
 
 	s3Endpoint: '',
+
+	/**
+	 * Default image for a new course.
+	 * Displayed in instructor dashboard.
+	 */
+	defaultCourseImage: '/assets/images/default-course-image.png'
 };

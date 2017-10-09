@@ -22,9 +22,13 @@ export class LoginService {
 
 	public isAuthenticated = this.isAuthenticatedSubject.asObservable();
 
-	constructor(private cognitoService: CognitoService) { 
-		this.getAuthentionStatus()
+	private _idToken: string;
+
+	public get idToken(): string {
+		return this._idToken;
 	}
+
+	constructor(private cognitoService: CognitoService) {}
 
 	public getAuthentionStatus() {
 		return new Promise((resolve, reject) => {
@@ -38,6 +42,7 @@ export class LoginService {
 					}
 					else {
 						console.log("UserLoginService: Session is " + session.isValid());
+						this._idToken = session.getIdToken().getJwtToken();
 						resolve(session.isValid());
 					}
 				});
@@ -107,7 +112,7 @@ export class LoginService {
 					reject(err.message);
 				},
 			});
-		}).then(x => {
+		}).then((x: any) => {
 			this.isAuthenticatedSubject.next(true);
 			return x;
 		}, x => {

@@ -15,7 +15,7 @@ export class OnlyInstructorsGuard implements CanActivate {
 		state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 		return this.loginService.isAuthenticated.map(status => {
 			if (!status) {
-				this.router.navigate(['/login']);
+				this.router.navigate(['/auth', 'login']);
 				return false;
 			}
 

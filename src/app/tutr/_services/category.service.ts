@@ -21,15 +21,18 @@ export class CategoryService {
 			this._categoriesSubject.next([
 				{
 					name: 'Web Development',
-					slug: 'web-development'
+					slug: 'web-development',
+					id: '21'
 				},
 				{
 					name: 'AI',
-					slug: 'ai'
+					slug: 'ai',
+					id: '21'
 				},
 				{
 					name: 'Marketing',
-					slug: 'marketing'
+					slug: 'marketing',
+					id: '21'
 				}
 			]);
 

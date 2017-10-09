@@ -20,7 +20,7 @@ export class CreateCourseComponent implements OnInit {
 
 	onSubmit(title: string) {
 		this.courseService.create(title)
-			.then((course: Course) => this.router.navigate(['/instructor', 'course', course.slug]))
+			.then((course: Course) => this.router.navigate(['/instructor', 'course', course.id]))
 	}
 
 }

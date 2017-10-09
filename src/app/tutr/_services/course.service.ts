@@ -12,22 +12,16 @@ export class CourseService {
 
 	get(slug: string): Promise<Course> {
 		return Promise.resolve({
-			name: 'Learning Path: Mastering Ember.js Application Development',
+			title: 'Learning Path: Mastering Ember.js Application Development',
+			subtitle: 'Learning Path: Mastering Ember.js Application Development',
 			slug: 'learning-path-mastering-emberjs-application-development',
 			description: 'Learn how to build ambitious single-page web applications using the power of Ember.js and Ember CLI.',
-			image: 'https://udemy-images.udemy.com/course/304x171/1263534_780a_4.jpg'
+			picture: 'https://udemy-images.udemy.com/course/304x171/1263534_780a_4.jpg'
 		});
 	}
 
 	create(title: string): Promise<Course> {
-		debugger
-		return Promise.resolve({
-			id: 'PPBqWA9',
-			name: 'Learning Path: Mastering Ember.js Application Development',
-			slug: 'learning-path-mastering-emberjs-application-development',
-			description: 'Learn how to build ambitious single-page web applications using the power of Ember.js and Ember CLI.',
-			image: 'https://udemy-images.udemy.com/course/304x171/1263534_780a_4.jpg'
-		});	
+		return this.httpClient.post<Course>('/CreateCourse', {title}).toPromise();
 	}
 
 }

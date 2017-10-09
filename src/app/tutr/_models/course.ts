@@ -1,7 +1,8 @@
 export class Course {
 	id: string;
-	name: string;
+	title: string;
+	subtitle: string;
 	slug: string;
 	description: string;
-	image: string;
+	picture: string;
 }
