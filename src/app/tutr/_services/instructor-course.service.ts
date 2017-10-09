@@ -11,6 +11,8 @@ import {
 
 import { environment } from "../../../environments/environment";
 
+import { NgProgressService } from 'ngx-progressbar';
+
 @Injectable()
 export class InstructorCourseService {
 	constructor(private httpClient: HttpClient) { }

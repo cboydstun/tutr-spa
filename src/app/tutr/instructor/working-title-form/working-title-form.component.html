@@ -11,7 +11,13 @@
 				[formControlName]="'title'">
 		</div>
 		<div class="form-group">
-			<button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+			<button 
+				type="submit" 
+				class="btn btn-primary" 
+				[disabled]="!form.valid || isLoading">
+				<i 
+					class="fa fa-spinner fa-spin fa-fw" 
+					*ngIf="isLoading"></i>
 				{{ 'workingTitleFormButtonSave' | translate }}
 			</button>
 		</div>

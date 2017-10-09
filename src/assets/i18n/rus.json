@@ -96,6 +96,7 @@
 
 	"courseCurriculumButtonAddCurriculumLesson": "Добавить урок",
 	"courseCurriculumButtonAddCurriculumQuiz": "Добавить тест",
+	"courseCurriculumEmptyCurriculum": "Нет уроков",
 
 	"curriculumItemEditTitleFormTitle": "Имя",
 	"curriculumItemSelectTheMainTypeOfContent": "Выберите основной тип контента. Файлы и ссылки могут быть добавлены в качестве ресурсов",
@@ -114,7 +115,9 @@
 	"quizAnswerGroupAddAnswer": "Добавить ответ",
 	"quizQuestionFormTypeMultiple": "Множественные ответы",
 	"quizQuestionFormTypeSingle": "Один ответ",
+
 	"curriculumQuizBuilderAddQuestion": "Добавить вопрос",
+	"curriculumQuizBuilderEmptyQuestionSet": "Нет заданных вопросов",
 
 	"courseDetailsCurriculumForThisCourse": "Учебный план для этого курса",
 	"courseDetailsAboutTheInstructor": "О инструкторе",

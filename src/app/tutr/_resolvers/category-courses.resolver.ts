@@ -10,6 +10,7 @@ export class CategoryCoursesResolve implements Resolve<Course[]> {
 	constructor(private courseService: CategoryCourseService) { }
 
 	resolve(route: ActivatedRouteSnapshot) {
+		
 		return this.courseService.forCategory(route.params.category);
 	}
 }

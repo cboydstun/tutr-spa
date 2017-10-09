@@ -10,6 +10,7 @@ import { CourseService } from '../../../services';
 	styleUrls: ['./create-course.component.css']
 })
 export class CreateCourseComponent implements OnInit {
+	public isLoading: boolean = false;
 
 	constructor(private courseService: CourseService,
 				private router: Router) { }
@@ -19,6 +20,7 @@ export class CreateCourseComponent implements OnInit {
 	}
 
 	onSubmit(title: string) {
+		this.isLoading = true;
 		this.courseService.create(title)
 			.then((course: Course) => this.router.navigate(['/instructor', 'course', course.id]))
 	}

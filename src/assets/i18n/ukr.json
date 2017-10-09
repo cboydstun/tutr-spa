@@ -96,6 +96,7 @@
 
 	"courseCurriculumButtonAddCurriculumLesson": "Додати урок",
 	"courseCurriculumButtonAddCurriculumQuiz": "Додати тест",
+	"courseCurriculumEmptyCurriculum": "Жодних уроків не створено",
 
 	"curriculumItemEditTitleFormTitle": "Ім'я",
 	"curriculumItemSelectTheMainTypeOfContent": "Виберіть основний тип вмісту. Файли та посилання можуть бути додані як ресурси",
@@ -114,7 +115,9 @@
 	"quizAnswerGroupAddAnswer": "Додати відповідь",
 	"quizQuestionFormTypeMultiple": "Кілька відповідей",
 	"quizQuestionFormTypeSingle": "Одиночна відповідь",
+
 	"curriculumQuizBuilderAddQuestion": "Додати запитання",
+	"curriculumQuizBuilderEmptyQuestionSet": "Немає створених питань",
 
 	"courseDetailsCurriculumForThisCourse": "Навчальний план для цього курсу",
 	"courseDetailsAboutTheInstructor": "Про Інструктора",

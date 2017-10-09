@@ -1,5 +1,9 @@
 <uikit-curriculum-group [curriculums]="curriculums"></uikit-curriculum-group>
 
+<div class="alert alert-primary" role="alert" *ngIf="!curriculums.length">
+	{{ 'courseCurriculumEmptyCurriculum' | translate }}
+</div>
+
 <div class="mt-2">
 	<hr>
 	<button class="btn btn-primary" (click)="addEmptyCurriculumLesson()">

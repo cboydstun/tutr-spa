@@ -11,6 +11,9 @@ export class QuizAnswerGroupComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
+		if (!this.answers.length) {
+			this.addAnswer();
+		}
 	}
 
 	public addAnswer() {

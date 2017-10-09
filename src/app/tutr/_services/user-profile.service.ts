@@ -10,10 +10,13 @@ import { CognitoService } from './cognito.service';
 
 import { environment } from "../../../environments/environment";
 
+import { NgProgressService } from 'ngx-progressbar';
+
 @Injectable()
 export class UserProfileService {
 
-	constructor(private cognitoService: CognitoService) { }
+	constructor(private cognitoService: CognitoService,
+				private ngProgressService: NgProgressService) { }
 
 	public updateAttributes(attributes: {[s: string]: string}): Promise<any> {
 		const cognitoUser = this.cognitoService.getCurrentUser();
@@ -43,15 +46,21 @@ export class UserProfileService {
 	public getProfile(): Promise<any> {
 		let cognitoUser = this.cognitoService.getCurrentUser();
 
+		this.ngProgressService.start();
+
 		if (cognitoUser == null) {
 			return Promise.reject(new Error('Empty session'));
 		} else {
 			return new Promise((resolve, reject) => {
 				cognitoUser.getSession((err, session) => {
 					if (err) {
+						this.ngProgressService.done();
+
 						reject(err);
 					} else {
 						cognitoUser.getUserAttributes((err, result) => {
+							this.ngProgressService.done();
+
 							err ? reject(err) : resolve(result.reduce((acc, attr) => {
 								acc[attr.getName()] = attr.getValue();
 								return acc;

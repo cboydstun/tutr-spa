@@ -14,6 +14,8 @@ export class CourseGoalsComponent implements OnInit {
 	public course: Course;
 	public courseGoals: CourseGoals;
 
+	public isLoading: boolean = false;
+
 	public form: FormGroup;
 
 	constructor(private activatedRoute: ActivatedRoute,
@@ -46,11 +48,15 @@ export class CourseGoalsComponent implements OnInit {
 			return;
 		}
 
+		this.isLoading = true;
+
 		this.courseGoals.prerequisites = this.form.value.prerequisites;
 		this.courseGoals.target_student = this.form.value.targetStudent;
 		this.courseGoals.what_will_they_learn = this.form.value.whatWillTheyLearn;
 
-		this.instructorCourseService.setGoals(this.courseGoals);
+		this.instructorCourseService.setGoals(this.courseGoals)
+			.then(() => this.isLoading = false)
+			.catch(() => this.isLoading = false);
 	}
 
 }

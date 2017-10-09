@@ -10,6 +10,6 @@ export class AllWebinarsResolve implements Resolve<Webinar[]> {
 	constructor(private webinarService: WebinarService) { }
 
 	resolve(route: ActivatedRouteSnapshot) {
-		return this.webinarService.all();
+		return this.webinarService.all()
 	}
 }

@@ -37,8 +37,11 @@
 				</a>
 			</div>
 			<div>
-				<button class="btn btn-outline-primary btn-block mt-5" (click)="submitCourse()">
-					{{ 'courseManagementButtonSubmitCourse' | translate }}
+				<button 
+					class="btn btn-outline-primary btn-block mt-5" 
+					(click)="submitCourse()">
+						<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isSubmittingCourse"></i>
+						{{ 'courseManagementButtonSubmitCourse' | translate }}
 				</button>
 			</div>
 		</div>

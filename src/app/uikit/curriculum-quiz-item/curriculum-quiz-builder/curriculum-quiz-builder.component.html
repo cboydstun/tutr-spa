@@ -2,6 +2,10 @@
 	*ngFor="let question of questions"
 	[question]="question"></uikit-quiz-question>
 
+<div class="alert alert-primary" role="alert" *ngIf="!questions.length">
+	{{ 'curriculumQuizBuilderEmptyQuestionSet' | translate }}
+</div>
+
 <hr>
 
 <button 

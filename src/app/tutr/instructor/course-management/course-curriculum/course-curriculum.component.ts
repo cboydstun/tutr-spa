@@ -6,13 +6,7 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./course-curriculum.component.css']
 })
 export class CourseCurriculumComponent implements OnInit {
-	public curriculums: any[] = [{
-		title: 'Lesson',
-		type: 'lesson'
-	}, {
-		title: 'Quiz',
-		type: 'quiz'
-	}];
+	public curriculums: any[] = [];
 
 	constructor() { }
 

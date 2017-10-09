@@ -14,6 +14,8 @@ export class CourseLandingPageComponent implements OnInit {
 	public course: Course;
 	public form: FormGroup;
 
+	public isLoading: boolean = false;
+
 	constructor(private activatedRoute: ActivatedRoute,
 				private instructorCourseService: InstructorCourseService) { }
 
@@ -40,11 +42,15 @@ export class CourseLandingPageComponent implements OnInit {
 			return;
 		}
 
+		this.isLoading = true;
+
 		this.course.title = this.form.value.title;
 		this.course.subtitle = this.form.value.subtitle;
 		this.course.description = this.form.value.description;
 
-		this.instructorCourseService.save(this.course);
+		this.instructorCourseService.save(this.course)
+			.then(() => this.isLoading = false)
+			.catch(() => this.isLoading = false);
 	}
 
 }

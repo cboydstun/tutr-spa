@@ -10,6 +10,6 @@ export class ArchivedWebinarsResolve implements Resolve<Webinar[]> {
 	constructor(private webinarService: WebinarService) { }
 
 	resolve(route: ActivatedRouteSnapshot) {
-		return this.webinarService.archived();
+		return this.webinarService.archived()
 	}
 }

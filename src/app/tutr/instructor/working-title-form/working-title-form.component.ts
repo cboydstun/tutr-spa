@@ -10,6 +10,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class WorkingTitleFormComponent implements OnInit {
 	@Input() placeholder: string;
 
+	@Input() isLoading: boolean = false;
+
 	@Output() save = new EventEmitter<string>();
 
 	public form: FormGroup;

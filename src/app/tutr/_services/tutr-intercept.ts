@@ -10,10 +10,13 @@ import { environment } from "../../../environments/environment";
 
 import { LoginService } from './login.service';
 
+import { NgProgressService } from 'ngx-progressbar';
+
 @Injectable()
 export class TutrInterceptor implements HttpInterceptor {
 
-	constructor(private loginService: LoginService) { }
+	constructor(private loginService: LoginService,
+				private ngProgressService: NgProgressService) { }
 
 	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 		if (/assets/.test(req.url)) {
@@ -26,7 +29,13 @@ export class TutrInterceptor implements HttpInterceptor {
 				}
 			});
 
-			return next.handle(dupReq);
+			this.ngProgressService.start();
+
+			return next.handle(dupReq).do(event => {
+			if (event instanceof HttpResponse) {
+				this.ngProgressService.done();
+			}
+		});
 		}
 	}
 }

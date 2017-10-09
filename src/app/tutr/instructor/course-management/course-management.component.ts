@@ -12,6 +12,8 @@ import { SubmitCourseService } from '../../services';
 export class CourseManagementComponent implements OnInit {
 	public course: Course;
 
+	public isSubmittingCourse: boolean = false;
+
 	constructor(private activatedRoute: ActivatedRoute,
 				private submitCourseService: SubmitCourseService) { }
 
@@ -22,7 +24,11 @@ export class CourseManagementComponent implements OnInit {
 	}
 
 	public submitCourse() {
-		this.submitCourseService.submit(this.course);
+		this.isSubmittingCourse = true;
+
+		this.submitCourseService.submit(this.course)
+			.then(() => this.isSubmittingCourse = false)
+			.catch(() => this.isSubmittingCourse = false);
 	}
 
 }
