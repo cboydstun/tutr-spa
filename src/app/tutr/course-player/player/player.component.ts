@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
+	public isSidebarOpen: boolean = true;
 
 	constructor() { }
 
