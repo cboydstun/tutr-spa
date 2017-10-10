@@ -1,5 +1,5 @@
 <div class="jumbotron">
-	<h1 class="display-4">{{ course.name }}</h1>
+	<h1 class="display-4">{{ course.title }}</h1>
 	<p class="lead">{{ course.description }}</p>
 </div>
 
@@ -73,7 +73,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		</div>
 		<div class="col-4">
 			<div class="card">
-				<img class="card-img-top" [src]="course.image">
+				<img class="card-img-top" [src]="course.picture">
 				<div class="card-body">
 					<button class="btn btn-secondary btn-block">
 						{{ 'courseDetailsCourseCardEnroll' | translate }}
@@ -81,7 +81,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 					<a 
 						class="btn btn-outline-primary btn-block" 
-						[routerLink]="['/courses', 'learn', course.slug]">
+						[routerLink]="['/courses', 'learn', course.id, course.slug]">
 							{{ 'courseDetailsCourseCardGotoCourse' | translate }}
 						</a>
 				</div>

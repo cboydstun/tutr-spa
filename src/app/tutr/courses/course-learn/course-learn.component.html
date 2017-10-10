@@ -1,8 +1,8 @@
 <div class="jumbotron">
 	<div class="d-flex w-100 justify-content-start">
-		<img class="img-fluid mr-2" [src]="course.image" [alt]="course.name">
+		<img class="img-fluid mr-2" [src]="course.picture" [alt]="course.title">
 		<div class="">
-			<h1 class="display-4">{{ course.name }}</h1>
+			<h1 class="display-4">{{ course.title }}</h1>
 		</div>
 	</div>
 </div>
@@ -11,7 +11,7 @@
 		<li class="nav-item">
 			<a
 				class="nav-link"
-				[routerLink]="['/courses', 'learn', course.slug, 'overview']" 
+				[routerLink]="['/courses', 'learn', course.id, course.slug, 'overview']" 
 				routerLinkActive="active"
 				[routerLinkActiveOptions]="{exact: true}">
 					{{ 'courseLearnNavItemOverview' | translate }}
@@ -20,7 +20,7 @@
 		<li class="nav-item">
 			<a
 				class="nav-link"
-				[routerLink]="['/courses', 'learn', course.slug, 'content']" routerLinkActive="active"
+				[routerLink]="['/courses', 'learn', course.id, course.slug, 'content']" routerLinkActive="active"
 				[routerLinkActiveOptions]="{exact: true}">
 					{{ 'courseLearnNavItemContent' | translate }}		
 			</a>

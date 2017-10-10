@@ -30,14 +30,14 @@ const routes: Routes = [
 		component: CoursesSearchComponent
 	},
 	{
-		path: 'details/:course',
+		path: 'details/:id/:slug',
 		component: CourseDetailsComponent,
 		resolve: {
 			course: CourseResolve
 		}
 	},
 	{
-		path: 'learn/:course',
+		path: 'learn/:id/:slug',
 		component: CourseLearnComponent,
 		resolve: {
 			course: CourseResolve
