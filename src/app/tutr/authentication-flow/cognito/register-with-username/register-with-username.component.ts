@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { RegisterService } from '../../../services';
 
@@ -12,7 +12,8 @@ import { RegisterService } from '../../../services';
 export class RegisterWithUsernameComponent implements OnInit {
 	public form: FormGroup;
 
-	constructor(private registerService: RegisterService) { }
+	constructor(private registerService: RegisterService,
+				private router: Router) { }
 
 	ngOnInit() {
 		this.form = new FormGroup({
@@ -37,7 +38,13 @@ export class RegisterWithUsernameComponent implements OnInit {
 			return;
 		}
 
-		this.registerService.register(this.form.value);
+		this.registerService.register(this.form.value)
+			.then(() => {
+				this.router.navigate(['/auth', 'confirm-registration']);
+			})
+			.catch((err) => {
+				debugger
+			});
 	}
 
 }

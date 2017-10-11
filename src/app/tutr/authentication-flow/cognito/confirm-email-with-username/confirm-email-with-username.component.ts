@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
 import { Router } from '@angular/router';
 
 import { ChangePasswordService } from '../../../services';
 
 @Component({
-	selector: 'tutr-change-temp-password-with-username',
-	templateUrl: './change-temp-password-with-username.component.html',
-	styleUrls: ['./change-temp-password-with-username.component.css']
+	selector: 'tutr-confirm-email-with-username',
+	templateUrl: './confirm-email-with-username.component.html',
+	styleUrls: ['./confirm-email-with-username.component.css']
 })
-export class ChangeTempPasswordWithUsernameComponent implements OnInit {
+export class ConfirmEmailWithUsernameComponent implements OnInit {
 	public form: FormGroup;
 
 	constructor(private changePasswordService: ChangePasswordService,
@@ -21,10 +20,7 @@ export class ChangeTempPasswordWithUsernameComponent implements OnInit {
 			'username': new FormControl('', [
 				Validators.required
 			]),
-			'temppassword': new FormControl('', [
-				Validators.required
-			]),
-			'newpassword': new FormControl('', [
+			'code': new FormControl('', [
 				Validators.required
 			])
 		});
@@ -35,12 +31,11 @@ export class ChangeTempPasswordWithUsernameComponent implements OnInit {
 			return;
 		}
 
-		this.changePasswordService.changeTempPassword(
+		this.changePasswordService.confirmCode(
 			this.form.value.username,
-			this.form.value.temppassword,
-			this.form.value.newpassword,
+			this.form.value.code
 		).then(() => {
-			this.router.navigate(['/']);
+			this.router.navigate(['/auth', 'login']);
 		});
 	}
 

@@ -1,7 +1,7 @@
 <header id="header" class="navbar navbar-expand-lg navbar-dark sticky-top">
 	<div class="container-fluid">
 		<a class="navbar-brand" routerLink="/">
-			<img src="https://tichio.s3.amazonaws.com/logos/logo.png" class="img-fluid">
+			<img [src]="headerLogo" class="img-fluid">
 		</a>
 
 		<form class="form-inline pr-1">
@@ -25,7 +25,7 @@
 							<a 
 								class="dropdown-item" 
 								[routerLink]="['/courses', 'category', category.slug]">
-								{{category.name}}
+									{{category.title}}
 							</a>
 						</li>
 					</ul>
@@ -42,14 +42,12 @@
 				</li>
 			</ul>
 		</div>
-		<div class="profile" ngbDropdown>
+		<div class="profile" ngbDropdown placement="bottom-right">
 			<a 
 				ngbDropdownToggle
 				href="javascript:void(0);"
 				class="profile__btn dropdown-toggle">
-
-				<div class="profile__photo"><img src="https://www.gravatar.com/avatar/a49306bde3874e83baf97dd49290c900?s=120&amp;d=identicon"></div>
-				<span class="profile__name">Name Surname</span>
+					<span class="profile__name">Name Surname</span>
 			</a>
 
 			<ul class="dropdown-menu" ngbDropdownMenu>

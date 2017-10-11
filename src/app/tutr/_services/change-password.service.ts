@@ -14,16 +14,31 @@ export class ChangePasswordService {
 
 	constructor(private cognitoService: CognitoService) { }
 
-	changeTempPassword(email: string, existingPassword: string, newPassword: string): Promise<any> {
+	confirmCode(username: string, code: string): Promise<any> {
+		let userData = {
+			Username: username,
+			Pool: this.cognitoService.getUserPool()
+		};
+
+		let cognitoUser = new CognitoUser(userData);
+
+		return new Promise((resolve, reject) => {
+			cognitoUser.confirmRegistration(code, true, function(err, result) {
+				err ? reject(err) : resolve(result);
+			});
+		});
+	}
+
+	changeTempPassword(username: string, existingPassword: string, newPassword: string): Promise<any> {
 		let authenticationData = {
-			Username: email,
+			Username: username,
 			Password: existingPassword,
 		};
 
 		let authenticationDetails = new AuthenticationDetails(authenticationData);
 
 		let userData = {
-			Username: email,
+			Username: username,
 			Pool: this.cognitoService.getUserPool()
 		};
 

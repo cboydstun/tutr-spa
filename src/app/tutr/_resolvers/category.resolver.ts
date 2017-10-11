@@ -1,3 +1,5 @@
+import 'rxjs/add/operator/toPromise';
+
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 
@@ -12,7 +14,6 @@ export class CategoryResolve implements Resolve<Category> {
 	constructor(private categoryService: CategoryService) { }
 
 	resolve(route: ActivatedRouteSnapshot) {
-		
 		return this.categoryService.get(route.params.category);
 	}
 }
