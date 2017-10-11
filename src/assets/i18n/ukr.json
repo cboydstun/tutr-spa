@@ -80,6 +80,8 @@
 	"courseLandingPageSubTitle": "Підзаголовок",
 	"courseLandingPageSubTitleHelpText": "Підзаголовок - це невелика опис, що відображається під заголовком",
 	"courseLandingPageDescription": "Опис",
+	"courseLandingPageCoursePicture": "Зображення курсу",
+	"courseLandingPageButtonUploadCoursePicture": "Завантажити картинку",
 
 	"createCourseWorkingTitleFormPlaceholder": "наприклад, Дізнайтеся кутовий 4 з нуля",
 	"createWebinarWorkingTitleFormPlaceholder": "наприклад, Дізнайтеся кутовий 4 HttpClient",

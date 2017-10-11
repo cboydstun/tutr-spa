@@ -80,6 +80,8 @@
 	"courseLandingPageSubTitle": "Subtitle",
 	"courseLandingPageSubTitleHelpText": "Course Subtitle is a small description displayed under the title",
 	"courseLandingPageDescription": "Description",
+	"courseLandingPageCoursePicture": "Course Image",
+	"courseLandingPageButtonUploadCoursePicture": "Upload course picture",
 
 	"createCourseWorkingTitleFormPlaceholder": "e.g. Learn Angular 4 From Scratch",
 	"createWebinarWorkingTitleFormPlaceholder": "e.g. Learn Angular 4 HttpClient",

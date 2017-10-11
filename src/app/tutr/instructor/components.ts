@@ -10,6 +10,7 @@ import { CreateCourseComponent } from './course-management/create-course/create-
 import { WorkingTitleFormComponent } from './working-title-form/working-title-form.component';
 import { CreateWebinarComponent } from './webinar-management/create-webinar/create-webinar.component';
 import { CourseCurriculumComponent } from './course-management/course-curriculum/course-curriculum.component';
+import { CoursePictureComponent } from './course-management/course-landing-page/course-picture/course-picture.component';
 
 export {
 	DashboardComponent,
@@ -23,5 +24,6 @@ export {
 	CreateCourseComponent,
 	WorkingTitleFormComponent,
 	CreateWebinarComponent,
-	CourseCurriculumComponent
+	CourseCurriculumComponent,
+	CoursePictureComponent
 }

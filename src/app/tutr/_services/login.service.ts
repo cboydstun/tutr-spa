@@ -30,7 +30,7 @@ export class LoginService {
 
 	constructor(private cognitoService: CognitoService) {}
 
-	public getAuthentionStatus() {
+	public getAuthentionStatus(): Promise<boolean> {
 		return new Promise((resolve, reject) => {
 			let cognitoUser = this.cognitoService.getCurrentUser();
 

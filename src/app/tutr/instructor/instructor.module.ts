@@ -23,7 +23,8 @@ import {
 	CreateCourseComponent,
 	WorkingTitleFormComponent,
 	CreateWebinarComponent,
-	CourseCurriculumComponent
+	CourseCurriculumComponent,
+	CoursePictureComponent
 } from './components';
 
 @NgModule({
@@ -35,6 +36,6 @@ import {
 		ReactiveFormsModule,
 		TranslateModule
 	],
-	declarations: [DashboardComponent, DashboardCoursesComponent, DashboardWebinarsComponent, CourseManagementComponent, CourseGoalsComponent, CourseLandingPageComponent, WebinarManagementComponent, WebinarBasicsComponent, CreateCourseComponent, WorkingTitleFormComponent, CreateWebinarComponent, CourseCurriculumComponent]
+	declarations: [DashboardComponent, DashboardCoursesComponent, DashboardWebinarsComponent, CourseManagementComponent, CourseGoalsComponent, CourseLandingPageComponent, WebinarManagementComponent, WebinarBasicsComponent, CreateCourseComponent, WorkingTitleFormComponent, CreateWebinarComponent, CourseCurriculumComponent, CoursePictureComponent]
 })
 export class InstructorModule { }

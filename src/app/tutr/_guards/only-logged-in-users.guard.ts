@@ -19,7 +19,7 @@ export class OnlyLoggedInUsersGuard implements CanActivate, CanActivateChild {
 	canActivate(
 		next: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-		return this.loginService.isAuthenticated.map(status => {
+		return this.loginService.getAuthentionStatus().then((status: boolean) => {
 			if (!status) {
 				this.router.navigate(['/auth', 'login']);
 				return false;

@@ -25,7 +25,7 @@ export class S3Service {
 			region: environment.region,
 			apiVersion: '2006-03-01',
 			params: {
-				Bucket: environment.staticFilesBucket
+				Bucket: environment.userContentBucket
 			}
 		};
 
@@ -38,11 +38,15 @@ export class S3Service {
 		return s3;
 	}
 
-	public upload(file): Promise<any> {
-		return this.getS3().upload({
-			Key: `${environment.staticFilesKeyPrefix}/${file.name}`,
-			ContentType: file.type,
-			Body: file
-		}).promise();
+	public uploadCoursePicture(course_id, file): Promise<{Bucket: string, Key: string, Location: string}> {
+		return this.cognitoService.getIdToken().then((token) => {
+			return this.awsCredentialsService.init(token).then(() => {
+				return this.getS3().upload({
+					Key: `course-picture/${course_id}.${file.name.split('.').pop()}`,
+					ContentType: file.type,
+					Body: file
+				}).promise();
+			});
+		});
 	}
 }

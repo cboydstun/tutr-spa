@@ -28,12 +28,6 @@ export const environment = {
 
 	cognito_identity_endpoint: '',
 
-	staticFilesBucket: '',
-
-	staticFilesKeyPrefix: '',
-
-	staticFilesRoot: '',
-
 	s3Endpoint: '',
 
 	/**
@@ -62,5 +56,10 @@ export const environment = {
 	/**
 	 * Support email address.
 	 */
-	supportEmail: 'support@domain.tld'
+	supportEmail: 'support@domain.tld',
+
+	/**
+	 * UserContent S3 Bucket name.
+	 */
+	userContentBucket: 'pixcare-usercontent-78lq56l57974'
 };
