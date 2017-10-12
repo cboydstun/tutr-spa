@@ -7,4 +7,6 @@ export class Webinar {
 	archived: boolean;
 	duration: number;
 	start_dt: Date;
+	instructor_name: string;
+	instructor_id: string;
 }

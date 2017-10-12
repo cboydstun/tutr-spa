@@ -19,6 +19,17 @@
 	</div>
 	<div class="form-group">
 		<label>
+			{{ 'courseLandingPageCategory' | translate }}
+		</label>
+		<select class="form-control" formControlName="category_id">
+			<option *ngFor="let category of categories" [ngValue]="category.slug">{{category.title}}</option>
+		</select>
+		<small class="form-text text-muted">
+			{{ 'courseLandingPageCategoryHelpText' | translate }}
+		</small>
+	</div>
+	<div class="form-group">
+		<label>
 			{{ 'courseLandingPageDescription' | translate }}
 		</label>
 		<div>

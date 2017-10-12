@@ -3,12 +3,18 @@
 		<h6 class="card-title">
 			<a [routerLink]="['/webinars', 'details', webinar.id, webinar.slug]">{{webinar.title}}</a>
 		</h6>
-		<p class="card-text">{{webinar.description}}</p>
+		<p class="card-text">{{webinar.subtitle}}</p>
 	</div>
 	<ul class="list-group list-group-flush">
 		<li class="list-group-item" [ngClass]="{'text-muted': webinar.archived}">
 			<i class="fa fa-calendar"></i>
-			Tomorrow, 11 am
+			{{ webinar.start_dt }}
+		</li>
+		<li class="list-group-item" [ngClass]="{'text-muted': webinar.archived}">
+			{{ webinar.duration }}
+		</li>
+		<li class="list-group-item" [ngClass]="{'text-muted': webinar.archived}">
+			by <a href="">{{ webinar.instructor_name }}</a>
 		</li>
 	</ul>
 </div>

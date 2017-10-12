@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { Course } from '../../../models';
+import { Course, Category } from '../../../models';
 import { InstructorCourseService } from '../../../services';
+import { CategoryService } from '../../../services';
 
 @Component({
 	selector: 'tutr-course-landing-page',
@@ -14,15 +15,20 @@ export class CourseLandingPageComponent implements OnInit {
 	public course: Course;
 	public form: FormGroup;
 
+	public categories: Category[] = [];
+
 	public isLoading: boolean = false;
 
 	constructor(private activatedRoute: ActivatedRoute,
-				private instructorCourseService: InstructorCourseService) { }
+				private instructorCourseService: InstructorCourseService,
+				private categoryService: CategoryService) { }
 
 	ngOnInit() {
 		this.activatedRoute.parent.data.subscribe(data => {
 			this.course = data.course;
 		});
+
+		this.categories = this.categoryService.categories;
 
 		this.form = new FormGroup({
 			'title': new FormControl(this.course.title, [
@@ -32,6 +38,9 @@ export class CourseLandingPageComponent implements OnInit {
 				Validators.required
 			]),
 			'description': new FormControl(this.course.description, [
+				Validators.required
+			]),
+			'category_id': new FormControl(this.course.category_id, [
 				Validators.required
 			])
 		});
@@ -47,6 +56,8 @@ export class CourseLandingPageComponent implements OnInit {
 		this.course.title = this.form.value.title;
 		this.course.subtitle = this.form.value.subtitle;
 		this.course.description = this.form.value.description;
+		this.course.category_id = this.form.value.category_id;
+		this.course.category_name = this.categoryService.get(this.form.value.category_id).title;
 
 		this.instructorCourseService.save(this.course)
 			.then(() => this.isLoading = false)
