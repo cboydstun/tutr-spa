@@ -44,7 +44,7 @@ export class InstructorCourseService {
 	}
 
 	save(course: Course): Promise<Course> {
-		return this.httpClient.post<Course>('/SaveInstructorDashboardCourse', course).toPromise();		
+		return this.httpClient.post<Course>('/SaveInstructorDashboardCourse', course).toPromise();
 	}
 
 }

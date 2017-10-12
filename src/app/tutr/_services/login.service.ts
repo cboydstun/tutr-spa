@@ -25,7 +25,7 @@ export class LoginService {
 	private _idToken: string;
 
 	public get idToken(): string {
-		return this._idToken;
+		return this._idToken || '';
 	}
 
 	constructor(private cognitoService: CognitoService) {}

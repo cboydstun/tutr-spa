@@ -1,9 +1,9 @@
-<form>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
 	<div class="form-group">
 		<label>
 			{{ 'webinarBasicsTitle' | translate }}
 		</label>
-		<input type="text" class="form-control">
+		<input type="text" class="form-control" formControlName="title">
 		<small class="form-text text-muted">
 			{{ 'webinarBasicsTitleHelpText' | translate }}
 		</small>
@@ -12,9 +12,27 @@
 		<label>
 			{{ 'webinarBasicsSubtitle' | translate }}
 		</label>
-		<input type="text" class="form-control">
+		<input type="text" class="form-control" formControlName="subtitle">
 		<small class="form-text text-muted">
 			{{ 'webinarBasicsSubtitleHelpText' | translate }}
+		</small>
+	</div>
+	<div class="form-group">
+		<label>
+			{{ 'webinarBasicsDuration' | translate }}
+		</label>
+		<input type="number" class="form-control" formControlName="duration">
+		<small class="form-text text-muted">
+			{{ 'webinarBasicsDurationHelpText' | translate }}
+		</small>
+	</div>
+	<div class="form-group">
+		<label>
+			{{ 'webinarBasicsStartAt' | translate }}
+		</label>
+		<input type="date" class="form-control" formControlName="start_at">
+		<small class="form-text text-muted">
+			{{ 'webinarBasicsStartAtHelpText' | translate }}
 		</small>
 	</div>
 	<div class="form-group">
@@ -22,7 +40,7 @@
 			{{ 'webinarBasicsDescription' | translate }}
 		</label>
 		<div>
-			<textarea class="form-control"></textarea>
+			<textarea class="form-control" formControlName="description"></textarea>
 		</div>
 	</div>
 	<div class="form-group row">
