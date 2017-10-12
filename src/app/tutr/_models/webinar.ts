@@ -6,5 +6,5 @@ export class Webinar {
 	description: string;
 	archived: boolean;
 	duration: number;
-	start_at: Date;
+	start_dt: Date;
 }

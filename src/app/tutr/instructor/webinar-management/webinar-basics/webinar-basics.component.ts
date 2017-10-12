@@ -37,7 +37,7 @@ export class WebinarBasicsComponent implements OnInit {
 			'duration': new FormControl(this.webinar.duration, [
 				Validators.required
 			]),
-			'start_at': new FormControl(this.webinar.start_at, [
+			'start_dt': new FormControl(this.webinar.start_dt, [
 				Validators.required
 			])
 		});
@@ -54,13 +54,11 @@ export class WebinarBasicsComponent implements OnInit {
 		this.webinar.subtitle = this.form.value.subtitle;
 		this.webinar.description = this.form.value.description;
 		this.webinar.duration = this.form.value.duration;
-		this.webinar.start_at = this.form.value.start_at;
+		this.webinar.start_dt = new Date(this.form.value.start_dt);
 
-		debugger
-
-		//this.instructorWebinarService.save(this.course)
-			//.then(() => this.isLoading = false)
-			//.catch(() => this.isLoading = false);
+		this.instructorWebinarService.save(this.webinar)
+			.then(() => this.isLoading = false)
+			.catch(() => this.isLoading = false);
 	}
 
 }

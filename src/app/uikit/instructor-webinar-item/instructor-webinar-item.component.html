@@ -2,12 +2,12 @@
 	class="list-group-item list-group-item-action flex-column align-items-start"
 	[routerLink]="['/instructor', 'webinar', webinar.id]">
 	<div class="d-flex w-100 justify-content-start">
-		<div>
+		<div class="w-100">
 			<div class="d-flex w-100 justify-content-between">
-				<h5>{{ webinar.name }}</h5>
+				<h5>{{ webinar.title }}</h5>
 				<span class="badge badge-warning">Archived</span>
 			</div>
-			<p class="mb-1">{{ webinar.description }}</p>
+			<p class="mb-1">{{ webinar.subtitle }}</p>
 			<small>Donec id elit non mi porta.</small>
 		</div>
 	</div>

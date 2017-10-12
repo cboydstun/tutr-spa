@@ -16,7 +16,7 @@ export class InstructorWebinarService {
 
 	get(id: string): Promise<Webinar> {
 		const params = new HttpParams().set('id', id);
-		return this.httpClient.get<Webinar>('/DescribeInstructorDashboardWebinar').toPromise();
+		return this.httpClient.get<Webinar>('/DescribeInstructorDashboardWebinar', {params}).toPromise();
 	}
 
 	save(webinar: Webinar): Promise<Webinar> {
