@@ -11,12 +11,18 @@ import { Webinar } from '../../models';
 export class WebinarManagementComponent implements OnInit {
 	public webinar: Webinar;
 
+	public isSubmittingWebinar: boolean = false;
+
 	constructor(private activatedRoute: ActivatedRoute) { }
 
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
 			this.webinar = data.webinar;
 		});
+	}
+
+	submitWebinar() {
+
 	}
 
 }

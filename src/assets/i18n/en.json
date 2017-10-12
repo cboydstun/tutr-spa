@@ -87,6 +87,7 @@
 	"createWebinarWorkingTitleFormPlaceholder": "e.g. Learn Angular 4 HttpClient",
 
 	"webinarManagementListItemBasics": "Basics",
+	"webinarManagementButtonSubmitWebinar": "Submit Webinar",
 
 	"webinarBasicsTitle": "Title",
 	"webinarBasicsTitleHelpText": "Catchy Webinar Title",
