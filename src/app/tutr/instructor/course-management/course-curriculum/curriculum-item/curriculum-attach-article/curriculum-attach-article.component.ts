@@ -7,6 +7,8 @@ import {
 } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { InstructorCourseService } from '../../../../../services';
+
 @Component({
 	selector: 'uikit-curriculum-attach-article',
 	templateUrl: './curriculum-attach-article.component.html',
@@ -20,8 +22,9 @@ export class CurriculumAttachArticleComponent implements OnInit {
 	@Output() delete = new EventEmitter<void>();
 
 	public editArticleForm: FormGroup;
+	public isLoading: boolean = false;
 
-	constructor() { }
+	constructor(private instructorCourseService: InstructorCourseService) { }
 
 	ngOnInit() {
 		this.editArticleForm = new FormGroup({
@@ -36,10 +39,19 @@ export class CurriculumAttachArticleComponent implements OnInit {
 			return;
 		}
 
-		this.curriculum.contentType = 'article';
+		this.curriculum.content_type = 'article';
 		this.curriculum.content = this.editArticleForm.value.content;
 
-		this.save.emit(this.curriculum);
+		this.isLoading = true;
+
+		this.instructorCourseService.saveCurriculumItem(this.curriculum)
+			.then(() => {
+				this.save.emit(this.curriculum);
+				this.isLoading = false;
+			})
+			.catch(() => {
+				this.isLoading = false;
+			});
 	}
 
 	public deleteArticle() {

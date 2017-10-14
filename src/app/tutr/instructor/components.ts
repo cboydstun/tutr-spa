@@ -12,6 +12,19 @@ import { CreateWebinarComponent } from './webinar-management/create-webinar/crea
 import { CourseCurriculumComponent } from './course-management/course-curriculum/course-curriculum.component';
 import { CoursePictureComponent } from './course-management/course-landing-page/course-picture/course-picture.component';
 
+import { CurriculumItemComponent } from './course-management/course-curriculum/curriculum-item/curriculum-item.component';
+import { CurriculumGroupComponent } from './course-management/course-curriculum/curriculum-group/curriculum-group.component';
+import { CurriculumAttachOfferComponent } from './course-management/course-curriculum/curriculum-item/curriculum-attach-offer/curriculum-attach-offer.component';
+import { CurriculumAttachArticleComponent } from './course-management/course-curriculum/curriculum-item/curriculum-attach-article/curriculum-attach-article.component';
+import { CurriculumAttachVideoComponent } from './course-management/course-curriculum/curriculum-item/curriculum-attach-video/curriculum-attach-video.component';
+import { CurriculumEditTitleComponent } from './course-management/course-curriculum/curriculum-item/curriculum-edit-title/curriculum-edit-title.component';
+import { CurriculumQuizItemComponent } from './course-management/course-curriculum/curriculum-quiz-item/curriculum-quiz-item.component';
+import { CurriculumQuizEditBasicsComponent } from './course-management/course-curriculum/curriculum-quiz-item/curriculum-quiz-edit-basics/curriculum-quiz-edit-basics.component';
+import { CurriculumQuizBuilderComponent } from './course-management/course-curriculum/curriculum-quiz-item/curriculum-quiz-builder/curriculum-quiz-builder.component';
+import { QuizQuestionComponent } from './course-management/course-curriculum/curriculum-quiz-item/curriculum-quiz-builder/quiz-question/quiz-question.component';
+import { QuizAnswerComponent } from './course-management/course-curriculum/curriculum-quiz-item/curriculum-quiz-builder/quiz-answer/quiz-answer.component';
+import { QuizAnswerGroupComponent } from './course-management/course-curriculum/curriculum-quiz-item/curriculum-quiz-builder/quiz-answer-group/quiz-answer-group.component';
+
 export {
 	DashboardComponent,
 	DashboardCoursesComponent,
@@ -25,5 +38,17 @@ export {
 	WorkingTitleFormComponent,
 	CreateWebinarComponent,
 	CourseCurriculumComponent,
-	CoursePictureComponent
+	CoursePictureComponent,
+	CurriculumItemComponent,
+	CurriculumGroupComponent,
+	CurriculumAttachOfferComponent,
+	CurriculumAttachArticleComponent,
+	CurriculumAttachVideoComponent,
+	CurriculumEditTitleComponent,
+	CurriculumQuizItemComponent,
+	CurriculumQuizEditBasicsComponent,
+	CurriculumQuizBuilderComponent,
+	QuizQuestionComponent,
+	QuizAnswerComponent,
+	QuizAnswerGroupComponent,
 }

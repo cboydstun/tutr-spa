@@ -43,8 +43,22 @@ export class InstructorCourseService {
 		return this.httpClient.post<CourseGoals>('/SaveInstructorDashboardCourseGoals', goals).toPromise();	
 	}
 
+
 	save(course: Course): Promise<Course> {
 		return this.httpClient.post<Course>('/SaveInstructorDashboardCourse', course).toPromise();
+	}
+
+	getCurriculums(id: string): Promise<any> {
+		const params = new HttpParams().set('id', id);
+		return this.httpClient.get<CourseGoals>('/DescribeInstructorDashboardCourseCurriculum', {params}).toPromise();
+	}
+
+	addCurriculumItem(item: any): Promise<any> {
+		return this.httpClient.post('/CreateCurriculumItem', item).toPromise();
+	}
+
+	saveCurriculumItem(item: any): Promise<any> {
+		return this.httpClient.post('/SaveCurriculumItem', item).toPromise();
 	}
 
 }

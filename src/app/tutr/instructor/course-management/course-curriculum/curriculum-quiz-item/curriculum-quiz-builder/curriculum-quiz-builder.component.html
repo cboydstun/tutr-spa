@@ -1,0 +1,26 @@
+<uikit-quiz-question
+	*ngFor="let question of curriculum.questions"
+	[question]="question"></uikit-quiz-question>
+
+<div class="alert alert-primary" role="alert" *ngIf="!curriculum.questions.length">
+	{{ 'curriculumQuizBuilderEmptyQuestionSet' | translate }}
+</div>
+
+<hr>
+
+<button 
+	(click)="addQuestion()"
+	type="button"
+	class="btn btn-secondary btn-sm"
+	[disabled]="isSaving">
+		{{ 'curriculumQuizBuilderAddQuestion' | translate }}
+</button>
+
+<button 
+	(click)="save()"
+	type="button"
+	class="btn btn-primary btn-sm"
+	[disabled]="isSaving">
+		<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isSaving"></i>
+		{{ 'Common_Save' | translate }}
+</button>

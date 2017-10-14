@@ -1,4 +1,4 @@
-<div class="card border-secondary">
+<div class="card border-secondary mt-1">
 	<div class="card-header">
 		<div *ngIf="isNormalMode()" class="d-flex flex-row justify-content-between">
 			<div>
@@ -31,7 +31,7 @@
 		<i>{{ curriculum.description }}</i>
 
 		<uikit-curriculum-quiz-builder 
-			[questions]="curriculum.questions"></uikit-curriculum-quiz-builder>
+			[curriculum]="curriculum"></uikit-curriculum-quiz-builder>
 	</div>
 
 	<div class="card-body" *ngIf="isEditMode()">

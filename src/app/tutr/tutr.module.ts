@@ -20,7 +20,9 @@ import {
 	SubmitRightAwayCourseService,
 	InstructorWebinarService,
 	WebinarService,
-	HomepageService
+	HomepageService,
+	SubmitWebinarService,
+	SubmitRightAwayWebinarService
 } from './services';
 
 import {
@@ -37,7 +39,8 @@ import {
 	WebinarResolve,
 	UpcomingWebinarsResolve,
 	HomepageResolve,
-	InstructorCourseGoalsResolve
+	InstructorCourseGoalsResolve,
+	InstructorCourseCurriculumsResolve
 } from './resolvers';
 
 import {
@@ -85,13 +88,22 @@ import {
 		HomepageResolve,
 		HomepageService,
 		InstructorCourseGoalsResolve,
+		InstructorCourseCurriculumsResolve,
 		{
 			provide: HTTP_INTERCEPTORS,
 			useClass: TutrInterceptor,
 			multi: true,
 		},
 		SubmitRightAwayCourseService,
-		[SubmitCourseService, { provide: SubmitCourseService, useExisting: SubmitRightAwayCourseService }]
+		SubmitRightAwayWebinarService,
+		[SubmitCourseService, { 
+			provide: SubmitCourseService, 
+			useExisting: SubmitRightAwayCourseService 
+		}],
+		[SubmitWebinarService, { 
+			provide: SubmitWebinarService, 
+			useExisting: SubmitRightAwayWebinarService 
+		}]
 	]
 })
 export class TutrModule { }

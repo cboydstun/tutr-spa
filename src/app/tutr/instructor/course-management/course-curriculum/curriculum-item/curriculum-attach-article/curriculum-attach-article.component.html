@@ -8,19 +8,22 @@
 		<button 
 			type="submit" 
 			class="btn btn-primary btn-sm"
-			[disabled]="!editArticleForm.valid">
+			[disabled]="!editArticleForm.valid || isLoading">
+				<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isLoading"></i>
 				{{ 'Common_Save' | translate }}
 		</button>
 
 		<button
 			type="button"
 			class="btn btn-secondary btn-sm"
-			(click)="turnOnNormalMode()">
+			(click)="turnOnNormalMode()"
+			[disabled]="isLoading">
 				{{ 'Common_Cancel' | translate }}
 		</button>
 
 		<button
 			(click)="deleteArticle()"
+			[disabled]="isLoading"
 			type="button"
 			class="btn btn-link btn-sm text-danger">
 				<i class="fa fa-trash"></i>

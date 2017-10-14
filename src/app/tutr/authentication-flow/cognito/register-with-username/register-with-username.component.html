@@ -15,7 +15,11 @@
 					class="form-control"
 					[placeholder]="'authenticationFlowUsername' | translate"
 					[formControlName]="'username'"
+					[class.is-invalid]="username.errors && username.errors.exists"
 					autofocus>
+				<div class="invalid-feedback" *ngIf="username.errors && username.errors.exists">
+					{{ 'authenticationFlowUsernameExistsException' | translate }}
+				</div>
 			</div>
 			<div class="form-group">
 				<label>
@@ -36,6 +40,9 @@
 					class="form-control" 
 					[placeholder]="'authenticationFlowPassword' | translate"
 					[formControlName]="'password'">
+				<span class="form-text text-muted">
+					{{ 'authenticationFlowPasswordHelpText' | translate }}
+				</span>
 			</div>
 			<div class="form-group">
 				<label>
@@ -46,12 +53,16 @@
 					class="form-control" 
 					[placeholder]="'authenticationFlowConfirmPassword' | translate"
 					[formControlName]="'confirmpassword'">
+				<span class="form-text text-muted">
+					{{ 'authenticationFlowConfirmPasswordHelpText' | translate }}
+				</span>
 			</div>
 			<div class="form-group">
 				<button
 					type="submit" 
 					class="btn btn-primary"
-					[disabled]="!form.valid">
+					[disabled]="!form.valid || isLoading">
+						<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isLoading"></i>
 						{{ 'authenticationFlowButtonRegister' | translate }}
 				</button>
 			</div>
@@ -62,9 +73,11 @@
 
 <div class="card mt-5">
 	<div class="card-body">
-		<h6 class="card-title">Already have an account?</h6>
+		<h6 class="card-title">
+			{{ 'authenticationFlowHaveAccount' | translate }}
+		</h6>
 		<a routerLink="/auth/login" class="card-link">
-			Login
+			{{ 'authenticationFlowLogin' | translate }}
 		</a>
 	</div>
 </div>

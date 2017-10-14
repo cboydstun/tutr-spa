@@ -15,6 +15,8 @@ import { SubmitCourseService } from './_services/submit-course.service';
 import { SubmitRightAwayCourseService } from './_services/submit-right-away-course.service';
 import { WebinarService } from './_services/webinar.service';
 import { HomepageService } from './_services/homepage.service';
+import { SubmitWebinarService } from './_services/submit-webinar.service';
+import { SubmitRightAwayWebinarService } from './_services/submit-right-away-webinar.service';
 
 export {
 	LoginService,
@@ -33,5 +35,7 @@ export {
 	SubmitRightAwayCourseService,
 	InstructorWebinarService,
 	WebinarService,
-	HomepageService
+	HomepageService,
+	SubmitWebinarService,
+	SubmitRightAwayWebinarService
 }

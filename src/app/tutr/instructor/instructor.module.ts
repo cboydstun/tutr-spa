@@ -24,7 +24,19 @@ import {
 	WorkingTitleFormComponent,
 	CreateWebinarComponent,
 	CourseCurriculumComponent,
-	CoursePictureComponent
+	CoursePictureComponent,
+	CurriculumItemComponent,
+	CurriculumGroupComponent,
+	CurriculumAttachOfferComponent,
+	CurriculumAttachArticleComponent,
+	CurriculumAttachVideoComponent,
+	CurriculumEditTitleComponent,
+	CurriculumQuizItemComponent,
+	CurriculumQuizEditBasicsComponent,
+	CurriculumQuizBuilderComponent,
+	QuizQuestionComponent,
+	QuizAnswerComponent,
+	QuizAnswerGroupComponent,
 } from './components';
 
 @NgModule({
@@ -36,6 +48,32 @@ import {
 		ReactiveFormsModule,
 		TranslateModule
 	],
-	declarations: [DashboardComponent, DashboardCoursesComponent, DashboardWebinarsComponent, CourseManagementComponent, CourseGoalsComponent, CourseLandingPageComponent, WebinarManagementComponent, WebinarBasicsComponent, CreateCourseComponent, WorkingTitleFormComponent, CreateWebinarComponent, CourseCurriculumComponent, CoursePictureComponent]
+	declarations: [
+		DashboardComponent, 
+		DashboardCoursesComponent, 
+		DashboardWebinarsComponent, 
+		CourseManagementComponent, 
+		CourseGoalsComponent, 
+		CourseLandingPageComponent, 
+		WebinarManagementComponent, 
+		WebinarBasicsComponent, 
+		CreateCourseComponent, 
+		WorkingTitleFormComponent, 
+		CreateWebinarComponent, 
+		CourseCurriculumComponent, 
+		CoursePictureComponent,
+		CurriculumItemComponent,
+		CurriculumGroupComponent,
+		CurriculumAttachOfferComponent,
+		CurriculumAttachArticleComponent,
+		CurriculumAttachVideoComponent,
+		CurriculumEditTitleComponent,
+		CurriculumQuizItemComponent,
+		CurriculumQuizEditBasicsComponent,
+		CurriculumQuizBuilderComponent,
+		QuizQuestionComponent,
+		QuizAnswerComponent,
+		QuizAnswerGroupComponent
+	]
 })
 export class InstructorModule { }

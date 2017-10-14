@@ -15,7 +15,8 @@
 			<button 
 				type="submit" 
 				class="btn btn-primary btn-sm"
-				[disabled]="!editTitleForm.valid">
+				[disabled]="!editTitleForm.valid || isLoading">
+					<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isLoading"></i>
 					{{ 'Common_Save' | translate }}
 			</button>
 

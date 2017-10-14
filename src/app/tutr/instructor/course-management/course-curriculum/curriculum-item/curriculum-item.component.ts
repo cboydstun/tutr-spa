@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 const MODES = {
@@ -15,6 +15,8 @@ const MODES = {
 })
 export class CurriculumItemComponent implements OnInit {
 	@Input() curriculum: any;
+
+	@Output() onSave = new EventEmitter<any>();
 
 	public expanded: boolean = false;
 
@@ -46,14 +48,14 @@ export class CurriculumItemComponent implements OnInit {
 	}
 
 	public deleteArticle() {
-		this.curriculum.contentType = null;
+		this.curriculum.content_type = null;
 		this.curriculum.content = null;
 
 		this.turnOnNormalMode();
 	}
 
 	public deleteVideo() {
-		this.curriculum.contentType = null;
+		this.curriculum.content_type = null;
 		this.curriculum.content = null;
 
 		this.turnOnNormalMode();
@@ -72,15 +74,15 @@ export class CurriculumItemComponent implements OnInit {
 	}
 
 	public isVideoContentType(): boolean {
-		return this.curriculum.contentType === 'video';
+		return this.curriculum.content_type === 'video';
 	}
 
 	public isArticleContentType(): boolean {
-		return this.curriculum.contentType === 'article';
+		return this.curriculum.content_type === 'article';
 	}
 
 	public isAnyContentType(): boolean {
-		return !!this.curriculum.contentType;
+		return !!this.curriculum.content_type;
 	}
 
 	public get articleContentPreview(): string {

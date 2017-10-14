@@ -19,6 +19,6 @@ export class CreateWebinarComponent implements OnInit {
 
 	onSubmit(title: string) {
 		this.webinarService.create(title)
-			.then((webinar: Webinar) => this.router.navigate(['/instructor', 'webinar', webinar.slug]))
+			.then((webinar: Webinar) => this.router.navigate(['/instructor', 'webinar', webinar.id]))
 	}
 }

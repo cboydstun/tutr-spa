@@ -5,6 +5,8 @@
 	"Common_Edit": "Редактировать",
 	"Common_Delete": "Удалить",
 
+	"categoryTitleAll": "Все",
+
 	"publicProfileJumbotronHeader": "Загальнодоступний профіль",
 
 	"headerNavBarCourses": "Курси",
@@ -18,23 +20,32 @@
 
 	"accountSettingsBasicsFormGivenName": "Ім'я",
 	"accountSettingsBasicsFormFamilyName": "Прізвище",
-
 	"accountSettingsLayoutNavItemBasics": "Basics",
 	"accountSettingsLayoutNavItemPrivacy": "Конфіденційність",
-
 	"accountSettingsPrivacyShowProfileOnSearch": "Показати мій профіль у результатах пошуку",
 	"accountSettingsPrivacyShowCoursesImTaking": "Показуйте курси на сторінці свого профілю",
+	"accountSettingsJumbotronHeader": "Настройки аккаунта",
 
 	"authenticationFlowLogin": "Login",
 	"authenticationFlowUsername": "Username",
 	"authenticationFlowPassword": "Password",
 	"authenticationFlowButtonLogin": "Login",
 	"authenticationFlowDontHaveAccount": "Dont have an account?",
+	"authenticationFlowHaveAccount": "Have an account?",
 	"authenticationFlowCreateAccount": "Create one for free!",
 	"authenticationFlowRegister": "Register",
 	"authenticationFlowEmail": "Email",
 	"authenticationFlowConfirmPassword": "Confirm Password",
 	"authenticationFlowButtonRegister": "Register",
+	"authenticationFlowUsernameInvalidLogin": "Неверное имя пользователя или пароль",
+	"authenticationFlowPasswordHelpText": "Минимальная длина 8 символов",
+	"authenticationFlowConfirmPasswordHelpText": "Введите свой пароль снова",
+	"authenticationFlowConfirmEmail": "Введите код подтверждения",
+	"authenticationFlowCode": "Код",
+	"authenticationFlowButtonConfirm": "Подтвердить",
+	"authenticationFlowCodeMismatchException": "Неверный код подтверждения, повторите попытку",
+	"authenticationFlowUserCodeCombinationNotFound": "Комбинация имени пользователя и кода не найдена",
+	"authenticationFlowUsernameExistsException": "Данное имя пользователя уже занято",
 
 	"homepageHeaderRecentCourses": "Recent Courses",
 	"homepageHeaderUpcomingWebinars": "Upcoming Webinars",
@@ -82,6 +93,8 @@
 	"courseLandingPageDescription": "Description",
 	"courseLandingPageCoursePicture": "Изображение курса",
 	"courseLandingPageButtonUploadCoursePicture": "Загрузить изображение",
+	"courseLandingPageCategory": "Категория",
+	"courseLandingPageCategoryHelpText": "Категория курса",
 
 	"createCourseWorkingTitleFormPlaceholder": "e.g. Learn Angular 4 From Scratch",
 	"createWebinarWorkingTitleFormPlaceholder": "e.g. Learn Angular 4 HttpClient",

@@ -9,4 +9,5 @@ export class Webinar {
 	start_dt: Date;
 	instructor_name: string;
 	instructor_id: string;
+	status: string;
 }

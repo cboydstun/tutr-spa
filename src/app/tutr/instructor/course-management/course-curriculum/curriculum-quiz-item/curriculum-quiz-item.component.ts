@@ -20,7 +20,7 @@ export class CurriculumQuizItemComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-		this.curriculum.questions = [];
+		this.curriculum.questions = this.curriculum.questions || [];
 	}
 
 	public turnOnEditMode() {

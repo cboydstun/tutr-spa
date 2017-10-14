@@ -22,7 +22,8 @@ import {
 	InstructorCourseResolve,
 	InstructorWebinarsResolve,
 	InstructorWebinarResolve,
-	InstructorCourseGoalsResolve
+	InstructorCourseGoalsResolve,
+	InstructorCourseCurriculumsResolve
 } from '../resolvers';
 
 const routes: Routes = [
@@ -84,7 +85,10 @@ const routes: Routes = [
 					},
 					{
 						path: 'curriculum',
-						component: CourseCurriculumComponent
+						component: CourseCurriculumComponent,
+						resolve: {
+							curriculums: InstructorCourseCurriculumsResolve
+						}
 					}
 				]
 			},

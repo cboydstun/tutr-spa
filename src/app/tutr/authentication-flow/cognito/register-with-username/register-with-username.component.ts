@@ -12,8 +12,12 @@ import { RegisterService } from '../../../services';
 export class RegisterWithUsernameComponent implements OnInit {
 	public form: FormGroup;
 
+	public isLoading: boolean = false;
+
 	constructor(private registerService: RegisterService,
 				private router: Router) { }
+
+	get username() { return this.form.get('username') }
 
 	ngOnInit() {
 		this.form = new FormGroup({
@@ -25,10 +29,12 @@ export class RegisterWithUsernameComponent implements OnInit {
 				Validators.email
 			]),
 			'password': new FormControl('', [
-				Validators.required
+				Validators.required,
+				Validators.minLength(8)
 			]),
 			'confirmpassword': new FormControl('', [
-				Validators.required
+				Validators.required,
+				Validators.minLength(8)
 			])
 		});
 	}
@@ -38,12 +44,20 @@ export class RegisterWithUsernameComponent implements OnInit {
 			return;
 		}
 
+		this.isLoading = true;
+
 		this.registerService.register(this.form.value)
 			.then(() => {
 				this.router.navigate(['/auth', 'confirm-registration']);
 			})
 			.catch((err) => {
-				debugger
+				this.isLoading = false;
+
+				if (err.code === RegisterService.USERNAME_EXISTS) {
+					this.username.setErrors({exists: true});
+				} else {
+
+				}
 			});
 	}
 

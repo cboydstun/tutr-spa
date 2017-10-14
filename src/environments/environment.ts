@@ -9,7 +9,7 @@ export const environment = {
 	/**
 	 * AWS API Gateway state root.
 	 */
-	apiRoot: 'https://4usahx5log.execute-api.eu-west-1.amazonaws.com/dev',
+	apiRoot: 'https://roto4ggfed.execute-api.eu-west-1.amazonaws.com/dev',
 
 	sts_endpoint: '',
 
@@ -18,11 +18,11 @@ export const environment = {
 	 */
 	region: 'eu-west-1',
 
-	identityPoolId: 'eu-west-1:76f2ee4f-2e43-46e8-a199-4a3f870eafb3',
+	identityPoolId: 'eu-west-1:37d9a150-2b32-4506-8da8-dc054c49231e',
 
-	userPoolId: 'eu-west-1_7pvbqbX2r',
+	userPoolId: 'eu-west-1_qDMixnFtx',
 
-	clientId: '135sb05cs4bt620jfmnksvhigl',
+	clientId: '1c8rcsh4escnkddb5aebi4vfbm',
 
 	cognito_idp_endpoint: '',
 
@@ -61,5 +61,5 @@ export const environment = {
 	/**
 	 * UserContent S3 Bucket name.
 	 */
-	userContentBucket: 'pixcare-usercontent-78lq56l57974'
+	userContentBucket: 'smartjob-usercontent-hy2x4kvvzzvx'
 };

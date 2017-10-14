@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Webinar } from '../../models';
+import { SubmitWebinarService } from '../../services';
 
 @Component({
 	selector: 'tutr-webinar-management',
@@ -13,7 +14,8 @@ export class WebinarManagementComponent implements OnInit {
 
 	public isSubmittingWebinar: boolean = false;
 
-	constructor(private activatedRoute: ActivatedRoute) { }
+	constructor(private activatedRoute: ActivatedRoute,
+				private submitWebinarService: SubmitWebinarService) { }
 
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
@@ -22,7 +24,11 @@ export class WebinarManagementComponent implements OnInit {
 	}
 
 	submitWebinar() {
+		this.isSubmittingWebinar = true;
 
+		this.submitWebinarService.submit(this.webinar)
+			.then(() => this.isSubmittingWebinar = false)
+			.catch(() => this.isSubmittingWebinar = false);
 	}
 
 }

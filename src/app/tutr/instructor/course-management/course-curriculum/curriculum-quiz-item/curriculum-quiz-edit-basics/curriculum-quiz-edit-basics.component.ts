@@ -7,6 +7,8 @@ import {
 } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { InstructorCourseService } from '../../../../../services';
+
 @Component({
 	selector: 'uikit-curriculum-quiz-edit-basics',
 	templateUrl: './curriculum-quiz-edit-basics.component.html',
@@ -20,8 +22,9 @@ export class CurriculumQuizEditBasicsComponent implements OnInit {
 	@Output() delete = new EventEmitter<void>();
 
 	public editForm: FormGroup;
+	public isLoading: boolean = false;
 
-	constructor() { }
+	constructor(private instructorCourseService: InstructorCourseService) { }
 
 	ngOnInit() {
 		this.editForm = new FormGroup({
@@ -39,10 +42,18 @@ export class CurriculumQuizEditBasicsComponent implements OnInit {
 			return;
 		}
 
+		this.isLoading = true;
+
 		this.curriculum.title = this.editForm.value.title;
 		this.curriculum.description = this.editForm.value.description;
 
-		this.save.emit(this.curriculum);
+		this.instructorCourseService.saveCurriculumItem(this.curriculum)
+			.then(() => {
+				this.save.emit(this.curriculum);
+				this.isLoading = false;
+			}).catch(() => {
+				this.isLoading = false
+			});
 	}
 
 	public doCancel() {

@@ -17,6 +17,7 @@ import { environment } from "../../../environments/environment";
 @Injectable()
 export class LoginService {
 	public static NEW_PASSWORD_REQUIRED: string = 'NEW_PASSWORD_REQUIRED';
+	public static USER_NOT_FOUND: string = 'UserNotFoundException';
 
 	private isAuthenticatedSubject = new ReplaySubject<boolean>();
 
@@ -109,7 +110,7 @@ export class LoginService {
 
 				},
 				onFailure: (err) => {
-					reject(err.message);
+					reject(err.code);
 				},
 			});
 		}).then((x: any) => {

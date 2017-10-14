@@ -5,6 +5,8 @@
 	"Common_Edit": "Редагувати",
 	"Common_Delete": "Видалити",
 
+	"categoryTitleAll": "Всі",
+
 	"publicProfileJumbotronHeader": "Загальнодоступний профіль",
 
 	"headerNavBarCourses": "Курси",
@@ -18,23 +20,32 @@
 
 	"accountSettingsBasicsFormGivenName": "Ім'я",
 	"accountSettingsBasicsFormFamilyName": "Прізвище",
-
 	"accountSettingsLayoutNavItemBasics": "Основи",
 	"accountSettingsLayoutNavItemPrivacy": "Конфіденційність",
-
 	"accountSettingsPrivacyShowProfileOnSearch": "Показати мій профіль у результатах пошуку",
 	"accountSettingsPrivacyShowCoursesImTaking": "Показуйте курси на сторінці свого профілю",
+	"accountSettingsJumbotronHeader": "Налаштування аккаунта",
 
 	"authenticationFlowLogin": "Увійти",
 	"authenticationFlowUsername": "Ім'я користувача",
 	"authenticationFlowPassword": "Пароль",
 	"authenticationFlowButtonLogin": "Увійти",
 	"authenticationFlowDontHaveAccount": "Не маєте облікового запису?",
+	"authenticationFlowHaveAccount": "Маєте обліковий запис?",
 	"authenticationFlowCreateAccount": "Створіть його безкоштовно!",
 	"authenticationFlowRegister": "Реєстрація",
 	"authenticationFlowEmail": "Email",
 	"authenticationFlowConfirmPassword": "Підтвердити пароль",
 	"authenticationFlowButtonRegister": "Зареєструватися",
+	"authenticationFlowUsernameInvalidLogin": "Неправильне ім'я користувача або пароль",
+	"authenticationFlowPasswordHelpText": "Мінімальна довжина 8 символів",
+	"authenticationFlowConfirmPasswordHelpText": "Повторно введіть свій пароль",
+	"authenticationFlowConfirmEmail": "Введіть код підтвердження",
+	"authenticationFlowCode": "Код",
+	"authenticationFlowButtonConfirm": "Підтвердити",
+	"authenticationFlowCodeMismatchException": "Не вказано дійсний код підтвердження, повторіть спробу",
+	"authenticationFlowUserCodeCombinationNotFound": "Ім'я користувача / кодова комбінація не знайдена",
+	"authenticationFlowUsernameExistsException": "Ім'я користувача вже зайняте",
 
 	"homepageHeaderRecentCourses": "Останні курси",
 	"homepageHeaderUpcomingWebinars": "Майбутні вебінари",
@@ -82,6 +93,8 @@
 	"courseLandingPageDescription": "Опис",
 	"courseLandingPageCoursePicture": "Зображення курсу",
 	"courseLandingPageButtonUploadCoursePicture": "Завантажити картинку",
+	"courseLandingPageCategory": "Категорія",
+	"courseLandingPageCategoryHelpText": "Категорія курсу",
 
 	"createCourseWorkingTitleFormPlaceholder": "наприклад, Дізнайтеся кутовий 4 з нуля",
 	"createWebinarWorkingTitleFormPlaceholder": "наприклад, Дізнайтеся кутовий 4 HttpClient",

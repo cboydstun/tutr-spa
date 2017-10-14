@@ -11,6 +11,8 @@ import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class ChangePasswordService {
+	public static CODE_MISMATCH: string = 'CodeMismatchException';
+	public static USER_NOT_FOUND: string = 'UserNotFoundException';
 
 	constructor(private cognitoService: CognitoService) { }
 

@@ -13,13 +13,16 @@ import { LoginService } from '../../../services';
 export class LoginWithUsernameComponent implements OnInit {
 	public form: FormGroup;
 
+	public isLoading: boolean = false;
+	public showError: boolean = false;
+
 	constructor(private loginService: LoginService,
 				private router: Router) { }
 
 	ngOnInit() {
 		this.form = new FormGroup({
 			'username': new FormControl('', [
-				Validators.required, 
+				Validators.required
 			]),
 			'password': new FormControl('', [
 				Validators.required
@@ -32,15 +35,20 @@ export class LoginWithUsernameComponent implements OnInit {
 			return;
 		}
 
+		this.isLoading = true;
+		this.showError = false;
+
 		this.loginService.authenticate(this.form.value.username, this.form.value.password).then(() => {
 			this.router.navigate(['/']);
 		}).catch((err: string) => {
+			this.isLoading = false;
+
 			if (err === LoginService.NEW_PASSWORD_REQUIRED) {
 				this.router.navigate(['/auth', 'change-temp-password']);
 			} else {
-				//TODO
+				this.showError = true;
 			}
-		})
+		});
 
 	}
 

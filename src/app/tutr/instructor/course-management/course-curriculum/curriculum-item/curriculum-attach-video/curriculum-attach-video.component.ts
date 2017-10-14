@@ -36,7 +36,7 @@ export class CurriculumAttachVideoComponent implements OnInit {
 			return;
 		}
 
-		this.curriculum.contentType = 'video';
+		this.curriculum.content_type = 'video';
 
 		this.save.emit(this.curriculum);
 	}

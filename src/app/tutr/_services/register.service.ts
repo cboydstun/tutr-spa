@@ -15,6 +15,8 @@ import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class RegisterService {
+	public static USERNAME_EXISTS: string = 'UsernameExistsException';
+
 	constructor(private cognitoService: CognitoService) { }
 
 	public register(data: {username: string, email: string, password: string}): Promise<any> {

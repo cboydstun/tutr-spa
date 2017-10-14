@@ -2,7 +2,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { Injectable } from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { Webinar } from '../models';
 
@@ -15,32 +15,16 @@ export class WebinarService {
 	}
 
 	archived() : Promise<Webinar[]> {
-		return Promise.resolve([
-			{
-				title: 'The Complete Ember 2 Developer Course',
-				slug: 'the-complete-ember-2-developer-course',
-				description: 'Learn how to build ambitious single-page web applications using the power of Ember.js and Ember CLI.',
-				archived: true
-			}
-		]);
+		return this.httpClient.get<Webinar[]>('/ListArchivedWebinars').toPromise();
 	}
 
 	upcoming() : Promise<Webinar[]> {
-		return Promise.resolve([
-			{
-				title: 'The Complete Ember 2 Developer Course',
-				slug: 'the-complete-ember-2-developer-course',
-				description: 'Learn how to build ambitious single-page web applications using the power of Ember.js and Ember CLI.'
-			}
-		]);
+		return this.httpClient.get<Webinar[]>('/ListUpcomingWebinars').toPromise();
 	}
 
-	get(slug: string): Promise<Webinar> {
-		return Promise.resolve({
-			title: 'Learning Path: Mastering Ember.js Application Development',
-			slug: 'learning-path-mastering-emberjs-application-development',
-			description: 'Learn how to build ambitious single-page web applications using the power of Ember.js and Ember CLI.'
-		});
+	get(id: string): Promise<Webinar> {
+		const params = new HttpParams().set('id', id);
+		return this.httpClient.get<Webinar>('/DescribeWebinar', {params}).toPromise();
 	}
 
 }

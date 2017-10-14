@@ -1,4 +1,5 @@
-<uikit-curriculum-group [curriculums]="curriculums"></uikit-curriculum-group>
+<uikit-curriculum-group 
+	[curriculums]="curriculums"></uikit-curriculum-group>
 
 <div class="alert alert-primary" role="alert" *ngIf="!curriculums.length">
 	{{ 'courseCurriculumEmptyCurriculum' | translate }}
@@ -6,11 +7,13 @@
 
 <div class="mt-2">
 	<hr>
-	<button class="btn btn-primary" (click)="addEmptyCurriculumLesson()">
+	<button class="btn btn-primary" (click)="addEmptyCurriculumLesson()" [disabled]="isAddingLesson">
+		<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isAddingLesson"></i>
 		{{ 'courseCurriculumButtonAddCurriculumLesson' | translate }}
 	</button>
 
-	<button class="btn btn-secondary" (click)="addEmptyCurriculumQuiz()">
+	<button class="btn btn-secondary" (click)="addEmptyCurriculumQuiz()" [disabled]="isAddingQuiz">
+		<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isAddingQuiz"></i>
 		{{ 'courseCurriculumButtonAddCurriculumQuiz' | translate }}
 	</button>
 </div>

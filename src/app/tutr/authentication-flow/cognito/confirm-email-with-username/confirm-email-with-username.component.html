@@ -5,6 +5,10 @@
 <div class="card mt-3">
 	<div class="card-body">
 
+		<div class="alert alert-danger" role="alert" *ngIf="showError">
+			{{ 'authenticationFlowUserCodeCombinationNotFound' | translate }}
+		</div>
+
 		<form [formGroup]="form" (ngSubmit)="onSubmit()">
 			<div class="form-group">
 				<label>
@@ -25,13 +29,18 @@
 					type="text" 
 					class="form-control"
 					[placeholder]="'authenticationFlowCode' | translate"
-					[formControlName]="'code'">
+					[formControlName]="'code'"
+					[class.is-invalid]="code.errors && code.errors.mismatch">
+				<div class="invalid-feedback" *ngIf="code.errors && code.errors.mismatch">
+					{{ 'authenticationFlowCodeMismatchException' | translate }}
+				</div>
 			</div>
 			<div class="form-group">
 				<button
 					type="submit" 
 					class="btn btn-primary"
-					[disabled]="!form.valid">
+					[disabled]="!form.valid || isLoading">
+						<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isLoading"></i>
 						{{ 'authenticationFlowButtonConfirm' | translate }}
 				</button>
 			</div>
