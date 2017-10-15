@@ -20,8 +20,10 @@ export class LoginService {
 	public static USER_NOT_FOUND: string = 'UserNotFoundException';
 
 	private isAuthenticatedSubject = new ReplaySubject<boolean>();
+	private authentionStatusSubject = new ReplaySubject<any>();
 
 	public isAuthenticated = this.isAuthenticatedSubject.asObservable();
+	public authentionStatus = this.authentionStatusSubject.asObservable();
 
 	private _idToken: string;
 

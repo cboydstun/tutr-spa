@@ -25,8 +25,32 @@
 			</div>
 		</div>
 		<div class="form-group row">
+			<label class="col-sm-2 col-form-label">
+				{{ 'accountSettingsBasicsFormHeadline' | translate }}
+			</label>
 			<div class="col-sm-10">
-				<button type="submit" class="btn btn-primary">
+				<input 
+					type="email" 
+					class="form-control" 
+					[placeholder]="'accountSettingsBasicsFormHeadline' | translate"
+					[formControlName]="'headline'">
+				<span class="form-text text-muted">
+					{{ 'accountSettingsBasicsFormHeadlineHelpText' | translate }}
+				</span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label>
+				{{ 'accountSettingsBasicsFormBio' | translate }}
+			</label>
+			<div>
+				<textarea class="form-control" [formControlName]="'bio'"></textarea>
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-10">
+				<button type="submit" class="btn btn-primary" [disabled]="!form.valid || isSaving">
+					<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isSaving"></i>
 					{{ 'Common_Save' | translate }}
 				</button>
 			</div>

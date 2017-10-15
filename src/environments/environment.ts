@@ -20,9 +20,9 @@ export const environment = {
 
 	identityPoolId: 'eu-west-1:37d9a150-2b32-4506-8da8-dc054c49231e',
 
-	userPoolId: 'eu-west-1_qDMixnFtx',
+	userPoolId: 'eu-west-1_MW81UklJr',
 
-	clientId: '1c8rcsh4escnkddb5aebi4vfbm',
+	clientId: '1ekv5kb919hv3f05mlv1hcddce',
 
 	cognito_idp_endpoint: '',
 
@@ -61,5 +61,10 @@ export const environment = {
 	/**
 	 * UserContent S3 Bucket name.
 	 */
-	userContentBucket: 'smartjob-usercontent-hy2x4kvvzzvx'
+	userContentBucket: 'smartjob-usercontent-hy2x4kvvzzvx',
+
+	/**
+	 * Set to true when CloudSearch is created.
+	 */
+	searchEnabled: false
 };

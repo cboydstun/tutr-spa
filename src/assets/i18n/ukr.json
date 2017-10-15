@@ -15,6 +15,7 @@
 	"headerNavBarAccountSettings": "Налаштування",
 	"headerNavBarInstructor": "Інструктор",
 	"headerSearchPlaceholder": "Пошук",
+	"headerNavBarLogin": "Увійти",
 
 	"footerDescription": "tutr platform",
 
@@ -25,6 +26,9 @@
 	"accountSettingsPrivacyShowProfileOnSearch": "Показати мій профіль у результатах пошуку",
 	"accountSettingsPrivacyShowCoursesImTaking": "Показуйте курси на сторінці свого профілю",
 	"accountSettingsJumbotronHeader": "Налаштування аккаунта",
+	"accountSettingsBasicsFormHeadline": "Заголовок",
+	"accountSettingsBasicsFormHeadlineHelpText": "наприклад, Архітектор або PR-менеджер",
+	"accountSettingsBasicsFormBio": "Біографія",
 
 	"authenticationFlowLogin": "Увійти",
 	"authenticationFlowUsername": "Ім'я користувача",

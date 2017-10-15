@@ -3,10 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ProfileComponent } from './components';
 
+import { PublicUserProfileResolve } from '../resolvers';
+
 const routes: Routes = [
 	{
-		path: '',
-		component: ProfileComponent
+		path: ':id',
+		component: ProfileComponent,
+		resolve: {
+			profile: PublicUserProfileResolve
+		}
 	}
 ];
 

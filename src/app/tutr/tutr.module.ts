@@ -40,7 +40,8 @@ import {
 	UpcomingWebinarsResolve,
 	HomepageResolve,
 	InstructorCourseGoalsResolve,
-	InstructorCourseCurriculumsResolve
+	InstructorCourseCurriculumsResolve,
+	PublicUserProfileResolve
 } from './resolvers';
 
 import {
@@ -89,6 +90,7 @@ import {
 		HomepageService,
 		InstructorCourseGoalsResolve,
 		InstructorCourseCurriculumsResolve,
+		PublicUserProfileResolve,
 		{
 			provide: HTTP_INTERCEPTORS,
 			useClass: TutrInterceptor,

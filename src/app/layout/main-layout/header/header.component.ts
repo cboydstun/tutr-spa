@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
-import { CategoryService } from '../../../tutr/services';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+import { 
+	CategoryService, 
+	UserProfileService, 
+	LoginService
+} from '../../../tutr/services';
 import { Category } from '../../../tutr/models';
 
 import { environment } from '../../../../environments/environment';
@@ -10,15 +16,55 @@ import { environment } from '../../../../environments/environment';
 	templateUrl: './header.component.html',
 	styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 	public categories: Category[];
 
 	public headerLogo: string = environment.headerLogo;
 
-	constructor(private categoryService: CategoryService) { }
+	public isAuthenticated: boolean = false;
+
+	public isLoadingProfile: boolean = false;
+
+	public searchEnabled: boolean = environment.searchEnabled;
+
+	public displayName: string = '';
+
+	public sub: string = '';
+
+	private isAuthenticatedSubscription: Subscription;
+
+	constructor(private categoryService: CategoryService,
+				private userProfileService: UserProfileService,
+				private loginService: LoginService) { }
 
 	ngOnInit() {
 		this.categories = this.categoryService.categories;
+
+		this.isAuthenticatedSubscription = this.loginService.isAuthenticated.subscribe((status: boolean) => {
+			this.isAuthenticated = status;
+
+			if (status) {
+				this.getProfile();
+			}
+		});
+	}
+
+	ngOnDestroy() {
+		this.isAuthenticatedSubscription.unsubscribe();
+	}
+
+	getProfile() {
+		this.isLoadingProfile = true;
+
+		this.userProfileService.getProfile()
+			.then((profile) => {
+				this.displayName = profile.email;
+				this.sub = profile.id;
+				this.isLoadingProfile = false;
+			})
+			.catch(() => {
+				this.isLoadingProfile = false;				
+			});
 	}
 
 }

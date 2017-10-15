@@ -11,6 +11,7 @@ import { InstructorWebinarsResolve } from './_resolvers/instructor-webinars.reso
 import { InstructorWebinarResolve } from './_resolvers/instructor-webinar.resolver';
 
 import { UserProfileResolve } from './_resolvers/user-profile.resolver';
+import { PublicUserProfileResolve } from './_resolvers/public-user-profile.resolver';
 
 import { ArchivedWebinarsResolve } from './_resolvers/archived-webinars.resolver';
 
@@ -34,5 +35,6 @@ export {
 	UpcomingWebinarsResolve,
 	HomepageResolve,
 	InstructorCourseGoalsResolve,
-	InstructorCourseCurriculumsResolve
+	InstructorCourseCurriculumsResolve,
+	PublicUserProfileResolve
 };

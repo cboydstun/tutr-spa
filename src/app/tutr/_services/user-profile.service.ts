@@ -1,4 +1,8 @@
+import 'rxjs/add/operator/toPromise';
+
 import { Injectable } from '@angular/core';
+
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { 
 	AuthenticationDetails, 
@@ -10,66 +14,22 @@ import { CognitoService } from './cognito.service';
 
 import { environment } from "../../../environments/environment";
 
-import { NgProgressService } from 'ngx-progressbar';
-
 @Injectable()
 export class UserProfileService {
 
-	constructor(private cognitoService: CognitoService,
-				private ngProgressService: NgProgressService) { }
-
-	public updateAttributes(attributes: {[s: string]: string}): Promise<any> {
-		const cognitoUser = this.cognitoService.getCurrentUser();
-
-		const attributeList = Object.keys(attributes).reduce((acc, attributeName) => {
-			acc.push(new CognitoUserAttribute({
-				Name: attributeName,
-				Value: '' + attributes[attributeName]
-			}));
-
-			return acc;
-		}, []);
-
-		return new Promise((resolve, reject) => {
-			cognitoUser.getSession((err, session) => {
-				if (err) {
-					reject(err);
-				} else {
-					cognitoUser.updateAttributes(attributeList, function(err, result) {
-						err ? reject(err) : resolve(result);
-					});
-				}
-			});
-		});
-	}
+	constructor(private httpClient: HttpClient) { }
 
 	public getProfile(): Promise<any> {
-		let cognitoUser = this.cognitoService.getCurrentUser();
+		return this.httpClient.get('/DescribeUserProfile').toPromise();
+	}
 
-		this.ngProgressService.start();
+	public getPublicProfile(id: string): Promise<any> {
+		const params = new HttpParams().set('id', id);
+		return this.httpClient.get('/DescribePublicUserProfile', {params}).toPromise();
+	}
 
-		if (cognitoUser == null) {
-			return Promise.reject(new Error('Empty session'));
-		} else {
-			return new Promise((resolve, reject) => {
-				cognitoUser.getSession((err, session) => {
-					if (err) {
-						this.ngProgressService.done();
-
-						reject(err);
-					} else {
-						cognitoUser.getUserAttributes((err, result) => {
-							this.ngProgressService.done();
-
-							err ? reject(err) : resolve(result.reduce((acc, attr) => {
-								acc[attr.getName()] = attr.getValue();
-								return acc;
-							}, {}));
-						});
-					}
-				});
-			});
-		}
+	public updateProfile(profile: {given_name:string, family_name:string, headline:string, bio:string}): Promise<any> {
+		return this.httpClient.post('/SaveUserProfile', profile).toPromise();	
 	}
 
 }

@@ -23,10 +23,10 @@ export class AccountSettingsPrivacyComponent implements OnInit {
 		});
 
 		this.form = new FormGroup({
-			'custom:profile_public': new FormControl(this.profile['custom:profile_public'] == 'true', [
+			'profile_public': new FormControl(false, [
 				Validators.required 
 			]),
-			'custom:courses_public': new FormControl(this.profile['custom:courses_public'] == 'true', [
+			'courses_public': new FormControl(false, [
 				Validators.required
 			])
 		});
@@ -37,6 +37,6 @@ export class AccountSettingsPrivacyComponent implements OnInit {
 			return;
 		}
 
-		this.userProfileService.updateAttributes(this.form.value);
+		//this.userProfileService.updateAttributes(this.form.value);
 	}
 }
