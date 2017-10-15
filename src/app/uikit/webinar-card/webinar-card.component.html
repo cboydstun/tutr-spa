@@ -1,7 +1,7 @@
 <div class="card" [ngClass]="{'border-warning': webinar.archived}">
 	<div class="card-body">
 		<h6 class="card-title">
-			<a [routerLink]="['/webinars', 'details', webinar.id, webinar.slug]">{{webinar.title}}</a>
+			<a [routerLink]="['/webinars', 'details', webinar.instructor_id, webinar.id, webinar.slug]">{{webinar.title}}</a>
 		</h6>
 		<p class="card-text">{{webinar.subtitle}}</p>
 	</div>

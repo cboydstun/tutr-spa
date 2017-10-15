@@ -13,6 +13,6 @@ export class WebinarResolve implements Resolve<Webinar> {
 
 	resolve(route: ActivatedRouteSnapshot) {
 		
-		return this.webinarService.get(route.params.id);
+		return this.webinarService.get(route.params.instructor_id, route.params.id);
 	}
 }

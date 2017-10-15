@@ -29,7 +29,7 @@ const routes: Routes = [
 		}
 	},
 	{
-		path: 'details/:id/:slug',
+		path: 'details/:instructor_id/:id/:slug',
 		component: WebinarDetailsComponent,
 		resolve: {
 			webinar: WebinarResolve

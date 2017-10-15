@@ -10,6 +10,7 @@ import { WebinarService } from '../../../services';
 	styleUrls: ['./create-webinar.component.css']
 })
 export class CreateWebinarComponent implements OnInit {
+	public isLoading: boolean = false;
 
 	constructor(private webinarService: WebinarService,
 				private router: Router) { }
@@ -18,6 +19,8 @@ export class CreateWebinarComponent implements OnInit {
 	}
 
 	onSubmit(title: string) {
+		this.isLoading = true;
+
 		this.webinarService.create(title)
 			.then((webinar: Webinar) => this.router.navigate(['/instructor', 'webinar', webinar.id]))
 	}

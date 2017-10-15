@@ -13,6 +13,6 @@ export class CourseResolve implements Resolve<Course> {
 
 	resolve(route: ActivatedRouteSnapshot) {
 		
-		return this.courseService.get(route.params.id);
+		return this.courseService.get(route.params.instructor_id, route.params.id);
 	}
 }

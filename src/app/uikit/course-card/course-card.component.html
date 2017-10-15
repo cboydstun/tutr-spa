@@ -2,7 +2,7 @@
 	<img class="card-img-top" [src]="course.picture" [alt]="course.title">
 	<div class="card-body">
 		<h6 class="card-title">
-			<a [routerLink]="['/courses', 'details', course.id, course.slug]">{{course.title}}</a>
+			<a [routerLink]="['/courses', 'details', course.instructor_id, course.id, course.slug]">{{course.title}}</a>
 		</h6>
 		<p class="card-text">{{course.subtitle}}</p>
 	</div>

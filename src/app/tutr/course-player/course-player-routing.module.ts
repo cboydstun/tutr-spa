@@ -1,12 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PlayerComponent } from './components';
+import { PlayerComponent, CoursePlayerComponent } from './components';
+
+import {
+	CourseResolve
+} from '../../tutr/resolvers';
 
 const routes: Routes = [
 	{
-		path: 'course/:course/lecture/:lecture',
-		component: PlayerComponent
+		path: ':instructor_id/:id',
+		component: CoursePlayerComponent,
+		resolve: {
+			course: CourseResolve
+		},
+		children: [
+			{
+				path: ':lecture',
+				component: PlayerComponent
+			}
+		]
 	}
 ];
 

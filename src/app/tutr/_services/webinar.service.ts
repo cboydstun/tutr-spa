@@ -22,8 +22,8 @@ export class WebinarService {
 		return this.httpClient.get<Webinar[]>('/ListUpcomingWebinars').toPromise();
 	}
 
-	get(id: string): Promise<Webinar> {
-		const params = new HttpParams().set('id', id);
+	get(instructor_id: string, id: string): Promise<Webinar> {
+		const params = new HttpParams().set('id', id).set('instructor_id', instructor_id);
 		return this.httpClient.get<Webinar>('/DescribeWebinar', {params}).toPromise();
 	}
 

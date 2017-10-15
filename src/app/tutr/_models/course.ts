@@ -9,4 +9,5 @@ export class Course {
 	instructor_id: string;
 	category_name: string;
 	category_id: string
+	curriculum: any[];
 }

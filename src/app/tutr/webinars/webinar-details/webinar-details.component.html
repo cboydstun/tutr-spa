@@ -1,13 +1,13 @@
 <div class="jumbotron">
 	<h1 class="display-4">{{ webinar.title }}</h1>
-	<p class="lead">{{ webinar.description }}</p>
+	<p class="lead">{{ webinar.subtitle }}</p>
 </div>
 
 <div class="container mb-5">
 	<div class="row">
 		<div class="col-8">
 			<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+				{{ webinar.description }}
 			</p>
 		</div>
 
@@ -16,11 +16,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item" [ngClass]="{'text-muted': webinar.archived}">
 						<i class="fa fa-calendar"></i>
-						Tomorrow, 11 am
+						{{ webinar.start_dt }}
 					</li>
 					<li class="list-group-item" [ngClass]="{'text-muted': webinar.archived}">
 						<i class="fa fa-clock-o"></i>
-						1hr
+						{{ webinar.duration }}
 					</li>
 				</ul>
 				<div class="card-body">

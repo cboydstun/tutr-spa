@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CoursePlayerRoutingModule } from './course-player-routing.module';
-import { PlayerComponent } from './components';
+import { PlayerComponent, CoursePlayerComponent } from './components';
 
 import { UikitModule } from '../../uikit/uikit.module';
 
@@ -12,6 +12,6 @@ import { UikitModule } from '../../uikit/uikit.module';
 		CoursePlayerRoutingModule,
 		UikitModule
 	],
-	declarations: [PlayerComponent]
+	declarations: [PlayerComponent, CoursePlayerComponent]
 })
 export class CoursePlayerModule { }

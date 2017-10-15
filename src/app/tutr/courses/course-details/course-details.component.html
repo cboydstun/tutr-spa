@@ -1,6 +1,6 @@
 <div class="jumbotron">
 	<h1 class="display-4">{{ course.title }}</h1>
-	<p class="lead">{{ course.description }}</p>
+	<p class="lead">{{ course.subtitle }}</p>
 </div>
 
 <div class="container mb-5">
@@ -8,34 +8,22 @@
 		<div class="col-8">
 			<div>
 				<h5>{{ 'courseDetailsWhatWillILearn' | translate }}</h5>
-
-				<ul>
-					<li>Vestibulum at eros</li>
-					<li>Cras justo odio</li>
-				</ul>
+				<p>{{ course.goals.what_will_they_learn }}</p>
 			</div>
 
 			<div class="mt-3">
 				<h5>{{ 'courseDetailsRequirements' | translate }}</h5>
-
-				<ul>
-					<li>Vestibulum at eros</li>
-					<li>Cras justo odio</li>
-				</ul>
+				<p>{{ course.goals.prerequisites }}</p>
 			</div>
 
 			<div class="mt-3">
 				<h5>{{ 'courseDetailsWhoIsTheTargetAudience' | translate }}</h5>
-
-				<ul>
-					<li>Vestibulum at eros</li>
-					<li>Cras justo odio</li>
-				</ul>
+				<p>{{ course.goals.target_student }}</p>
 			</div>
 
 			<div class="mt-3">
-				<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+				<p class="lead">
+					{{ course.description }}
 				</p>
 			</div>
 
@@ -43,25 +31,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 				<h4>{{ 'courseDetailsCurriculumForThisCourse' | translate }}</h4>
 
 				<ul class="list-group">
-					<li class="list-group-item">
-						<i class="fa fa-play-circle"></i>
-						Cras justo odio
-					</li>
-					<li class="list-group-item">
-						<i class="fa fa-play-circle"></i>
-						Dapibus ac facilisis in
-					</li>
-					<li class="list-group-item">
-						<i class="fa fa-play-circle"></i>
-						Morbi leo risus
-					</li>
-					<li class="list-group-item">
-						<i class="fa fa-play-circle"></i>
-						Porta ac consectetur ac
-					</li>
-					<li class="list-group-item">
-						<i class="fa fa-play-circle"></i>
-						Vestibulum at eros
+					<li class="list-group-item" *ngFor="let lesson of course.curriculum">
+						<i 
+							class="fa" 
+							[class.fa-play-circle]="lesson.content_type == 'video'"
+							[class.fa-book]="lesson.content_type == 'article'"
+							[class.fa-list-ol]="lesson.type == 'quiz'"></i>
+						{{ lesson.title }}
 					</li>
 				</ul>
 			</div>
@@ -81,7 +57,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 					<a 
 						class="btn btn-outline-primary btn-block" 
-						[routerLink]="['/courses', 'learn', course.id, course.slug]">
+						[routerLink]="['/courses', 'learn', course.instructor_id, course.id, course.slug]">
 							{{ 'courseDetailsCourseCardGotoCourse' | translate }}
 						</a>
 				</div>

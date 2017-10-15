@@ -1,32 +1,13 @@
 <ul class="list-group mt-3">
-	<li class="list-group-item">
-		<a [routerLink]="['/course-player', 'course', 'qwe', 'lecture', 'qwe']">
-			<i class="fa fa-play-circle"></i>
-			Cras justo odio
-		</a>
-	</li>
-	<li class="list-group-item">
-		<a href="">
-			<i class="fa fa-play-circle"></i>
-			Dapibus ac facilisis in
-		</a>
-	</li>
-	<li class="list-group-item">
-		<a href="">
-			<i class="fa fa-play-circle"></i>
-			Morbi leo risus
-		</a>
-	</li>
-	<li class="list-group-item">
-		<a href="">
-			<i class="fa fa-play-circle"></i>
-			Porta ac consectetur ac
-		</a>
-	</li>
-	<li class="list-group-item">
-		<a href="">
-			<i class="fa fa-play-circle"></i>
-			Vestibulum at eros
+	<li class="list-group-item" *ngFor="let lesson of course.curriculum">
+		<a [routerLink]="['/course-player', course.instructor_id, course.id, lesson.id]">
+			<i 
+				class="fa" 
+				[class.fa-play-circle]="lesson.content_type == 'video'"
+				[class.fa-book]="lesson.content_type == 'article'"
+				[class.fa-list-ol]="lesson.type == 'quiz'"></i>
+
+			{{ lesson.title }}
 		</a>
 	</li>
 </ul>

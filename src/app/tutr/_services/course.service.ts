@@ -2,7 +2,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { Injectable } from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { Course } from '../models';
 
@@ -10,14 +10,9 @@ import { Course } from '../models';
 export class CourseService {
 	constructor(private httpClient: HttpClient) { }
 
-	get(slug: string): Promise<Course> {
-		return Promise.resolve({
-			title: 'Learning Path: Mastering Ember.js Application Development',
-			subtitle: 'Learning Path: Mastering Ember.js Application Development',
-			slug: 'learning-path-mastering-emberjs-application-development',
-			description: 'Learn how to build ambitious single-page web applications using the power of Ember.js and Ember CLI.',
-			picture: 'https://udemy-images.udemy.com/course/304x171/1263534_780a_4.jpg'
-		});
+	get(instructor_id: string, id: string): Promise<Course> {
+		const params = new HttpParams().set('id', id).set('instructor_id', instructor_id);
+		return this.httpClient.get<Course>('/DescribeCourse', {params}).toPromise();
 	}
 
 	create(title: string): Promise<Course> {
