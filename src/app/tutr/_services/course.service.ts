@@ -12,7 +12,7 @@ export class CourseService {
 
 	get(instructor_id: string, id: string): Promise<Course> {
 		const params = new HttpParams().set('id', id).set('instructor_id', instructor_id);
-		return this.httpClient.get<Course>('/DescribeCourse', {params}).toPromise();
+		return this.httpClient.get<Course>('/DescribeCourse', {params}).toPromise().then(item => new Course(item));
 	}
 
 	create(title: string): Promise<Course> {

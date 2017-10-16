@@ -38,13 +38,31 @@ export class S3Service {
 		return s3;
 	}
 
+	public uploadProfilePicture(profile_id, file): Promise<{Bucket: string, Key: string, Location: string}> {
+		return this.cognitoService.getIdToken().then((token) => {
+			return this.awsCredentialsService.init(token).then(() => {
+				return this.getS3().upload({
+					Key: `user-picture/${profile_id}.png`,
+					ContentType: file.type,
+					Body: file,
+					Metadata: {
+						profile_id: profile_id
+					}
+				}).promise();
+			});
+		});
+	}
+
 	public uploadCoursePicture(course_id, file): Promise<{Bucket: string, Key: string, Location: string}> {
 		return this.cognitoService.getIdToken().then((token) => {
 			return this.awsCredentialsService.init(token).then(() => {
 				return this.getS3().upload({
-					Key: `course-picture/${course_id}.${file.name.split('.').pop()}`,
+					Key: `course-image/${course_id}.png`,
 					ContentType: file.type,
-					Body: file
+					Body: file,
+					Metadata: {
+						course_id: course_id
+					}
 				}).promise();
 			});
 		});

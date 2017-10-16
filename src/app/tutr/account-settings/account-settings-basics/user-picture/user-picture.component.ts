@@ -1,19 +1,23 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Course } from '../../../../models';
-import { S3Service } from '../../../../services';
+import { Course } from '../../../models';
+import { S3Service } from '../../../services';
+
+import { environment } from "../../../../../environments/environment";
 
 @Component({
-    selector: 'tutr-course-picture',
-    templateUrl: './course-picture.component.html',
-    styleUrls: ['./course-picture.component.css']
+    selector: 'tutr-user-picture',
+    templateUrl: './user-picture.component.html',
+    styleUrls: ['./user-picture.component.css']
 })
-export class CoursePictureComponent implements OnInit {
-	@Input() course: Course;
+export class UserPictureComponent implements OnInit {
+	@Input() profile: any;
 
 	public file: any = null;
 
 	public isUploading: boolean = false;
+
+	public defaultPicture = environment.defaultUserPicture;
 
 	public get hasPictureSelected(): boolean {
 		return !!this.file;
@@ -31,7 +35,7 @@ export class CoursePictureComponent implements OnInit {
 	public upload() {
 		this.isUploading = true;
 
-		this.s3.uploadCoursePicture(this.course.id, this.file)
+		this.s3.uploadProfilePicture(this.profile.id, this.file)
 			.then((result) => {
 				this.isUploading = false
 			})

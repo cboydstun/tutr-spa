@@ -20,7 +20,7 @@ export class AccountSettingsBasicsComponent implements OnInit {
 				private userProfileService: UserProfileService) { }
 
 	ngOnInit() {
-		this.activatedRoute.data.subscribe(data => {
+		this.activatedRoute.parent.data.subscribe(data => {
 			this.profile = data.profile;
 		});
 

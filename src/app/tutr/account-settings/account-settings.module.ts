@@ -12,7 +12,8 @@ import { AccountSettingsRoutingModule } from './account-settings-routing.module'
 import { 
 	AccountSettingsBasicsComponent, 
 	AccountSettingsPrivacyComponent,
-	AccountSettingsLayoutComponent 
+	AccountSettingsLayoutComponent,
+	UserPictureComponent
 } from './components';
 
 @NgModule({
@@ -23,6 +24,6 @@ import {
 		ReactiveFormsModule,
 		TranslateModule.forChild()
 	],
-	declarations: [AccountSettingsBasicsComponent, AccountSettingsPrivacyComponent, AccountSettingsLayoutComponent]
+	declarations: [AccountSettingsBasicsComponent, AccountSettingsPrivacyComponent, AccountSettingsLayoutComponent, UserPictureComponent]
 })
 export class AccountSettingsModule { }

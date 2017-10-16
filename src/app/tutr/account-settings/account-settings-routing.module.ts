@@ -16,6 +16,9 @@ const routes: Routes = [
 		path: '',
 		component: AccountSettingsLayoutComponent,
 		canActivateChild: [OnlyLoggedInUsersGuard],
+		resolve: {
+			profile: UserProfileResolve
+		},
 		children: [
 			{
 				path: '',
@@ -24,17 +27,11 @@ const routes: Routes = [
 			},
 			{
 				path: 'basics',
-				component: AccountSettingsBasicsComponent,
-				resolve: {
-					profile: UserProfileResolve
-				}
+				component: AccountSettingsBasicsComponent
 			},
 			{
 				path: 'privacy',
-				component: AccountSettingsPrivacyComponent,
-				resolve: {
-					profile: UserProfileResolve
-				}
+				component: AccountSettingsPrivacyComponent
 			}
 		]
 	}

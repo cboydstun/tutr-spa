@@ -18,20 +18,12 @@ export class InstructorCourseService {
 	constructor(private httpClient: HttpClient) { }
 
 	forInstructor() : Promise<Course[]> {
-		return this.httpClient.get<Course[]>('/ListInstructorDashboardCourses').toPromise().then(list => {
-			return list.map(listItem => {
-				listItem.picture = listItem.picture || environment.defaultCourseImage;
-				return listItem;
-			});
-		});
+		return this.httpClient.get<Course[]>('/ListInstructorDashboardCourses').toPromise().then(list => list.map(item => new Course(item)));
 	}
 
 	get(id: string): Promise<Course> {
 		const params = new HttpParams().set('id', id);
-		return this.httpClient.get<Course>('/DescribeInstructorDashboardCourse', {params}).toPromise().then(item => {
-				item.picture = item.picture || environment.defaultCourseImage;
-				return item;
-		});
+		return this.httpClient.get<Course>('/DescribeInstructorDashboardCourse', {params}).toPromise().then(item => new Course(item));
 	}
 
 	getGoals(id: string): Promise<CourseGoals> {

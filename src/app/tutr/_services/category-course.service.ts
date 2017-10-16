@@ -12,17 +12,7 @@ export class CategoryCourseService {
 
 	forCategory(slug: string) : Promise<Course[]> {
 		const params = new HttpParams().set('category', slug);
-		return this.httpClient.get<Course[]>('/ListCoursesByCategory', {params}).toPromise();
-	}
-
-	get(slug: string): Promise<Course> {
-		return Promise.resolve({
-			title: 'Learning Path: Mastering Ember.js Application Development',
-			subtitle: 'The Complete Ember 2 Developer Course',
-			slug: 'learning-path-mastering-emberjs-application-development',
-			description: 'Learn how to build ambitious single-page web applications using the power of Ember.js and Ember CLI.',
-			picture: 'https://udemy-images.udemy.com/course/304x171/1263534_780a_4.jpg'
-		});
+		return this.httpClient.get<Course[]>('/ListCoursesByCategory', {params}).toPromise().then(list => list.map(item => new Course(item)));
 	}
 
 }

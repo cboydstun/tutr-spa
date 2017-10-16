@@ -3,11 +3,13 @@ import { Category } from './_models/category';
 import { Webinar } from './_models/webinar';
 import { Homepage } from './_models/homepage';
 import { CourseGoals } from './_models/course-goals';
+import { Profile } from './_models/profile';
 
 export {
 	Course,
 	Category,
 	Webinar,
 	Homepage,
-	CourseGoals
+	CourseGoals,
+	Profile
 }

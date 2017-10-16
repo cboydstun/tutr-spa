@@ -37,6 +37,12 @@ export const environment = {
 	defaultCourseImage: '/assets/images/default-course-image.png',
 
 	/**
+	 * Default image for a new user.
+	 * Displayed in account settings tab.
+	 */
+	defaultUserPicture: '/assets/images/default-user-picture.png',
+
+	/**
 	 * Logo displayed in navbar.
 	 * Make it transparent.
 	 */

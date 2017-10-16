@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { UserProfileService } from '../../tutr/services';
 
 @Component({
 	selector: 'uikit-instructor-card',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./instructor-card.component.css']
 })
 export class InstructorCardComponent implements OnInit {
+	@Input() instructor: string;
 
-	constructor() { }
+	public profile: any;
+	public isLoading: boolean = true;
+
+	constructor(private userProfileService: UserProfileService) { }
 
 	ngOnInit() {
+		this.userProfileService.getPublicProfile(this.instructor)
+			.then((profile) => {
+				this.profile = profile;
+				this.isLoading = false;
+			})
+			.catch(() => this.isLoading = false);
 	}
 
 }
