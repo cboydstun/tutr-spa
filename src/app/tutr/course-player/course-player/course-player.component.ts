@@ -9,6 +9,7 @@ import { Course } from '../../models';
     styleUrls: ['./course-player.component.css']
 })
 export class CoursePlayerComponent implements OnInit {
+	public isSidebarOpen: boolean = true;
 	public course: Course;
 
 	constructor(private activatedRoute: ActivatedRoute) { }

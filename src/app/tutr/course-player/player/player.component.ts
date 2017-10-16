@@ -9,8 +9,6 @@ import { Course } from '../../models';
 	styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
-	public isSidebarOpen: boolean = true;
-
 	public course: Course;
 	public lesson: any;
 
