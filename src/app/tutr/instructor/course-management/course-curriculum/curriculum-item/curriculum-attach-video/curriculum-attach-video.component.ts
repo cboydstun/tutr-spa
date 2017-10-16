@@ -7,6 +7,8 @@ import {
 } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { S3Service, InstructorCourseService } from '../../../../../services';
+
 @Component({
 	selector: 'uikit-curriculum-attach-video',
 	templateUrl: './curriculum-attach-video.component.html',
@@ -20,8 +22,11 @@ export class CurriculumAttachVideoComponent implements OnInit {
 	@Output() delete = new EventEmitter<void>();
 
 	public editVideoForm: FormGroup;
+	public file: any;
+	public isUploading: boolean = false;
 
-	constructor() { }
+	constructor(private s3Service: S3Service,
+				private instructorCourseService: InstructorCourseService) { }
 
 	ngOnInit() {
 		this.editVideoForm = new FormGroup({
@@ -36,14 +41,30 @@ export class CurriculumAttachVideoComponent implements OnInit {
 			return;
 		}
 
-		this.curriculum.content_type = 'video';
+		this.isUploading = true;
 
-		this.save.emit(this.curriculum);
+		this.s3Service.uploadVideoLecture(
+			this.curriculum.course_id, 
+			this.curriculum.id, 
+			this.file
+		).then(() => {
+			this.curriculum.content_type = 'video';
+
+			this.instructorCourseService.saveCurriculumItem(this.curriculum)
+				.then(() => {
+					this.isUploading = false;
+					this.save.emit(this.curriculum);
+				})
+				.catch(() => this.isUploading = false);
+
+		}).catch((err) => {
+			this.isUploading = false;
+		});
 	}
 
 	public onFileChange(event) {
-		const file = event.target.files[0];
-		this.editVideoForm.controls['file'].setValue(file ? file.name : '');
+		this.file = event.target.files[0];
+		this.editVideoForm.controls['file'].setValue(this.file ? this.file.name : '');
 	}
 
 	public deleteVideo() {

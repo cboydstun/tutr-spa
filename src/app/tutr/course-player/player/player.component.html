@@ -1,1 +1,21 @@
-{{lesson.content}}
+<ng-container [ngSwitch]="lesson.type">
+
+	<ng-container *ngSwitchCase="'lesson'">
+
+		<ng-container [ngSwitch]="lesson.content_type">
+			<ng-container *ngSwitchCase="'article'">
+				<tutr-play-article [lesson]="lesson"></tutr-play-article>
+			</ng-container>
+
+			<ng-container *ngSwitchCase="'video'">
+				<tutr-play-video [lesson]="lesson"></tutr-play-video>
+			</ng-container>
+		</ng-container>
+
+	</ng-container>
+
+	<ng-container *ngSwitchCase="'quiz'">
+		<tutr-play-quiz [lesson]="lesson"></tutr-play-quiz>
+	</ng-container>
+
+</ng-container>

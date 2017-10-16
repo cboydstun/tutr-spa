@@ -6,7 +6,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { 
 	Course, 
-	CourseGoals 
+	CourseGoals,
+	CurriculumItem
 } from '../models';
 
 import { environment } from "../../../environments/environment";
@@ -42,7 +43,7 @@ export class InstructorCourseService {
 
 	getCurriculums(id: string): Promise<any> {
 		const params = new HttpParams().set('id', id);
-		return this.httpClient.get<CourseGoals>('/DescribeInstructorDashboardCourseCurriculum', {params}).toPromise();
+		return this.httpClient.get<CurriculumItem[]>('/DescribeInstructorDashboardCourseCurriculum', {params}).toPromise().then(list => list.map(item => new CurriculumItem(item)));
 	}
 
 	addCurriculumItem(item: any): Promise<any> {

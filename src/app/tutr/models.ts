@@ -4,6 +4,7 @@ import { Webinar } from './_models/webinar';
 import { Homepage } from './_models/homepage';
 import { CourseGoals } from './_models/course-goals';
 import { Profile } from './_models/profile';
+import { CurriculumItem } from './_models/curriculum-item';
 
 export {
 	Course,
@@ -11,5 +12,6 @@ export {
 	Webinar,
 	Homepage,
 	CourseGoals,
-	Profile
+	Profile,
+	CurriculumItem
 }

@@ -70,6 +70,16 @@ export const environment = {
 	userContentBucket: 'smartjob-usercontent-hy2x4kvvzzvx',
 
 	/**
+	 * VideoPipelineInput S3 Bucket name.
+	 */
+	videoPipelineInputBucket: 'smartjob-videopipelineinput-1od6me6fe9o38',
+
+	/**
+	 * VideoPipelineOutput S3 Bucket name.
+	 */
+ 	videoPipelineOutputBucket: 'smartjob-videopipelineoutput-rm8ftehw5tu',
+
+	/**
 	 * Set to true when CloudSearch is created.
 	 */
 	searchEnabled: false

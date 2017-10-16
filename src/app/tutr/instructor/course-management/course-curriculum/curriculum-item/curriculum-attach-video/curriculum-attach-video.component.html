@@ -14,7 +14,8 @@
 		<button 
 			type="submit" 
 			class="btn btn-primary btn-sm"
-			[disabled]="!editVideoForm.valid">
+			[disabled]="!editVideoForm.valid || isUploading">
+				<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isUploading"></i>
 				{{ 'Common_Save' | translate }}
 		</button>
 

@@ -1,5 +1,7 @@
 import { environment } from "../../../environments/environment";
 
+import { CurriculumItem } from './curriculum-item';
+
 export class Course {
 	id: string;
 	title: string;
@@ -24,7 +26,7 @@ export class Course {
 		this.instructor_id = data.instructor_id;
 		this.category_name = data.category_name;
 		this.category_id = data.category_id;
-		this.curriculum = data.curriculum;
+		this.curriculum = (data.curriculum || []).map(item => new CurriculumItem(item));
 		this.goals = data.goals;
 		this.status = data.status;
 	}

@@ -23,7 +23,6 @@ export class PlayerComponent implements OnInit {
 
 		this.activatedRoute.params.subscribe(data => {
 			const curriculum_id = data.lecture;
-
 			this.lesson = this.course.curriculum.find(c => c.id === curriculum_id);
 		});
 	}

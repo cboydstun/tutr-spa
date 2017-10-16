@@ -16,7 +16,7 @@ export class S3Service {
 		AWS.config.region = environment.region;
 	}
 
-	private getS3(): any {
+	private getS3(bucket: string = environment.userContentBucket): any {
 		AWS.config.update({
 			region: environment.region,
 		});
@@ -25,7 +25,7 @@ export class S3Service {
 			region: environment.region,
 			apiVersion: '2006-03-01',
 			params: {
-				Bucket: environment.userContentBucket
+				Bucket: bucket
 			}
 		};
 
@@ -36,6 +36,22 @@ export class S3Service {
 		var s3 = new S3(clientParams);
 
 		return s3;
+	}
+
+	public uploadVideoLecture(course_id, curriculum_id, file): Promise<{Bucket: string, Key: string, Location: string}> {
+		return this.cognitoService.getIdToken().then((token) => {
+			return this.awsCredentialsService.init(token).then(() => {
+				return this.getS3(environment.videoPipelineInputBucket).upload({
+					Key: `${course_id}/${curriculum_id}.${file.name.split('.').pop()}`,
+					ContentType: file.type,
+					Body: file,
+					Metadata: {
+						course_id,
+						curriculum_id
+					}
+				}).promise();
+			});
+		});
 	}
 
 	public uploadProfilePicture(profile_id, file): Promise<{Bucket: string, Key: string, Location: string}> {
