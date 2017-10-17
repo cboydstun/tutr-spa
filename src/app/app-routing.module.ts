@@ -65,6 +65,16 @@ const routes: Routes = [
 		]
 	},
 	{
+		path: 'join-webinar',
+		component: NakedLayoutComponent,
+		children: [
+			{
+				path: '',
+				loadChildren: './tutr/join-webinar/join-webinar.module#JoinWebinarModule'
+			}
+		]
+	},
+	{
 		path: 'debug',
 		loadChildren: './tutr/debug/debug.module#DebugModule'
 	}
