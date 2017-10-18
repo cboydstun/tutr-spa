@@ -13,7 +13,10 @@ import {
 } from './components';
 
 import { CursorAtRestDirective } from './directives';
-import { IceService } from './services';
+import { 
+	IceService, 
+	WebrtcSignalingService 
+} from './services';
 
 @NgModule({
 	imports: [
@@ -23,7 +26,8 @@ import { IceService } from './services';
 		TranslateModule
 	],
 	providers: [
-		IceService
+		IceService,
+		WebrtcSignalingService
 	],
 	declarations: [WebinarRoomComponent, CursorAtRestDirective, WebinarRoomControlsComponent]
 })
