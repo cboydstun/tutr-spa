@@ -27,7 +27,7 @@
 	background-color: black;
 	bottom: 0;
 	color: white;
-	display: none;
+	display: block;
 	font-size: .9em;
 	font-weight: 300;
 	line-height: 2em;
@@ -37,10 +37,6 @@
 	position: absolute;
 	transition: opacity 1s;
 	width: 100%;
-}
-
-.webinar-room__footer.active {
-	display: block;
 }
 
 .webinar-room video {

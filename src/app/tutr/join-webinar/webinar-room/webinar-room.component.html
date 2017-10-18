@@ -1,9 +1,9 @@
 <div class="webinar-room">
-	<tutr-webinar-room-controls></tutr-webinar-room-controls>
+	<tutr-webinar-room-controls (infoChanged)="infoChanged($event)"></tutr-webinar-room-controls>
 
 	<video #bigVideo autoplay="" muted=""></video>
 
-	<div class="webinar-room__footer" tutrCursorAtRest *ngIf="false">
+	<div class="webinar-room__footer" *ngIf="isInfoOpen">
 		<p class="lead mb-0 pb-0">{{ webinar.title }}</p>
 		<p>{{ webinar.subtitle }}</p>
 	</div>

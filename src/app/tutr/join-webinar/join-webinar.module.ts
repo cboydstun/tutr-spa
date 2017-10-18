@@ -13,6 +13,7 @@ import {
 } from './components';
 
 import { CursorAtRestDirective } from './directives';
+import { IceService } from './services';
 
 @NgModule({
 	imports: [
@@ -20,6 +21,9 @@ import { CursorAtRestDirective } from './directives';
 		JoinWebinarRoutingModule,
 		UikitModule,
 		TranslateModule
+	],
+	providers: [
+		IceService
 	],
 	declarations: [WebinarRoomComponent, CursorAtRestDirective, WebinarRoomControlsComponent]
 })

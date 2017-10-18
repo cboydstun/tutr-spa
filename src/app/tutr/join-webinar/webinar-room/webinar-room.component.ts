@@ -3,6 +3,8 @@ declare var RTCPeerConnection: any;
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { IceService } from '../services';
+
 @Component({
 	selector: 'app-webinar-room',
 	templateUrl: './webinar-room.component.html',
@@ -13,8 +15,10 @@ export class WebinarRoomComponent implements OnInit, OnDestroy {
 
 	public webinar: any;
 	public isSidebarOpen: boolean = true;
+	public isInfoOpen: boolean = false;
 
-	constructor(private activatedRoute: ActivatedRoute) { }
+	constructor(private activatedRoute: ActivatedRoute,
+				private iceService: IceService) { }
 
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
@@ -25,45 +29,14 @@ export class WebinarRoomComponent implements OnInit, OnDestroy {
 			this.localVideo.nativeElement.srcObject = stream;
 
 			let server = {
-				iceServers: [
-					{url:'stun:stun01.sipphone.com'},
-					{url:'stun:stun.ekiga.net'},
-					{url:'stun:stun.fwdnet.net'},
-					{url:'stun:stun.ideasip.com'},
-					{url:'stun:stun.iptel.org'},
-					{url:'stun:stun.rixtelecom.se'},
-					{url:'stun:stun.schlund.de'},
-					{url:'stun:stun.l.google.com:19302'},
-					{url:'stun:stun1.l.google.com:19302'},
-					{url:'stun:stun2.l.google.com:19302'},
-					{url:'stun:stun3.l.google.com:19302'},
-					{url:'stun:stun4.l.google.com:19302'},
-					{url:'stun:stunserver.org'},
-					{url:'stun:stun.softjoys.com'},
-					{url:'stun:stun.voiparound.com'},
-					{url:'stun:stun.voipbuster.com'},
-					{url:'stun:stun.voipstunt.com'},
-					{url:'stun:stun.voxgratia.org'},
-					{url:'stun:stun.xten.com'}
-				]
+				iceServers: this.iceService.iceServers
 			};
 
-			let options = {
-				optional: [
-					{DtlsSrtpKeyAgreement: true},
-					{RtpDataChannels: true}
-				],
-				mandatory: {
-					OfferToReceiveAudio: true,
-					OfferToReceiveVideo: true
-				}
-			};
-
-			var pc = new RTCPeerConnection(server, options);
+			var pc = new RTCPeerConnection(server, this.iceService.rtcOptions);
 
 			pc.addStream(stream);
 
-			pc.createOffer(options).then(offer => {
+			pc.createOffer().then(offer => {
 				pc.setLocalDescription(offer);
 				console.log(offer.sdp);
 			});
@@ -76,6 +49,10 @@ export class WebinarRoomComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 
+	}
+
+	public infoChanged(status) {
+		this.isInfoOpen = status;
 	}
 
 }
