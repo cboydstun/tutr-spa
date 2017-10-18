@@ -1,35 +1,10 @@
-<div class="player">
-	<a 
-		[attr.aria-expanded]="isSidebarOpen"
-		(click)="isSidebarOpen = !isSidebarOpen"
-		href="javascript:void(0)" 
-		class="player__btn-hide" >
-			<i 
-				class="fa"
-				[class.fa-arrow-circle-o-left]="isSidebarOpen"
-				[class.fa-arrow-circle-o-right]="!isSidebarOpen"></i>
-	</a>
-	<div class="player__aside collapse show">
-		<div class="player__aside-holder">
-			<h6 class="mb-3">
-				Long webinar title goes right here, yes-yes, right here
-			</h6>
+<div class="webinar-room">
+	<tutr-webinar-room-controls></tutr-webinar-room-controls>
 
-			<ngb-tabset>
-				<ngb-tab title="Webinar">
-					<ng-template ngbTabContent>
-					</ng-template>
-				</ngb-tab>
-				
-				<ngb-tab title="Chat">
-					<ng-template ngbTabContent>
-					</ng-template>
-				</ngb-tab>
-			</ngb-tabset>
+	<video #bigVideo autoplay="" muted=""></video>
 
-		</div>
-	</div>
-	<div class="player__content">
-		<router-outlet></router-outlet>
+	<div class="webinar-room__footer" tutrCursorAtRest *ngIf="false">
+		<p class="lead mb-0 pb-0">{{ webinar.title }}</p>
+		<p>{{ webinar.subtitle }}</p>
 	</div>
 </div>

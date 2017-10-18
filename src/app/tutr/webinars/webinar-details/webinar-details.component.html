@@ -27,6 +27,10 @@
 					<button class="btn btn-secondary btn-block">
 						{{ 'webinarDetailsReserveASeat' | translate }}
 					</button>
+
+					<a [routerLink]="['/join-webinar', webinar.instructor_id, webinar.id]" class="btn btn-outline-primary btn-block">
+						{{ 'webinarDetailsGotoWebinar' | translate }}
+					</a>
 				</div>
 			</div>
 		</div>

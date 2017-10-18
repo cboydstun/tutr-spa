@@ -1,0 +1,13 @@
+<ul class="webinar-room__icons" tutrCursorAtRest>
+	<li class="icon" (click)="toggleAudioMute()" [class.text-danger]="isAudioMuted">
+		<i 
+			class="fa" 
+			[class.fa-microphone]="!isAudioMuted" 
+			[class.fa-microphone-slash]="isAudioMuted">
+		</i>
+	</li>
+
+	<li class="icon" (click)="toggleVideoMute()" [class.text-danger]="isVideoMuted">
+		<i class="fa fa-video-camera"></i>
+	</li>
+</ul>

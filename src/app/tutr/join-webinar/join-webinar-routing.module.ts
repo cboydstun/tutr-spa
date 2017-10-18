@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import  { WebinarResolve } from '../resolvers';
+
 import { WebinarRoomComponent } from './components';
 
 const routes: Routes = [
 	{
-		path: ':id',
-		component: WebinarRoomComponent
+		path: ':instructor_id/:id',
+		component: WebinarRoomComponent,
+		resolve: {
+			webinar: WebinarResolve
+		}
 	}
 ];
 
