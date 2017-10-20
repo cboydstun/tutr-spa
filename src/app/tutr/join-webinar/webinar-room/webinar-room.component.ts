@@ -1,11 +1,17 @@
-declare var RTCPeerConnection: any;
+import { Subscription } from 'rxjs';
 
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Webinar, Profile } from '../../models';
+import { ConnectionStatus } from '../models';
 
-import { IceService, WebrtcSignalingService } from '../services';
+import { 
+	UserMediaService,
+	ParticipantFlowService,
+	InstructorFlowService,
+	WebinarFlowService
+} from '../services';
 
 @Component({
 	selector: 'app-webinar-room',
@@ -13,7 +19,7 @@ import { IceService, WebrtcSignalingService } from '../services';
 	styleUrls: ['./webinar-room.component.css']
 })
 export class WebinarRoomComponent implements OnInit, OnDestroy {
-	@ViewChild('bigVideo') localVideo;
+	@ViewChild('bigVideo') bigVideo;
 
 	public webinar: Webinar;
 	public profile: Profile;
@@ -21,9 +27,16 @@ export class WebinarRoomComponent implements OnInit, OnDestroy {
 	public isSidebarOpen: boolean = true;
 	public isInfoOpen: boolean = false;
 
+	public cs: ConnectionStatus = new ConnectionStatus();
+
+	public webinarFlow: WebinarFlowService;
+
+	private statusSubscription: Subscription;
+
 	constructor(private activatedRoute: ActivatedRoute,
-				private iceService: IceService,
-				private webrtcSignalingService: WebrtcSignalingService) { }
+				private userMediaService: UserMediaService,
+				private instructorFlowService: InstructorFlowService,
+				private participantFlowService: ParticipantFlowService) { }
 
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
@@ -31,31 +44,31 @@ export class WebinarRoomComponent implements OnInit, OnDestroy {
 			this.profile = data.profile;
 		});
 
-		navigator.mediaDevices.getUserMedia({audio:true, video:true}).then(stream => {
-			this.localVideo.nativeElement.srcObject = stream;
+		this.userMediaService.ask()
+			.then((stream) => this.bigVideo.nativeElement.srcObject = stream);
 
-			let server = {
-				iceServers: this.iceService.iceServers
-			};
+		if (this.profile.id == this.webinar.instructor_id) {
+			this.webinarFlow = this.instructorFlowService;
+		} else {
+			this.webinarFlow = this.participantFlowService;
+		}
 
-			var pc = new RTCPeerConnection(server, this.iceService.rtcOptions);
+		this.webinarFlow.setSignalingData(this.webinar.id, this.profile.id);
 
-			pc.addStream(stream);
-
-			pc.createOffer().then(offer => {
-				pc.setLocalDescription(offer);
-				console.log(offer.sdp);
-			});
-
-			pc.onicecandidate = (event) => {
-				console.log(event);
-			}
+		this.statusSubscription = this.webinarFlow.status.subscribe(status => {
+			console.log('status', status);
+			this.cs = status;
 		});
 
-		this.join();
+		this.webinarFlow.instructorJoined.subscribe(stream => {
+			console.log('instructorJoined');
+			this.bigVideo.nativeElement.srcObject = stream;
+		});
 	}
 
 	ngOnDestroy() {
+		this.statusSubscription.unsubscribe();
+		this.webinarFlow.dispose();
 	}
 
 	public infoChanged(status) {
@@ -63,11 +76,11 @@ export class WebinarRoomComponent implements OnInit, OnDestroy {
 	}
 
 	public join() {
-		this.webrtcSignalingService.join(this.webinar, this.profile);
+		this.webinarFlow.join();
 	}
 
-	public start() {
-		this.webrtcSignalingService.start(this.webinar, this.profile);
+	public leave() {
+		this.webinarFlow.leave();
 	}
 
 }

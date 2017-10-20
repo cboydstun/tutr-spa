@@ -14,8 +14,11 @@ import {
 
 import { CursorAtRestDirective } from './directives';
 import { 
-	IceService, 
-	WebrtcSignalingService 
+	WebrtcSignalingService,
+	UserMediaService,
+	PeerConnectionService,
+	ParticipantFlowService,
+	InstructorFlowService
 } from './services';
 
 @NgModule({
@@ -26,9 +29,16 @@ import {
 		TranslateModule
 	],
 	providers: [
-		IceService,
-		WebrtcSignalingService
+		WebrtcSignalingService,
+		UserMediaService,
+		PeerConnectionService,
+		ParticipantFlowService,
+		InstructorFlowService
 	],
-	declarations: [WebinarRoomComponent, CursorAtRestDirective, WebinarRoomControlsComponent]
+	declarations: [
+		WebinarRoomComponent, 
+		CursorAtRestDirective, 
+		WebinarRoomControlsComponent
+	]
 })
 export class JoinWebinarModule { }

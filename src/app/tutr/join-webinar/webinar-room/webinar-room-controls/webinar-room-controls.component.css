@@ -3,7 +3,7 @@
 	left: 6vw;
 	position: absolute;
 	list-style-type: none;
-	z-index: 9999;
+	z-index: 10;
 }
 
 .webinar-room__icons.active  > .icon {

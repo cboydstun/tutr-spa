@@ -21,7 +21,10 @@ export class WebrtcSignalingService {
 		});
 
 		let observable = Observable.create((obs: Observer<MessageEvent>) => {
-			this.connection.onmessage = obs.next.bind(obs);
+			this.connection.onmessage = ({data}) => {
+				obs.next.call(obs, JSON.parse(data));
+			};
+
 			this.connection.onerror   = obs.error.bind(obs);
 			this.connection.onclose   = obs.complete.bind(obs);
 
@@ -33,22 +36,79 @@ export class WebrtcSignalingService {
 		this.messages = Subject.create(observer, observable);
 	}
 
-	public join(webinar: Webinar, user: Profile) {
-		this.connect().next({
-			room: webinar.id,
-			id: user.id,
-			ns: 'webinar',
-			action: 'join'
+	private send(data: Object) {
+		this.connection.send(JSON.stringify(data));
+	}
+
+	public join(data: {room: string, id: string}) {
+		return this.whenWebSocketOpen.then(() => {
+			this.send({
+				room: data.room,
+				id: data.id,
+				ns: 'webinar',
+				action: 'join'
+			});
 		});
 	}
 
-	public start(webinar: Webinar, user: Profile) {
-		this.connect().next({
-			room: webinar.id,
-			id: user.id,
-			ns: 'webinar',
-			action: 'start'
+	public start(data: {room: string, id: string}) {
+		return this.whenWebSocketOpen.then(() => {
+			this.send({
+				room: data.room,
+				id: data.id,
+				ns: 'webinar',
+				action: 'start'
+			});
 		});
+	}
+
+	public leave(data: {room: string, id: string}) {
+		return this.whenWebSocketOpen.then(() => {
+			this.send({
+				room: data.room,
+				id: data.id,
+				ns: 'webinar',
+				action: 'leave'
+			});
+		});	
+	}
+
+	public sendCandidate(data: {room: string, id: string, to?: string, candidate: string}) {
+		return this.whenWebSocketOpen.then(() => {
+			this.send({
+				room: data.room,
+				id: data.id,
+				to: data.to,
+				ns: 'webinar',
+				candidate: data.candidate,
+				action: 'exchangeCandidate'
+			});
+		});	
+	}
+
+	public offer(data: {room: string, id: string, offer: string}) {
+		return this.whenWebSocketOpen.then(() => {
+			this.send({
+				room: data.room,
+				id: data.id,
+				ns: 'webinar',
+				offer: data.offer,
+				action: 'offer'
+			});
+		});	
+	}
+
+	public answer(data: {room: string, id: string, to: string, answer: string}) {
+		return this.whenWebSocketOpen.then(() => {
+			this.send({
+				room: data.room,
+				id: data.id,
+				to: data.to,
+				ns: 'webinar',
+				answer: data.answer,
+				action: 'answer'
+			});
+		});	
 	}
 
 }
