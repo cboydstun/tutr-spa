@@ -43,8 +43,6 @@ export class PeerConnectionService {
 		optional: [
 		],
 		mandatory: {
-			OfferToReceiveAudio: 1,
-			OfferToReceiveVideo: 1
 		}
 	}
 

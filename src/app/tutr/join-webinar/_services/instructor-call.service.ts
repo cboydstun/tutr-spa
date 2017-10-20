@@ -23,57 +23,83 @@ export class InstructorCallService extends BaseCallService {
 		super(webrtcSignalingService);
 	}
 
+	sendOfferToParticipant(id: string) {
+		const data = this.signalingData;
+
+		const participant = {
+			conn: this.peerConnectionService.createRTCPeerConnection(),
+			id: id
+		};
+
+		participant.conn.addStream(this.localStream);
+
+		participant.conn.createOffer({OfferToReceiveAudio: true, OfferToReceiveVideo: true})
+			.then((offer) => {
+				participant.conn.setLocalDescription(offer);
+
+				this.webrtcSignalingService.offer({
+					...data,
+					offer,
+					to: id
+				});
+			});
+
+		participant.conn.onaddstream = (e) => {
+			this.ngZone.run(() => {
+				this.participantJoined.next(e.stream);
+			});
+		};
+
+		participant.conn.onicecandidate = (event) => {
+			if (event.candidate) {
+				this.webrtcSignalingService.sendCandidate({
+					...data,
+					candidate: event.candidate,
+					to: id
+				});
+			}
+		};
+
+		this.participants.push(participant);
+	}
+
 	public handle(message: any) {
-		let data = this.signalingData;
+		let existingparticipant;
+		let existingparticipantIndex;
 
 		switch(message.action) {
-			case 'offer':
-				const participant = {
-					conn: this.peerConnectionService.createRTCPeerConnection(),
-					id: message.from
-				};
+			case 'participantsJoined':
+				message.participants.map(id => this.sendOfferToParticipant(id));
+				break;
+			case 'participantLeft':
+				existingparticipantIndex = this.participants.findIndex(p => p.id == message.id);
 
-				participant.conn.addStream(this.userMediaService.stream);
+				existingparticipant = this.participants[existingparticipantIndex];
+				existingparticipant.conn.close();
+				existingparticipant.conn = null;
 
-				participant.conn.setRemoteDescription(new RTCSessionDescription(message.offer));
+				this.participants.splice(existingparticipantIndex, 1);
 
-				participant.conn.onaddstream = (e) => {
-					this.ngZone.run(() => {
-						this.participantJoined.next(e.stream);
-					});
-				};
-
-				participant.conn.onicecandidate = (event) => {
-					if (event.candidate) {
-						this.webrtcSignalingService.sendCandidate({
-							...data,
-							candidate: event.candidate,
-							to: message.from
-						});
-					}
-				}
-
-				participant.conn.createAnswer((answer) => {
-					console.log('answer', answer.sdp);
-					participant.conn.setLocalDescription(answer);
-
-					this.webrtcSignalingService.answer({
-							...data,
-							answer,
-							to: message.from
-						})
-				}, (err) => {
-					console.log(err);
-				});
-
-				this.participants.push(participant);
-
+				break;
+			case 'answer':
+				existingparticipant = this.participants.find(p => p.id === message.from);
+				existingparticipant.conn.setRemoteDescription(new RTCSessionDescription(message.answer));
 				break;
 			case 'receiveCandidate':
-				const existingparticipant = this.participants.find(p => p.id === message.from);
+				existingparticipant = this.participants.find(p => p.id === message.from);
 				existingparticipant.conn.addIceCandidate(new RTCIceCandidate(message.candidate));
 				break;
-		};	
+		};
+	}
+
+	public disconnect() {
+		this.participants.forEach(p => {
+			p.conn.close();
+		});
+
+		this.localStream.getTracks().forEach(track => track.stop());
+
+		this.participants = [];
 	}
 
 }

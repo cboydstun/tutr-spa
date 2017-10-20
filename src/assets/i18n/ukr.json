@@ -114,6 +114,17 @@
 
 	"webinarDetailsReserveASeat": "Забронювати місце",
 
+	"webinarJoin": "Приєднатися",
+	"webinarJoining": "В процесі",
+
+	"webinarAsInstructorJoinHelpText": "Натисніть кнопку Приєднатись, щоб розпочати вебінар",
+	"webinarAsInstructorJoiningHelpText": "Підключення до вебінару ...",
+
+	"webinarAsParticipantWaitingForInstructor": "Очікування інструктора",
+	"webinarAsParticipantJoinHelpText": "Натисніть кнопку Приєднатися, щоб приєднатися до вебінару",
+	"webinarAsParticipantJoiningHelpText": "Підключення до вебінару ...",
+	"webinarAsParticipantWaitingForInstructorHelpText": "Як тільки інструктор почне вебінар, ви будете приєднанні автоматично",
+
 	"courseCurriculumButtonAddCurriculumLesson": "Додати урок",
 	"courseCurriculumButtonAddCurriculumQuiz": "Додати тест",
 	"courseCurriculumEmptyCurriculum": "Жодних уроків не створено",

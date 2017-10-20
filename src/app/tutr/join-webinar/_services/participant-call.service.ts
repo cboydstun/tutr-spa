@@ -20,66 +20,61 @@ export class ParticipantCallService extends BaseCallService {
 				protected ngZone: NgZone,
 				webrtcSignalingService: WebrtcSignalingService,) { 
 		super(webrtcSignalingService);
-		this.localConnection = this.peerConnectionService.createRTCPeerConnection();
 	}
 
 	handle(message: any) {
 		let data = this.signalingData;
 
 		switch(message.action) {
-			case 'answer':
-				this.localConnection.setRemoteDescription(new RTCSessionDescription(message.answer));
-				break;
 			case 'receiveCandidate':
 				this.localConnection.addIceCandidate(new RTCIceCandidate(message.candidate));
 				break;
 			case 'waitingForInstructor':
+				this._status.isJoining = true;
+				this._status.isJoined = false;
 				this._status.waitingForInstructor = message.status;
 				this.status.next(this._status);
+				this.instructorJoined.next(null);
+				break;
+			case 'offer':
+				this.localConnection = this.peerConnectionService.createRTCPeerConnection();
 
-				if (!this._status.waitingForInstructor) {
-					this.localConnection.createOffer()
-						.then((offer) => {
-							console.log('offer', offer.sdp);
-							this.localConnection.setLocalDescription(offer);
+				this.localConnection.setRemoteDescription(new RTCSessionDescription(message.offer));
 
-							this.webrtcSignalingService.offer({
-								...data,
-								offer
-							});
-						}).catch((err) => {
-							console.log(err);
+				this.localConnection.onaddstream = (e) => {
+					this.ngZone.run(() => {
+						this._status.isJoining = false;
+						this._status.isJoined = true;
+						this.status.next(this._status);
+						this.instructorJoined.next(e.stream);
+					});
+				};
+
+				this.localConnection.onicecandidate = (event) => {
+					if (event.candidate) {
+						this.webrtcSignalingService.sendCandidate({
+							...data,
+							candidate: event.candidate
 						});
+					}
+				};
 
-					this.localConnection.onaddstream = (e) => {
-						this.ngZone.run(() => {
-							this._status.isJoining = false;
-							this._status.isJoined = true;
+				this.localConnection.createAnswer().then((answer) => {
+					this.localConnection.setLocalDescription(answer);
 
-							this.status.next(this._status);
-
-							this.instructorJoined.next(e.stream);
-						});
-					};
-
-					this.localConnection.oniceconnectionstatechange = (e) => {
-						console.log('iceConnectionState', this.localConnection.iceConnectionState);
-					};
-
-					this.localConnection.onicecandidate = (event) => {
-						if (event.candidate) {
-							this.webrtcSignalingService.sendCandidate({
-								...data,
-								candidate: event.candidate
-							});
-						}
-					};
-				}
+					this.webrtcSignalingService.answer({
+						...data,
+						answer
+					});
+				});
 
 				break;
 		};	
 	}
 
-
+	public disconnect() {
+		this.localConnection.close();
+		this.localConnection= null;
+	}
 
 }

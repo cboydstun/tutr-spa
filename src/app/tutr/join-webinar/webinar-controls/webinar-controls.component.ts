@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'tutr-webinar-controls',
@@ -6,13 +6,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 	styleUrls: ['./webinar-controls.component.css']
 })
 export class WebinarControlsComponent implements OnInit {
-	public isVideoMuted: boolean = false;
-	public isAudioMuted: boolean = false;
-	public isInfoOn: boolean = false;
+	@Input() showAudioMute: boolean = true;
+	@Input() showVideoMute: boolean = true;
 
 	@Output() infoChanged = new EventEmitter<boolean>();
 	@Output() videoMutedChanged = new EventEmitter<boolean>();
 	@Output() audioMutedChanged = new EventEmitter<boolean>();
+	@Output() onStop = new EventEmitter<void>();
+
+	public isVideoMuted: boolean = false;
+	public isAudioMuted: boolean = false;
+	public isInfoOn: boolean = false;
 
 	constructor() { }
 
@@ -32,6 +36,10 @@ export class WebinarControlsComponent implements OnInit {
 	public toggleInfo() {
 		this.isInfoOn = !this.isInfoOn;
 		this.infoChanged.emit(this.isInfoOn);
+	}
+
+	public stop() {
+		this.onStop.emit();
 	}
 
 }

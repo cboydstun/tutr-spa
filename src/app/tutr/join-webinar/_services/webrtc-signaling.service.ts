@@ -81,29 +81,29 @@ export class WebrtcSignalingService {
 				to: data.to,
 				ns: 'webinar',
 				candidate: data.candidate,
-				action: 'exchangeCandidate'
+				action: 'sendCandidate'
 			});
 		});	
 	}
 
-	public offer(data: {room: string, id: string, offer: string}) {
+	public offer(data: {room: string, id: string, to: string, offer: string}) {
 		return this.whenWebSocketOpen.then(() => {
 			this.send({
 				room: data.room,
 				id: data.id,
 				ns: 'webinar',
 				offer: data.offer,
-				action: 'offer'
+				action: 'offer',
+				to: data.to
 			});
 		});	
 	}
 
-	public answer(data: {room: string, id: string, to: string, answer: string}) {
+	public answer(data: {room: string, id: string, answer: string}) {
 		return this.whenWebSocketOpen.then(() => {
 			this.send({
 				room: data.room,
 				id: data.id,
-				to: data.to,
 				ns: 'webinar',
 				answer: data.answer,
 				action: 'answer'

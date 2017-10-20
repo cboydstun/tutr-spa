@@ -8,20 +8,29 @@ export abstract class BaseCallService {
 
 	public signalingData: any;
 
+	protected localStream: MediaStream;
+
 	protected _status: ConnectionStatus = new ConnectionStatus();
 
 	constructor(protected webrtcSignalingService: WebrtcSignalingService) { }
 
 	abstract handle(message: any);
 
+	abstract disconnect();
+
 	public join(): Promise<any> {
-		return this.webrtcSignalingService.join(this.signalingData).then(() => {
-			this._status.isJoining = true;
-			this.status.next(this._status);
-		});
+		this._status.isJoining = true;
+		this.status.next(this._status);
+
+		return this.webrtcSignalingService.join(this.signalingData);
 	}
 
-	public start(): Promise<any> {
+	public start(stream: MediaStream): Promise<any> {
+		this.localStream = stream;
+
+		this._status.isJoining = true;
+		this.status.next(this._status);
+
 		return this.webrtcSignalingService.start(this.signalingData).then(() => {
 			this._status.isJoining = false;
 			this._status.isJoined = true;
@@ -31,6 +40,7 @@ export abstract class BaseCallService {
 
 	public leave(): Promise<any> {
 		return this.webrtcSignalingService.leave(this.signalingData).then(() => {
+			this.disconnect();
 			this._status.reset();
 			this.status.next(this._status);
 		});

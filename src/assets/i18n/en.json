@@ -114,6 +114,17 @@
 
 	"webinarDetailsReserveASeat": "Reserve a seat",
 
+	"webinarJoin": "Join",
+	"webinarJoining": "Joining",
+
+	"webinarAsInstructorJoinHelpText": "Please click Join button to start the webinar",
+	"webinarAsInstructorJoiningHelpText": "Connecting to the webinar...",
+
+	"webinarAsParticipantWaitingForInstructor": "Waiting for instructor to join",
+	"webinarAsParticipantJoinHelpText": "Please click Join button to join the webinar",
+	"webinarAsParticipantJoiningHelpText": "Connecting to the webinar...",
+	"webinarAsParticipantWaitingForInstructorHelpText": "Onсe instructor will start the webinar you will be joined automatically",
+
 	"courseCurriculumButtonAddCurriculumLesson": "Add Lesson",
 	"courseCurriculumButtonAddCurriculumQuiz": "Add Quiz",
 	"courseCurriculumEmptyCurriculum": "No lessons created",

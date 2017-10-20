@@ -1,6 +1,7 @@
 <tutr-webinar-controls 
 	*ngIf="cs.isJoined"
-	(infoChanged)="infoChanged($event)">
+	(infoChanged)="infoChanged($event)"
+	(onStop)="leave()">
 </tutr-webinar-controls>
 
 <div class="join-block" *ngIf="!cs.isJoined" >

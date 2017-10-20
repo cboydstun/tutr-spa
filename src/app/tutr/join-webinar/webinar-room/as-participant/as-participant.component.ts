@@ -7,7 +7,8 @@ import { ConnectionStatus } from '../../models';
 
 import { 
 	ParticipantCallService,
-	WebrtcSignalingService
+	WebrtcSignalingService,
+	UserMediaService
 } from '../../services';
 
 @Component({
@@ -20,13 +21,16 @@ export class AsParticipantComponent implements OnInit {
 
 	@Input() joinInfo: {room: string, id: string};
 
+	public isInfoOpen: boolean = false;
+
 	public cs: ConnectionStatus = new ConnectionStatus();
 
 	private statusSubscription: Subscription;
 	private signalingSubscription: Subscription;
 	private instructorJoinedSubscription: Subscription;
 
-	constructor(private participantCallService: ParticipantCallService,
+	constructor(private userMediaService: UserMediaService,
+				private participantCallService: ParticipantCallService,
 				private webrtcSignalingService: WebrtcSignalingService) { }
 
 	ngOnInit() {

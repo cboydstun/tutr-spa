@@ -23,6 +23,8 @@ export class AsInstructorComponent implements OnInit {
 
 	public cs: ConnectionStatus = new ConnectionStatus();
 
+	public isInfoOpen: boolean = false;
+
 	private statusSubscription: Subscription;
 	private signalingSubscription: Subscription;
 
@@ -49,11 +51,14 @@ export class AsInstructorComponent implements OnInit {
 	}
 
 	public infoChanged(status) {
-		//this.isInfoOpen = status;
+		this.isInfoOpen = status;
 	}
 
 	public join() {
-		this.instructorCallService.start();
+		this.userMediaService.ask().then(stream => {
+			this.bigVideo.nativeElement.srcObject = stream;
+			this.instructorCallService.start(stream);
+		});
 	}
 
 	public leave() {
