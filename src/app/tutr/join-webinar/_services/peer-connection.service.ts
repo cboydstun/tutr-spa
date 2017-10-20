@@ -14,7 +14,7 @@ export class PeerConnectionService {
 			iceTransportPolicy: 'all'
 		};
 
-		return new RTCPeerConnection(null, this.rtcOptions);
+		return new RTCPeerConnection(server, this.rtcOptions);
 	}
 
 	public iceServers = [

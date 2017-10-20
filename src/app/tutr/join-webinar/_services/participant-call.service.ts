@@ -7,38 +7,19 @@ import { WebrtcSignalingService } from './webrtc-signaling.service';
 import { PeerConnectionService } from './peer-connection.service';
 
 import { ConnectionStatus } from '../_models/connection-status';
-import { WebinarFlowService } from './webinar-flow.service';
+import { BaseCallService } from './base-call.service';
 
 @Injectable()
-export class ParticipantFlowService implements WebinarFlowService {
-	public status = new ReplaySubject<ConnectionStatus>();
+export class ParticipantCallService extends BaseCallService {
 
-	public participantJoined = new Subject<any>();
 	public instructorJoined = new Subject<any>();
 
-	private room: string;
-	private id: string;
-	public get signalingData() {
-		return Object.assign({
-			room: this.room,
-			id: this.id,
-		});
-	}
-	public setSignalingData(room, id) {
-		this.room = room;
-		this.id = id;
-	}
+	protected localConnection;
 
-	protected _status: ConnectionStatus = new ConnectionStatus();
-
-	protected subscription: Subscription;
-
-	private localConnection;
-
-	constructor(private userMediaService: UserMediaService,
-				private peerConnectionService: PeerConnectionService,
-				private webrtcSignalingService: WebrtcSignalingService,
-				private ngZone: NgZone) { 
+	constructor(protected peerConnectionService: PeerConnectionService,
+				protected ngZone: NgZone,
+				webrtcSignalingService: WebrtcSignalingService,) { 
+		super(webrtcSignalingService);
 		this.localConnection = this.peerConnectionService.createRTCPeerConnection();
 	}
 
@@ -57,10 +38,7 @@ export class ParticipantFlowService implements WebinarFlowService {
 				this.status.next(this._status);
 
 				if (!this._status.waitingForInstructor) {
-
-					this.localConnection.addStream(this.userMediaService.stream);
-
-					this.localConnection.createOffer(this.peerConnectionService.rtcOptions.mandatory)
+					this.localConnection.createOffer()
 						.then((offer) => {
 							console.log('offer', offer.sdp);
 							this.localConnection.setLocalDescription(offer);
@@ -102,26 +80,6 @@ export class ParticipantFlowService implements WebinarFlowService {
 		};	
 	}
 
-	public dispose() {
-		this.subscription.unsubscribe();
-	}
 
-	public join(): Promise<any> {
-		this.subscription = this.webrtcSignalingService.messages.subscribe((message: any) => {
-			this.handle(message);
-		});
-
-		return this.webrtcSignalingService.join(this.signalingData).then(() => {
-			this._status.isJoining = true;
-			this.status.next(this._status);
-		});
-	}
-
-	public leave(): Promise<any> {
-		return this.webrtcSignalingService.leave(this.signalingData).then(() => {
-			this._status.reset();
-			this.status.next(this._status);
-		});
-	}
 
 }

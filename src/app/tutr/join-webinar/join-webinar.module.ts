@@ -9,7 +9,9 @@ import { JoinWebinarRoutingModule } from './join-webinar-routing.module';
 
 import { 
 	WebinarRoomComponent, 
-	WebinarRoomControlsComponent 
+	WebinarControlsComponent,
+	AsParticipantComponent,
+	AsInstructorComponent
 } from './components';
 
 import { CursorAtRestDirective } from './directives';
@@ -17,8 +19,8 @@ import {
 	WebrtcSignalingService,
 	UserMediaService,
 	PeerConnectionService,
-	ParticipantFlowService,
-	InstructorFlowService
+	ParticipantCallService,
+	InstructorCallService
 } from './services';
 
 @NgModule({
@@ -32,13 +34,13 @@ import {
 		WebrtcSignalingService,
 		UserMediaService,
 		PeerConnectionService,
-		ParticipantFlowService,
-		InstructorFlowService
+		ParticipantCallService,
+		InstructorCallService
 	],
 	declarations: [
 		WebinarRoomComponent, 
 		CursorAtRestDirective, 
-		WebinarRoomControlsComponent
+		WebinarControlsComponent, AsParticipantComponent, AsInstructorComponent
 	]
 })
 export class JoinWebinarModule { }

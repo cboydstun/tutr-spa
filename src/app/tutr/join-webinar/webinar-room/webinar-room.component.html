@@ -1,33 +1,5 @@
 <div class="webinar-room">
-	<tutr-webinar-room-controls 
-		*ngIf="cs.isJoined"
-		(infoChanged)="infoChanged($event)">
-	</tutr-webinar-room-controls>
+	<tutr-as-participant *ngIf="isInstructor" [joinInfo]="joinInfo"></tutr-as-participant>
 
-	<button 
-		class="btn btn-secondary btn-join" 
-		*ngIf="!cs.isJoined" 
-		(click)="join()"
-		[disabled]="cs.isJoining">
-			<i class="fa fa-spinner fa-spin fa-fw" *ngIf="cs.isJoining"></i>
-
-			<ng-container *ngIf="!cs.isJoining && !cs.waitingForInstructor">
-				{{ 'webinarJoin' | translate }}
-			</ng-container>
-
-			<ng-container *ngIf="cs.isJoining && !cs.waitingForInstructor">
-				{{ 'webinarJoining' | translate }}
-			</ng-container>
-
-			<ng-container *ngIf="cs.waitingForInstructor">
-				{{ 'webinarWaitingForInstructor' | translate }}
-			</ng-container>
-	</button>
-
-	<video #bigVideo autoplay="" muted=""></video>
-
-	<div class="webinar-room__footer" *ngIf="isInfoOpen">
-		<p class="lead mb-0 pb-0">{{ webinar.title }}</p>
-		<p>{{ webinar.subtitle }}</p>
-	</div>
+	<tutr-as-participant *ngIf="isInstructor" [joinInfo]="joinInfo"></tutr-as-participant>
 </div>

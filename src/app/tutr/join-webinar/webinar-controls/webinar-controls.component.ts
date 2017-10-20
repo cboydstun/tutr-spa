@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-	selector: 'tutr-webinar-room-controls',
-	templateUrl: './webinar-room-controls.component.html',
-	styleUrls: ['./webinar-room-controls.component.css']
+	selector: 'tutr-webinar-controls',
+	templateUrl: './webinar-controls.component.html',
+	styleUrls: ['./webinar-controls.component.css']
 })
-export class WebinarRoomControlsComponent implements OnInit {
+export class WebinarControlsComponent implements OnInit {
 	public isVideoMuted: boolean = false;
 	public isAudioMuted: boolean = false;
 	public isInfoOn: boolean = false;

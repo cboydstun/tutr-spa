@@ -7,41 +7,23 @@ import { WebrtcSignalingService } from './webrtc-signaling.service';
 import { PeerConnectionService } from './peer-connection.service';
 
 import { ConnectionStatus } from '../_models/connection-status';
-import { WebinarFlowService } from './webinar-flow.service';
+import { BaseCallService } from './base-call.service';
 
 @Injectable()
-export class InstructorFlowService implements WebinarFlowService {
-	public status = new ReplaySubject<ConnectionStatus>();
+export class InstructorCallService extends BaseCallService {
 
 	public participantJoined = new Subject<any>();
-	public instructorJoined = new Subject<any>();
 
-	private room: string;
-	private id: string;
-	public get signalingData() {
-		return Object.assign({
-			room: this.room,
-			id: this.id,
-		});
-	}
-	public setSignalingData(room, id) {
-		this.room = room;
-		this.id = id;
+	protected participants: any[] = [];
+
+	constructor(protected userMediaService: UserMediaService,
+				protected peerConnectionService: PeerConnectionService,
+				protected ngZone: NgZone,
+				webrtcSignalingService: WebrtcSignalingService,) { 
+		super(webrtcSignalingService);
 	}
 
-	protected _status: ConnectionStatus = new ConnectionStatus();
-
-	protected subscription: Subscription;
-
-	private participants: any[] = [];
-
-	constructor(private userMediaService: UserMediaService,
-				private peerConnectionService: PeerConnectionService,
-				private webrtcSignalingService: WebrtcSignalingService,
-				private ngZone: NgZone) { 
-	}
-
-	handle(message: any) {
+	public handle(message: any) {
 		let data = this.signalingData;
 
 		switch(message.action) {
@@ -92,29 +74,6 @@ export class InstructorFlowService implements WebinarFlowService {
 				existingparticipant.conn.addIceCandidate(new RTCIceCandidate(message.candidate));
 				break;
 		};	
-	}
-
-	public join(): Promise<any> {
-		this.subscription = this.webrtcSignalingService.messages.subscribe((message: any) => {
-			this.handle(message);
-		});
-
-		return this.webrtcSignalingService.start(this.signalingData).then(() => {
-			this._status.isJoining = false;
-			this._status.isJoined = true;
-			this.status.next(this._status);
-		});
-	}
-
-	public dispose() {
-		this.subscription.unsubscribe();
-	}
-
-	public leave(): Promise<any> {
-		return this.webrtcSignalingService.leave(this.signalingData).then(() => {
-			this._status.reset();
-			this.status.next(this._status);
-		});
 	}
 
 }

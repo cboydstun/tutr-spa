@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import  { WebinarResolve, UserProfileResolve } from '../resolvers';
+import { WebinarResolve, UserProfileResolve } from '../resolvers';
 import { OnlyLoggedInUsersGuard } from '../guards';
 
-import { WebinarRoomComponent } from './components';
+import { 
+	WebinarRoomComponent
+} from './components';
 
 const routes: Routes = [
 	{

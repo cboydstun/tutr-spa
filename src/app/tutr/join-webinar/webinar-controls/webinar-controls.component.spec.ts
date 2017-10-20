@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WebinarRoomControlsComponent } from './webinar-room-controls.component';
+import { WebinarControlsComponent } from './webinar-controls.component';
 
 describe('WebinarRoomControlsComponent', () => {
-  let component: WebinarRoomControlsComponent;
-  let fixture: ComponentFixture<WebinarRoomControlsComponent>;
+  let component: WebinarControlsComponent;
+  let fixture: ComponentFixture<WebinarControlsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WebinarRoomControlsComponent ]
+      declarations: [ WebinarControlsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WebinarRoomControlsComponent);
+    fixture = TestBed.createComponent(WebinarControlsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
