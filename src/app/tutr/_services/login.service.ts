@@ -19,11 +19,9 @@ export class LoginService {
 	public static NEW_PASSWORD_REQUIRED: string = 'NEW_PASSWORD_REQUIRED';
 	public static USER_NOT_FOUND: string = 'UserNotFoundException';
 
-	private isAuthenticatedSubject = new ReplaySubject<boolean>();
-	private authentionStatusSubject = new ReplaySubject<any>();
+	private isAuthenticatedSubject = new ReplaySubject<boolean>(1);
 
 	public isAuthenticated = this.isAuthenticatedSubject.asObservable();
-	public authentionStatus = this.authentionStatusSubject.asObservable();
 
 	private _idToken: string;
 
@@ -64,6 +62,7 @@ export class LoginService {
 	public logout() {
 		const user = this.cognitoService.getCurrentUser();
 		user && user.signOut();
+		this._idToken = null;
 		this.isAuthenticatedSubject.next(false);
 	}
 
@@ -107,7 +106,7 @@ export class LoginService {
 					const sts = new STS(clientParams);
 
 					sts.getCallerIdentity((err, data) => {
-						resolve(result);
+						this.getAuthentionStatus().then(() => resolve(result));
 					});
 
 				},

@@ -9,7 +9,8 @@ import {
 	ChangeTempPasswordWithUsernameComponent,
 	ConfirmEmailWithUsernameComponent,
 	ConfirmEmailWithEmailComponent,
-	LoginWithEmailComponent
+	LoginWithEmailComponent,
+	LogoutComponent
 } from './components';
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
 			{
 				path: 'confirm-registration',
 				component: ConfirmEmailWithEmailComponent
+			},
+			{
+				path: 'logout',
+				component: LogoutComponent
 			}
 		]
 	}

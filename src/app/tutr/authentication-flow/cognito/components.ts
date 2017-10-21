@@ -6,6 +6,7 @@ import { ConfirmEmailWithUsernameComponent } from './confirm-email-with-username
 import { ConfirmEmailWithEmailComponent } from './confirm-email-with-email/confirm-email-with-email.component';
 import { RegisterWithEmailComponent } from './register-with-email/register-with-email.component';
 import { LoginWithEmailComponent } from './login-with-email/login-with-email.component';
+import { LogoutComponent } from './logout/logout.component';
 
 export {
 	LoginWithUsernameComponent,
@@ -15,5 +16,6 @@ export {
 	ConfirmEmailWithUsernameComponent,
 	RegisterWithEmailComponent,
 	ConfirmEmailWithEmailComponent,
-	LoginWithEmailComponent
+	LoginWithEmailComponent,
+	LogoutComponent
 };

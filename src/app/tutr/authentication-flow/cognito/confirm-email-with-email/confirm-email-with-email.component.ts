@@ -41,7 +41,7 @@ export class ConfirmEmailWithEmailComponent implements OnInit {
 		this.showError = false;
 
 		this.changePasswordService.confirmCode(
-			this.form.value.username,
+			this.form.value.email,
 			this.form.value.code
 		).then(() => {
 			this.router.navigate(['/auth', 'login']);

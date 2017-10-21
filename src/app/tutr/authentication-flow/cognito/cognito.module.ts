@@ -19,7 +19,8 @@ import {
 	ConfirmEmailWithUsernameComponent,
 	RegisterWithEmailComponent,
 	ConfirmEmailWithEmailComponent,
-	LoginWithEmailComponent
+	LoginWithEmailComponent,
+	LogoutComponent
 } from './components';
 
 @NgModule({
@@ -39,7 +40,8 @@ import {
 		ConfirmEmailWithUsernameComponent,
 		RegisterWithEmailComponent,
 		ConfirmEmailWithEmailComponent,
-		LoginWithEmailComponent
+		LoginWithEmailComponent,
+		LogoutComponent
 	]
 })
 export class CognitoModule { }
