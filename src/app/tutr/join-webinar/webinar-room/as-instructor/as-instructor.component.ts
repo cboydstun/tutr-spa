@@ -25,8 +25,12 @@ export class AsInstructorComponent implements OnInit {
 
 	public isInfoOpen: boolean = false;
 
+	public participantsCount: number = 0;
+	public participants: any[] = [];
+
 	private statusSubscription: Subscription;
 	private signalingSubscription: Subscription;
+	private participantJoinedSubscription: Subscription;
 
 	constructor(private userMediaService: UserMediaService,
 				private instructorCallService: InstructorCallService,
@@ -40,6 +44,11 @@ export class AsInstructorComponent implements OnInit {
 			this.cs = status;
 		});
 
+		this.participantJoinedSubscription = this.instructorCallService.participantJoined.subscribe(participants => {
+			this.participants = participants;
+			this.participantsCount = participants.length;
+		});
+
 		this.signalingSubscription = this.webrtcSignalingService.messages.subscribe((message: any) => {
 			this.instructorCallService.handle(message);
 		});
@@ -48,6 +57,7 @@ export class AsInstructorComponent implements OnInit {
 	ngOnDestroy() {
 		this.statusSubscription.unsubscribe();
 		this.signalingSubscription.unsubscribe();
+		this.participantJoinedSubscription.unsubscribe();
 	}
 
 	public infoChanged(status) {

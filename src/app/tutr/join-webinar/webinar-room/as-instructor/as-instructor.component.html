@@ -29,6 +29,10 @@
 
 <video #bigVideo autoplay="" muted=""></video>
 
+<div class="webinar-room__participants-count">
+	{{ participantsCount }}
+</div>
+
 <div class="webinar-room__footer" *ngIf="isInfoOpen">
 	<p class="lead mb-0 pb-0">{{ webinar.title }}</p>
 	<p>{{ webinar.subtitle }}</p>

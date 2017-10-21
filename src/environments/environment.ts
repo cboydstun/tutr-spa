@@ -9,7 +9,7 @@ export const environment = {
 	/**
 	 * AWS API Gateway state root.
 	 */
-	apiRoot: 'https://roto4ggfed.execute-api.eu-west-1.amazonaws.com/dev',
+	apiRoot: 'https://1ocupwc74i.execute-api.eu-west-1.amazonaws.com/dev',
 
 	sts_endpoint: '',
 
@@ -18,11 +18,11 @@ export const environment = {
 	 */
 	region: 'eu-west-1',
 
-	identityPoolId: 'eu-west-1:37d9a150-2b32-4506-8da8-dc054c49231e',
+	identityPoolId: 'eu-west-1:5161e2e0-76ce-427f-a535-3b3c0681c6a2',
 
-	userPoolId: 'eu-west-1_MW81UklJr',
+	userPoolId: 'eu-west-1_BKDzXD9bx',
 
-	clientId: '1ekv5kb919hv3f05mlv1hcddce',
+	clientId: '1f7g3r7dtt4gq14a717rq3ps9h',
 
 	cognito_idp_endpoint: '',
 

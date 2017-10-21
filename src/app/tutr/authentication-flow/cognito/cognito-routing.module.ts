@@ -4,9 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import {
 	LoginWithUsernameComponent,
 	RegisterWithUsernameComponent,
+	RegisterWithEmailComponent,
 	LayoutComponent,
 	ChangeTempPasswordWithUsernameComponent,
-	ConfirmEmailWithUsernameComponent
+	ConfirmEmailWithUsernameComponent,
+	ConfirmEmailWithEmailComponent,
+	LoginWithEmailComponent
 } from './components';
 
 const routes: Routes = [
@@ -16,11 +19,11 @@ const routes: Routes = [
 		children: [
 			{
 				path: 'login',
-				component: LoginWithUsernameComponent
+				component: LoginWithEmailComponent
 			},
 			{
 				path: 'register',
-				component: RegisterWithUsernameComponent
+				component: RegisterWithEmailComponent
 			},
 			{
 				path: 'change-temp-password',
@@ -28,7 +31,7 @@ const routes: Routes = [
 			},
 			{
 				path: 'confirm-registration',
-				component: ConfirmEmailWithUsernameComponent
+				component: ConfirmEmailWithEmailComponent
 			}
 		]
 	}

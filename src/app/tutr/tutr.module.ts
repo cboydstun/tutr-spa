@@ -6,6 +6,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {
 	LoginService,
 	RegisterService,
+	RegisterWidthEmailService,
 	CognitoService,
 	ChangePasswordService,
 	UserProfileService,
@@ -60,7 +61,13 @@ import {
 	declarations: [],
 	providers: [
 		LoginService,
-		RegisterService,
+		RegisterWidthEmailService,
+		[
+			RegisterService, { 
+				provide: RegisterService, 
+				useExisting: RegisterWidthEmailService 
+			}
+		],
 		CognitoService,
 		ChangePasswordService,
 		UserProfileService,
@@ -98,14 +105,18 @@ import {
 		},
 		SubmitRightAwayCourseService,
 		SubmitRightAwayWebinarService,
-		[SubmitCourseService, { 
-			provide: SubmitCourseService, 
-			useExisting: SubmitRightAwayCourseService 
-		}],
-		[SubmitWebinarService, { 
-			provide: SubmitWebinarService, 
-			useExisting: SubmitRightAwayWebinarService 
-		}]
+		[
+			SubmitCourseService, { 
+				provide: SubmitCourseService, 
+				useExisting: SubmitRightAwayCourseService 
+			}
+		],
+		[
+			SubmitWebinarService, { 
+				provide: SubmitWebinarService, 
+				useExisting: SubmitRightAwayWebinarService 
+			}
+		],
 	]
 })
 export class TutrModule { }

@@ -19,6 +19,14 @@
 	background-size: auto 100%;
 }
 
+.webinar-room__participants-count {
+	position: absolute;
+	top: 77px;
+	right: 6vw;
+	color: white;
+	font-size: 44px;
+}
+
 .webinar-room__header {
 	opacity: .8;
 	background-color: black;

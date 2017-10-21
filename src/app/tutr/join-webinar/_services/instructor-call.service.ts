@@ -44,11 +44,10 @@ export class InstructorCallService extends BaseCallService {
 				});
 			});
 
-		participant.conn.onaddstream = (e) => {
-			this.ngZone.run(() => {
-				this.participantJoined.next(e.stream);
-			});
-		};
+		//participant.conn.onaddstream = (e) => {
+		//	this.ngZone.run(() => {
+		//	});
+		//};
 
 		participant.conn.onicecandidate = (event) => {
 			if (event.candidate) {
@@ -61,6 +60,8 @@ export class InstructorCallService extends BaseCallService {
 		};
 
 		this.participants.push(participant);
+
+		this.participantJoined.next(this.participants);
 	}
 
 	public handle(message: any) {
@@ -77,6 +78,7 @@ export class InstructorCallService extends BaseCallService {
 				existingparticipant = this.participants[existingparticipantIndex];
 				existingparticipant.conn.close();
 				existingparticipant.conn = null;
+				existingparticipant.stream = null;
 
 				this.participants.splice(existingparticipantIndex, 1);
 
@@ -95,6 +97,8 @@ export class InstructorCallService extends BaseCallService {
 	public disconnect() {
 		this.participants.forEach(p => {
 			p.conn.close();
+			p.stream = null;
+			p.conn = null;
 		});
 
 		this.localStream.getTracks().forEach(track => track.stop());

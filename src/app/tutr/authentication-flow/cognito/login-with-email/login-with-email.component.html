@@ -1,0 +1,56 @@
+<h4 class="text-center">
+	{{ 'authenticationFlowLogin' | translate }}
+</h4>
+
+<div class="card mt-3">
+	<div class="card-body">
+
+		<div class="alert alert-danger" role="alert" *ngIf="showError">
+			{{ 'authenticationFlowEmailInvalidLogin' | translate }}
+		</div>
+
+		<form [formGroup]="form" (ngSubmit)="onSubmit()">
+			<div class="form-group">
+				<label>
+					{{ 'authenticationFlowEmail' | translate }}
+				</label>
+				<input 
+					type="email" 
+					class="form-control" 
+					[placeholder]="'authenticationFlowEmail' | translate"
+					[formControlName]="'email'">
+			</div>
+			<div class="form-group">
+				<label>
+					{{ 'authenticationFlowPassword' | translate }}</label>
+				<input 
+					type="password" 
+					class="form-control" 
+					[placeholder]="'authenticationFlowPassword' | translate"
+					[formControlName]="'password'">
+			</div>
+			<div class="form-group">
+				<button
+					type="submit" 
+					class="btn btn-primary"
+					[disabled]="!form.valid || isLoading">
+						<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isLoading"></i>
+						{{ 'authenticationFlowButtonLogin' | translate }}
+				</button>
+			</div>
+		</form>
+
+	</div>
+</div>
+
+<div class="card mt-5">
+	<div class="card-body">
+		<h6 class="card-title">
+			{{ 'authenticationFlowDontHaveAccount' | translate }}
+		</h6>
+		<a routerLink="/auth/register" class="card-link">
+			{{ 'authenticationFlowCreateAccount' | translate }}
+		</a>
+	</div>
+</div>
+

@@ -16,7 +16,10 @@ import {
 	RegisterWithUsernameComponent ,
 	LayoutComponent,
 	ChangeTempPasswordWithUsernameComponent,
-	ConfirmEmailWithUsernameComponent
+	ConfirmEmailWithUsernameComponent,
+	RegisterWithEmailComponent,
+	ConfirmEmailWithEmailComponent,
+	LoginWithEmailComponent
 } from './components';
 
 @NgModule({
@@ -33,7 +36,10 @@ import {
 		RegisterWithUsernameComponent,
 		LayoutComponent,
 		ChangeTempPasswordWithUsernameComponent,
-		ConfirmEmailWithUsernameComponent
+		ConfirmEmailWithUsernameComponent,
+		RegisterWithEmailComponent,
+		ConfirmEmailWithEmailComponent,
+		LoginWithEmailComponent
 	]
 })
 export class CognitoModule { }

@@ -1,5 +1,6 @@
 import { LoginService } from './_services/login.service';
 import { RegisterService } from './_services/register.service';
+import { RegisterWidthEmailService } from './_services/register-with-email.service';
 import { CognitoService } from './_services/cognito.service';
 import { ChangePasswordService } from './_services/change-password.service';
 import { UserProfileService } from './_services/user-profile.service';
@@ -21,6 +22,7 @@ import { SubmitRightAwayWebinarService } from './_services/submit-right-away-web
 export {
 	LoginService,
 	RegisterService,
+	RegisterWidthEmailService,
 	CognitoService,
 	ChangePasswordService,
 	UserProfileService,
