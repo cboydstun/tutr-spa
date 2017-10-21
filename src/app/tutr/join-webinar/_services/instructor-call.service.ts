@@ -1,4 +1,4 @@
-import { Subscription, ReplaySubject, Subject } from 'rxjs';
+import { Subscription, Subject } from 'rxjs';
 
 import { Injectable, NgZone } from '@angular/core';
 

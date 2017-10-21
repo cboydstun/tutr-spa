@@ -4,7 +4,7 @@ import { ConnectionStatus } from '../_models/connection-status';
 import { WebrtcSignalingService } from './webrtc-signaling.service';
 
 export abstract class BaseCallService {
-	public status = new ReplaySubject<ConnectionStatus>();
+	public status = new ReplaySubject<ConnectionStatus>(1);
 
 	public signalingData: any;
 

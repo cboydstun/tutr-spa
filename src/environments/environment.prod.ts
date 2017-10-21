@@ -1,9 +1,11 @@
+
 export const environment = {
 	production: true,
+
 	/**
 	 * AWS API Gateway state root.
 	 */
-	apiRoot: 'https://roto4ggfed.execute-api.eu-west-1.amazonaws.com/dev',
+	apiRoot: 'https://j8nvv380u0.execute-api.eu-west-1.amazonaws.com/dev',
 
 	sts_endpoint: '',
 
@@ -12,11 +14,11 @@ export const environment = {
 	 */
 	region: 'eu-west-1',
 
-	identityPoolId: 'eu-west-1:37d9a150-2b32-4506-8da8-dc054c49231e',
+	identityPoolId: 'eu-west-1:400441ef-ad1f-4a3b-a3d2-a27424c12827',
 
-	userPoolId: 'eu-west-1_MW81UklJr',
+	userPoolId: 'eu-west-1_PGPrgfVrB',
 
-	clientId: '1ekv5kb919hv3f05mlv1hcddce',
+	clientId: '4geh2qea0bmmi5reqpdiic3rao',
 
 	cognito_idp_endpoint: '',
 
@@ -61,20 +63,22 @@ export const environment = {
 	/**
 	 * UserContent S3 Bucket name.
 	 */
-	userContentBucket: 'smartjob-usercontent-hy2x4kvvzzvx',
+	userContentBucket: 'usercontent.tutr.io',
 
 	/**
 	 * VideoPipelineInput S3 Bucket name.
 	 */
-	videoPipelineInputBucket: 'smartjob-videopipelineinput-1od6me6fe9o38',
+	videoPipelineInputBucket: 'videopipelineinput.tutr.io',
 
 	/**
 	 * VideoPipelineOutput S3 Bucket name.
 	 */
- 	videoPipelineOutputBucket: 'smartjob-videopipelineoutput-rm8ftehw5tu',
+ 	videoPipelineOutputBucket: 'videopipelineoutput.tutr.io',
 
 	/**
 	 * Set to true when CloudSearch is created.
 	 */
-	searchEnabled: false
+	searchEnabled: false,
+
+	wsServerAddress: 'ws://52.214.46.102'
 };

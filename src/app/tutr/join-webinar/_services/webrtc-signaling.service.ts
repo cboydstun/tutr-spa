@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 
 import { Webinar, Profile } from '../../models';
 
+import { environment } from "../../../../environments/environment";
+
 @Injectable()
 export class WebrtcSignalingService {
 	private connection: any;
@@ -13,7 +15,7 @@ export class WebrtcSignalingService {
 	public messages: Subject<Object>;
 
 	constructor() {
-		this.connection = new WebSocket('ws://localhost:8080');
+		this.connection = new WebSocket(environment.wsServerAddress);
 
 		this.whenWebSocketOpen = new Promise((resolve, reject) => {
 			this.connection.onopen = () => resolve(this.connection);

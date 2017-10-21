@@ -16,6 +16,7 @@
 	"headerNavBarInstructor": "Інструктор",
 	"headerSearchPlaceholder": "Пошук",
 	"headerNavBarLogin": "Увійти",
+	"headerNavBarLogout": "Вийти",
 
 	"footerDescription": "tutr platform",
 
@@ -29,6 +30,8 @@
 	"accountSettingsBasicsFormHeadline": "Заголовок",
 	"accountSettingsBasicsFormHeadlineHelpText": "наприклад, Архітектор або PR-менеджер",
 	"accountSettingsBasicsFormBio": "Біографія",
+	"accountSettingsBasicsPicture": "Фото",
+	"accountSettingsBasicsButtonUploadImage": "Завантажити",
 
 	"authenticationFlowLogin": "Увійти",
 	"authenticationFlowUsername": "Ім'я користувача",
@@ -50,6 +53,7 @@
 	"authenticationFlowCodeMismatchException": "Не вказано дійсний код підтвердження, повторіть спробу",
 	"authenticationFlowUserCodeCombinationNotFound": "Ім'я користувача / кодова комбінація не знайдена",
 	"authenticationFlowUsernameExistsException": "Ім'я користувача вже зайняте",
+	"authenticationFlowEmailInvalidLogin": "Невірна адреса електронної пошти або пароль",
 
 	"homepageHeaderRecentCourses": "Останні курси",
 	"homepageHeaderUpcomingWebinars": "Майбутні вебінари",
@@ -111,8 +115,13 @@
 	"webinarBasicsSubtitle": "Підзаголовок",
 	"webinarBasicsSubtitleHelpText": "Підзаголовок - це невелика опис, що відображається під заголовком",
 	"webinarBasicsDescription": "Опис",
+	"webinarBasicsDuration": "Тривалість",
+	"webinarBasicsDurationHelpText": "Тривалість вебінару в хвилинах",
+	"webinarBasicsStartAt": "Дата початку",
+	"webinarBasicsStartAtHelpText": "Дата і час початку вебінару",
 
 	"webinarDetailsReserveASeat": "Забронювати місце",
+	"webinarDetailsGotoWebinar": "Перейти до вебінару",
 
 	"webinarJoin": "Приєднатися",
 	"webinarJoining": "В процесі",

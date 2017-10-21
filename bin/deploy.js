@@ -12,7 +12,7 @@ const uploader = client.uploadDir({
 	localDir: 'dist',
 	deleteRemoved: true,
 	s3Params: { 
-		Bucket: 'smartjob-app-ltny07jtaynb'
+		Bucket: 'app.tutr.io'
 	}, 
 });
 

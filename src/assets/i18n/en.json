@@ -16,6 +16,7 @@
 	"headerNavBarInstructor": "Instructor",
 	"headerSearchPlaceholder": "Search",
 	"headerNavBarLogin": "Login",
+	"headerNavBarLogout": "Logout",
 
 	"footerDescription": "tutr platform",
 
@@ -29,6 +30,8 @@
 	"accountSettingsBasicsFormHeadline": "Headline",
 	"accountSettingsBasicsFormHeadlineHelpText": "e.g. Architect or PR Manager",
 	"accountSettingsBasicsFormBio": "Biography",
+	"accountSettingsBasicsPicture": "Picture",
+	"accountSettingsBasicsButtonUploadImage": "Upload",
 
 	"authenticationFlowLogin": "Login",
 	"authenticationFlowUsername": "Username",
@@ -50,6 +53,7 @@
 	"authenticationFlowCodeMismatchException": "Invalid verification code provided, please try again",
 	"authenticationFlowUserCodeCombinationNotFound": "Username/code combination not found",
 	"authenticationFlowUsernameExistsException": "Username already taken",
+	"authenticationFlowEmailInvalidLogin": "Wrong email or password",
 
 	"homepageHeaderRecentCourses": "Recent Courses",
 	"homepageHeaderUpcomingWebinars": "Upcoming Webinars",
@@ -111,8 +115,13 @@
 	"webinarBasicsSubtitle": "Subtitle",
 	"webinarBasicsSubtitleHelpText": "Webinar Subtitle is a small description displayed under the title",
 	"webinarBasicsDescription": "Description",
+	"webinarBasicsDuration": "Duration",
+	"webinarBasicsDurationHelpText": "Webinar duration in minutes",
+	"webinarBasicsStartAt": "Start Date",
+	"webinarBasicsStartAtHelpText": "Webinar start date and time",
 
 	"webinarDetailsReserveASeat": "Reserve a seat",
+	"webinarDetailsGotoWebinar": "Goto Webinar",
 
 	"webinarJoin": "Join",
 	"webinarJoining": "Joining",
