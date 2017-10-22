@@ -13,6 +13,7 @@ import { environment } from "../../../environments/environment";
 export class ChangePasswordService {
 	public static CODE_MISMATCH: string = 'CodeMismatchException';
 	public static USER_NOT_FOUND: string = 'UserNotFoundException';
+	public static EXPIRED_CODE_EXCEPTION: string = 'ExpiredCodeException';
 
 	constructor(private cognitoService: CognitoService) { }
 
@@ -27,6 +28,38 @@ export class ChangePasswordService {
 		return new Promise((resolve, reject) => {
 			cognitoUser.confirmRegistration(code, true, function(err, result) {
 				err ? reject(err) : resolve(result);
+			});
+		});
+	}
+
+	confirmPassword(username: string, code: string, password: string): Promise<any> {
+		let userData = {
+			Username: username,
+			Pool: this.cognitoService.getUserPool()
+		};
+
+		let cognitoUser = new CognitoUser(userData);
+
+		return new Promise((resolve, reject) => {
+			cognitoUser.confirmPassword(code, password ,{
+				onSuccess: resolve,
+				onFailure: reject
+			});
+		});
+	}
+
+	forgottenPassword(username: string): Promise<any> {
+		let userData = {
+			Username: username,
+			Pool: this.cognitoService.getUserPool()
+		};
+
+		let cognitoUser = new CognitoUser(userData);
+
+		return new Promise((resolve, reject) => {
+			cognitoUser.forgotPassword({
+				onSuccess: resolve,
+				onFailure: reject
 			});
 		});
 	}

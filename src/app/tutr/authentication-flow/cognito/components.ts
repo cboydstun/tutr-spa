@@ -7,6 +7,8 @@ import { ConfirmEmailWithEmailComponent } from './confirm-email-with-email/confi
 import { RegisterWithEmailComponent } from './register-with-email/register-with-email.component';
 import { LoginWithEmailComponent } from './login-with-email/login-with-email.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ForgottenPasswordComponent } from './forgotten-password/forgotten-password.component';
+import { ConfirmForgottenPasswordComponent } from './forgotten-password/confirm-forgotten-password/confirm-forgotten-password.component';
 
 export {
 	LoginWithUsernameComponent,
@@ -17,5 +19,7 @@ export {
 	RegisterWithEmailComponent,
 	ConfirmEmailWithEmailComponent,
 	LoginWithEmailComponent,
-	LogoutComponent
+	LogoutComponent,
+	ForgottenPasswordComponent,
+	ConfirmForgottenPasswordComponent
 };

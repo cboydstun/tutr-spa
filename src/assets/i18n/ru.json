@@ -60,6 +60,12 @@
 	"authenticationFlowUserCodeCombinationNotFound": "Комбинация имени пользователя и кода не найдена",
 	"authenticationFlowUsernameExistsException": "Данное имя пользователя уже занято",
 	"authenticationFlowEmailInvalidLogin": "Wrong email or password",
+	"authenticationFlowExpiredCodeException": "Code has expired",
+	"authenticationFlowConfirmForgottenPassword": "Please enter confirmation code to change your password",
+	"authenticationFlowButtonChangePassword": "Change Password",
+	"authenticationFlowForgottenPassword": "Forgotten Password",
+	"authenticationFlowUserNotFoundException": "Not Found ",
+	"authenticationFlowButtonForgotYourPassword": "Forgot your password?",
 
 	"homepageHeaderRecentCourses": "Recent Courses",
 	"homepageHeaderUpcomingWebinars": "Upcoming Webinars",

@@ -10,7 +10,9 @@ import {
 	ConfirmEmailWithUsernameComponent,
 	ConfirmEmailWithEmailComponent,
 	LoginWithEmailComponent,
-	LogoutComponent
+	LogoutComponent,
+	ForgottenPasswordComponent,
+	ConfirmForgottenPasswordComponent
 } from './components';
 
 const routes: Routes = [
@@ -37,6 +39,14 @@ const routes: Routes = [
 			{
 				path: 'logout',
 				component: LogoutComponent
+			},
+			{
+				path: 'forgotten-password',
+				component: ForgottenPasswordComponent,
+			},
+			{
+				path: 'forgotten-password/confirm',
+				component: ConfirmForgottenPasswordComponent
 			}
 		]
 	}

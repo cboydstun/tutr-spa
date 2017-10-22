@@ -60,6 +60,12 @@
 	"authenticationFlowUserCodeCombinationNotFound": "Ім'я користувача / кодова комбінація не знайдена",
 	"authenticationFlowUsernameExistsException": "Ім'я користувача вже зайняте",
 	"authenticationFlowEmailInvalidLogin": "Невірна адреса електронної пошти або пароль",
+	"authenticationFlowExpiredCodeException": "Термін дії коду закінчився",
+	"authenticationFlowConfirmForgottenPassword": "Будь-ласка, введіть код підтвердження, щоб змінити пароль",
+	"authenticationFlowButtonChangePassword": "Змінити пароль",
+	"authenticationFlowForgottenPassword": "Забутий пароль",
+	"authenticationFlowUserNotFoundException": "Користувача не знайдено",
+	"authenticationFlowButtonForgotYourPassword": "Забули свій пароль?",
 
 	"homepageHeaderRecentCourses": "Останні курси",
 	"homepageHeaderUpcomingWebinars": "Майбутні вебінари",
