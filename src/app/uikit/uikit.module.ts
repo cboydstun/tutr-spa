@@ -24,6 +24,10 @@ import {
 	InstructorCardComponent
 } from './components';
 
+import {
+	HumanizeDurationPipe
+} from './pipes';
+
 @NgModule({
 	imports: [
 		CommonModule,
@@ -44,7 +48,8 @@ import {
 		WebinarCardComponent,
 		WebinarCardGridComponent,
 		ConversationThreadComponent,
-		InstructorCardComponent
+		InstructorCardComponent,
+		HumanizeDurationPipe
 	],
 	exports: [
 		CourseCardComponent,
@@ -57,7 +62,8 @@ import {
 		WebinarCardGridComponent,
 		ConversationThreadComponent,
 		InstructorCardComponent,
-		NgbModule
+		NgbModule,
+		HumanizeDurationPipe
 	]
 })
 export class UikitModule { }

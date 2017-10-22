@@ -29,8 +29,10 @@
 
 <video #bigVideo autoplay="" muted=""></video>
 
-<div class="webinar-room__participants-count">
-	{{ participantsCount }}
+<div class="webinar-room__participants-debug">
+	<p *ngFor="let participant of participants">
+		connectionState: {{ participant.conn.connectionState }} iceConnectionState: {{ participant.conn.iceConnectionState }} signalingState {{ participant.conn.signalingState }}
+	</p>
 </div>
 
 <div class="webinar-room__footer" *ngIf="isInfoOpen">

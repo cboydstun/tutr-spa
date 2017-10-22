@@ -19,12 +19,11 @@
 	background-size: auto 100%;
 }
 
-.webinar-room__participants-count {
+.webinar-room__participants-debug {
 	position: absolute;
-	top: 77px;
-	right: 6vw;
+	top: 10px;
+	left: 1vw;
 	color: white;
-	font-size: 44px;
 }
 
 .webinar-room__header {

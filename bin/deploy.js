@@ -12,7 +12,7 @@ const uploader = client.uploadDir({
 	localDir: 'dist',
 	deleteRemoved: true,
 	s3Params: { 
-		Bucket: 'app.tutr.io'
+		Bucket: 'aaaaaa008-app-ltag3pvzq1uz'
 	}, 
 });
 

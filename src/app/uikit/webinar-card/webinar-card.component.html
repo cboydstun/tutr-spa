@@ -8,13 +8,13 @@
 	<ul class="list-group list-group-flush">
 		<li class="list-group-item" [ngClass]="{'text-muted': webinar.archived}">
 			<i class="fa fa-calendar"></i>
-			{{ webinar.start_dt }}
+			{{ webinar.start_dt | date:'MMMM d, H:mm, EEE' }}
 		</li>
 		<li class="list-group-item" [ngClass]="{'text-muted': webinar.archived}">
-			{{ webinar.duration }}
+			{{ webinar.duration | humanizeDuration }}
 		</li>
 		<li class="list-group-item" [ngClass]="{'text-muted': webinar.archived}">
-			by <a href="">{{ webinar.instructor_name }}</a>
+			{{ 'Common_By' | translate }} <a href="">{{ webinar.instructor_name }}</a>
 		</li>
 	</ul>
 </div>

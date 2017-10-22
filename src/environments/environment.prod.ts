@@ -1,3 +1,7 @@
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
 	production: true,
@@ -5,7 +9,7 @@ export const environment = {
 	/**
 	 * AWS API Gateway state root.
 	 */
-	apiRoot: 'https://j8nvv380u0.execute-api.eu-west-1.amazonaws.com/dev',
+	apiRoot: 'https://w40xs05cqa.execute-api.eu-west-1.amazonaws.com/dev',
 
 	sts_endpoint: '',
 
@@ -14,11 +18,11 @@ export const environment = {
 	 */
 	region: 'eu-west-1',
 
-	identityPoolId: 'eu-west-1:400441ef-ad1f-4a3b-a3d2-a27424c12827',
+	identityPoolId: 'eu-west-1:eb105ee7-c257-495e-bf71-cdd38a07e315',
 
-	userPoolId: 'eu-west-1_PGPrgfVrB',
+	userPoolId: 'eu-west-1_XScweZozO',
 
-	clientId: '4geh2qea0bmmi5reqpdiic3rao',
+	clientId: '7mtdudjqqqquh3v61uglvj5qf9',
 
 	cognito_idp_endpoint: '',
 
@@ -63,22 +67,22 @@ export const environment = {
 	/**
 	 * UserContent S3 Bucket name.
 	 */
-	userContentBucket: 'usercontent.tutr.io',
+	userContentBucket: 'aaaaaa008-usercontent-19jfxqkcvsfav',
 
 	/**
 	 * VideoPipelineInput S3 Bucket name.
 	 */
-	videoPipelineInputBucket: 'videopipelineinput.tutr.io',
+	videoPipelineInputBucket: 'aaaaaa008-videopipelineinput-1f4tna9im7tms',
 
 	/**
 	 * VideoPipelineOutput S3 Bucket name.
 	 */
- 	videoPipelineOutputBucket: 'videopipelineoutput.tutr.io',
+ 	videoPipelineOutputBucket: 'aaaaaa008-videopipelineoutput-dlh8wohyg07l',
 
 	/**
 	 * Set to true when CloudSearch is created.
 	 */
 	searchEnabled: false,
 
-	wsServerAddress: 'ws://52.214.46.102'
+	wsServerAddress: 'wss://signaling.tutr.work:443/'
 };

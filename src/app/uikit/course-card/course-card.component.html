@@ -8,10 +8,10 @@
 	</div>
 	<ul class="list-group list-group-flush">
 		<li class="list-group-item" *ngIf="showCategory">
-			in <a href="">{{ course.category_name }}</a>
+			{{ 'Common_In' | translate }} <a href="">{{ course.category_name }}</a>
 		</li>
 		<li class="list-group-item">
-			by <a href="">{{ course.instructor_name }}</a>
+			{{ 'Common_By' | translate }} <a href="">{{ course.instructor_name }}</a>
 		</li>
 	</ul>
 </div>

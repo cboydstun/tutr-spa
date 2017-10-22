@@ -25,7 +25,6 @@ export class AsInstructorComponent implements OnInit {
 
 	public isInfoOpen: boolean = false;
 
-	public participantsCount: number = 0;
 	public participants: any[] = [];
 
 	private statusSubscription: Subscription;
@@ -46,7 +45,6 @@ export class AsInstructorComponent implements OnInit {
 
 		this.participantJoinedSubscription = this.instructorCallService.participantJoined.subscribe(participants => {
 			this.participants = participants;
-			this.participantsCount = participants.length;
 		});
 
 		this.signalingSubscription = this.webrtcSignalingService.messages.subscribe((message: any) => {

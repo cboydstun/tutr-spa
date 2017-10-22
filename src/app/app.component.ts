@@ -13,7 +13,7 @@ export class AppComponent {
 	constructor(private translate: TranslateService,
 				private loginService: LoginService) {
 		translate.setDefaultLang('en');
-		translate.use('ukr');
+		translate.use('uk');
 
 		loginService.getAuthentionStatus();
 	}
