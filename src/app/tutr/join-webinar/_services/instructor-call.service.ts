@@ -104,6 +104,8 @@ export class InstructorCallService extends BaseCallService {
 		this.localStream.getTracks().forEach(track => track.stop());
 
 		this.participants = [];
+
+		this.participantJoined.next(this.participants);
 	}
 
 }

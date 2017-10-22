@@ -1,10 +1,11 @@
 <tutr-webinar-controls 
 	*ngIf="cs.isJoined"
 	(infoChanged)="infoChanged($event)"
+	(audioMutedChanged)="audioMutedChanged($event)"
 	(onStop)="leave()">
 </tutr-webinar-controls>
 
-<div class="join-block" *ngIf="!cs.isJoined" >
+<div class="join-block" *ngIf="!cs.isJoined">
 	<button class="btn btn-secondary" (click)="join()" [disabled]="cs.isJoining">
 		<i class="fa fa-spinner fa-spin fa-fw" *ngIf="cs.isJoining"></i>
 
@@ -35,7 +36,7 @@
 	</p>
 </div>
 
-<div class="webinar-room__footer" *ngIf="isInfoOpen">
+<div class="webinar-room__footer" *ngIf="cs.isJoined && isInfoOpen">
 	<p class="lead mb-0 pb-0">{{ webinar.title }}</p>
 	<p>{{ webinar.subtitle }}</p>
 </div>

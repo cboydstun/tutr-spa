@@ -24,4 +24,8 @@ export class Profile {
 	public get biggerpicture(): string {
 		return `http://${environment.userContentBucket}.s3-website-${environment.region}.amazonaws.com/fly/200x200/user-picture/${this.id}.png`;
 	}
+
+	public get promovideo(): string {
+		return `http://${environment.userContentBucket}.s3-website-${environment.region}.amazonaws.com/user-promo-video/${this.id}.MOV`;	
+	}
 }

@@ -6,7 +6,8 @@ import { OnlyLoggedInUsersGuard } from './../guards';
 import {
 	AccountSettingsBasicsComponent,
 	AccountSettingsPrivacyComponent,
-	AccountSettingsLayoutComponent
+	AccountSettingsLayoutComponent,
+	PromoVideoComponent
 } from './components';
 
 import { UserProfileResolve } from '../resolvers';
@@ -28,6 +29,10 @@ const routes: Routes = [
 			{
 				path: 'basics',
 				component: AccountSettingsBasicsComponent
+			},
+			{
+				path: 'promo-video',
+				component: PromoVideoComponent
 			},
 			{
 				path: 'privacy',

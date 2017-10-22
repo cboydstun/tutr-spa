@@ -19,9 +19,11 @@ import {
 export class AsParticipantComponent implements OnInit {
 	@ViewChild('bigVideo') bigVideo;
 
+	@Input() webinar: Webinar;
+	@Input() profile: Profile;
 	@Input() joinInfo: {room: string, id: string};
 
-	public isInfoOpen: boolean = false;
+	public isInfoOpen: boolean = true;
 
 	public cs: ConnectionStatus = new ConnectionStatus();
 
@@ -58,7 +60,7 @@ export class AsParticipantComponent implements OnInit {
 	}
 
 	public infoChanged(status) {
-		//this.isInfoOpen = status;
+		this.isInfoOpen = status;
 	}
 
 	public join() {

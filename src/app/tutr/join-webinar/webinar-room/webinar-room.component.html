@@ -1,5 +1,13 @@
 <div class="webinar-room">
-	<tutr-as-participant *ngIf="!isInstructor" [joinInfo]="joinInfo"></tutr-as-participant>
+	<tutr-as-participant 
+		*ngIf="!isInstructor" 
+		[joinInfo]="joinInfo"
+		[webinar]="webinar"
+		[profile]="profile"></tutr-as-participant>
 
-	<tutr-as-instructor *ngIf="isInstructor" [joinInfo]="joinInfo"></tutr-as-instructor>
+	<tutr-as-instructor 
+		*ngIf="isInstructor" 
+		[joinInfo]="joinInfo"
+		[webinar]="webinar"
+		[profile]="profile"></tutr-as-instructor>
 </div>

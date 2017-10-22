@@ -69,6 +69,21 @@ export class S3Service {
 		});
 	}
 
+	public uploadPromoVideo(profile_id, file): Promise<{Bucket: string, Key: string, Location: string}> {
+		return this.cognitoService.getIdToken().then((token) => {
+			return this.awsCredentialsService.init(token).then(() => {
+				return this.getS3().upload({
+					Key: `user-promo-video/${profile_id}.${file.name.split('.').pop()}`,
+					ContentType: file.type,
+					Body: file,
+					Metadata: {
+						profile_id: profile_id
+					}
+				}).promise();
+			});
+		});
+	}
+
 	public uploadCoursePicture(course_id, file): Promise<{Bucket: string, Key: string, Location: string}> {
 		return this.cognitoService.getIdToken().then((token) => {
 			return this.awsCredentialsService.init(token).then(() => {

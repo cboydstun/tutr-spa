@@ -38,7 +38,7 @@
 
 <video #bigVideo autoplay=""></video>
 
-<div class="webinar-room__footer" *ngIf="isInfoOpen">
+<div class="webinar-room__footer" *ngIf="cs.isJoined && isInfoOpen">
 	<p class="lead mb-0 pb-0">{{ webinar.title }}</p>
 	<p>{{ webinar.subtitle }}</p>
 </div>

@@ -13,7 +13,8 @@ import {
 	AccountSettingsBasicsComponent, 
 	AccountSettingsPrivacyComponent,
 	AccountSettingsLayoutComponent,
-	UserPictureComponent
+	UserPictureComponent,
+	PromoVideoComponent
 } from './components';
 
 @NgModule({
@@ -24,6 +25,12 @@ import {
 		ReactiveFormsModule,
 		TranslateModule.forChild()
 	],
-	declarations: [AccountSettingsBasicsComponent, AccountSettingsPrivacyComponent, AccountSettingsLayoutComponent, UserPictureComponent]
+	declarations: [
+		AccountSettingsBasicsComponent, 
+		AccountSettingsPrivacyComponent, 
+		AccountSettingsLayoutComponent, 
+		UserPictureComponent, 
+		PromoVideoComponent
+	]
 })
 export class AccountSettingsModule { }

@@ -16,7 +16,7 @@ export class WebinarControlsComponent implements OnInit {
 
 	public isVideoMuted: boolean = false;
 	public isAudioMuted: boolean = false;
-	public isInfoOn: boolean = false;
+	public isInfoOn: boolean = true;
 
 	constructor() { }
 

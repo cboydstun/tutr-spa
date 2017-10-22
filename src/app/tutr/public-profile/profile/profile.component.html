@@ -1,6 +1,7 @@
 <div class="jumbotron">
 	<h1 class="display-4">
 		Platon Korzh
+		<small>{{ profile.headline }}</small>
 	</h1>
 	<ul class="nav nav-pills">
 		<li class="nav-item">
@@ -15,5 +16,21 @@
 </div>
 
 <div class="container mt-5 mb-5">
-	{{profile|json}}
+	<p class="lead">
+		{{ profile.bio }}
+	</p>
+
+	<div class="row mt-5">
+		<div class="col-8">
+			<h5>{{ 'publicProfileVideo' | translate }}</h5>
+
+			<div class="embed-responsive embed-responsive-1by1">
+				<video class="embed-responsive-item" [src]="profile.promovideo"></video>
+			</div>
+		</div>
+
+		<div class="col-4">
+			<h5>{{ 'publicProfileAttachments' | translate }}</h5>
+		</div>
+	</div>
 </div>

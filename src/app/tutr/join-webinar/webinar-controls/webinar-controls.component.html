@@ -1,5 +1,10 @@
 <ul class="webinar-room__icons" tutrCursorAtRest>
-	<li class="icon" *ngIf="showAudioMute" (click)="toggleAudioMute()" [class.text-danger]="isAudioMuted">
+	<li 
+		class="icon" 
+		title="Mute microphone"
+		*ngIf="showAudioMute" 
+		(click)="toggleAudioMute()" 
+		[class.text-danger]="isAudioMuted">
 		<i 
 			class="fa" 
 			[class.fa-microphone]="!isAudioMuted" 
@@ -7,15 +12,27 @@
 		</i>
 	</li>
 
-	<li class="icon" *ngIf="showVideoMute" (click)="toggleVideoMute()" [class.text-danger]="isVideoMuted">
+	<li 
+		class="icon" 
+		title="Mute video"
+		*ngIf="showVideoMute" 
+		(click)="toggleVideoMute()" 
+		[class.text-danger]="isVideoMuted">
 		<i class="fa fa-video-camera"></i>
 	</li>
 
-	<li class="icon" (click)="toggleInfo()" [class.text-warning]="isInfoOn">
+	<li 
+		class="icon"
+		title="Show info"
+		(click)="toggleInfo()" 
+		[class.text-warning]="isInfoOn">
 		<i class="fa fa-info-circle"></i>
 	</li>
 
-	<li class="icon bg-danger" (click)="stop()">
+	<li 
+		class="icon bg-danger"
+		title="Leave webinar"
+		(click)="stop()">
 		<i class="fa fa-stop"></i>
 	</li>
 </ul>

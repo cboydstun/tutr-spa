@@ -6,10 +6,13 @@
 	"Common_Delete": "Удалить",
 	"Common_In": "In",
 	"Common_By": "By",
+	"Common_Upload": "Upload",
 
 	"categoryTitleAll": "Все",
 
 	"publicProfileJumbotronHeader": "Загальнодоступний профіль",
+	"publicProfileVideo": "Video",
+	"publicProfileAttachments": "Attachments",
 
 	"headerNavBarCourses": "Курси",
 	"headerNavBarWebinars": "Вебінари",
@@ -26,6 +29,7 @@
 	"accountSettingsBasicsFormFamilyName": "Прізвище",
 	"accountSettingsLayoutNavItemBasics": "Basics",
 	"accountSettingsLayoutNavItemPrivacy": "Конфіденційність",
+	"accountSettingsLayoutNavItemPromoVideo": "Промо-видео",
 	"accountSettingsPrivacyShowProfileOnSearch": "Показати мій профіль у результатах пошуку",
 	"accountSettingsPrivacyShowCoursesImTaking": "Показуйте курси на сторінці свого профілю",
 	"accountSettingsJumbotronHeader": "Настройки аккаунта",
