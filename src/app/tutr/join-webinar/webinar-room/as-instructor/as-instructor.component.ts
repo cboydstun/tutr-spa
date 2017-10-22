@@ -70,6 +70,8 @@ export class AsInstructorComponent implements OnInit {
 	}
 
 	public leave() {
-		this.instructorCallService.leave();
+		this.instructorCallService.leave().then(() => {
+			this.bigVideo.nativeElement.srcObject = null;
+		})
 	}
 }

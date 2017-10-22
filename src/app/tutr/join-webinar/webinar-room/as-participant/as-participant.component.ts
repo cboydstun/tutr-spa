@@ -66,6 +66,8 @@ export class AsParticipantComponent implements OnInit {
 	}
 
 	public leave() {
-		this.participantCallService.leave();
+		this.participantCallService.leave().then(() => {
+			this.bigVideo.nativeElement.srcObject = null;
+		});
 	}
 }
