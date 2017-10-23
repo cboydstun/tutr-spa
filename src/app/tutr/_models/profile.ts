@@ -17,6 +17,10 @@ export class Profile {
 		this.bio = data.bio;
 	}
 
+	public get get_full_name(): string {
+		return `${this.given_name} ${this.family_name}`;
+	}
+
 	public get picture(): string {
 		return `http://${environment.userContentBucket}.s3-website-${environment.region}.amazonaws.com/fly/150x150/user-picture/${this.id}.png`;
 	}
