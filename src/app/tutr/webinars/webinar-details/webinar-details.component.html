@@ -6,7 +6,7 @@
 <div class="container mb-5">
 	<div class="row">
 		<div class="col-8">
-			<p>
+			<p class="lead">
 				{{ webinar.description }}
 			</p>
 		</div>
@@ -16,11 +16,11 @@
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item" [ngClass]="{'text-muted': webinar.archived}">
 						<i class="fa fa-calendar"></i>
-						{{ webinar.start_dt }}
+						{{ webinar.start_dt | date:'MMMM d, H:mm, EEE' }}
 					</li>
 					<li class="list-group-item" [ngClass]="{'text-muted': webinar.archived}">
 						<i class="fa fa-clock-o"></i>
-						{{ webinar.duration }}
+						{{ webinar.duration | humanizeDuration }}
 					</li>
 				</ul>
 				<div class="card-body">
