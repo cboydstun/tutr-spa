@@ -12,7 +12,6 @@ export class HomepageResolve implements Resolve<Homepage> {
 	constructor(private homepageService: HomepageService) { }
 
 	resolve(route: ActivatedRouteSnapshot) {
-		
 		return this.homepageService.get();
 	}
 }
