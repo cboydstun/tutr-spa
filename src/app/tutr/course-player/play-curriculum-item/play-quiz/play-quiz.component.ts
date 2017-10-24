@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 const STATE = {
 	NOT_STARTED: 1,
@@ -7,9 +8,9 @@ const STATE = {
 }
 
 @Component({
-    selector: 'tutr-play-quiz',
-    templateUrl: './play-quiz.component.html',
-    styleUrls: ['./play-quiz.component.css']
+	selector: 'tutr-play-quiz',
+	templateUrl: './play-quiz.component.html',
+	styleUrls: ['./play-quiz.component.css']
 })
 export class PlayQuizComponent implements OnInit {
 	@Input() lesson: any;
@@ -33,41 +34,41 @@ export class PlayQuizComponent implements OnInit {
 		return this.lesson.questions[this.currQuestionIndex];
 	}
 
-    constructor() { }
+	constructor() { }
 
-    ngOnInit() {
-    }
+	ngOnInit() {
+	}
 
-    public startQuiz() {
-    	this.state = STATE.STARTED;
-    	this.currQuestionIndex = 0;
-    }
+	public startQuiz() {
+		this.state = STATE.STARTED;
+		this.currQuestionIndex = 0;
+	}
 
-    public nextQuestion() {
-    	this.currQuestionIndex += 1;
-    }
+	public nextQuestion() {
+		this.currQuestionIndex += 1;
+	}
 
-    public hasNextQuestion(): boolean {
-    	return this.currQuestionIndex < this.lesson.questions.length - 1;
-    }
+	public hasNextQuestion(): boolean {
+		return this.currQuestionIndex < this.lesson.questions.length - 1;
+	}
 
-    public prevQuestion() {
-    	this.currQuestionIndex += -1;
-    }
+	public prevQuestion() {
+		this.currQuestionIndex += -1;
+	}
 
-    public hasPrevQuestion(): boolean {
-    	return this.currQuestionIndex > 0;
-    }
+	public hasPrevQuestion(): boolean {
+		return this.currQuestionIndex > 0;
+	}
 
-    public isLastQuestion(): boolean {
-    	return !this.hasNextQuestion();
-    }
+	public isLastQuestion(): boolean {
+		return !this.hasNextQuestion();
+	}
 
-    public questionAnswered(): boolean {
-    	return false;
-    }
+	public questionAnswered(): boolean {
+		return false;
+	}
 
-    public completeQuiz() {
-    	this.state = STATE.COMPLETED;
-    }
+	public completeQuiz() {
+		this.state = STATE.COMPLETED;
+	}
 }
