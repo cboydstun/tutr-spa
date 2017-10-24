@@ -8,10 +8,16 @@ import {
 	CurriculumItemResolve
 } from '../../tutr/resolvers';
 
+import {
+	OnlyInstructorsGuard
+} from '../../tutr/guards';
+
 const routes: Routes = [
 	{
 		path: ':instructor_id/:id',
 		component: PlayerLayoutComponent,
+		canActivate: [OnlyInstructorsGuard],
+		canActivateChild: [OnlyInstructorsGuard],
 		resolve: {
 			course: CourseResolve
 		},
