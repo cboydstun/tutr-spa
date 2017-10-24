@@ -53,7 +53,8 @@
 
 					<button 
 						type="button" 
-						class="btn btn-link btn-sm text-danger">
+						class="btn btn-link btn-sm text-danger"
+						(click)="remove()">
 							<i class="fa fa-trash"></i>
 					</button>
 				</div>
@@ -67,6 +68,10 @@
 
 	<button class="btn btn-link p-0" (click)="turnOnEditMode()">
 		<i class="fa fa-pencil-square-o"></i>
+	</button>
+
+	<button class="btn btn-link text-danger p-0" (click)="remove()">
+		<i class="fa fa-trash"></i>
 	</button>
 
 	<div class="p-1">

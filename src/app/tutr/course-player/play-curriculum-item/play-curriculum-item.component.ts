@@ -10,7 +10,7 @@ import { Course } from '../../models';
 })
 export class PlayCurriculumItemComponent implements OnInit {
 	public course: Course;
-	public lesson: any;
+	public lesson: any = {};
 
 	constructor(private activatedRoute: ActivatedRoute) { }
 
@@ -19,9 +19,8 @@ export class PlayCurriculumItemComponent implements OnInit {
 			this.course = data.course;
 		});
 
-		this.activatedRoute.params.subscribe(data => {
-			const curriculum_id = data.lecture;
-			this.lesson = this.course.curriculum.find(c => c.id === curriculum_id);
+		this.activatedRoute.data.subscribe(data => {
+			this.lesson = data.curriculumItem;
 		});
 	}
 }

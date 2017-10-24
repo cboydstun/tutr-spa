@@ -179,5 +179,9 @@
 	"courseDetailsWhoIsTheTargetAudience": "Who Is The Target Audience",
 
 	"coursePlayerPlayQuizStartQuizNote": "You are NOT timed while you answer the questions",
-	"coursePlayerPlayQuizStartQuiz": "Start quiz"
+	"coursePlayerPlayQuizStartQuiz": "Start quiz",
+	"coursePlayerPlayQuizPrevQuestion": "Prev",
+	"coursePlayerPlayQuizNextQuestion": "Next",
+	"coursePlayerPlayQuizCompleteQuiz": "Complete",
+	"coursePlayerPlayQuizReStartQuiz": "Retake quiz"
 }

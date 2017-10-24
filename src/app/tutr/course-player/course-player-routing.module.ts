@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { PlayCurriculumItemComponent, PlayerLayoutComponent } from './components';
 
 import {
-	CourseResolve
+	CourseResolve,
+	CurriculumItemResolve
 } from '../../tutr/resolvers';
 
 const routes: Routes = [
@@ -16,8 +17,11 @@ const routes: Routes = [
 		},
 		children: [
 			{
-				path: ':lecture',
-				component: PlayCurriculumItemComponent
+				path: ':curriculum_id',
+				component: PlayCurriculumItemComponent,
+				resolve: {
+					curriculumItem: CurriculumItemResolve
+				}
 			}
 		]
 	}

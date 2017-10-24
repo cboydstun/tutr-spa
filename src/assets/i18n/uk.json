@@ -178,5 +178,9 @@
 	"courseDetailsWhoIsTheTargetAudience": "Хто є цільовою аудиторією?",
 
 	"coursePlayerPlayQuizStartQuizNote": "Час відповіді на питання не обмежується",
-	"coursePlayerPlayQuizStartQuiz": "Почати тест"
+	"coursePlayerPlayQuizStartQuiz": "Почати тест",
+	"coursePlayerPlayQuizPrevQuestion": "Назад",
+	"coursePlayerPlayQuizNextQuestion": "Далі",
+	"coursePlayerPlayQuizCompleteQuiz": "Завершити",
+	"coursePlayerPlayQuizReStartQuiz": "Пройти знову"
 }

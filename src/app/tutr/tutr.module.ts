@@ -42,7 +42,8 @@ import {
 	HomepageResolve,
 	InstructorCourseGoalsResolve,
 	InstructorCourseCurriculumsResolve,
-	PublicUserProfileResolve
+	PublicUserProfileResolve,
+	CurriculumItemResolve
 } from './resolvers';
 
 import {
@@ -118,6 +119,7 @@ import {
 				useExisting: SubmitRightAwayWebinarService 
 			}
 		],
+		CurriculumItemResolve
 	]
 })
 export class TutrModule { }

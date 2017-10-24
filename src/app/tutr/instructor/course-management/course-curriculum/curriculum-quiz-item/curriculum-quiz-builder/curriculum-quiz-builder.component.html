@@ -1,6 +1,7 @@
 <uikit-quiz-question
 	*ngFor="let question of curriculum.questions"
-	[question]="question"></uikit-quiz-question>
+	[question]="question"
+	(onRemove)="removeQuestion($event)"></uikit-quiz-question>
 
 <div class="alert alert-primary" role="alert" *ngIf="!curriculum.questions.length">
 	{{ 'curriculumQuizBuilderEmptyQuestionSet' | translate }}

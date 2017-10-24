@@ -25,6 +25,8 @@ const MODES = {
 export class QuizQuestionComponent implements OnInit {
 	@Input() question: any;
 
+	@Output() onRemove = new EventEmitter<any>();
+
 	private mode: number = MODES.VIEW;
 
 	public editForm: FormGroup;
@@ -71,5 +73,9 @@ export class QuizQuestionComponent implements OnInit {
 
 	public turnOnEditMode() {
 		this.mode = MODES.EDIT;
+	}
+
+	public remove() {
+		this.onRemove.emit(this.question);
 	}
 }

@@ -3,7 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { TranslateModule } from '@ngx-translate/core';
 
+import { 
+	FormsModule, 
+	ReactiveFormsModule 
+} from '@angular/forms';
+
 import { CoursePlayerRoutingModule } from './course-player-routing.module';
+
 import { 
 	PlayCurriculumItemComponent, 
 	PlayerLayoutComponent,
@@ -19,7 +25,9 @@ import { UikitModule } from '../../uikit/uikit.module';
 		CommonModule,
 		CoursePlayerRoutingModule,
 		UikitModule,
-		TranslateModule
+		TranslateModule,
+		FormsModule, 
+		ReactiveFormsModule 
 	],
 	declarations: [
 		PlayCurriculumItemComponent, 

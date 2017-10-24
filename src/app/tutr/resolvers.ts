@@ -6,7 +6,7 @@ import { InstructorCoursesResolve } from './_resolvers/instructor-courses.resolv
 import { InstructorCourseResolve } from './_resolvers/instructor-course.resolver';
 import { InstructorCourseGoalsResolve } from './_resolvers/instructor-course-goals.resolver';
 import { InstructorCourseCurriculumsResolve } from './_resolvers/instructor-course-curriculums.resolver';
-
+import { CurriculumItemResolve } from './_resolvers/curriculum-item.resolver';
 import { InstructorWebinarsResolve } from './_resolvers/instructor-webinars.resolver';
 import { InstructorWebinarResolve } from './_resolvers/instructor-webinar.resolver';
 
@@ -36,5 +36,6 @@ export {
 	HomepageResolve,
 	InstructorCourseGoalsResolve,
 	InstructorCourseCurriculumsResolve,
-	PublicUserProfileResolve
+	PublicUserProfileResolve,
+	CurriculumItemResolve
 };

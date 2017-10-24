@@ -1,5 +1,4 @@
-<div class="container">
-	{{lesson|json}}
+<div class="container mt-2">
 	<ng-container *ngIf="isNotStarted">
 		<h1>
 			{{lesson.title}}
@@ -20,14 +19,17 @@
 
 		<hr>
 
-		<div class="mb-5">
-				<div class="form-check" *ngFor="let answer of currQuestion.answers">
+		<form class="mb-5" [formGroup]="currForm">
+				<div class="form-check" *ngFor="let answer of currForm.controls.answers.controls; let i=index">
 					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox">
-						{{ answer.title }}
+						<input 
+							class="form-check-input" 
+							type="checkbox"
+							[formControl]="answer">
+								{{ currQuestion.answers[i].title }}
 					</label>
 				</div>
-		</div>
+		</form>
 
 		<button class="btn btn-outline-secondary" (click)="prevQuestion()" *ngIf="hasPrevQuestion()">
 			{{ 'coursePlayerPlayQuizPrevQuestion' | translate }}
@@ -43,6 +45,25 @@
 	</ng-container>
 
 	<ng-container *ngIf="isCompleted">
-		sfjkhsf
+		<div *ngFor="let question of lesson.questions">
+			<p class="lead">{{ question.title }}</p>
+
+			<ol>
+				<li *ngFor="let answer of question.answers; let i=index">
+					<span [class.text-success]="isCorrectAnswer(question, i)" [class.text-danger]="isWrongAnswer(question, i)">
+						{{ answer.title }}
+					</span>
+					<i class="d-block" *ngIf="answer.explanation">
+						{{ answer.explanation }}
+					</i>
+				</li>
+			</ol>
+		</div>
+
+		<hr>
+
+		<button class="btn btn-primary" (click)="startQuiz()">
+			{{ 'coursePlayerPlayQuizReStartQuiz' | translate }}
+		</button>
 	</ng-container>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
 const STATE = {
 	NOT_STARTED: 1,
@@ -17,6 +17,9 @@ export class PlayQuizComponent implements OnInit {
 
 	private currQuestionIndex: 0;
 	private state = STATE.NOT_STARTED;
+	private formCache;
+	private answers;
+	private questionMap;
 
 	public get isStarted(): boolean {
 		return this.state == STATE.STARTED;
@@ -34,12 +37,22 @@ export class PlayQuizComponent implements OnInit {
 		return this.lesson.questions[this.currQuestionIndex];
 	}
 
+	public get currForm(): FormGroup {
+		return this.formCache[this.currQuestion.id];
+	}
+
 	constructor() { }
 
 	ngOnInit() {
+		this.questionMap = this.lesson.questions.reduce((map, q) => {
+			map[q.id] = q;
+			return map;
+		}, {});
 	}
 
 	public startQuiz() {
+		this.buildFormCache();
+
 		this.state = STATE.STARTED;
 		this.currQuestionIndex = 0;
 	}
@@ -65,10 +78,53 @@ export class PlayQuizComponent implements OnInit {
 	}
 
 	public questionAnswered(): boolean {
-		return false;
+		return this.currForm.valid;
 	}
 
 	public completeQuiz() {
 		this.state = STATE.COMPLETED;
+
+		this.answers = {};
+
+		this.lesson.questions.forEach(q => {
+			const { answers } = this.formCache[q.id].value;
+			this.answers[q.id] = answers;
+		});
+	}
+
+	public isCorrectAnswer(question, answerIndex) {
+		return this.answers[question.id][answerIndex] && this.questionMap[question.id].answers[answerIndex].correct;
+	}
+
+	public isWrongAnswer(question, answerIndex) {
+		return this.answers[question.id][answerIndex] && !this.questionMap[question.id].answers[answerIndex].correct;
+	}
+
+	private buildFormCache() {
+		this.formCache = {};
+
+		this.lesson.questions.forEach(q => {
+			this.formCache[q.id] = new FormGroup({
+				answers: new FormArray(
+					q.answers.map(a => new FormControl(null)),
+					PlayQuizComponent.multipleCheckboxRequireAtLeastOne
+				)
+			});
+		});
+	}
+
+	static multipleCheckboxRequireAtLeastOne(fa: FormArray): any {
+		let valid = false;
+
+		for (let x = 0; x < fa.length; ++x) {
+			if (fa.at(x).value) {
+				valid = true;
+				break;
+			}
+		}
+
+		return valid ? null : {
+			multipleCheckboxRequireOne: true
+		};
 	}
 }
