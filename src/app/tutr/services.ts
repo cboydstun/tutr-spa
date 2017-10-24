@@ -18,6 +18,7 @@ import { WebinarService } from './_services/webinar.service';
 import { HomepageService } from './_services/homepage.service';
 import { SubmitWebinarService } from './_services/submit-webinar.service';
 import { SubmitRightAwayWebinarService } from './_services/submit-right-away-webinar.service';
+import { CurriculumService } from './_services/curriculum.service';
 
 export {
 	LoginService,
@@ -39,5 +40,6 @@ export {
 	WebinarService,
 	HomepageService,
 	SubmitWebinarService,
-	SubmitRightAwayWebinarService
+	SubmitRightAwayWebinarService,
+	CurriculumService
 }

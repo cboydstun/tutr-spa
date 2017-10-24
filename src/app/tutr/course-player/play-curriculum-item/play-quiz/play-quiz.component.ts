@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
+import { CurriculumService } from '../../../services';
+
 const STATE = {
 	NOT_STARTED: 1,
 	STARTED: 2,
@@ -20,6 +22,8 @@ export class PlayQuizComponent implements OnInit {
 	private formCache;
 	private answers;
 	private questionMap;
+
+	public isSavingResults: boolean = false;
 
 	public get isStarted(): boolean {
 		return this.state == STATE.STARTED;
@@ -41,7 +45,7 @@ export class PlayQuizComponent implements OnInit {
 		return this.formCache[this.currQuestion.id];
 	}
 
-	constructor() { }
+	constructor(private curriculumService: CurriculumService) { }
 
 	ngOnInit() {
 		this.questionMap = this.lesson.questions.reduce((map, q) => {
@@ -82,14 +86,25 @@ export class PlayQuizComponent implements OnInit {
 	}
 
 	public completeQuiz() {
-		this.state = STATE.COMPLETED;
-
 		this.answers = {};
 
 		this.lesson.questions.forEach(q => {
 			const { answers } = this.formCache[q.id].value;
 			this.answers[q.id] = answers;
 		});
+
+		this.isSavingResults = true;
+
+		this.curriculumService.saveQuizResults({
+			course_id: this.lesson.course_id,
+			curriculum_id: this.lesson.id,
+			answers: this.answers
+		})
+		.then(() => {
+			this.state = STATE.COMPLETED;
+			this.isSavingResults = false
+		})
+		.catch(() => this.isSavingResults = false);
 	}
 
 	public isCorrectAnswer(question, answerIndex) {

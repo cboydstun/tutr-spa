@@ -23,7 +23,8 @@ import {
 	WebinarService,
 	HomepageService,
 	SubmitWebinarService,
-	SubmitRightAwayWebinarService
+	SubmitRightAwayWebinarService,
+	CurriculumService
 } from './services';
 
 import {
@@ -119,7 +120,8 @@ import {
 				useExisting: SubmitRightAwayWebinarService 
 			}
 		],
-		CurriculumItemResolve
+		CurriculumItemResolve,
+		CurriculumService
 	]
 })
 export class TutrModule { }

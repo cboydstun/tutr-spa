@@ -46,11 +46,6 @@ export class InstructorCourseService {
 		return this.httpClient.get<CurriculumItem[]>('/DescribeInstructorDashboardCourseCurriculum', {params}).toPromise().then(list => list.map(item => new CurriculumItem(item)));
 	}
 
-	getCurriculum(id: string): Promise<any> {
-		const params = new HttpParams().set('id', id);
-		return this.httpClient.get<CurriculumItem[]>('/DescribeCurriculumItem', {params}).toPromise().then(item => new CurriculumItem(item));
-	}
-
 	addCurriculumItem(item: any): Promise<any> {
 		return this.httpClient.post('/CreateCurriculumItem', item).toPromise();
 	}

@@ -39,8 +39,13 @@
 			{{ 'coursePlayerPlayQuizNextQuestion' | translate }}
 		</button>
 
-		<button class="btn btn-primary" (click)="completeQuiz()" *ngIf="isLastQuestion()" [disabled]="!questionAnswered()">
-			{{ 'coursePlayerPlayQuizCompleteQuiz' | translate }}
+		<button 
+			class="btn btn-primary" 
+			(click)="completeQuiz()" 
+			*ngIf="isLastQuestion()" 
+			[disabled]="!questionAnswered() || isSavingResults">
+				<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isSavingResults"></i>
+				{{ 'coursePlayerPlayQuizCompleteQuiz' | translate }}
 		</button>
 	</ng-container>
 
