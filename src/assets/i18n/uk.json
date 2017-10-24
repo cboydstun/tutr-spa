@@ -175,5 +175,8 @@
 	"courseDetailsAboutTheInstructor": "Про Інструктора",
 	"courseDetailsWhatWillILearn": "Чому я навчуся",
 	"courseDetailsRequirements": "Вимоги",
-	"courseDetailsWhoIsTheTargetAudience": "Хто є цільовою аудиторією?"
+	"courseDetailsWhoIsTheTargetAudience": "Хто є цільовою аудиторією?",
+
+	"coursePlayerPlayQuizStartQuizNote": "Час відповіді на питання не обмежується",
+	"coursePlayerPlayQuizStartQuiz": "Почати тест"
 }

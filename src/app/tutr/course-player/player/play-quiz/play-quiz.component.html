@@ -1,5 +1,14 @@
 <div class="container">
-	<p>
-	  play-quiz works!
-	</p>
+	<h1>
+		{{lesson.title}}
+	</h1>
+	<p class="lead">{{lesson.description}}</p>
+
+	<hr>
+
+	<p>{{ 'coursePlayerPlayQuizStartQuizNote' | translate }}</p>
+
+	<button class="btn btn-primary">
+		{{ 'coursePlayerPlayQuizStartQuiz' | translate }}
+	</button>
 </div>

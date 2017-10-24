@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { CoursePlayerRoutingModule } from './course-player-routing.module';
 import { 
 	PlayerComponent, 
@@ -16,7 +18,8 @@ import { PlayQuizComponent } from './player/play-quiz/play-quiz.component';
 	imports: [
 		CommonModule,
 		CoursePlayerRoutingModule,
-		UikitModule
+		UikitModule,
+		TranslateModule
 	],
 	declarations: [PlayerComponent, CoursePlayerComponent, PlayVideoComponent, PlayArticleComponent, PlayQuizComponent]
 })

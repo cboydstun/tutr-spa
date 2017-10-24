@@ -176,6 +176,8 @@
 	"courseDetailsAboutTheInstructor": "About The Instructor",
 	"courseDetailsWhatWillILearn": "What Will I Learn",
 	"courseDetailsRequirements": "Requirements",
-	"courseDetailsWhoIsTheTargetAudience": "Who Is The Target Audience"
+	"courseDetailsWhoIsTheTargetAudience": "Who Is The Target Audience",
 
+	"coursePlayerPlayQuizStartQuizNote": "You are NOT timed while you answer the questions",
+	"coursePlayerPlayQuizStartQuiz": "Start quiz"
 }
