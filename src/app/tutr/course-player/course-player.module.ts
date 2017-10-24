@@ -5,14 +5,14 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { CoursePlayerRoutingModule } from './course-player-routing.module';
 import { 
-	PlayerComponent, 
-	CoursePlayerComponent,
+	PlayCurriculumItemComponent, 
+	PlayerLayoutComponent,
 	PlayVideoComponent,
-	PlayArticleComponent
+	PlayArticleComponent,
+	PlayQuizComponent
 } from './components';
 
 import { UikitModule } from '../../uikit/uikit.module';
-import { PlayQuizComponent } from './player/play-quiz/play-quiz.component';
 
 @NgModule({
 	imports: [
@@ -21,6 +21,6 @@ import { PlayQuizComponent } from './player/play-quiz/play-quiz.component';
 		UikitModule,
 		TranslateModule
 	],
-	declarations: [PlayerComponent, CoursePlayerComponent, PlayVideoComponent, PlayArticleComponent, PlayQuizComponent]
+	declarations: [PlayCurriculumItemComponent, PlayerLayoutComponent, PlayVideoComponent, PlayArticleComponent, PlayQuizComponent]
 })
 export class CoursePlayerModule { }

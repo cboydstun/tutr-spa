@@ -4,11 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from '../../models';
 
 @Component({
-	selector: 'tutr-player',
-	templateUrl: './player.component.html',
-	styleUrls: ['./player.component.css']
+	selector: 'tutr-play-curriculum-item',
+	templateUrl: './play-curriculum-item.component.html',
+	styleUrls: ['./play-curriculum-item.component.css']
 })
-export class PlayerComponent implements OnInit {
+export class PlayCurriculumItemComponent implements OnInit {
 	public course: Course;
 	public lesson: any;
 

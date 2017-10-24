@@ -4,11 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from '../../models';
 
 @Component({
-    selector: 'tutr-course-player',
-    templateUrl: './course-player.component.html',
-    styleUrls: ['./course-player.component.css']
+    selector: 'tutr-player-layout',
+    templateUrl: './player-layout.component.html',
+    styleUrls: ['./player-layout.component.css']
 })
-export class CoursePlayerComponent implements OnInit {
+export class PlayerLayoutComponent implements OnInit {
 	public isSidebarOpen: boolean = true;
 	public course: Course;
 

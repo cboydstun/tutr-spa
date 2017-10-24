@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PlayerComponent, CoursePlayerComponent } from './components';
+import { PlayCurriculumItemComponent, PlayerLayoutComponent } from './components';
 
 import {
 	CourseResolve
@@ -10,14 +10,14 @@ import {
 const routes: Routes = [
 	{
 		path: ':instructor_id/:id',
-		component: CoursePlayerComponent,
+		component: PlayerLayoutComponent,
 		resolve: {
 			course: CourseResolve
 		},
 		children: [
 			{
 				path: ':lecture',
-				component: PlayerComponent
+				component: PlayCurriculumItemComponent
 			}
 		]
 	}
