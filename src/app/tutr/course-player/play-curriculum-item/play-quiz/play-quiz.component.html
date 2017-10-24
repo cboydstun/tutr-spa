@@ -1,14 +1,48 @@
 <div class="container">
-	<h1>
-		{{lesson.title}}
-	</h1>
-	<p class="lead">{{lesson.description}}</p>
+	{{lesson|json}}
+	<ng-container *ngIf="isNotStarted">
+		<h1>
+			{{lesson.title}}
+		</h1>
+		<p class="lead">{{lesson.description}}</p>
 
-	<hr>
+		<hr>
 
-	<p>{{ 'coursePlayerPlayQuizStartQuizNote' | translate }}</p>
+		<p>{{ 'coursePlayerPlayQuizStartQuizNote' | translate }}</p>
 
-	<button class="btn btn-primary">
-		{{ 'coursePlayerPlayQuizStartQuiz' | translate }}
-	</button>
+		<button class="btn btn-primary" (click)="startQuiz()">
+			{{ 'coursePlayerPlayQuizStartQuiz' | translate }}
+		</button>
+	</ng-container>
+
+	<ng-container *ngIf="isStarted">
+		<p class="lead">{{ currQuestion.title }}</p>
+
+		<hr>
+
+		<div class="mb-5">
+				<div class="form-check" *ngFor="let answer of currQuestion.answers">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox">
+						{{ answer.title }}
+					</label>
+				</div>
+		</div>
+
+		<button class="btn btn-outline-secondary" (click)="prevQuestion()" *ngIf="hasPrevQuestion()">
+			{{ 'coursePlayerPlayQuizPrevQuestion' | translate }}
+		</button>
+
+		<button class="btn btn-primary" (click)="nextQuestion()" *ngIf="!isLastQuestion()" [disabled]="!questionAnswered()">
+			{{ 'coursePlayerPlayQuizNextQuestion' | translate }}
+		</button>
+
+		<button class="btn btn-primary" (click)="completeQuiz()" *ngIf="isLastQuestion()" [disabled]="!questionAnswered()">
+			{{ 'coursePlayerPlayQuizCompleteQuiz' | translate }}
+		</button>
+	</ng-container>
+
+	<ng-container *ngIf="isCompleted">
+		sfjkhsf
+	</ng-container>
 </div>

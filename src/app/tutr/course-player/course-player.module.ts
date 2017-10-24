@@ -21,6 +21,12 @@ import { UikitModule } from '../../uikit/uikit.module';
 		UikitModule,
 		TranslateModule
 	],
-	declarations: [PlayCurriculumItemComponent, PlayerLayoutComponent, PlayVideoComponent, PlayArticleComponent, PlayQuizComponent]
+	declarations: [
+		PlayCurriculumItemComponent, 
+		PlayerLayoutComponent, 
+		PlayVideoComponent, 
+		PlayArticleComponent, 
+		PlayQuizComponent
+	]
 })
 export class CoursePlayerModule { }
