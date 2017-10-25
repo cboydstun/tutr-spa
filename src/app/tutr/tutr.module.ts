@@ -24,7 +24,8 @@ import {
 	HomepageService,
 	SubmitWebinarService,
 	SubmitRightAwayWebinarService,
-	CurriculumService
+	CurriculumService,
+	EnrollmentService
 } from './services';
 
 import {
@@ -121,7 +122,8 @@ import {
 			}
 		],
 		CurriculumItemResolve,
-		CurriculumService
+		CurriculumService,
+		EnrollmentService
 	]
 })
 export class TutrModule { }
