@@ -14,7 +14,8 @@ import {
 	AccountSettingsPrivacyComponent,
 	AccountSettingsLayoutComponent,
 	UserPictureComponent,
-	PromoVideoComponent
+	PromoVideoComponent,
+	AttachmentsComponent
 } from './components';
 
 @NgModule({
@@ -30,7 +31,7 @@ import {
 		AccountSettingsPrivacyComponent, 
 		AccountSettingsLayoutComponent, 
 		UserPictureComponent, 
-		PromoVideoComponent
+		PromoVideoComponent, AttachmentsComponent
 	]
 })
 export class AccountSettingsModule { }

@@ -7,7 +7,8 @@ import {
 	AccountSettingsBasicsComponent,
 	AccountSettingsPrivacyComponent,
 	AccountSettingsLayoutComponent,
-	PromoVideoComponent
+	PromoVideoComponent,
+	AttachmentsComponent
 } from './components';
 
 import { UserProfileResolve } from '../resolvers';
@@ -33,6 +34,10 @@ const routes: Routes = [
 			{
 				path: 'promo-video',
 				component: PromoVideoComponent
+			},
+			{
+				path: 'attachments',
+				component: AttachmentsComponent
 			},
 			{
 				path: 'privacy',

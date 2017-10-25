@@ -3,11 +3,13 @@ import { AccountSettingsPrivacyComponent } from './account-settings-privacy/acco
 import { AccountSettingsLayoutComponent } from './account-settings-layout/account-settings-layout.component';
 import { UserPictureComponent } from './account-settings-basics/user-picture/user-picture.component';
 import { PromoVideoComponent } from './promo-video/promo-video.component';
+import { AttachmentsComponent } from './attachments/attachments.component';
 
 export {
 	AccountSettingsBasicsComponent,
 	AccountSettingsPrivacyComponent,
 	AccountSettingsLayoutComponent,
 	UserPictureComponent,
-	PromoVideoComponent
+	PromoVideoComponent,
+	AttachmentsComponent
 }
