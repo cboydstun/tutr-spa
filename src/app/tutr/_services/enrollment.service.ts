@@ -11,9 +11,18 @@ export class EnrollmentService {
 	constructor(private httpClient: HttpClient) { }
 
 	enroll(to: Webinar|Course) {
+		const type = to instanceof Webinar ? 'webinar' : 'course';
+		const object_id = `${type}:${to.instructor_id}:${to.id}`;
+
+		return this.httpClient.post('/Enroll', {object_id}).toPromise();
 	}
 
 	enrollmentStatus(to: Webinar|Course) {
+		const type = to instanceof Webinar ? 'webinar' : 'course';
+		const object_id = `${type}:${to.instructor_id}:${to.id}`;
+
+		const params = new HttpParams().set('object_id', object_id);
+		return this.httpClient.get('/EnrollmentStatus', {params}).toPromise();
 	}
 
 }
