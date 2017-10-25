@@ -9,15 +9,14 @@ import {
 } from '../../tutr/resolvers';
 
 import {
-	OnlyInstructorsGuard
+	OnlyLoggedInUsersGuard
 } from '../../tutr/guards';
 
 const routes: Routes = [
 	{
 		path: ':instructor_id/:id',
 		component: PlayerLayoutComponent,
-		canActivate: [OnlyInstructorsGuard],
-		canActivateChild: [OnlyInstructorsGuard],
+		canActivateChild: [OnlyLoggedInUsersGuard],
 		resolve: {
 			course: CourseResolve
 		},
