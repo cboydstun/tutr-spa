@@ -18,6 +18,7 @@ export class CourseDetailsComponent implements OnInit, OnDestroy {
 	private isAuthenticatedSubscription: any;
 
 	constructor(private activatedRoute: ActivatedRoute,
+				private router: Router,
 				private enrollmentService: EnrollmentService,
 				private loginService: LoginService) { }
 
@@ -44,7 +45,13 @@ export class CourseDetailsComponent implements OnInit, OnDestroy {
 	}
 
 	public enroll() {
-		this.enrollmentService.enroll(this.course);
+		if (!this.isAuthenticated) {
+			this.router.navigate(['/auth', 'login']);
+		} else {
+			this.enrollmentService.enroll(this.course).then(() => {
+				this.enrollmentStatus = true;
+			});
+		}
 	}
 
 }
