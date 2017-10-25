@@ -22,7 +22,9 @@ export class EnrollmentService {
 		const object_id = `${type}:${to.instructor_id}:${to.id}`;
 
 		const params = new HttpParams().set('object_id', object_id);
-		return this.httpClient.get('/EnrollmentStatus', {params}).toPromise();
+		return this.httpClient.get('/EnrollmentStatus', {params}).toPromise().then((data: {status: boolean}) => {
+			return data.status;
+		});
 	}
 
 }

@@ -23,12 +23,17 @@
 						{{ webinar.duration | humanizeDuration }}
 					</li>
 				</ul>
-				<div class="card-body">
-					<button class="btn btn-secondary btn-block">
+
+				<div class="card-body" *ngIf="gettingEnrollmentStatus">
+					<i class="fa fa-spinner fa-spin fa-fw"></i>
+				</div>
+
+				<div class="card-body" *ngIf="!gettingEnrollmentStatus">
+					<button class="btn btn-secondary btn-block" *ngIf="!enrollmentStatus" (click)="enroll()">
 						{{ 'webinarDetailsReserveASeat' | translate }}
 					</button>
 
-					<a [routerLink]="['/join-webinar', webinar.instructor_id, webinar.id]" class="btn btn-outline-primary btn-block">
+					<a [routerLink]="['/join-webinar', webinar.instructor_id, webinar.id]" class="btn btn-outline-primary btn-block" *ngIf="enrollmentStatus">
 						{{ 'webinarDetailsGotoWebinar' | translate }}
 					</a>
 				</div>

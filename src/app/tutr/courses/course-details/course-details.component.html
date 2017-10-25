@@ -50,14 +50,21 @@
 		<div class="col-4">
 			<div class="card">
 				<img class="card-img-top" [src]="course.biggerpicture">
-				<div class="card-body">
-					<button class="btn btn-secondary btn-block">
+
+				<div class="card-body" *ngIf="gettingEnrollmentStatus">
+					<i class="fa fa-spinner fa-spin fa-fw"></i>
+				</div>
+
+
+				<div class="card-body" *ngIf="!gettingEnrollmentStatus">
+					<button class="btn btn-secondary btn-block" (click)="enroll()" *ngIf="!enrollmentStatus">
 						{{ 'courseDetailsCourseCardEnroll' | translate }}
 					</button>
 
 					<a 
-						class="btn btn-outline-primary btn-block" 
-						[routerLink]="['/courses', 'learn', course.instructor_id, course.id, course.slug]">
+						class="btn btn-outline-primary btn-block"
+						[routerLink]="['/courses', 'learn', course.instructor_id, course.id, course.slug]"
+						*ngIf="enrollmentStatus">
 							{{ 'courseDetailsCourseCardGotoCourse' | translate }}
 						</a>
 				</div>
