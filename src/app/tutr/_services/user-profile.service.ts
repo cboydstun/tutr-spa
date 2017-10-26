@@ -22,6 +22,10 @@ export class UserProfileService {
 	constructor(private httpClient: HttpClient,
 		private cognitoService: CognitoService) { }
 
+	listInstructors(): Promise<any> {
+		return this.httpClient.get('/ListPublicUserProfiles').toPromise().then(item => new Profile(item));
+	}
+
 	public getProfile(): Promise<any> {
 		return this.httpClient.get('/DescribeUserProfile').toPromise().then(item => new Profile(item));
 	}

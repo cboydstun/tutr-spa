@@ -45,7 +45,8 @@ import {
 	InstructorCourseGoalsResolve,
 	InstructorCourseCurriculumsResolve,
 	PublicUserProfileResolve,
-	CurriculumItemResolve
+	CurriculumItemResolve,
+	AllPublicInstructorsResolve
 } from './resolvers';
 
 import {
@@ -123,7 +124,8 @@ import {
 		],
 		CurriculumItemResolve,
 		CurriculumService,
-		EnrollmentService
+		EnrollmentService,
+		AllPublicInstructorsResolve
 	]
 })
 export class TutrModule { }

@@ -20,6 +20,8 @@ import { UpcomingWebinarsResolve } from './_resolvers/upcoming-webinars.resolver
 
 import { HomepageResolve } from './_resolvers/homepage.resolver';
 
+import { AllPublicInstructorsResolve } from './_resolvers/all-public-instructors.resolver';
+
 export {
 	PreloadCategoriesResolve,
 	CategoryCoursesResolve,
@@ -37,5 +39,6 @@ export {
 	InstructorCourseGoalsResolve,
 	InstructorCourseCurriculumsResolve,
 	PublicUserProfileResolve,
-	CurriculumItemResolve
+	CurriculumItemResolve,
+	AllPublicInstructorsResolve
 };

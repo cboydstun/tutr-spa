@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Profile } from '../../models';
 
 @Component({
 	selector: 'app-instructors',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./instructors.component.css']
 })
 export class InstructorsComponent implements OnInit {
+	public instructors: Profile[];
 
-	constructor() { }
+	constructor(private activatedRoute: ActivatedRoute) { }
 
 	ngOnInit() {
+		this.activatedRoute.data.subscribe(data => {
+			this.instructors = data.instructors;
+		});
 	}
 
 }

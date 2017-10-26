@@ -3,10 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { InstructorsComponent } from './components';
 
+import { AllPublicInstructorsResolve } from '../resolvers';
+
 const routes: Routes = [
 	{
 		path: '',
-		component: InstructorsComponent
+		component: InstructorsComponent,
+		resolve: {
+			instructors: AllPublicInstructorsResolve
+		}
 	}
 ];
 
