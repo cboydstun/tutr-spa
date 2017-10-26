@@ -21,7 +21,9 @@ import {
 	WebinarCardComponent,
 	WebinarCardGridComponent,
 	ConversationThreadComponent,
-	InstructorCardComponent
+	InstructorCardComponent,
+	InstructorGroupComponent,
+	InstructorItemComponent
 } from './components';
 
 import {
@@ -49,7 +51,9 @@ import {
 		WebinarCardGridComponent,
 		ConversationThreadComponent,
 		InstructorCardComponent,
-		HumanizeDurationPipe
+		HumanizeDurationPipe,
+		InstructorGroupComponent,
+		InstructorItemComponent
 	],
 	exports: [
 		CourseCardComponent,
@@ -63,7 +67,9 @@ import {
 		ConversationThreadComponent,
 		InstructorCardComponent,
 		NgbModule,
-		HumanizeDurationPipe
+		HumanizeDurationPipe,
+		InstructorGroupComponent,
+		InstructorItemComponent
 	]
 })
 export class UikitModule { }

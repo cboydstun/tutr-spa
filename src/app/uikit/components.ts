@@ -9,6 +9,9 @@ import { InstructorWebinarGroupComponent } from './instructor-webinar-group/inst
 import { ConversationThreadComponent } from './conversation-thread/conversation-thread.component';
 import { InstructorCardComponent } from './instructor-card/instructor-card.component';
 
+import { InstructorGroupComponent } from './instructor-group/instructor-group.component';
+import { InstructorItemComponent } from './instructor-item/instructor-item.component';
+
 export {
 	CourseCardComponent,
 	CourseCardGridComponent,
@@ -19,5 +22,7 @@ export {
 	InstructorWebinarItemComponent,
 	InstructorWebinarGroupComponent,
 	ConversationThreadComponent,
-	InstructorCardComponent
+	InstructorCardComponent,
+	InstructorGroupComponent,
+	InstructorItemComponent
 }

@@ -23,7 +23,7 @@ export class UserProfileService {
 		private cognitoService: CognitoService) { }
 
 	listInstructors(): Promise<any> {
-		return this.httpClient.get('/ListPublicUserProfiles').toPromise().then(item => new Profile(item));
+		return this.httpClient.get('/ListPublicUserProfiles').toPromise().then((items: any) => items.map(item => new Profile(item)));
 	}
 
 	public getProfile(): Promise<any> {

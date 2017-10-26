@@ -25,6 +25,10 @@ export class Profile {
 		return `http://${environment.userContentBucket}.s3-website-${environment.region}.amazonaws.com/fly/150x150/user-picture/${this.id}.png`;
 	}
 
+	public get smallerpicture(): string {
+		return `http://${environment.userContentBucket}.s3-website-${environment.region}.amazonaws.com/fly/100x100/user-picture/${this.id}.png`;
+	}
+
 	public get biggerpicture(): string {
 		return `http://${environment.userContentBucket}.s3-website-${environment.region}.amazonaws.com/fly/200x200/user-picture/${this.id}.png`;
 	}
