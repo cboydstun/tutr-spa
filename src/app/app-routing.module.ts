@@ -41,6 +41,10 @@ const routes: Routes = [
 			{
 				path: 'instructor',
 				loadChildren: './tutr/instructor/instructor.module#InstructorModule'
+			},
+			{
+				path: 'instructors',
+				loadChildren: './tutr/instructors/instructors.module#InstructorsModule'
 			}
 		]
 	},

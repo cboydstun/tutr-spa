@@ -40,6 +40,16 @@
 							{{ 'headerNavBarWebinars' | translate }}
 						</a>
 				</li>
+				<li 
+					class="nav-item" 
+					routerLinkActive="active" 
+					[routerLinkActiveOptions]="{exact: true}">
+					<a 
+						class="nav-link" 
+						[routerLink]="['/instructors']">
+							{{ 'headerNavBarInstructors' | translate }}
+						</a>
+				</li>
 			</ul>
 		</div>
 		<div class="profile" ngbDropdown placement="bottom-right" *ngIf="isAuthenticated">
