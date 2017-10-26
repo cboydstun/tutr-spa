@@ -12,7 +12,7 @@ const uploader = client.uploadDir({
 	localDir: 'dist',
 	deleteRemoved: true,
 	s3Params: { 
-		Bucket: 'aaaaaa008-app-ltag3pvzq1uz'
+		Bucket: 'smartjob-spa-app-gyrq2l8svm2a'
 	}, 
 });
 

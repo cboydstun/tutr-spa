@@ -9,7 +9,7 @@ export const environment = {
 	/**
 	 * AWS API Gateway state root.
 	 */
-	apiRoot: 'https://w40xs05cqa.execute-api.eu-west-1.amazonaws.com/dev',
+	apiRoot: 'https://4qjwa5q4t9.execute-api.eu-west-1.amazonaws.com/dev',
 
 	sts_endpoint: '',
 
@@ -18,11 +18,11 @@ export const environment = {
 	 */
 	region: 'eu-west-1',
 
-	identityPoolId: 'eu-west-1:eb105ee7-c257-495e-bf71-cdd38a07e315',
+	identityPoolId: 'eu-west-1:8cca2110-e9ca-4781-bfcc-d3e80260ff32',
 
-	userPoolId: 'eu-west-1_XScweZozO',
+	userPoolId: 'eu-west-1_fMsUpAFPJ',
 
-	clientId: '7mtdudjqqqquh3v61uglvj5qf9',
+	clientId: '4skds4lgj9e19mgavsagbgjaj4',
 
 	cognito_idp_endpoint: '',
 
@@ -67,17 +67,17 @@ export const environment = {
 	/**
 	 * UserContent S3 Bucket name.
 	 */
-	userContentBucket: 'aaaaaa008-usercontent-19jfxqkcvsfav',
+	userContentBucket: 'smartjob-v2-usercontent-1rfdvv3kvfr16',
 
 	/**
 	 * VideoPipelineInput S3 Bucket name.
 	 */
-	videoPipelineInputBucket: 'aaaaaa008-videopipelineinput-1f4tna9im7tms',
+	videoPipelineInputBucket: 'smartjob-v2-videopipelineinput-yb81qicd0c33',
 
 	/**
 	 * VideoPipelineOutput S3 Bucket name.
 	 */
- 	videoPipelineOutputBucket: 'aaaaaa008-videopipelineoutput-dlh8wohyg07l',
+ 	videoPipelineOutputBucket: 'smartjob-v2-videopipelineoutput-1vb87r2lnvb5r',
 
 	/**
 	 * Set to true when CloudSearch is created.
