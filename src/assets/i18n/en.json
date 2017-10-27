@@ -10,6 +10,10 @@
 
 	"categoryTitleAll": "All",
 
+	"profileIsNotCompletedException": "All instructors of this course must complete their profile before the course can be published. This includes name, image, and a short summary of your background",
+
+	"instructorItemScheduleConsultation": "Schedule a consultation",
+
 	"publicProfileJumbotronHeader": "Public Profile",
 	"publicProfileVideo": "Video",
 	"publicProfileAttachments": "Attachments",

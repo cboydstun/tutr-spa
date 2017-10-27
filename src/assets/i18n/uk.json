@@ -10,6 +10,10 @@
 
 	"categoryTitleAll": "Всі",
 
+	"profileIsNotCompletedException": "Всі інструктори цього курсу повинні заповнити свій профіль, перш ніж курс може бути опублікований. Це включає в себе ім'я, зображення та короткий опис ваших навичок",
+
+	"instructorItemScheduleConsultation": "Запланувати консультацію",
+
 	"publicProfileJumbotronHeader": "Загальнодоступний профіль",
 	"publicProfileVideo": "Відео",
 	"publicProfileAttachments": "Вкладення",
