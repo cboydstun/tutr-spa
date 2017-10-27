@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Webinar } from '../../models';
+import { Webinar, Profile } from '../../models';
 import { SubmitWebinarService } from '../../services';
 
 @Component({
@@ -11,6 +11,7 @@ import { SubmitWebinarService } from '../../services';
 })
 export class WebinarManagementComponent implements OnInit {
 	public webinar: Webinar;
+	public profile: Profile;
 
 	public isSubmittingWebinar: boolean = false;
 
@@ -20,10 +21,15 @@ export class WebinarManagementComponent implements OnInit {
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
 			this.webinar = data.webinar;
+			this.profile = data.profile;
 		});
 	}
 
 	submitWebinar() {
+		if (!this.profile.completed) {
+			return;
+		}
+
 		this.isSubmittingWebinar = true;
 
 		this.submitWebinarService.submit(this.webinar)

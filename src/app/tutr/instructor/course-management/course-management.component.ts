@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Course } from '../../models';
+import { Course, Profile } from '../../models';
 import { SubmitCourseService } from '../../services';
 
 @Component({
@@ -11,6 +11,7 @@ import { SubmitCourseService } from '../../services';
 })
 export class CourseManagementComponent implements OnInit {
 	public course: Course;
+	public profile: Profile
 
 	public isSubmittingCourse: boolean = false;
 
@@ -20,10 +21,15 @@ export class CourseManagementComponent implements OnInit {
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
 			this.course = data.course;
+			this.profile = data.profile;
 		});
 	}
 
 	public submitCourse() {
+		if (!this.profile.completed) {
+			return;
+		}
+
 		this.isSubmittingCourse = true;
 
 		this.submitCourseService.submit(this.course)

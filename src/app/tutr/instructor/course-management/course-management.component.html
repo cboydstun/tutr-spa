@@ -12,6 +12,10 @@
 
 	<hr>
 
+	<div class="alert alert-danger" role="alert" *ngIf="!profile.completed">
+		{{ 'profileIsNotCompletedException' | translate }}
+	</div>
+
 	<div class="row mt-5">
 		<div class="col-3">
 			<div class="list-group">
@@ -40,7 +44,7 @@
 				<button 
 					class="btn btn-outline-primary btn-block mt-5" 
 					(click)="submitCourse()"
-					[disabled]="isSubmittingCourse">
+					[disabled]="isSubmittingCourse || !profile.completed">
 						<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isSubmittingCourse"></i>
 						{{ 'courseManagementButtonSubmitCourse' | translate }}
 				</button>
