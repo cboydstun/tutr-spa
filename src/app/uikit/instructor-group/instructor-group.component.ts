@@ -10,9 +10,18 @@ import { Profile } from '../../tutr/models';
 export class InstructorGroupComponent implements OnInit {
 	@Input() profiles: Profile[];
 
+	public groups: any[] = [];
+
 	constructor() { }
 
 	ngOnInit() {
+		let i,
+			j,
+			chunk = 4;
+
+		for (i = 0, j = this.profiles.length; i < j; i += chunk) {
+		    this.groups.push(this.profiles.slice(i, i + chunk));
+		}
 	}
 
 }

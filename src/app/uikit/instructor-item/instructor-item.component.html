@@ -1,15 +1,16 @@
-<div class="list-group-item">
-	<div class="d-flex justify-content-start">
-		<div class="mr-3">
-			<img src="{{ profile.smallerpicture }}" class="rounded-circle">
-		</div>
-		<div>
-			<h5>
-				<a [routerLink]="['/profile', profile.id]">
-					{{ profile.get_full_name }}
-				</a>
-			</h5>
-			<p class="mb-1">{{ profile.headline }}</p>
-		</div>
+<div class="card">
+	<img class="card-img-top" [src]="profile.cardpicture" [alt]="profile.get_full_name">
+	<div class="card-body">
+		<h6 class="card-title">
+			<a [routerLink]="['/profile', profile.id]">{{profile.get_full_name}}</a>
+		</h6>
+		<p class="card-text">{{profile.get_full_name}}</p>
 	</div>
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">
+			<a href="">
+				{{ 'instructorItemScheduleConsultation' | translate }}
+			</a>
+		</li>
+	</ul>
 </div>

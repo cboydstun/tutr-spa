@@ -1,4 +1,3 @@
-<div class="list-group">
-	<uikit-instructor-item
-		*ngFor="let profile of profiles" [profile]="profile"></uikit-instructor-item>
+<div class="row" *ngFor="let group of groups; let odd=odd" [ngClass]="{ 'mt-4': odd }">
+	<uikit-instructor-item *ngFor="let profile of group" [profile]="profile" class="col-3"></uikit-instructor-item>
 </div>
