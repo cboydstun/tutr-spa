@@ -12,11 +12,10 @@ const uploader = client.uploadDir({
 	localDir: 'dist',
 	deleteRemoved: true,
 	s3Params: { 
-		Bucket: 'smartjob-spa-app-gyrq2l8svm2a'
+		Bucket: 'smartjob-spa-app-gyrq2l8svm2a' //test
+		//Bucket: 'smartjob-spa-app-xt1124qe9hug', //prod
 	}, 
 });
 
 uploader.on('error', console.log);
 uploader.on('end', console.log);
-
-//http://smartjob-app-ltny07jtaynb.s3-website-eu-west-1.amazonaws.com

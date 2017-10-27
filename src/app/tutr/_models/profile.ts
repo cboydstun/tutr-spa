@@ -17,6 +17,10 @@ export class Profile {
 		this.bio = data.bio;
 	}
 
+	public get completed(): boolean {
+		return !!this.given_name && !!this.family_name && !!this.headline && !!this.bio;
+	}
+
 	public get get_full_name(): string {
 		return `${this.given_name} ${this.family_name}`;
 	}
