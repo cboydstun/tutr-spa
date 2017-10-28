@@ -42,6 +42,6 @@ export class Profile {
 	}
 
 	public get promovideo(): string {
-		return `http://${environment.userContentBucket}.s3-website-${environment.region}.amazonaws.com/user-promo-video/${this.id}.MOV`;	
+		return `http://${environment.videoPipelineOutputBucket}.s3-website-${environment.region}.amazonaws.com/user-promo-video/${this.id}.mp4`;	
 	}
 }

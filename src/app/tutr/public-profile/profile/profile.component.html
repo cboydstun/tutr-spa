@@ -26,12 +26,23 @@
 			<h5>{{ 'publicProfileVideo' | translate }}</h5>
 
 			<div class="embed-responsive embed-responsive-1by1">
-				<video class="embed-responsive-item" [src]="profile.promovideo"></video>
+				<video controls>
+					<source [src]="profile.promovideo" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
 			</div>
 		</div>
 
 		<div class="col-4">
 			<h5>{{ 'publicProfileAttachments' | translate }}</h5>
+
+			<ul>
+				<li *ngFor="let attachment of attachments">
+					<a href="{{ attachment.url }}" target="_blank">
+						{{ attachment.name }}
+					</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 </div>
