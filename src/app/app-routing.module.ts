@@ -40,7 +40,11 @@ const routes: Routes = [
 			},
 			{
 				path: 'instructor',
-				loadChildren: './tutr/instructor/instructor.module#InstructorModule'
+				loadChildren: './tutr/instructor-space/instructor-space.module#InstructorSpaceModule'
+			},
+			{
+				path: 'student',
+				loadChildren: './tutr/student-space/student-space.module#StudentSpaceModule'
 			},
 			{
 				path: 'instructors',

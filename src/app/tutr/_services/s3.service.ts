@@ -90,7 +90,8 @@ export class S3Service {
 				return this.getS3().listObjectsV2({
 					Prefix: `user-attachment/${profile_id}/`
 				}).promise().then(data => {
-					return data.Contents.map(content => {
+					const contents = data.Contents || [];
+					return contents.map(content => {
 						return {
 							url: `http://${environment.userContentBucket}.s3-website-${environment.region}.amazonaws.com/${content.Key}`,
 							name: content.Key.split('/').pop()

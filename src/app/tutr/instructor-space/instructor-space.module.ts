@@ -10,7 +10,7 @@ import {
 
 import { UikitModule } from '../../uikit/uikit.module';
 
-import { InstructorRoutingModule } from './instructor-routing.module';
+import { InstructorSpaceRoutingModule } from './instructor-space-routing.module';
 import { 
 	DashboardComponent,
 	DashboardCoursesComponent,
@@ -42,7 +42,7 @@ import {
 @NgModule({
 	imports: [
 		CommonModule,
-		InstructorRoutingModule,
+		InstructorSpaceRoutingModule,
 		UikitModule,
 		FormsModule, 
 		ReactiveFormsModule,
@@ -76,4 +76,4 @@ import {
 		QuizAnswerGroupComponent
 	]
 })
-export class InstructorModule { }
+export class InstructorSpaceModule { }
