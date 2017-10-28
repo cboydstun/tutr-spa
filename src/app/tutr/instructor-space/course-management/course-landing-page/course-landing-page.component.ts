@@ -6,6 +6,8 @@ import { Course, Category } from '../../../models';
 import { InstructorCourseService } from '../../../services';
 import { CategoryService } from '../../../services';
 
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 @Component({
 	selector: 'tutr-course-landing-page',
 	templateUrl: './course-landing-page.component.html',
@@ -21,7 +23,8 @@ export class CourseLandingPageComponent implements OnInit {
 
 	constructor(private activatedRoute: ActivatedRoute,
 				private instructorCourseService: InstructorCourseService,
-				private categoryService: CategoryService) { }
+				private categoryService: CategoryService,
+				private toastr: ToastsManager) { }
 
 	ngOnInit() {
 		this.activatedRoute.parent.data.subscribe(data => {
@@ -60,7 +63,10 @@ export class CourseLandingPageComponent implements OnInit {
 		this.course.category_name = this.categoryService.get(this.form.value.category_id).title;
 
 		this.instructorCourseService.save(this.course)
-			.then(() => this.isLoading = false)
+			.then(() => {
+				this.toastr.success('Saved');
+				this.isLoading = false
+			})
 			.catch(() => this.isLoading = false);
 	}
 

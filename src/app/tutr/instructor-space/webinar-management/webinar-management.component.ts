@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Webinar, Profile } from '../../models';
 import { SubmitWebinarService } from '../../services';
 
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 @Component({
 	selector: 'tutr-webinar-management',
 	templateUrl: './webinar-management.component.html',
@@ -16,7 +18,8 @@ export class WebinarManagementComponent implements OnInit {
 	public isSubmittingWebinar: boolean = false;
 
 	constructor(private activatedRoute: ActivatedRoute,
-				private submitWebinarService: SubmitWebinarService) { }
+				private submitWebinarService: SubmitWebinarService,
+				private toastr: ToastsManager) { }
 
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
@@ -33,7 +36,10 @@ export class WebinarManagementComponent implements OnInit {
 		this.isSubmittingWebinar = true;
 
 		this.submitWebinarService.submit(this.webinar)
-			.then(() => this.isSubmittingWebinar = false)
+			.then(() => {
+				this.toastr.success('Webinar is Published');
+				this.isSubmittingWebinar = false
+			})
 			.catch(() => this.isSubmittingWebinar = false);
 	}
 

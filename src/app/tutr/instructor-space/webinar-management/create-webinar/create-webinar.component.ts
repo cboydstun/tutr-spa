@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Webinar } from '../../../models';
 import { WebinarService } from '../../../services';
 
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 @Component({
 	selector: 'tutr-create-webinar',
 	templateUrl: './create-webinar.component.html',
@@ -13,7 +15,8 @@ export class CreateWebinarComponent implements OnInit {
 	public isLoading: boolean = false;
 
 	constructor(private webinarService: WebinarService,
-				private router: Router) { }
+				private router: Router,
+				private toastr: ToastsManager) { }
 
 	ngOnInit() {
 	}
@@ -22,6 +25,10 @@ export class CreateWebinarComponent implements OnInit {
 		this.isLoading = true;
 
 		this.webinarService.create(title)
-			.then((webinar: Webinar) => this.router.navigate(['/instructor', 'webinar', webinar.id]))
+			.then((webinar: Webinar) => {
+				this.toastr.success('Webinar created');
+				this.toastr.info('Redirecting you to edit page');
+				this.router.navigate(['/instructor', 'webinar', webinar.id])
+			})
 	}
 }

@@ -18,12 +18,14 @@ import { environment } from "../../../environments/environment";
 import { LoginService } from './login.service';
 
 import { NgProgressService } from 'ngx-progressbar';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Injectable()
 export class TutrInterceptor implements HttpInterceptor {
 
 	constructor(private loginService: LoginService,
-				private ngProgressService: NgProgressService) { }
+				private ngProgressService: NgProgressService,
+				private toastr: ToastsManager) { }
 
 	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 		if (/assets/.test(req.url)) {
@@ -51,6 +53,9 @@ export class TutrInterceptor implements HttpInterceptor {
 									return next.handle(dupReq);
 								}
 							});
+						} else {
+							this.ngProgressService.done();
+							this.toastr.error('Site may not work as expected', 'Internal server error');
 						}
 					}
 				});

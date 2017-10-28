@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Course, Profile } from '../../models';
 import { SubmitCourseService } from '../../services';
 
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 @Component({
 	selector: 'tutr-course-management',
 	templateUrl: './course-management.component.html',
@@ -16,7 +18,8 @@ export class CourseManagementComponent implements OnInit {
 	public isSubmittingCourse: boolean = false;
 
 	constructor(private activatedRoute: ActivatedRoute,
-				private submitCourseService: SubmitCourseService) { }
+				private submitCourseService: SubmitCourseService,
+				private toastr: ToastsManager) { }
 
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
@@ -33,7 +36,10 @@ export class CourseManagementComponent implements OnInit {
 		this.isSubmittingCourse = true;
 
 		this.submitCourseService.submit(this.course)
-			.then(() => this.isSubmittingCourse = false)
+			.then(() => {
+				this.toastr.success('Course is Published');
+				this.isSubmittingCourse = false
+			})
 			.catch(() => this.isSubmittingCourse = false);
 	}
 

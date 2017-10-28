@@ -20,7 +20,7 @@ import { environment } from "../../../environments/environment";
 export class UserProfileService {
 
 	constructor(private httpClient: HttpClient,
-		private cognitoService: CognitoService) { }
+				private cognitoService: CognitoService) { }
 
 	listInstructors(): Promise<any> {
 		return this.httpClient.get('/ListPublicUserProfiles').toPromise().then((items: any) => items.map(item => new Profile(item)));

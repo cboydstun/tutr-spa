@@ -5,6 +5,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Webinar } from '../../../models';
 import { InstructorWebinarService } from '../../../services';
 
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 @Component({
 	selector: 'tutr-webinar-basics',
 	templateUrl: './webinar-basics.component.html',
@@ -17,7 +19,8 @@ export class WebinarBasicsComponent implements OnInit {
 	public isLoading: boolean = false;
 
 	constructor(private activatedRoute: ActivatedRoute,
-				private instructorWebinarService: InstructorWebinarService) { }
+				private instructorWebinarService: InstructorWebinarService,
+				private toastr: ToastsManager) { }
 
 	ngOnInit() {
 		this.activatedRoute.parent.data.subscribe(data => {
@@ -57,7 +60,10 @@ export class WebinarBasicsComponent implements OnInit {
 		this.webinar.start_dt = new Date(this.form.value.start_dt);
 
 		this.instructorWebinarService.save(this.webinar)
-			.then(() => this.isLoading = false)
+			.then(() => {
+				this.toastr.success('Saved');
+				this.isLoading = false
+			})
 			.catch(() => this.isLoading = false);
 	}
 

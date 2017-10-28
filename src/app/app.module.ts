@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NgModule } from '@angular/core';
 
 import { 
@@ -11,6 +13,7 @@ import { TutrModule } from './tutr/tutr.module';
 import { LayoutModule } from './layout/layout.module';
 import { DisqusModule } from './disqus/disqus.module';
 
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { NgProgressModule } from 'ngx-progressbar';
 
 import { 
@@ -46,7 +49,9 @@ export function createTranslateLoader(http: HttpClient) {
 			}
 		}),
 		DisqusModule.forRoot(environment.disqusShortName),
-		NgProgressModule
+		NgProgressModule,
+		ToastModule.forRoot(),
+		BrowserAnimationsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

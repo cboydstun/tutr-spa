@@ -5,6 +5,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Course, CourseGoals } from '../../../models';
 import { InstructorCourseService } from '../../../services';
 
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 @Component({
 	selector: 'tutr-course-goals',
 	templateUrl: './course-goals.component.html',
@@ -19,7 +21,8 @@ export class CourseGoalsComponent implements OnInit {
 	public form: FormGroup;
 
 	constructor(private activatedRoute: ActivatedRoute,
-				private instructorCourseService: InstructorCourseService) { }
+				private instructorCourseService: InstructorCourseService,
+				private toastr: ToastsManager) { }
 
 	ngOnInit() {
 		this.activatedRoute.parent.data.subscribe(data => {
@@ -55,7 +58,10 @@ export class CourseGoalsComponent implements OnInit {
 		this.courseGoals.what_will_they_learn = this.form.value.whatWillTheyLearn;
 
 		this.instructorCourseService.setGoals(this.courseGoals)
-			.then(() => this.isLoading = false)
+			.then(() => {
+				this.toastr.success('Saved');
+				this.isLoading = false
+			})
 			.catch(() => this.isLoading = false);
 	}
 
