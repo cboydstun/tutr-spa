@@ -2,7 +2,14 @@ import * as AWS from "aws-sdk/global";
 import 'rxjs/add/operator/do';
 
 import { Injectable } from '@angular/core';
-import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse } from '@angular/common/http';
+import { 
+	HttpEvent, 
+	HttpInterceptor, 
+	HttpHandler, 
+	HttpRequest, 
+	HttpResponse, 
+	HttpErrorResponse 
+} from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
@@ -31,11 +38,22 @@ export class TutrInterceptor implements HttpInterceptor {
 
 			this.ngProgressService.start();
 
-			return next.handle(dupReq).do(event => {
-			if (event instanceof HttpResponse) {
-				this.ngProgressService.done();
-			}
-		});
+			return next.handle(dupReq)
+				.do(event => {
+					if (event instanceof HttpResponse) {
+						this.ngProgressService.done();
+					}
+				}).catch((error: any) => {
+					if (error instanceof HttpErrorResponse) {
+						if (error.status === 403) {
+							return this.loginService.getAuthentionStatus().then((status: boolean) => {
+								if (status) {
+									return next.handle(dupReq);
+								}
+							});
+						}
+					}
+				});
 		}
 	}
 }

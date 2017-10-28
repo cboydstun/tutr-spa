@@ -31,6 +31,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 	public sub: string = '';
 
+	public isInstructor: boolean = false;
+
 	private isAuthenticatedSubscription: Subscription;
 
 	constructor(private categoryService: CategoryService,
@@ -61,6 +63,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 				this.displayName = profile.email;
 				this.sub = profile.id;
 				this.isLoadingProfile = false;
+				this.isInstructor = profile.is_instructor;
 			})
 			.catch(() => {
 				this.isLoadingProfile = false;				

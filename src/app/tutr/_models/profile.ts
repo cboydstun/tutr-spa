@@ -7,6 +7,7 @@ export class Profile {
 	family_name: string;
 	headline: string;
 	bio: string;
+	is_instructor: boolean;
 
 	constructor(data: any) {
 		this.id = data.id;
@@ -15,6 +16,7 @@ export class Profile {
 		this.family_name = data.family_name;
 		this.headline = data.headline;
 		this.bio = data.bio;
+		this.is_instructor = !!data.is_instructor;
 	}
 
 	public get completed(): boolean {
