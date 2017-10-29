@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { StudentDashboard } from '../../models';
+import { StudentDashboard, Course, Webinar } from '../../models';
 
 @Component({
 	selector: 'tutr-dashboard',
@@ -16,6 +16,20 @@ export class DashboardComponent implements OnInit {
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
 			this.studentDashboard = data.dashboard;
+
+			const _map = (item) => {
+				const [type, instructor_id, id] = item.object_id.split(':');
+				const object = item.object;
+
+				return {
+					...object,
+					instructor_id,
+					id
+				};
+			};
+
+			this.studentDashboard.courses = this.studentDashboard.courses.map(item => new Course(_map(item)));
+			this.studentDashboard.webinars = this.studentDashboard.webinars.map(item => new Webinar(_map(item)));
 		});
 	}
 
