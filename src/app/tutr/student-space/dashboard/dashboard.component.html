@@ -1,3 +1,27 @@
-<p>
-  dashboard works!
-</p>
+<div class="jumbotron">
+	<div class="d-flex flex-row justify-content-between">
+		<h1 class="display-4">
+			
+			{{ 'studentDashboardJumbotronHeader' | translate }}
+		</h1>
+	</div>
+</div>
+
+<div class="container mb-5 mt-5">
+	<h4>
+		{{ 'studentSpaceDashboardCourses' | translate }}
+	</h4>
+	<hr>
+
+	<uikit-course-card-grid 
+		[courses]="studentDashboard.courses" 
+		[showCategory]="true"></uikit-course-card-grid>
+
+	<h4 class="mt-5">
+		{{ 'studentSpaceDashboardWebinars' | translate }}
+	</h4>
+	<hr>
+
+	<uikit-webinar-card-grid 
+		[webinars]="studentDashboard.webinars"></uikit-webinar-card-grid>
+</div>

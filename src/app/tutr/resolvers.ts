@@ -9,18 +9,14 @@ import { InstructorCourseCurriculumsResolve } from './_resolvers/instructor-cour
 import { CurriculumItemResolve } from './_resolvers/curriculum-item.resolver';
 import { InstructorWebinarsResolve } from './_resolvers/instructor-webinars.resolver';
 import { InstructorWebinarResolve } from './_resolvers/instructor-webinar.resolver';
-
 import { UserProfileResolve } from './_resolvers/user-profile.resolver';
 import { PublicUserProfileResolve } from './_resolvers/public-user-profile.resolver';
-
 import { ArchivedWebinarsResolve } from './_resolvers/archived-webinars.resolver';
-
 import { WebinarResolve } from './_resolvers/webinar.resolver';
 import { UpcomingWebinarsResolve } from './_resolvers/upcoming-webinars.resolver';
-
 import { HomepageResolve } from './_resolvers/homepage.resolver';
-
 import { AllPublicInstructorsResolve } from './_resolvers/all-public-instructors.resolver';
+import { StudentDashboardResolve } from './_resolvers/student-dashboard.resolver';
 
 export {
 	PreloadCategoriesResolve,
@@ -40,5 +36,6 @@ export {
 	InstructorCourseCurriculumsResolve,
 	PublicUserProfileResolve,
 	CurriculumItemResolve,
-	AllPublicInstructorsResolve
+	AllPublicInstructorsResolve,
+	StudentDashboardResolve
 };

@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { OnlyLoggedInUsersGuard } from './../guards';
 
+import { StudentDashboardResolve } from './../resolvers';
+
 import { DashboardComponent } from './components';
 
 const routes: Routes = [
@@ -17,7 +19,10 @@ const routes: Routes = [
 		children: [
 			{
 				path: 'dashboard',
-				component: DashboardComponent
+				component: DashboardComponent,
+				resolve: {
+					dashboard: StudentDashboardResolve
+				}
 			}
 		]
 	}

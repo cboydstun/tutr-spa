@@ -99,6 +99,10 @@
 	"instructorDashboardJumbotronNavItemCourses": "Courses",
 	"instructorDashboardJumbotronNavItemWebinars": "Webinars",
 
+	"studentDashboardJumbotronHeader": "Student Dashboard",
+	"studentSpaceDashboardCourses": "Courses",
+	"studentSpaceDashboardWebinars": "Webinars",
+
 	"workingTitleFormLabel": "All you need to do is enter a working title",
 	"workingTitleFormButtonSave": "Save and Go",
 

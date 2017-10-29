@@ -98,6 +98,10 @@
 	"instructorDashboardJumbotronNavItemCourses": "Курси",
 	"instructorDashboardJumbotronNavItemWebinars": "Вебінари",
 
+	"studentDashboardJumbotronHeader": "Дашбоард студента",
+	"studentSpaceDashboardCourses": "Курси",
+	"studentSpaceDashboardWebinars": "Вебінари",
+
 	"workingTitleFormLabel": "Все, що вам потрібно зробити, це ввести робочий титул",
 	"workingTitleFormButtonSave": "Зберегти і перейти",
 

@@ -46,18 +46,18 @@ export const environment = {
 	 * Logo displayed in navbar.
 	 * Make it transparent.
 	 */
-	headerLogo: '/assets/images/default-logo.png',
+	headerLogo: 'http://smartjob.com.ua.s3-website-eu-west-1.amazonaws.com/media/smartjob-logo-white.png',
 
 	/**
 	 * Logo displayed in footer.
 	 * Usually it will be the same as in header.
 	 */
-	footerLogo: '/assets/images/default-logo.png',
+	footerLogo: 'http://smartjob.com.ua.s3-website-eu-west-1.amazonaws.com/media/smartjob-logo-white.png',
 
 	/**
 	 * Logo displayed in auth screens: login, register, reset password, etc.
 	 */
-	authScreensLogo: '/assets/images/default-auth-logo.png',
+	authScreensLogo: 'http://smartjob.com.ua.s3-website-eu-west-1.amazonaws.com/media/smartjob-logo-blank.png',
 
 	/**
 	 * Support email address.
