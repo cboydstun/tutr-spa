@@ -85,6 +85,15 @@ const routes: Routes = [
 	{
 		path: 'debug',
 		loadChildren: './tutr/debug/debug.module#DebugModule'
+	},
+	{
+		path: 't',
+		children: [
+			{
+				path: 'video-prompter',
+				loadChildren: './tenant/video-prompter/video-prompter.module#VideoPrompterModule'
+			}
+		]
 	}
 ];
 

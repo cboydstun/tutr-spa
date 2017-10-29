@@ -1,0 +1,36 @@
+<div class="container mt-5 mb-5">
+	<div class="card">
+		<div class="card-header">
+			{{ 'videoPrompterVideoPrompter' | translate }}
+		</div>
+
+		<div class="card-body" *ngIf="isEditing">
+			<textarea [(ngModel)]="text" class="form-control w-100"></textarea>
+		</div>
+
+		<div class="card-body" *ngIf="isPlaying">
+			<span 
+				*ngFor="let word of words; let i=index" 
+				[class.bg-warning]="currentWordIndex == i">
+				{{ word.literal }}
+			</span>
+		</div>
+
+		<div class="card-footer text-muted">
+			<button 
+				class="btn btn-primary btn-sm" 
+				(click)="start()"
+				[disabled]="!text"
+				*ngIf="isEditing">
+					{{ 'videoPrompterStart' | translate }}
+			</button>
+
+			<button 
+				class="btn btn-primary btn-sm" 
+				(click)="stop()" 
+				*ngIf="isPlaying">
+					{{ 'videoPrompterStop' | translate }}
+			</button>
+		</div>
+	</div>
+</div>

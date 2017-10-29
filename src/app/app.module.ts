@@ -10,6 +10,7 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 import { TutrModule } from './tutr/tutr.module';
+import { TenantModule } from './tenant/tenant.module';
 import { LayoutModule } from './layout/layout.module';
 import { DisqusModule } from './disqus/disqus.module';
 
@@ -38,6 +39,7 @@ export function createTranslateLoader(http: HttpClient) {
 	imports: [
 		BrowserModule,
 		TutrModule,
+		TenantModule,
 		LayoutModule,
 		AppRoutingModule,
 		HttpClientModule,
