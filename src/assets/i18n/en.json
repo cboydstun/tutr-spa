@@ -194,5 +194,10 @@
 	"coursePlayerPlayQuizPrevQuestion": "Prev",
 	"coursePlayerPlayQuizNextQuestion": "Next",
 	"coursePlayerPlayQuizCompleteQuiz": "Complete",
-	"coursePlayerPlayQuizReStartQuiz": "Retake quiz"
+	"coursePlayerPlayQuizReStartQuiz": "Retake quiz",
+
+	"videoPrompterVideoHelp": "Help Text",
+	"videoPrompterVideoPrompter": "Video Prompter",
+	"videoPrompterStart": "Start",
+	"videoPrompterStop": "Stop"
 }

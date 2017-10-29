@@ -193,5 +193,10 @@
 	"coursePlayerPlayQuizPrevQuestion": "Назад",
 	"coursePlayerPlayQuizNextQuestion": "Далі",
 	"coursePlayerPlayQuizCompleteQuiz": "Завершити",
-	"coursePlayerPlayQuizReStartQuiz": "Пройти знову"
+	"coursePlayerPlayQuizReStartQuiz": "Пройти знову",
+
+	"videoPrompterVideoHelp": "Help Text",
+	"videoPrompterVideoPrompter": "Видео суфлер",
+	"videoPrompterStart": "Старт",
+	"videoPrompterStop": "Стоп"
 }
