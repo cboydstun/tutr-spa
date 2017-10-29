@@ -198,5 +198,6 @@
 	"videoPrompterVideoHelp": "Help Text",
 	"videoPrompterVideoPrompter": "Видео суфлер",
 	"videoPrompterStart": "Старт",
-	"videoPrompterStop": "Стоп"
+	"videoPrompterStop": "Стоп",
+	"videoPrompterTextHelpText": "Help text"
 }

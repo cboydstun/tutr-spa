@@ -10,6 +10,9 @@
 
 		<div class="card-body" *ngIf="isEditing">
 			<textarea [(ngModel)]="text" class="form-control w-100"></textarea>
+			<small class="form-text text-muted">
+				{{ 'videoPrompterTextHelpText' | translate }}
+			</small>
 		</div>
 
 		<div class="card-body" *ngIf="isPlaying">

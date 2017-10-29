@@ -199,5 +199,6 @@
 	"videoPrompterVideoHelp": "Help Text",
 	"videoPrompterVideoPrompter": "Video Prompter",
 	"videoPrompterStart": "Start",
-	"videoPrompterStop": "Stop"
+	"videoPrompterStop": "Stop",
+	"videoPrompterTextHelpText": "Help text"
 }
