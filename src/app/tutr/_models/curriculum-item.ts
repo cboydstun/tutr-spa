@@ -30,6 +30,6 @@ export class CurriculumItem {
 	}
 
 	public get video(): string {
-		return `http://${environment.videoPipelineOutputBucket}.s3-website-${environment.region}.amazonaws.com/${this.course_id}/${this.id}.mp4`;
+		return `http://${environment.videoPipelineOutputBucket}.s3-website-${environment.region}.amazonaws.com/course/${this.course_id}/${this.id}.mp4`;
 	}
 }
