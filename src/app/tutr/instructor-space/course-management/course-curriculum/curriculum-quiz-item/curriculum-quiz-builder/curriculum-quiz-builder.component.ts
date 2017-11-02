@@ -33,7 +33,6 @@ export class CurriculumQuizBuilderComponent implements OnInit {
 	}
 
 	public removeQuestion(question) {
-		debugger
 		for (var i = this.curriculum.questions.length - 1; i >= 0; i--) {
 			if (question === this.curriculum.questions[i]) {
 				this.curriculum.questions.splice(i, 1);

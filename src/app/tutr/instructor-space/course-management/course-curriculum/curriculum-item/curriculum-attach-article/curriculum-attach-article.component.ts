@@ -19,7 +19,6 @@ export class CurriculumAttachArticleComponent implements OnInit {
 
 	@Output() save = new EventEmitter<any>();
 	@Output() cancel = new EventEmitter<void>();
-	@Output() delete = new EventEmitter<void>();
 
 	public editArticleForm: FormGroup;
 	public isLoading: boolean = false;
@@ -52,10 +51,6 @@ export class CurriculumAttachArticleComponent implements OnInit {
 			.catch(() => {
 				this.isLoading = false;
 			});
-	}
-
-	public deleteArticle() {
-		this.delete.emit();
 	}
 
 	public turnOnNormalMode() {

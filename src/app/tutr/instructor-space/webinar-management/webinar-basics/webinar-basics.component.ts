@@ -40,8 +40,12 @@ export class WebinarBasicsComponent implements OnInit {
 			'duration': new FormControl(this.webinar.duration, [
 				Validators.required
 			]),
-			'start_dt': new FormControl(this.webinar.start_dt, [
+			'start_dt': new FormControl(this.stringifyDate(this.webinar.start_dt), [
 				Validators.required
+			]),
+			'start_t': new FormControl(this.stringifyTime(this.webinar.start_dt), [
+				Validators.required,
+				WebinarBasicsComponent.timeValidator
 			])
 		});
 	}
@@ -57,7 +61,11 @@ export class WebinarBasicsComponent implements OnInit {
 		this.webinar.subtitle = this.form.value.subtitle;
 		this.webinar.description = this.form.value.description;
 		this.webinar.duration = this.form.value.duration;
-		this.webinar.start_dt = new Date(this.form.value.start_dt);
+
+		this.webinar.start_dt = this.combineDateAndTime(
+			new Date(this.form.value.start_dt),
+			this.form.value.start_t
+		);
 
 		this.instructorWebinarService.save(this.webinar)
 			.then(() => {
@@ -65,6 +73,42 @@ export class WebinarBasicsComponent implements OnInit {
 				this.isLoading = false
 			})
 			.catch(() => this.isLoading = false);
+	}
+
+	private combineDateAndTime(date: Date, time: string): Date {
+		let parts = time.split(':');
+		let hh = parseInt(parts[0], 10);
+		let mm = parseInt(parts[1], 10);
+
+		date.setHours(hh);
+		date.setMinutes(mm);
+
+		return date;
+	}
+
+	private stringifyDate(date: Date): string {
+		let mm = date.getMonth() + 1;
+		let dd = date.getDate();
+
+		return [
+			date.getFullYear(),
+			(mm > 9 ? '' : '0') + mm,
+			(dd > 9 ? '' : '0') + dd
+		].join('-');
+	}
+
+	private stringifyTime(date: Date): string {
+		const pad = (i: number) => i < 10 ? `0${i}` : i;
+
+		return `${pad(date.getHours())}:${pad(date.getMinutes())}`;
+	}
+
+	static timeValidator(c: FormControl): any {
+		let valid = /^[0-9]{2}:[0-9]{2}$/.test(c.value);
+
+		return valid ? null : {
+			time: true
+		};
 	}
 
 }

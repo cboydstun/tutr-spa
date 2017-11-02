@@ -142,7 +142,9 @@
 	"webinarBasicsDuration": "Duration",
 	"webinarBasicsDurationHelpText": "Webinar duration in minutes",
 	"webinarBasicsStartAt": "Start Date",
-	"webinarBasicsStartAtHelpText": "Webinar start date and time",
+	"webinarBasicsStartAtHelpText": "Webinar start date",
+	"webinarBasicsStartAtTime": "Start Time",
+	"webinarBasicsStartAtTimeHelpText": "Webinar start time",
 
 	"webinarDetailsReserveASeat": "Reserve a seat",
 	"webinarDetailsGotoWebinar": "Goto Webinar",

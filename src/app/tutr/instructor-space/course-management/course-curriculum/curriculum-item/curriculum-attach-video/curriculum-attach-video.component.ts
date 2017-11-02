@@ -19,7 +19,6 @@ export class CurriculumAttachVideoComponent implements OnInit {
 
 	@Output() save = new EventEmitter<any>();
 	@Output() cancel = new EventEmitter<void>();
-	@Output() delete = new EventEmitter<void>();
 
 	public editVideoForm: FormGroup;
 	public file: any;
@@ -65,10 +64,6 @@ export class CurriculumAttachVideoComponent implements OnInit {
 	public onFileChange(event) {
 		this.file = event.target.files[0];
 		this.editVideoForm.controls['file'].setValue(this.file ? this.file.name : '');
-	}
-
-	public deleteVideo() {
-		this.delete.emit();
 	}
 
 	public turnOnNormalMode() {

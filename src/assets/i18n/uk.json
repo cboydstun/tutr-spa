@@ -141,7 +141,9 @@
 	"webinarBasicsDuration": "Тривалість",
 	"webinarBasicsDurationHelpText": "Тривалість вебінару в хвилинах",
 	"webinarBasicsStartAt": "Дата початку",
-	"webinarBasicsStartAtHelpText": "Дата і час початку вебінару",
+	"webinarBasicsStartAtHelpText": "Дата початку вебінару",
+	"webinarBasicsStartAtTime": "Час початку",
+	"webinarBasicsStartAtTimeHelpText": "Час початку вебінару",
 
 	"webinarDetailsReserveASeat": "Забронювати місце",
 	"webinarDetailsGotoWebinar": "Перейти до вебінару",
