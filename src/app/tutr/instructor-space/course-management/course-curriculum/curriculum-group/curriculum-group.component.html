@@ -2,10 +2,12 @@
 
 	<uikit-curriculum-item
 		*ngSwitchCase="'lesson'"
-		[curriculum]="curriculum"></uikit-curriculum-item>
+		[curriculum]="curriculum"
+		(onDelete)="onDelete($event)"></uikit-curriculum-item>
 
 	<uikit-curriculum-quiz-item
 		*ngSwitchCase="'quiz'"
-		[curriculum]="curriculum"></uikit-curriculum-quiz-item>
+		[curriculum]="curriculum"
+		(onDelete)="onDelete($event)"></uikit-curriculum-quiz-item>
 
 </div>

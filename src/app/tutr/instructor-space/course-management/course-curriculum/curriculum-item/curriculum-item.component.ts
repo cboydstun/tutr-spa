@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { CurriculumService } from '../../../../services';
+
 const MODES = {
 	NORMAL         : 1,
 	EDIT_TITLE     : 2,
@@ -16,7 +18,7 @@ const MODES = {
 export class CurriculumItemComponent implements OnInit {
 	@Input() curriculum: any;
 
-	@Output() onSave = new EventEmitter<any>();
+	@Output() onDelete = new EventEmitter<any>();
 
 	public expanded: boolean = false;
 
@@ -47,18 +49,8 @@ export class CurriculumItemComponent implements OnInit {
 		return this.mode == MODES.EDIT_TITLE;
 	}
 
-	public deleteArticle() {
-		this.curriculum.content_type = null;
-		this.curriculum.content = null;
-
-		this.turnOnNormalMode();
-	}
-
-	public deleteVideo() {
-		this.curriculum.content_type = null;
-		this.curriculum.content = null;
-
-		this.turnOnNormalMode();
+	public doDelete() {
+		this.onDelete.emit(this.curriculum);
 	}
 
 	public isNormalMode(): boolean {

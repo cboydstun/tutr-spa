@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 const MODES = {
 	NORMAL : 1,
@@ -12,6 +12,8 @@ const MODES = {
 })
 export class CurriculumQuizItemComponent implements OnInit {
 	@Input() curriculum: any;
+
+	@Output() onDelete = new EventEmitter<any>();
 
 	public expanded: boolean = false;
 
@@ -40,7 +42,7 @@ export class CurriculumQuizItemComponent implements OnInit {
 	}
 
 	public deleteQuiz() {
-
+		this.onDelete.emit(this.curriculum);
 	}
 
 }

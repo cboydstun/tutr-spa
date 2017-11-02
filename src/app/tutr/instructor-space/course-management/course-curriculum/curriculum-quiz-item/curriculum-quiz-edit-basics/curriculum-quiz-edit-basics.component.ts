@@ -23,6 +23,7 @@ export class CurriculumQuizEditBasicsComponent implements OnInit {
 
 	public editForm: FormGroup;
 	public isLoading: boolean = false;
+	public isDeleting: boolean = false;
 
 	constructor(private instructorCourseService: InstructorCourseService) { }
 
@@ -54,6 +55,11 @@ export class CurriculumQuizEditBasicsComponent implements OnInit {
 			}).catch(() => {
 				this.isLoading = false
 			});
+	}
+
+	public doDelete() {
+		this.isDeleting = true;
+		this.delete.emit();
 	}
 
 	public doCancel() {

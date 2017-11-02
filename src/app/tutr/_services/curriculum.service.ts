@@ -16,7 +16,11 @@ export class CurriculumService {
 	}
 
 	saveQuizResults(results) {
-		return this.httpClient.post('/SaveQuizResults', results).toPromise();	
+		return this.httpClient.post('/SaveQuizResults', results).toPromise();
+	}
+
+	delete(id: string): Promise<any> {
+		return this.httpClient.post('/DeleteCurriculumItem', {id}).toPromise();
 	}
 
 }
