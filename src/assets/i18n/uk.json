@@ -28,6 +28,8 @@
 	"headerNavBarLogout": "Вийти",
 	"headerNavBarInstructors": "Інструктори",
 	"headerNavBarStudent": "Студент",
+	"headerNavBarInstructorCourses": "Курси",
+	"headerNavBarInstructorWebinars": "Вебінари",
 
 	"footerDescription": "tutr platform",
 

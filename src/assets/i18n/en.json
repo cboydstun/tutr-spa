@@ -26,8 +26,9 @@
 	"headerSearchPlaceholder": "Search",
 	"headerNavBarLogin": "Login",
 	"headerNavBarLogout": "Logout",
-	"headerNavBarInstructors": "Instructors",
 	"headerNavBarStudent": "Student",
+	"headerNavBarInstructorCourses": "Courses",
+	"headerNavBarInstructorWebinars": "Webinars",
 
 	"footerDescription": "tutr platform",
 
