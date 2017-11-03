@@ -50,6 +50,16 @@
 							{{ 'headerNavBarInstructors' | translate }}
 						</a>
 				</li>
+				<li 
+					class="nav-item" 
+					routerLinkActive="active" 
+					[routerLinkActiveOptions]="{exact: true}">
+					<a 
+						class="nav-link" 
+						[routerLink]="['/managed-consultations']">
+							{{ 'headerNavBarManagedConsultations' | translate }}
+						</a>
+				</li>
 			</ul>
 
 
