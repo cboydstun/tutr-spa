@@ -3,8 +3,14 @@
 	[showAudioMute]="false"
 	[showVideoMute]="false"
 	(infoChanged)="infoChanged($event)"
+	(chatChanged)="chatChanged($event)"
 	(onStop)="leave()">
 </tutr-webinar-controls>
+
+<tutr-chat 
+	[webinar]="webinar" 
+	[profile]="profile" 
+	[hidden]="!(cs.isJoined && isChatOpen)"></tutr-chat>
 
 <div class="join-block" *ngIf="!cs.isJoined">
 	<button class="btn btn-secondary" (click)="join()" [disabled]="cs.isJoining">

@@ -5,6 +5,7 @@ import { WebrtcSignalingService } from './webrtc-signaling.service';
 
 export abstract class BaseCallService {
 	public status = new ReplaySubject<ConnectionStatus>(1);
+	private messages = new ReplaySubject<any>(1);
 
 	public signalingData: any;
 

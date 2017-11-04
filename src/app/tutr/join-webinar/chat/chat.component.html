@@ -1,0 +1,43 @@
+<div class="card chat-card">
+    <div class="card-header">
+        Chat
+    </div>
+    <div class="card-body">
+        <ul class="chat">
+            <li 
+                class="clearfix" 
+                *ngFor="let message of messages"
+                [class.right]="message.sender.id === profile.id"
+                [class.left]="message.sender.id !== profile.id">
+                <span 
+                    class="chat-img" 
+                    [class.pull-right]="message.sender.id === profile.id"
+                    [class.pull-left]="message.sender.id !== profile.id">
+                    <img [src]="message.sender.image" [alt]="message.sender.name" class="img-circle" />
+                </span>
+                <div class="chat-body clearfix">
+                    <div class="header">
+                        <strong class="primary-font">
+                            {{ message.sender.name }}
+                        </strong> 
+                        <small 
+                            class="text-muted pull-right">
+                            <span class="glyphicon glyphicon-time"></span>
+                            <!--12 mins ago-->
+                        </small>
+                    </div>
+                    <p>
+                        {{ message.message }}
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="card-footer">
+        <textarea 
+            class="form-control form-control-sm" 
+            placeholder="Type your message here..."
+            [(ngModel)]="message"
+            (keydown.enter)="sendChatMessage();false"></textarea>
+    </div>
+</div>

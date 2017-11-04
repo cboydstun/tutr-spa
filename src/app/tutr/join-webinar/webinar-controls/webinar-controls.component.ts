@@ -10,6 +10,7 @@ export class WebinarControlsComponent implements OnInit {
 	@Input() showVideoMute: boolean = true;
 
 	@Output() infoChanged = new EventEmitter<boolean>();
+	@Output() chatChanged = new EventEmitter<boolean>();
 	@Output() videoMutedChanged = new EventEmitter<boolean>();
 	@Output() audioMutedChanged = new EventEmitter<boolean>();
 	@Output() onStop = new EventEmitter<void>();
@@ -17,6 +18,7 @@ export class WebinarControlsComponent implements OnInit {
 	public isVideoMuted: boolean = false;
 	public isAudioMuted: boolean = false;
 	public isInfoOn: boolean = true;
+	public isChatOn: boolean = true;
 
 	constructor() { }
 
@@ -36,6 +38,11 @@ export class WebinarControlsComponent implements OnInit {
 	public toggleInfo() {
 		this.isInfoOn = !this.isInfoOn;
 		this.infoChanged.emit(this.isInfoOn);
+	}
+
+	public toggleChat() {
+		this.isChatOn = !this.isChatOn;
+		this.chatChanged.emit(this.isChatOn);
 	}
 
 	public stop() {

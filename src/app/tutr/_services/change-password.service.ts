@@ -17,7 +17,7 @@ export class ChangePasswordService {
 
 	constructor(private cognitoService: CognitoService) { }
 
-	confirmCode(username: string, code: string): Promise<any> {
+	confirmRegistration(username: string, code: string): Promise<any> {
 		let userData = {
 			Username: username,
 			Pool: this.cognitoService.getUserPool()

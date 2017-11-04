@@ -24,6 +24,7 @@ export class AsParticipantComponent implements OnInit {
 	@Input() joinInfo: {room: string, id: string};
 
 	public isInfoOpen: boolean = true;
+	public isChatOpen: boolean = true;
 
 	public cs: ConnectionStatus = new ConnectionStatus();
 
@@ -57,10 +58,15 @@ export class AsParticipantComponent implements OnInit {
 		this.statusSubscription.unsubscribe();
 		this.signalingSubscription.unsubscribe();
 		this.instructorJoinedSubscription.unsubscribe();
+		this.webrtcSignalingService.disconnect();
 	}
 
 	public infoChanged(status) {
 		this.isInfoOpen = status;
+	}
+
+	public chatChanged(status: boolean) {
+		this.isChatOpen = status;
 	}
 
 	public join() {

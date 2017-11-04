@@ -26,6 +26,7 @@ export class AsInstructorComponent implements OnInit {
 	public cs: ConnectionStatus = new ConnectionStatus();
 
 	public isInfoOpen: boolean = true;
+	public isChatOpen: boolean = true;
 
 	public participants: any[] = [];
 
@@ -60,10 +61,15 @@ export class AsInstructorComponent implements OnInit {
 		this.statusSubscription.unsubscribe();
 		this.signalingSubscription.unsubscribe();
 		this.participantJoinedSubscription.unsubscribe();
+		this.webrtcSignalingService.disconnect();
 	}
 
 	public infoChanged(status: boolean) {
 		this.isInfoOpen = status;
+	}
+
+	public chatChanged(status: boolean) {
+		this.isChatOpen = status;
 	}
 
 	public audioMutedChanged(status: boolean) {

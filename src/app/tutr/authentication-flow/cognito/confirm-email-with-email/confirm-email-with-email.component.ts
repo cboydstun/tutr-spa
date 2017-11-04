@@ -40,7 +40,7 @@ export class ConfirmEmailWithEmailComponent implements OnInit {
 		this.isLoading = true;
 		this.showError = false;
 
-		this.changePasswordService.confirmCode(
+		this.changePasswordService.confirmRegistration(
 			this.form.value.email,
 			this.form.value.code
 		).then(() => {

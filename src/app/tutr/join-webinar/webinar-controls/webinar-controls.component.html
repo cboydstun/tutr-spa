@@ -30,6 +30,14 @@
 	</li>
 
 	<li 
+		class="icon"
+		title="Show chat"
+		(click)="toggleChat()" 
+		[class.text-warning]="isChatOn">
+		<i class="fa fa-comments"></i>
+	</li>
+
+	<li 
 		class="icon bg-danger"
 		title="Leave webinar"
 		(click)="stop()">

@@ -43,6 +43,10 @@ export class Profile {
 		return `http://${environment.userContentBucket}.s3-website-${environment.region}.amazonaws.com/fly/200x200/user-picture/${this.id}.png`;
 	}
 
+	public get chatpicture(): string {
+		return `http://${environment.userContentBucket}.s3-website-${environment.region}.amazonaws.com/fly/50x50/user-picture/${this.id}.png`;
+	}
+
 	public get promovideo(): string {
 		return `http://${environment.videoPipelineOutputBucket}.s3-website-${environment.region}.amazonaws.com/user-promo-video/${this.id}.mp4`;	
 	}

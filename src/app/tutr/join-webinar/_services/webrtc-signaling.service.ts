@@ -1,5 +1,4 @@
-import { Observable, Subject, Observer } from 'rxjs';
-
+import { Observable, ReplaySubject, Observer } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 
@@ -12,7 +11,7 @@ export class WebrtcSignalingService {
 	private connection: any;
 	private whenWebSocketOpen: any;
 
-	public messages: Subject<Object>;
+	public messages: ReplaySubject<Object> = new ReplaySubject<Object>(1);
 
 	constructor() {
 		this.connection = new WebSocket(environment.wsServerAddress);
@@ -22,24 +21,20 @@ export class WebrtcSignalingService {
 			this.connection.onerror = (e) => reject(e);
 		});
 
-		let observable = Observable.create((obs: Observer<MessageEvent>) => {
-			this.connection.onmessage = ({data}) => {
-				obs.next.call(obs, JSON.parse(data));
-			};
+		this.connection.onmessage = ({data}) => {
+			this.messages.next.call(this.messages, JSON.parse(data));
+		}
 
-			this.connection.onerror   = obs.error.bind(obs);
-			this.connection.onclose   = obs.complete.bind(obs);
-
-			return this.connection.close.bind(this.connection);
-		});
-
-		let observer = {};
-
-		this.messages = Subject.create(observer, observable);
+		this.connection.onerror = this.messages.error.bind(this.messages);
+		this.connection.onclose = this.messages.complete.bind(this.messages);
 	}
 
 	private send(data: Object) {
 		this.connection.send(JSON.stringify(data));
+	}
+
+	public disconnect() {
+		this.connection.close();
 	}
 
 	public join(data: {room: string, id: string}) {
@@ -112,5 +107,17 @@ export class WebrtcSignalingService {
 			});
 		});	
 	}
+
+	public sendChatMessage(data: {room: string, message: string, sender: any}) {
+		return this.whenWebSocketOpen.then(() => {
+			this.send({
+				room: data.room,
+				ns: 'webinar',
+				message: data.message,
+				action: 'sendChatMessage',
+				sender: data.sender
+			});
+		});	
+	}	
 
 }

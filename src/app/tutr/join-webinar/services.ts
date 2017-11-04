@@ -4,6 +4,7 @@ import { PeerConnectionService } from './_services/peer-connection.service';
 import { BaseCallService } from './_services/base-call.service';
 import { ParticipantCallService } from './_services/participant-call.service';
 import { InstructorCallService } from './_services/instructor-call.service';
+import { ChatService } from './_services/chat.service';
 
 export {
 	WebrtcSignalingService,
@@ -11,5 +12,6 @@ export {
 	PeerConnectionService,
 	BaseCallService,
 	ParticipantCallService,
-	InstructorCallService
+	InstructorCallService,
+	ChatService
 }
