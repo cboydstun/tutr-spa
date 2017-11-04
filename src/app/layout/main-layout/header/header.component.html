@@ -64,7 +64,7 @@
 
 
 		<ul class="navbar-nav" *ngIf="isAuthenticated">
-			<li class="nav-item" ngbDropdown>
+			<li class="nav-item" ngbDropdown *ngIf="isInstructor">
 				<a class="nav-link" href="javascript:void(0);" ngbDropdownToggle>
 					{{ 'headerNavBarInstructor' | translate }}
 				</a>
