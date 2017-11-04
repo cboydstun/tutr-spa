@@ -154,6 +154,9 @@
 	"webinarJoin": "Приєднатися",
 	"webinarJoining": "В процесі",
 
+	"webinarChatHeader": "Чат",
+	"webinarChatInputPlaceholder": "Введіть своє повідомлення тут ...",
+
 	"webinarAsInstructorJoinHelpText": "Натисніть кнопку Приєднатись, щоб розпочати вебінар",
 	"webinarAsInstructorJoiningHelpText": "Підключення до вебінару ...",
 

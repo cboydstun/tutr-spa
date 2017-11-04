@@ -1,6 +1,6 @@
 <div class="card chat-card">
     <div class="card-header">
-        Chat
+        {{ 'webinarChatHeader' | translate }}
     </div>
     <div class="card-body">
         <ul class="chat">
@@ -36,7 +36,7 @@
     <div class="card-footer">
         <textarea 
             class="form-control form-control-sm" 
-            placeholder="Type your message here..."
+            placeholder="{{ 'webinarChatInputPlaceholder' | translate }}"
             [(ngModel)]="message"
             (keydown.enter)="sendChatMessage();false"></textarea>
     </div>

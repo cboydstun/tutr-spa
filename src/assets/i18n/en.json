@@ -154,6 +154,9 @@
 	"webinarJoin": "Join",
 	"webinarJoining": "Joining",
 
+	"webinarChatHeader": "Chat",
+	"webinarChatInputPlaceholder": "Type your message here...",
+
 	"webinarAsInstructorJoinHelpText": "Please click Join button to start the webinar",
 	"webinarAsInstructorJoiningHelpText": "Connecting to the webinar...",
 
