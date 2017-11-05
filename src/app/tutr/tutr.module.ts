@@ -26,7 +26,8 @@ import {
 	SubmitRightAwayWebinarService,
 	CurriculumService,
 	EnrollmentService,
-	StudentDashboardService
+	StudentDashboardService,
+	ConsultationService
 } from './services';
 
 import {
@@ -48,7 +49,9 @@ import {
 	PublicUserProfileResolve,
 	CurriculumItemResolve,
 	AllPublicInstructorsResolve,
-	StudentDashboardResolve
+	StudentDashboardResolve,
+	ConsultationResolve,
+	ConsultationsResolve
 } from './resolvers';
 
 import {
@@ -129,7 +132,10 @@ import {
 		EnrollmentService,
 		AllPublicInstructorsResolve,
 		StudentDashboardService,
-		StudentDashboardResolve
+		StudentDashboardResolve,
+		ConsultationService,
+		ConsultationResolve,
+		ConsultationsResolve
 	]
 })
 export class TutrModule { }

@@ -17,6 +17,8 @@ import { UpcomingWebinarsResolve } from './_resolvers/upcoming-webinars.resolver
 import { HomepageResolve } from './_resolvers/homepage.resolver';
 import { AllPublicInstructorsResolve } from './_resolvers/all-public-instructors.resolver';
 import { StudentDashboardResolve } from './_resolvers/student-dashboard.resolver';
+import { ConsultationResolve } from './_resolvers/consultation.resolver';
+import { ConsultationsResolve } from './_resolvers/consultations.resolver';
 
 export {
 	PreloadCategoriesResolve,
@@ -37,5 +39,7 @@ export {
 	PublicUserProfileResolve,
 	CurriculumItemResolve,
 	AllPublicInstructorsResolve,
-	StudentDashboardResolve
+	StudentDashboardResolve,
+	ConsultationResolve,
+	ConsultationsResolve
 };

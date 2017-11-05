@@ -4,20 +4,18 @@ import { ActivatedRoute } from '@angular/router';
 import { Consultation } from '../../models';
 
 @Component({
-	selector: 'app-consultations',
-	templateUrl: './consultations.component.html',
-	styleUrls: ['./consultations.component.css']
+	selector: 'app-schedule-consultation',
+	templateUrl: './schedule-consultation.component.html',
+	styleUrls: ['./schedule-consultation.component.css']
 })
-export class ConsultationsComponent implements OnInit {
-	public consultations: Consultation[];
-	public date;
+export class ScheduleConsultationComponent implements OnInit {
+	public consultation: Consultation;
 
 	constructor(private activatedRoute: ActivatedRoute) { }
 
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
-			this.consultations = data.consultations;
+			this.consultation = data.consultation;
 		});
 	}
-
 }

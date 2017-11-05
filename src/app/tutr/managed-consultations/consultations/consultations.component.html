@@ -1,3 +1,32 @@
-<p>
-  consultations works!
-</p>
+<div class="container mb-5 mt-5">
+	<form class="form-inline">
+		<div class="form-group">
+			<div class="input-group">
+				<input
+				class="form-control"
+				placeholder="yyyy-mm-dd"
+				name="dp"
+				[(ngModel)]="date"
+				ngbDatepicker
+				readonly
+				#d="ngbDatepicker">
+				<button
+				class="input-group-addon"
+				(click)="d.toggle()"
+				type="button">
+				<i class="fa fa-calendar-check-o"></i>
+				</button>
+			</div>
+		</div>
+	</form>
+
+	<table class="table table-hover mt-5">
+		<tbody>
+			<tr *ngFor="let consultation of consultations">
+				<td>
+					<a [routerLink]="['/managed-consultations', 'schedule', consultation.id]">{{ consultation.title }}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

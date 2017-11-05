@@ -6,6 +6,7 @@ import { CourseGoals } from './_models/course-goals';
 import { Profile } from './_models/profile';
 import { CurriculumItem } from './_models/curriculum-item';
 import { StudentDashboard } from './_models/student-dashboard';
+import { Consultation } from './_models/consultation';
 
 export {
 	Course,
@@ -15,5 +16,6 @@ export {
 	CourseGoals,
 	Profile,
 	CurriculumItem,
-	StudentDashboard
+	StudentDashboard,
+	Consultation
 }
