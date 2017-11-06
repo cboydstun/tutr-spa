@@ -210,5 +210,6 @@
 	"videoPrompterTextHelpText": "Help text",
 
 	"scheduleConsultationSelectOccurrence": "Select Occurrence",
-	"scheduleConsultationButton": "Schedule Consultation"
+	"scheduleConsultationButton": "Schedule Consultation",
+	"scheduleConsultationPleaseLogin": "Please Login to schedule a  consultation"
 }

@@ -1,8 +1,10 @@
 import { rrulestr, RRule } from 'rrule';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { LoginService } from '../../services';
 
 import { Consultation } from '../../models';
 
@@ -11,19 +13,28 @@ import { Consultation } from '../../models';
 	templateUrl: './schedule-consultation.component.html',
 	styleUrls: ['./schedule-consultation.component.css']
 })
-export class ScheduleConsultationComponent implements OnInit {
+export class ScheduleConsultationComponent implements OnInit, OnDestroy {
 	public consultation: Consultation;
 	public rrule: RRule;
 	public occurrences: any[];
 
+	public isAuthenticated: boolean = false;
+
 	public form: FormGroup;
 	public isLoading: boolean = false;
 
-	constructor(private activatedRoute: ActivatedRoute) { }
+	private isAuthenticatedSubscription: any;
+
+	constructor(private activatedRoute: ActivatedRoute,
+				private loginService: LoginService) { }
 
 	ngOnInit() {
 		this.activatedRoute.data.subscribe(data => {
 			this.consultation = data.consultation;
+		});
+
+		this.isAuthenticatedSubscription = this.loginService.isAuthenticated.subscribe((status: boolean) => {
+			this.isAuthenticated = status;
 		});
 
 		this.form = new FormGroup({
@@ -35,12 +46,20 @@ export class ScheduleConsultationComponent implements OnInit {
 		this.rrule = rrulestr(this.consultation.rrule);
 	}
 
+	ngOnDestroy() {
+		this.isAuthenticatedSubscription.unsubscribe();
+	}
+
 	public onDateChange(range: {from: Date, to: Date}) {
 		this.buildOccurrences(range);
 	}
 
 	public onSubmit() {
 		if (!this.form.valid || this.isLoading) {
+			return;
+		}
+
+		if (!this.isAuthenticated) {
 			return;
 		}
 
@@ -52,7 +71,8 @@ export class ScheduleConsultationComponent implements OnInit {
 			.map(item => {
 				return {
 					date: new Date(item),
-					str: item
+					str: item,
+					isBooked: false
 				};
 			});
 	}

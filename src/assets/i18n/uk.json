@@ -210,5 +210,6 @@
 	"videoPrompterTextHelpText": "Help text",
 
 	"scheduleConsultationSelectOccurrence": "Виберіть дату та час",
-	"scheduleConsultationButton": "Запланувати консультацію"
+	"scheduleConsultationButton": "Запланувати консультацію",
+	"scheduleConsultationPleaseLogin": "Будь ласка, увійдіть, щоб запланувати консультацію"
 }
