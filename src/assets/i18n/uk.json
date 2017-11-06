@@ -211,5 +211,7 @@
 
 	"scheduleConsultationSelectOccurrence": "Виберіть дату та час",
 	"scheduleConsultationButton": "Запланувати консультацію",
-	"scheduleConsultationPleaseLogin": "Будь ласка, увійдіть, щоб запланувати консультацію"
+	"scheduleConsultationPleaseLogin": "Будь ласка, увійдіть, щоб запланувати консультацію",
+
+	"scheduleCuccessCongratulations": "Ваше призначення було заплановано"
 }

@@ -4,7 +4,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { LoginService } from '../../services';
+import { LoginService, ConsultationBookingService } from '../../services';
 
 import { Consultation } from '../../models';
 
@@ -28,7 +28,8 @@ export class ScheduleConsultationComponent implements OnInit, OnDestroy {
 
 	constructor(private activatedRoute: ActivatedRoute,
 				private loginService: LoginService,
-				private router: Router) { }
+				private router: Router,
+				private consultationBookingService: ConsultationBookingService) { }
 
 	ngOnInit() {
 		this.activatedRoute.parent.data.subscribe(data => {
@@ -53,7 +54,28 @@ export class ScheduleConsultationComponent implements OnInit, OnDestroy {
 	}
 
 	public onDateChange(range: {from: Date, to: Date}) {
-		this.buildOccurrences(range);
+		this.isLoading = true;
+		this.occurrences = [];
+
+		this.consultationBookingService.listBookedSlots(
+			this.consultation.id,
+			range.from,
+			range.to
+		).then((slots) => {
+			this.isLoading = false;
+
+			this.buildOccurrences(range);
+
+			slots.forEach(slot => {
+				const occurrence = this.occurrences.find(o => o.date.getTime() === slot.getTime());
+
+				if (!!occurrence) {
+					occurrence.isBooked = true;
+				}
+			});
+		}).catch(() => {
+			this.isLoading = false;
+		});
 	}
 
 	public onSubmit() {
@@ -67,19 +89,29 @@ export class ScheduleConsultationComponent implements OnInit, OnDestroy {
 
 		this.isLoading = true;
 
-		this.router.navigate([
-			'/managed-consultations', 
-			'schedule', 
+		this.consultationBookingService.book(
 			this.consultation.id, 
-			'success'
-		]);
+			new Date(this.form.value.occurrence)
+		).then(() => {
+			this.router.navigate([
+				'/managed-consultations', 
+				'schedule', 
+				this.consultation.id, 
+				'success'
+			]);
+		}).catch(() => {
+			this.isLoading = false;
+		});
 	}
 
 	private buildOccurrences(range: {from: Date, to: Date}): void {
 		this.occurrences = this.rrule.between(range.from, range.to)
 			.map(item => {
+				const dt = new Date(item);
+				dt.setMilliseconds(0);
+
 				return {
-					date: new Date(item),
+					date: dt,
 					str: item,
 					isBooked: false
 				};

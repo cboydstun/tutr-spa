@@ -22,6 +22,7 @@ import { CurriculumService } from './_services/curriculum.service';
 import { EnrollmentService } from './_services/enrollment.service';
 import { StudentDashboardService } from './_services/student-dashboard.service';
 import { ConsultationService } from './_services/consultation.service';
+import { ConsultationBookingService } from './_services/consultation-booking.service';
 
 export {
 	LoginService,
@@ -47,5 +48,6 @@ export {
 	CurriculumService,
 	EnrollmentService,
 	StudentDashboardService,
-	ConsultationService
+	ConsultationService,
+	ConsultationBookingService
 }

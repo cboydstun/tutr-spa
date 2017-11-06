@@ -27,7 +27,8 @@ import {
 	CurriculumService,
 	EnrollmentService,
 	StudentDashboardService,
-	ConsultationService
+	ConsultationService,
+	ConsultationBookingService
 } from './services';
 
 import {
@@ -135,7 +136,8 @@ import {
 		StudentDashboardResolve,
 		ConsultationService,
 		ConsultationResolve,
-		ConsultationsResolve
+		ConsultationsResolve,
+		ConsultationBookingService
 	]
 })
 export class TutrModule { }

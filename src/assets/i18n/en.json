@@ -211,5 +211,7 @@
 
 	"scheduleConsultationSelectOccurrence": "Select Occurrence",
 	"scheduleConsultationButton": "Schedule Consultation",
-	"scheduleConsultationPleaseLogin": "Please Login to schedule a  consultation"
+	"scheduleConsultationPleaseLogin": "Please Login to schedule a  consultation",
+
+	"scheduleCuccessCongratulations": "Your appointment has been scheduled"
 }

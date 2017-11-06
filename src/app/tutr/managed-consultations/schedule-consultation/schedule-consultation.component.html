@@ -10,7 +10,7 @@
 					{{ 'scheduleConsultationSelectOccurrence' | translate }}
 				</label>
 				<select type="text" class="form-control"  formControlName="occurrence">
-					<option *ngFor="let occurrence of occurrences" [value]="occurrence" [disabled]="occurrence.isBooked">
+					<option *ngFor="let occurrence of occurrences" [value]="occurrence.date" [disabled]="occurrence.isBooked">
 						{{ occurrence.date | date:'MMMM d, H:mm, EEE' }}
 					</option>
 				</select>

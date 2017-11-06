@@ -11,25 +11,14 @@ export class ConsultationService {
 	constructor(private httpClient: HttpClient) { }
 
 	all(): Promise<Consultation[]> {
-		return Promise.resolve([
-			{
-				id: '1',
-				title: 'sdlkfj skdlf sdkjl fsd fjlskd jflk'
-			},
-			{
-				id: '2',
-				title: 'sdlkfj skdlf sdkjl fsd fjlskd jflk'
-			}
-		]);
+		return this.httpClient.get<Consultation[]>('/ListConsultations').toPromise();
 	}
 
 	get(id: string): Promise<Consultation> {
-		return Promise.resolve({
-			id: '1',
-			title: 'sdlkfj skdlf sdkjl fsd fjlskd jflk',
-			rrule: 'FREQ=WEEKLY;COUNT=30;WKST=MO;BYDAY=TH;BYHOUR=12,13;BYMINUTE=0;BYSECOND=0',
-			description: 'slfk skldf sdklf jsdklf sjdf sdkf sdjf sdklf sdjklf sdkl'
-		});
+		const params = new HttpParams()
+			.set('id', id);
+
+		return this.httpClient.get<Consultation>('/DescribeConsultation', {params}).toPromise();
 	}
 
 }
