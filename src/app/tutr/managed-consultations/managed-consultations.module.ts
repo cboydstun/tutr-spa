@@ -13,7 +13,9 @@ import { ManagedConsultationsRoutingModule } from './managed-consultations-routi
 
 import { 
 	ConsultationsComponent, 
-	ScheduleConsultationComponent 
+	ScheduleConsultationComponent,
+	ScheduleSuccessComponent,
+	ConsultationLayoutComponent
 } from './components';
 
 @NgModule({
@@ -25,6 +27,6 @@ import {
 		FormsModule, 
 		ReactiveFormsModule 
 	],
-	declarations: [ConsultationsComponent, ScheduleConsultationComponent]
+	declarations: [ConsultationsComponent, ScheduleConsultationComponent, ScheduleSuccessComponent, ConsultationLayoutComponent]
 })
 export class ManagedConsultationsModule { }

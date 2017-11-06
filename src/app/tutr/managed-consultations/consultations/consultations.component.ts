@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Consultation } from '../../models';
 
 @Component({
-	selector: 'app-consultations',
+	selector: 'tutr-consultations',
 	templateUrl: './consultations.component.html',
 	styleUrls: ['./consultations.component.css']
 })

@@ -8,7 +8,9 @@ import {
 
 import { 
 	ConsultationsComponent, 
-	ScheduleConsultationComponent 
+	ScheduleConsultationComponent,
+	ScheduleSuccessComponent,
+	ConsultationLayoutComponent
 } from './components';
 
 const routes: Routes = [
@@ -21,10 +23,20 @@ const routes: Routes = [
 	},
 	{
 		path: 'schedule/:id',
-		component: ScheduleConsultationComponent,
+		component: ConsultationLayoutComponent,
 		resolve: {
 			consultation: ConsultationResolve
-		}
+		},
+		children: [
+			{
+				path: '',
+				component: ScheduleConsultationComponent
+			},
+			{
+				path: 'success',
+				component: ScheduleSuccessComponent
+			}
+		]
 	}
 ];
 

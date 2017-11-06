@@ -1,47 +1,37 @@
-<div class="container mb-5 mt-5">
-	<h1 class="display-6">{{ consultation.title }}</h1>
+<div class="row">
+	<div class="col-6">
+		<tutr-date-range (onDateChange)="onDateChange($event)"></tutr-date-range>
+	</div>
 
-	<p class="lead">
-		{{ consultation.description }}
-	</p>
+	<div class="col-6">
+		<form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-50">
+			<div class="form-group">
+				<label>
+					{{ 'scheduleConsultationSelectOccurrence' | translate }}
+				</label>
+				<select type="text" class="form-control"  formControlName="occurrence">
+					<option *ngFor="let occurrence of occurrences" [value]="occurrence" [disabled]="occurrence.isBooked">
+						{{ occurrence.date | date:'MMMM d, H:mm, EEE' }}
+					</option>
+				</select>
+			</div>
 
-	<hr>
+			<div class="form-group" *ngIf="isAuthenticated">
+				<button type="submit" class="btn btn-primary" [disabled]="!form.valid || isLoading">
+					<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isLoading"></i>
+					{{ 'scheduleConsultationButton' | translate }}
+				</button>
+			</div>
 
-	<div class="row">
-		<div class="col-6">
-			<tutr-date-range (onDateChange)="onDateChange($event)"></tutr-date-range>
-		</div>
-
-		<div class="col-6">
-			<form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-50">
-				<div class="form-group">
-					<label>
-						{{ 'scheduleConsultationSelectOccurrence' | translate }}
-					</label>
-					<select type="text" class="form-control"  formControlName="occurrence">
-						<option *ngFor="let occurrence of occurrences" [value]="occurrence" [disabled]="occurrence.isBooked">
-							{{ occurrence.date | date:'MMMM d, H:mm, EEE' }}
-						</option>
-					</select>
-				</div>
-
-				<div class="form-group" *ngIf="isAuthenticated">
-					<button type="submit" class="btn btn-primary" [disabled]="!form.valid || isLoading">
-						<i class="fa fa-spinner fa-spin fa-fw" *ngIf="isLoading"></i>
-						{{ 'scheduleConsultationButton' | translate }}
-					</button>
-				</div>
-
-				<div class="form-group" *ngIf="!isAuthenticated">
-					<a [routerLink]="['/auth', 'login']">
-						{{ 'scheduleConsultationPleaseLogin' | translate }}
-					</a>
-				</div>
-			</form>
-		</div>
+			<div class="form-group" *ngIf="!isAuthenticated">
+				<a [routerLink]="['/auth', 'login']">
+					{{ 'scheduleConsultationPleaseLogin' | translate }}
+				</a>
+			</div>
+		</form>
 	</div>
 </div>
 
-<div class="container">
+<div class="container mt-5">
 	<uikit-conversation-thread></uikit-conversation-thread>
 </div>

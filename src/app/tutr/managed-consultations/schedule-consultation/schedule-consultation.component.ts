@@ -1,7 +1,7 @@
 import { rrulestr, RRule } from 'rrule';
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { LoginService } from '../../services';
@@ -9,12 +9,13 @@ import { LoginService } from '../../services';
 import { Consultation } from '../../models';
 
 @Component({
-	selector: 'app-schedule-consultation',
+	selector: 'tutr-schedule-consultation',
 	templateUrl: './schedule-consultation.component.html',
 	styleUrls: ['./schedule-consultation.component.css']
 })
 export class ScheduleConsultationComponent implements OnInit, OnDestroy {
 	public consultation: Consultation;
+
 	public rrule: RRule;
 	public occurrences: any[];
 
@@ -26,10 +27,11 @@ export class ScheduleConsultationComponent implements OnInit, OnDestroy {
 	private isAuthenticatedSubscription: any;
 
 	constructor(private activatedRoute: ActivatedRoute,
-				private loginService: LoginService) { }
+				private loginService: LoginService,
+				private router: Router) { }
 
 	ngOnInit() {
-		this.activatedRoute.data.subscribe(data => {
+		this.activatedRoute.parent.data.subscribe(data => {
 			this.consultation = data.consultation;
 		});
 
@@ -64,6 +66,13 @@ export class ScheduleConsultationComponent implements OnInit, OnDestroy {
 		}
 
 		this.isLoading = true;
+
+		this.router.navigate([
+			'/managed-consultations', 
+			'schedule', 
+			this.consultation.id, 
+			'success'
+		]);
 	}
 
 	private buildOccurrences(range: {from: Date, to: Date}): void {
