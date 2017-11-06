@@ -207,5 +207,8 @@
 	"videoPrompterVideoPrompter": "Video Prompter",
 	"videoPrompterStart": "Start",
 	"videoPrompterStop": "Stop",
-	"videoPrompterTextHelpText": "Help text"
+	"videoPrompterTextHelpText": "Help text",
+
+	"scheduleConsultationSelectOccurrence": "Select Occurrence",
+	"scheduleConsultationButton": "Schedule Consultation"
 }

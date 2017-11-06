@@ -10,7 +10,6 @@ import { Consultation } from '../../models';
 })
 export class ConsultationsComponent implements OnInit {
 	public consultations: Consultation[];
-	public date;
 
 	constructor(private activatedRoute: ActivatedRoute) { }
 

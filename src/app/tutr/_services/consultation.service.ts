@@ -26,7 +26,8 @@ export class ConsultationService {
 	get(id: string): Promise<Consultation> {
 		return Promise.resolve({
 			id: '1',
-			title: 'sdlkfj skdlf sdkjl fsd fjlskd jflk'
+			title: 'sdlkfj skdlf sdkjl fsd fjlskd jflk',
+			rrule: 'FREQ=WEEKLY;COUNT=30;WKST=MO;BYDAY=TH;BYHOUR=12,13;BYMINUTE=0;BYSECOND=0'
 		});
 	}
 

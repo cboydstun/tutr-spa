@@ -8,9 +8,9 @@ import { InstructorWebinarItemComponent } from './instructor-webinar-item/instru
 import { InstructorWebinarGroupComponent } from './instructor-webinar-group/instructor-webinar-group.component';
 import { ConversationThreadComponent } from './conversation-thread/conversation-thread.component';
 import { InstructorCardComponent } from './instructor-card/instructor-card.component';
-
 import { InstructorGroupComponent } from './instructor-group/instructor-group.component';
 import { InstructorItemComponent } from './instructor-item/instructor-item.component';
+import { DateRangeComponent } from './date-range/date-range.component';
 
 export {
 	CourseCardComponent,
@@ -24,5 +24,6 @@ export {
 	ConversationThreadComponent,
 	InstructorCardComponent,
 	InstructorGroupComponent,
-	InstructorItemComponent
+	InstructorItemComponent,
+	DateRangeComponent
 }

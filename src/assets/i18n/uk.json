@@ -207,5 +207,8 @@
 	"videoPrompterVideoPrompter": "Видео суфлер",
 	"videoPrompterStart": "Старт",
 	"videoPrompterStop": "Стоп",
-	"videoPrompterTextHelpText": "Help text"
+	"videoPrompterTextHelpText": "Help text",
+
+	"scheduleConsultationSelectOccurrence": "Виберіть дату та час",
+	"scheduleConsultationButton": "Запланувати консультацію"
 }

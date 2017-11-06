@@ -24,7 +24,8 @@ import {
 	ConversationThreadComponent,
 	InstructorCardComponent,
 	InstructorGroupComponent,
-	InstructorItemComponent
+	InstructorItemComponent,
+	DateRangeComponent
 } from './components';
 
 import {
@@ -54,7 +55,9 @@ import {
 		InstructorCardComponent,
 		HumanizeDurationPipe,
 		InstructorGroupComponent,
-		InstructorItemComponent
+		InstructorItemComponent,
+		DateRangeComponent,
+		DateRangeComponent
 	],
 	exports: [
 		CourseCardComponent,
@@ -70,7 +73,8 @@ import {
 		NgbModule,
 		HumanizeDurationPipe,
 		InstructorGroupComponent,
-		InstructorItemComponent
+		InstructorItemComponent,
+		DateRangeComponent
 	]
 })
 export class UikitModule { }
