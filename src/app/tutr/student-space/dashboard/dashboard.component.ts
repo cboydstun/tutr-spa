@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { StudentDashboard, Course, Webinar } from '../../models';
+import { 
+	StudentDashboard, 
+	Course, 
+	Webinar, 
+	ConsultationBooking 
+} from '../../models';
 
 @Component({
 	selector: 'tutr-dashboard',
@@ -30,6 +35,7 @@ export class DashboardComponent implements OnInit {
 
 			this.studentDashboard.courses = this.studentDashboard.courses.map(item => new Course(_map(item)));
 			this.studentDashboard.webinars = this.studentDashboard.webinars.map(item => new Webinar(_map(item)));
+			//this.studentDashboard.consultations = this.studentDashboard.consultations.map(item => new ConsultationBooking(item));
 		});
 	}
 
