@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpParams } from '@angular/common/http';
 
-import { Consultation } from '../models';
+import { ConsultationBooking } from '../models';
 
 @Injectable()
 export class ConsultationBookingService {
@@ -15,6 +15,11 @@ export class ConsultationBookingService {
 			consultation_id, 
 			slot_dt: slot_dt.toISOString()
 		}).toPromise();
+	}
+
+	get(id: string): Promise<ConsultationBooking> {
+		const params = new HttpParams().set('id', id);
+		return this.httpClient.get<ConsultationBooking>('/DescribeConsultationBooking', {params}).toPromise();
 	}
 
 	listBookedSlots(consultation_id: string, from: Date, to: Date): Promise<Date[]> {

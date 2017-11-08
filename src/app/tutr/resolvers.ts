@@ -19,6 +19,7 @@ import { AllPublicInstructorsResolve } from './_resolvers/all-public-instructors
 import { StudentDashboardResolve } from './_resolvers/student-dashboard.resolver';
 import { ConsultationResolve } from './_resolvers/consultation.resolver';
 import { ConsultationsResolve } from './_resolvers/consultations.resolver';
+import { ConsultationBookingResolve } from './_resolvers/consultation-booking.resolver'
 
 export {
 	PreloadCategoriesResolve,
@@ -41,5 +42,6 @@ export {
 	AllPublicInstructorsResolve,
 	StudentDashboardResolve,
 	ConsultationResolve,
-	ConsultationsResolve
+	ConsultationsResolve,
+	ConsultationBookingResolve
 };

@@ -9,7 +9,7 @@ export const environment = {
 	/**
 	 * AWS API Gateway state root.
 	 */
-	apiRoot: 'https://4qjwa5q4t9.execute-api.eu-west-1.amazonaws.com/dev',
+	apiRoot: 'https://6yluj78p0h.execute-api.eu-west-1.amazonaws.com/dev',
 
 	sts_endpoint: '',
 
@@ -18,11 +18,11 @@ export const environment = {
 	 */
 	region: 'eu-west-1',
 
-	identityPoolId: 'eu-west-1:8cca2110-e9ca-4781-bfcc-d3e80260ff32',
+	identityPoolId: 'eu-west-1:6dd833a8-c035-42f2-90f5-ca34e6d9715f',
 
-	userPoolId: 'eu-west-1_fMsUpAFPJ',
+	userPoolId: 'eu-west-1_7uXlWCxRY',
 
-	clientId: '4skds4lgj9e19mgavsagbgjaj4',
+	clientId: '4i9s002hj4uobt45ej0sb33uro',
 
 	cognito_idp_endpoint: '',
 
@@ -46,18 +46,18 @@ export const environment = {
 	 * Logo displayed in navbar.
 	 * Make it transparent.
 	 */
-	headerLogo: 'http://smartjob.com.ua.s3-website-eu-west-1.amazonaws.com/media/smartjob-logo-white.png',
+	headerLogo: '/assets/images/default-logo.png',
 
 	/**
 	 * Logo displayed in footer.
 	 * Usually it will be the same as in header.
 	 */
-	footerLogo: 'http://smartjob.com.ua.s3-website-eu-west-1.amazonaws.com/media/smartjob-logo-white.png',
+	footerLogo: '/assets/images/default-logo.png',
 
 	/**
 	 * Logo displayed in auth screens: login, register, reset password, etc.
 	 */
-	authScreensLogo: 'http://smartjob.com.ua.s3-website-eu-west-1.amazonaws.com/media/smartjob-logo-blank.png',
+	authScreensLogo: '/assets/images/default-auth-logo.png',
 
 	/**
 	 * Support email address.
@@ -67,17 +67,17 @@ export const environment = {
 	/**
 	 * UserContent S3 Bucket name.
 	 */
-	userContentBucket: 'smartjob-v2-usercontent-1rfdvv3kvfr16',
+	userContentBucket: 'dev-smartjob-usercontent-1pqhqyger7l3f',
 
 	/**
 	 * VideoPipelineInput S3 Bucket name.
 	 */
-	videoPipelineInputBucket: 'smartjob-v2-videopipelineinput-yb81qicd0c33',
+	videoPipelineInputBucket: 'dev-smartjob-videopipelineinput-1vavb7hbpg04b',
 
 	/**
 	 * VideoPipelineOutput S3 Bucket name.
 	 */
- 	videoPipelineOutputBucket: 'smartjob-v2-videopipelineoutput-1vb87r2lnvb5r',
+ 	videoPipelineOutputBucket: 'dev-smartjob-videopipelineoutput-4nic2kdn9lco',
 
 	/**
 	 * Set to true when CloudSearch is created.

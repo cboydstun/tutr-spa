@@ -17,7 +17,8 @@ import {
 	WebinarControlsComponent,
 	AsParticipantComponent,
 	AsInstructorComponent,
-	ChatComponent
+	ChatComponent,
+	ConsultationRoomComponent
 } from './components';
 
 import { CursorAtRestDirective } from './directives';
@@ -50,7 +51,7 @@ import {
 	declarations: [
 		WebinarRoomComponent, 
 		CursorAtRestDirective, 
-		WebinarControlsComponent, AsParticipantComponent, AsInstructorComponent, ChatComponent
+		WebinarControlsComponent, AsParticipantComponent, AsInstructorComponent, ChatComponent, ConsultationRoomComponent
 	]
 })
 export class JoinWebinarModule { }

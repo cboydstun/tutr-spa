@@ -1,0 +1,45 @@
+<div class="webinar-room">
+
+	<tutr-webinar-controls 
+		*ngIf="cs.isJoined"
+		(infoChanged)="infoChanged($event)"
+		(chatChanged)="chatChanged($event)"
+		(audioMutedChanged)="audioMutedChanged($event)"
+		(onStop)="leave()">
+	</tutr-webinar-controls>
+
+	<tutr-chat 
+		[webinar]="webinar" 
+		[profile]="profile" 
+		[hidden]="!(cs.isJoined && isChatOpen)"></tutr-chat>
+
+	<div class="join-block" *ngIf="!cs.isJoined">
+		<button class="btn btn-secondary" (click)="join()" [disabled]="cs.isJoining">
+			<i class="fa fa-spinner fa-spin fa-fw" *ngIf="cs.isJoining"></i>
+
+			<ng-container *ngIf="!cs.isJoining">
+				{{ 'webinarJoin' | translate }}
+			</ng-container>
+
+			<ng-container *ngIf="cs.isJoining">
+				{{ 'webinarJoining' | translate }}
+			</ng-container>
+
+		</button>
+
+		<p *ngIf="!cs.isJoining">
+			{{ 'consultationRoomJoinHelpText' | translate }}
+		</p>
+
+		<p *ngIf="cs.isJoining">
+			{{ 'consultationRoomJoiningHelpText' | translate }}
+		</p>
+	</div>
+
+	<video #bigVideo autoplay=""></video>
+
+	<div class="webinar-room__footer" *ngIf="cs.isJoined && isInfoOpen">
+		<p class="lead mb-0 pb-0">{{ booking.consultation_title }}</p>
+	</div>
+
+</div>

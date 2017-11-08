@@ -1,14 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { WebinarResolve, UserProfileResolve } from '../resolvers';
+import { WebinarResolve, ConsultationBookingResolve, UserProfileResolve } from '../resolvers';
 import { OnlyLoggedInUsersGuard } from '../guards';
 
 import { 
-	WebinarRoomComponent
+	WebinarRoomComponent,
+	ConsultationRoomComponent
 } from './components';
 
 const routes: Routes = [
+	{
+		path: ':id',
+		component: ConsultationRoomComponent,
+		canActivate: [OnlyLoggedInUsersGuard],
+		resolve: {
+			webinar: ConsultationBookingResolve,
+			profile: UserProfileResolve
+		}
+	},
 	{
 		path: ':instructor_id/:id',
 		component: WebinarRoomComponent,
@@ -17,7 +27,7 @@ const routes: Routes = [
 			webinar: WebinarResolve,
 			profile: UserProfileResolve
 		}
-	}
+	},
 ];
 
 @NgModule({

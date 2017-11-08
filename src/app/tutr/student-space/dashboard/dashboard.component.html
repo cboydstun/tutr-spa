@@ -34,7 +34,7 @@
 		<tbody>
 			<tr *ngFor="let booking of studentDashboard.consultations">
 				<td>
-					<a href="">{{ booking.consultation_title }}</a>
+					<a [routerLink]="['/join-webinar', booking.id]">{{ booking.consultation_title }}</a>
 				</td>
 				<td>
 					{{ booking.slot_dt | date:'MMMM d, H:mm, EEE' }}

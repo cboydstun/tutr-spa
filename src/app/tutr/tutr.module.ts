@@ -52,7 +52,8 @@ import {
 	AllPublicInstructorsResolve,
 	StudentDashboardResolve,
 	ConsultationResolve,
-	ConsultationsResolve
+	ConsultationsResolve,
+	ConsultationBookingResolve
 } from './resolvers';
 
 import {
@@ -137,7 +138,8 @@ import {
 		ConsultationService,
 		ConsultationResolve,
 		ConsultationsResolve,
-		ConsultationBookingService
+		ConsultationBookingService,
+		ConsultationBookingResolve
 	]
 })
 export class TutrModule { }
