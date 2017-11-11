@@ -11,7 +11,7 @@ export abstract class BaseCallService {
 
 	protected localStream: MediaStream;
 
-	protected _status: ConnectionStatus = new ConnectionStatus();
+	protected _status: ConnectionStatus;
 
 	constructor(protected webrtcSignalingService: WebrtcSignalingService) { }
 

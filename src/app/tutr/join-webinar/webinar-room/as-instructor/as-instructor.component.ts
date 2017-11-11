@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 import { Webinar, Profile } from '../../../models';
-import { ConnectionStatus } from '../../models';
+import { WebinarConnectionStatus } from '../../models';
 
 import { 
 	UserMediaService,
@@ -21,9 +21,9 @@ export class AsInstructorComponent implements OnInit {
 
 	@Input() webinar: Webinar;
 	@Input() profile: Profile;
-	@Input() joinInfo: {room: string, id: string};
+	@Input() joinInfo: {room: string, id: string, ns: string};
 
-	public cs: ConnectionStatus = new ConnectionStatus();
+	public cs: WebinarConnectionStatus = new WebinarConnectionStatus();
 
 	public isInfoOpen: boolean = true;
 	public isChatOpen: boolean = true;
@@ -43,8 +43,7 @@ export class AsInstructorComponent implements OnInit {
 	ngOnInit() {
 		this.instructorCallService.signalingData = this.joinInfo;
 
-		this.statusSubscription = this.instructorCallService.status.subscribe(status => {
-			console.log('status', status);
+		this.statusSubscription = this.instructorCallService.status.subscribe((status: WebinarConnectionStatus) => {
 			this.cs = status;
 		});
 

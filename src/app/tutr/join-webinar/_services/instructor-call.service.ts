@@ -6,7 +6,7 @@ import { UserMediaService } from './user-media.service';
 import { WebrtcSignalingService } from './webrtc-signaling.service';
 import { PeerConnectionService } from './peer-connection.service';
 
-import { ConnectionStatus } from '../_models/connection-status';
+import { WebinarConnectionStatus } from '../_models/webinar-connection-status';
 import { BaseCallService } from './base-call.service';
 
 @Injectable()
@@ -19,8 +19,9 @@ export class InstructorCallService extends BaseCallService {
 	constructor(protected userMediaService: UserMediaService,
 				protected peerConnectionService: PeerConnectionService,
 				protected ngZone: NgZone,
-				webrtcSignalingService: WebrtcSignalingService,) { 
+				webrtcSignalingService: WebrtcSignalingService) {
 		super(webrtcSignalingService);
+		this._status = new WebinarConnectionStatus();
 	}
 
 	sendOfferToParticipant(id: string) {

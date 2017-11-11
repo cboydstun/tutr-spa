@@ -15,7 +15,7 @@ const routes: Routes = [
 		component: ConsultationRoomComponent,
 		canActivate: [OnlyLoggedInUsersGuard],
 		resolve: {
-			webinar: ConsultationBookingResolve,
+			consultationBooking: ConsultationBookingResolve,
 			profile: UserProfileResolve
 		}
 	},

@@ -1,12 +1,14 @@
 import { Subscription } from 'rxjs';
-
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Input, OnInit, OnDestroy, ViewChild } from '@angular/core';
 
 import { ConsultationBooking, Profile } from '../../models';
-import { ConnectionStatus } from '../models';
+import { ConsultationBookingConnectionStatus } from '../models';
 
 import { 
-	UserMediaService
+	UserMediaService,
+	ConsultationCallService,
+	WebrtcSignalingService
 } from '../services';
 
 @Component({
@@ -14,22 +16,56 @@ import {
 	templateUrl: './consultation-room.component.html',
 	styleUrls: ['./consultation-room.component.css']
 })
-export class ConsultationRoomComponent implements OnInit {
+export class ConsultationRoomComponent implements OnInit, OnDestroy {
 	@ViewChild('bigVideo') bigVideo;
 
-	@Input() booking: ConsultationBooking;
-	@Input() profile: Profile;
+	public consultationBooking: ConsultationBooking;
+	public profile: Profile;
 
-	public cs: ConnectionStatus = new ConnectionStatus();
+	public cs: ConsultationBookingConnectionStatus = new ConsultationBookingConnectionStatus();
 
 	public isInfoOpen: boolean = true;
 	public isChatOpen: boolean = true;
 
 	private localStream: MediaStream;
 
-	constructor(private userMediaService: UserMediaService) { }
+	private statusSubscription: Subscription;
+	private signalingSubscription: Subscription;
+
+	public get joinInfo(): {room: string, id: string, ns: string} {
+		return {
+			room: this.consultationBooking.id,
+			id: this.profile.id,
+			ns: 'consultation'
+		};
+	}
+
+	constructor(private userMediaService: UserMediaService,
+				private webrtcSignalingService: WebrtcSignalingService,
+				private consultationCallService: ConsultationCallService,
+				private activatedRoute: ActivatedRoute) { }
 
 	ngOnInit() {
+		this.activatedRoute.data.subscribe(data => {
+			this.consultationBooking = data.consultationBooking;
+			this.profile = data.profile;
+		});
+
+		this.statusSubscription = this.consultationCallService.status.subscribe((status: ConsultationBookingConnectionStatus) => {
+			this.cs = status;
+		});
+
+		this.signalingSubscription = this.webrtcSignalingService.messages.subscribe((message: any) => {
+			this.consultationCallService.handle(message);
+		});
+
+		this.consultationCallService.signalingData = this.joinInfo;
+	}
+
+	ngOnDestroy() {
+		this.statusSubscription.unsubscribe();
+		this.signalingSubscription.unsubscribe();
+		this.webrtcSignalingService.disconnect();
 	}
 
 	public infoChanged(status: boolean) {
@@ -50,15 +86,14 @@ export class ConsultationRoomComponent implements OnInit {
 	public join() {
 		this.userMediaService.ask().then(stream => {
 			this.localStream = stream;
-
 			this.bigVideo.nativeElement.srcObject = stream;
-			//this.instructorCallService.start(stream);
+			this.consultationCallService.start(stream);
 		});
 	}
 
 	public leave() {
-		//this.instructorCallService.leave().then(() => {
-		//	this.bigVideo.nativeElement.srcObject = null;
-		//})
+		this.consultationCallService.leave().then(() => {
+			this.bigVideo.nativeElement.srcObject = null;
+		})
 	}
 }

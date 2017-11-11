@@ -8,8 +8,9 @@
 </tutr-webinar-controls>
 
 <tutr-chat 
-	[webinar]="webinar" 
-	[profile]="profile" 
+	[room]="webinar.id"
+	[profile]="profile"
+	[ns]="'webinar'" 
 	[hidden]="!(cs.isJoined && isChatOpen)"></tutr-chat>
 
 <div class="join-block" *ngIf="!cs.isJoined">

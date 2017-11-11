@@ -28,7 +28,8 @@ import {
 	PeerConnectionService,
 	ParticipantCallService,
 	InstructorCallService,
-	ChatService
+	ChatService,
+	ConsultationCallService
 } from './services';
 
 @NgModule({
@@ -46,7 +47,8 @@ import {
 		PeerConnectionService,
 		ParticipantCallService,
 		InstructorCallService,
-		ChatService
+		ChatService,
+		ConsultationCallService
 	],
 	declarations: [
 		WebinarRoomComponent, 

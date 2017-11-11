@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs';
 
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 
-import { Webinar, Profile } from '../../models';
+import { Profile } from '../../models';
 
 import { 
 	WebrtcSignalingService,
@@ -15,8 +15,9 @@ import {
 	styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit, OnDestroy {
-	@Input() webinar: Webinar;
+	@Input() room: string;
 	@Input() profile: Profile;
+	@Input() ns: string;
 
 	public message: string = '';
 	public messages: any[] = [];
@@ -44,13 +45,14 @@ export class ChatComponent implements OnInit, OnDestroy {
 
 	public sendChatMessage() {
 		this.webrtcSignalingService.sendChatMessage({
-			room: this.webinar.id,
+			room: this.room,
 			message: this.message,
 			sender: {
 				name: this.profile.get_full_name,
 				image: this.profile.chatpicture,
 				id: this.profile.id
-			}
+			},
+			ns: this.ns
 		}).then(() => {
 			this.message = '';
 		});

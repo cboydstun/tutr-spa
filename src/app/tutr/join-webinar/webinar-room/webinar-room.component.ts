@@ -19,10 +19,11 @@ export class WebinarRoomComponent implements OnInit, OnDestroy {
 		return this.profile.id == this.webinar.instructor_id;
 	}
 
-	public get joinInfo(): {room: string, id: string} {
+	public get joinInfo(): {room: string, id: string, ns: string} {
 		return {
 			room: this.webinar.id,
-			id: this.profile.id
+			id: this.profile.id,
+			ns: 'webinar'
 		};
 	}
 

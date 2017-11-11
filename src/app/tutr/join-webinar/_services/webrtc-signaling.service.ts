@@ -22,7 +22,12 @@ export class WebrtcSignalingService {
 		});
 
 		this.connection.onmessage = ({data}) => {
-			this.messages.next.call(this.messages, JSON.parse(data));
+			try {
+				let json = JSON.parse(data);
+				this.messages.next.call(this.messages, json);
+			} catch(e) {
+				console.error(data);
+			}
 		}
 
 		this.connection.onerror = this.messages.error.bind(this.messages);
@@ -37,58 +42,58 @@ export class WebrtcSignalingService {
 		this.connection.close();
 	}
 
-	public join(data: {room: string, id: string}) {
+	public join(data: {room: string, id: string, ns: string}) {
 		return this.whenWebSocketOpen.then(() => {
 			this.send({
 				room: data.room,
 				id: data.id,
-				ns: 'webinar',
+				ns: data.ns,
 				action: 'join'
 			});
 		});
 	}
 
-	public start(data: {room: string, id: string}) {
+	public start(data: {room: string, id: string, ns: string}) {
 		return this.whenWebSocketOpen.then(() => {
 			this.send({
 				room: data.room,
 				id: data.id,
-				ns: 'webinar',
+				ns: data.ns,
 				action: 'start'
 			});
 		});
 	}
 
-	public leave(data: {room: string, id: string}) {
+	public leave(data: {room: string, id: string, ns: string}) {
 		return this.whenWebSocketOpen.then(() => {
 			this.send({
 				room: data.room,
 				id: data.id,
-				ns: 'webinar',
+				ns: data.ns,
 				action: 'leave'
 			});
 		});	
 	}
 
-	public sendCandidate(data: {room: string, id: string, to?: string, candidate: string}) {
+	public sendCandidate(data: {room: string, id: string, to?: string, candidate: string, ns: string}) {
 		return this.whenWebSocketOpen.then(() => {
 			this.send({
 				room: data.room,
 				id: data.id,
 				to: data.to,
-				ns: 'webinar',
+				ns: data.ns,
 				candidate: data.candidate,
 				action: 'sendCandidate'
 			});
 		});	
 	}
 
-	public offer(data: {room: string, id: string, to: string, offer: string}) {
+	public offer(data: {room: string, id: string, to: string, offer: string, ns: string}) {
 		return this.whenWebSocketOpen.then(() => {
 			this.send({
 				room: data.room,
 				id: data.id,
-				ns: 'webinar',
+				ns: data.ns,
 				offer: data.offer,
 				action: 'offer',
 				to: data.to
@@ -96,23 +101,23 @@ export class WebrtcSignalingService {
 		});	
 	}
 
-	public answer(data: {room: string, id: string, answer: string}) {
+	public answer(data: {room: string, id: string, answer: string, ns: string}) {
 		return this.whenWebSocketOpen.then(() => {
 			this.send({
 				room: data.room,
 				id: data.id,
-				ns: 'webinar',
+				ns: data.ns,
 				answer: data.answer,
 				action: 'answer'
 			});
 		});	
 	}
 
-	public sendChatMessage(data: {room: string, message: string, sender: any}) {
+	public sendChatMessage(data: {room: string, message: string, sender: any, ns: string}) {
 		return this.whenWebSocketOpen.then(() => {
 			this.send({
 				room: data.room,
-				ns: 'webinar',
+				ns: data.ns,
 				message: data.message,
 				action: 'sendChatMessage',
 				sender: data.sender

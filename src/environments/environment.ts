@@ -84,7 +84,7 @@ export const environment = {
 	 */
 	searchEnabled: false,
 
-	wsServerAddress: 'wss://signaling.tutr.work:443/',
+	wsServerAddress: 'ws://localhost:8080/',
 
 	disqusShortName: 'tutrio'
 };

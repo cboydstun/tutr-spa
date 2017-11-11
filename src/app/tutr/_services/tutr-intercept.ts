@@ -46,8 +46,9 @@ export class TutrInterceptor implements HttpInterceptor {
 						this.ngProgressService.done();
 					}
 				}).catch((error: any) => {
+					debugger
 					if (error instanceof HttpErrorResponse) {
-						if (error.status === 403) { //401
+						if (error.status === 403 || error.status === 401) {
 							return this.loginService.getAuthentionStatus().then((status: boolean) => {
 								if (status) {
 									return next.handle(dupReq);

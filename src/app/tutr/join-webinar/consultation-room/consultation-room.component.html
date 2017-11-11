@@ -9,37 +9,46 @@
 	</tutr-webinar-controls>
 
 	<tutr-chat 
-		[webinar]="webinar" 
-		[profile]="profile" 
+		*ngIf="cs.isJoined"
+		[room]="consultationBooking.id" 
+		[profile]="profile"
+		[ns]="'consultation'"
 		[hidden]="!(cs.isJoined && isChatOpen)"></tutr-chat>
 
-	<div class="join-block" *ngIf="!cs.isJoined">
-		<button class="btn btn-secondary" (click)="join()" [disabled]="cs.isJoining">
-			<i class="fa fa-spinner fa-spin fa-fw" *ngIf="cs.isJoining"></i>
+		<div class="join-block" *ngIf="!cs.isJoined">
+			<button class="btn btn-secondary" (click)="join()" [disabled]="cs.isJoining">
+				<i class="fa fa-spinner fa-spin fa-fw" *ngIf="cs.isJoining"></i>
 
-			<ng-container *ngIf="!cs.isJoining">
-				{{ 'webinarJoin' | translate }}
-			</ng-container>
+				<ng-container *ngIf="!cs.isJoining && !cs.waitingForOther">
+					{{ 'webinarJoin' | translate }}
+				</ng-container>
 
-			<ng-container *ngIf="cs.isJoining">
-				{{ 'webinarJoining' | translate }}
-			</ng-container>
+				<ng-container *ngIf="cs.isJoining && !cs.waitingForOther">
+					{{ 'webinarJoining' | translate }}
+				</ng-container>
 
-		</button>
+				<ng-container *ngIf="cs.waitingForOther">
+					{{ 'consultationRoomWaitingForOther' | translate }}
+				</ng-container>
+			</button>
 
-		<p *ngIf="!cs.isJoining">
-			{{ 'consultationRoomJoinHelpText' | translate }}
-		</p>
+			<p *ngIf="!cs.isJoining && !cs.waitingForOther">
+				{{ 'consultationRoomJoinHelpText' | translate }}
+			</p>
 
-		<p *ngIf="cs.isJoining">
-			{{ 'consultationRoomJoiningHelpText' | translate }}
-		</p>
-	</div>
+			<p *ngIf="cs.isJoining && !cs.waitingForOther">
+				{{ 'consultationRoomJoiningHelpText' | translate }}
+			</p>
+
+			<p *ngIf="cs.waitingForOther">
+				{{ 'consultationRoomWaitingForOtherHelpText' | translate }}
+			</p>
+		</div>
 
 	<video #bigVideo autoplay=""></video>
 
 	<div class="webinar-room__footer" *ngIf="cs.isJoined && isInfoOpen">
-		<p class="lead mb-0 pb-0">{{ booking.consultation_title }}</p>
+		<p class="lead mb-0 pb-0">{{ consultationBooking.consultation_title }}</p>
 	</div>
 
 </div>

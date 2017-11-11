@@ -6,7 +6,7 @@ import { UserMediaService } from './user-media.service';
 import { WebrtcSignalingService } from './webrtc-signaling.service';
 import { PeerConnectionService } from './peer-connection.service';
 
-import { ConnectionStatus } from '../_models/connection-status';
+import { WebinarConnectionStatus } from '../_models/webinar-connection-status';
 import { BaseCallService } from './base-call.service';
 
 @Injectable()
@@ -18,8 +18,9 @@ export class ParticipantCallService extends BaseCallService {
 
 	constructor(protected peerConnectionService: PeerConnectionService,
 				protected ngZone: NgZone,
-				webrtcSignalingService: WebrtcSignalingService,) { 
+				webrtcSignalingService: WebrtcSignalingService) { 
 		super(webrtcSignalingService);
+		this._status = new WebinarConnectionStatus();
 	}
 
 	handle(message: any) {
@@ -32,7 +33,7 @@ export class ParticipantCallService extends BaseCallService {
 			case 'waitingForInstructor':
 				this._status.isJoining = true;
 				this._status.isJoined = false;
-				this._status.waitingForInstructor = message.status;
+				(this._status as WebinarConnectionStatus).waitingForInstructor = message.status;
 				this.status.next(this._status);
 				this.instructorJoined.next(null);
 				break;
