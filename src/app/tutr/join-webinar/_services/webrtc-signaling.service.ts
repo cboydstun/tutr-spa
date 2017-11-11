@@ -88,7 +88,7 @@ export class WebrtcSignalingService {
 		});	
 	}
 
-	public offer(data: {room: string, id: string, to: string, offer: string, ns: string}) {
+	public offer(data: {room: string, id: string, to?: string, offer: string, ns: string}) {
 		return this.whenWebSocketOpen.then(() => {
 			this.send({
 				room: data.room,

@@ -31,6 +31,7 @@ export class ConsultationRoomComponent implements OnInit, OnDestroy {
 
 	private statusSubscription: Subscription;
 	private signalingSubscription: Subscription;
+	private otherJoinedSubscription: Subscription;
 
 	public get joinInfo(): {room: string, id: string, ns: string} {
 		return {
@@ -59,12 +60,17 @@ export class ConsultationRoomComponent implements OnInit, OnDestroy {
 			this.consultationCallService.handle(message);
 		});
 
+		this.otherJoinedSubscription = this.consultationCallService.otherJoined.subscribe(stream => {
+			this.bigVideo.nativeElement.srcObject = stream;
+		});
+
 		this.consultationCallService.signalingData = this.joinInfo;
 	}
 
 	ngOnDestroy() {
 		this.statusSubscription.unsubscribe();
 		this.signalingSubscription.unsubscribe();
+		this.otherJoinedSubscription.unsubscribe();
 		this.webrtcSignalingService.disconnect();
 	}
 

@@ -166,6 +166,11 @@
 	"webinarAsParticipantJoiningHelpText": "Підключення до вебінару ...",
 	"webinarAsParticipantWaitingForInstructorHelpText": "Як тільки інструктор почне вебінар, ви будете приєднанні автоматично",
 
+	"consultationRoomWaitingForOther": "Очікування іншого учасника",
+	"consultationRoomJoinHelpText": "Натисніть кнопку Приєднатися, щоб приєднатися до консультації",
+	"consultationRoomJoiningHelpText": "Підключення ...",
+	"consultationRoomWaitingForOtherHelpText": "Після того, як інший учасник приєднається до консультації, ви приєднаєтесь до нього автоматично",
+
 	"courseCurriculumButtonAddCurriculumLesson": "Додати урок",
 	"courseCurriculumButtonAddCurriculumQuiz": "Додати тест",
 	"courseCurriculumEmptyCurriculum": "Жодних уроків не створено",

@@ -166,6 +166,11 @@
 	"webinarAsParticipantJoiningHelpText": "Connecting to the webinar...",
 	"webinarAsParticipantWaitingForInstructorHelpText": "Onсe instructor will start the webinar you will be joined automatically",
 
+	"consultationRoomWaitingForOther": "Waiting for the other participant to join",
+	"consultationRoomJoinHelpText": "Please click Start button to join the consultation",
+	"consultationRoomJoiningHelpText": "Connecting...",
+	"consultationRoomWaitingForOtherHelpText": "Onсe the other participant will join the consultation you will be joined automatically",
+
 	"courseCurriculumButtonAddCurriculumLesson": "Add Lesson",
 	"courseCurriculumButtonAddCurriculumQuiz": "Add Quiz",
 	"courseCurriculumEmptyCurriculum": "No lessons created",
