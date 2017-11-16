@@ -11,6 +11,7 @@ import {
 } from "amazon-cognito-identity-js";
 
 import { CognitoService } from './cognito.service';
+import { AwsCredentialsService } from './aws-credentials.service';
 
 import { environment } from "../../../environments/environment";
 
@@ -23,13 +24,8 @@ export class LoginService {
 
 	public isAuthenticated = this.isAuthenticatedSubject.asObservable();
 
-	private _idToken: string;
-
-	public get idToken(): string {
-		return this._idToken || '';
-	}
-
-	constructor(private cognitoService: CognitoService) {}
+	constructor(private cognitoService: CognitoService,
+				private awsCredentialsService: AwsCredentialsService) {}
 
 	public getAuthentionStatus(): Promise<boolean> {
 		return new Promise((resolve, reject) => {
@@ -42,9 +38,9 @@ export class LoginService {
 						resolve(false);
 					}
 					else {
-						console.log("UserLoginService: Session is " + session.isValid());
-						this._idToken = session.getIdToken().getJwtToken();
-						resolve(session.isValid());
+						this.awsCredentialsService.init(session.getIdToken().getJwtToken()).then(() => {
+							resolve(session.isValid());
+						});
 					}
 				});
 			} else {
@@ -55,14 +51,13 @@ export class LoginService {
 			return status;
 		}, (err) => {
 			this.isAuthenticatedSubject.next(false);
-			throw err;
+			return false;
 		});
 	}
 
 	public logout() {
 		const user = this.cognitoService.getCurrentUser();
 		user && user.signOut();
-		this._idToken = null;
 		this.isAuthenticatedSubject.next(false);
 	}
 
@@ -106,7 +101,9 @@ export class LoginService {
 					const sts = new STS(clientParams);
 
 					sts.getCallerIdentity((err, data) => {
-						this.getAuthentionStatus().then(() => resolve(result));
+						creds.get(err => {
+							err ? reject(err) : resolve(result)
+						});
 					});
 
 				},

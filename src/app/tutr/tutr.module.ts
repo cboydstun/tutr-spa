@@ -53,7 +53,8 @@ import {
 	StudentDashboardResolve,
 	ConsultationResolve,
 	ConsultationsResolve,
-	ConsultationBookingResolve
+	ConsultationBookingResolve,
+	AWSCredentialsResolve
 } from './resolvers';
 
 import {
@@ -139,7 +140,8 @@ import {
 		ConsultationResolve,
 		ConsultationsResolve,
 		ConsultationBookingService,
-		ConsultationBookingResolve
+		ConsultationBookingResolve,
+		AWSCredentialsResolve
 	]
 })
 export class TutrModule { }

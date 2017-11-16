@@ -19,8 +19,6 @@ export class AppComponent {
 		translate.setDefaultLang('en');
 		translate.use('uk');
 
-		loginService.getAuthentionStatus();
-
 		toastr.setRootViewContainerRef(vcr);
 	}
 }

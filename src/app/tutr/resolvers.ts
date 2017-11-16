@@ -20,6 +20,7 @@ import { StudentDashboardResolve } from './_resolvers/student-dashboard.resolver
 import { ConsultationResolve } from './_resolvers/consultation.resolver';
 import { ConsultationsResolve } from './_resolvers/consultations.resolver';
 import { ConsultationBookingResolve } from './_resolvers/consultation-booking.resolver'
+import { AWSCredentialsResolve } from './_resolvers/aws-credentials.resolver';
 
 export {
 	PreloadCategoriesResolve,
@@ -43,5 +44,6 @@ export {
 	StudentDashboardResolve,
 	ConsultationResolve,
 	ConsultationsResolve,
-	ConsultationBookingResolve
+	ConsultationBookingResolve,
+	AWSCredentialsResolve
 };

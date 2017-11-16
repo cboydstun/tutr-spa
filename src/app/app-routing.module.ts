@@ -6,7 +6,7 @@ import {
 	NakedLayoutComponent 
 } from './layout/components';
 
-import { PreloadCategoriesResolve } from './tutr/resolvers';
+import { PreloadCategoriesResolve, AWSCredentialsResolve } from './tutr/resolvers';
 
 import { environment } from '../environments/environment';
 
@@ -15,7 +15,8 @@ const routes: Routes = [
 		path: '',
 		component: MainLayoutComponent,
 		resolve: {
-			categories: PreloadCategoriesResolve
+			categories: PreloadCategoriesResolve,
+			aws: AWSCredentialsResolve
 		},
 		children: [
 			{
@@ -69,6 +70,9 @@ const routes: Routes = [
 	{
 		path: 'course-player',
 		component: NakedLayoutComponent,
+		resolve: {
+			aws: AWSCredentialsResolve
+		},
 		children: [
 			{
 				path: '',
@@ -79,6 +83,9 @@ const routes: Routes = [
 	{
 		path: 'join-webinar',
 		component: NakedLayoutComponent,
+		resolve: {
+			aws: AWSCredentialsResolve
+		},
 		children: [
 			{
 				path: '',
