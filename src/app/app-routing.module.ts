@@ -48,10 +48,6 @@ const routes: Routes = [
 				loadChildren: './tutr/student-space/student-space.module#StudentSpaceModule'
 			},
 			{
-				path: 'instructors',
-				loadChildren: './tutr/instructors/instructors.module#InstructorsModule'
-			},
-			{
 				path: 'managed-consultations',
 				loadChildren: './tutr/managed-consultations/managed-consultations.module#ManagedConsultationsModule'
 			}

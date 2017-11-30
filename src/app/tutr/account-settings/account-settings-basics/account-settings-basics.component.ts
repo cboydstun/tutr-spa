@@ -48,7 +48,9 @@ export class AccountSettingsBasicsComponent implements OnInit {
 		this.isSaving = true;
 
 		this.userProfileService.updateProfile(this.form.value)
-			.then(() => this.isSaving = false)
+			.then(() => {
+				this.isSaving = false;
+			})
 			.catch(() => this.isSaving = false);
 	}
 }

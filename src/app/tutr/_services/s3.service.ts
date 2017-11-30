@@ -46,15 +46,34 @@ export class S3Service {
 		}).promise();
 	}
 
-	public uploadProfilePicture(profile_id, file): Promise<{Bucket: string, Key: string, Location: string}> {
-			return this.getS3().upload({
-				Key: `user-picture/${profile_id}.png`,
-				ContentType: file.type,
-				Body: file,
-				Metadata: {
-					profile_id: profile_id
-				}
-			}).promise();
+	public uploadProfilePicture(profile_id, file): Promise<any> {
+		const deleteOld = () => {
+			return new Promise((resolve, reject) => {
+				this.getS3().deleteObjects({
+					Delete: {
+						Objects: [
+							{Key: `fly/150x150/user-picture/${profile_id}.png`},
+							{Key: `fly/240x135/user-picture/${profile_id}.png`},
+							{Key: `fly/100x100/user-picture/${profile_id}.png`},
+							{Key: `fly/200x200/user-picture/${profile_id}.png`},
+							{Key: `fly/50x50/user-picture/${profile_id}.png`}
+						],
+						Quiet: true
+					}
+				}, (err, data) => {
+					resolve();
+				});
+			});
+		};
+
+		return this.getS3().upload({
+			Key: `user-picture/${profile_id}.png`,
+			ContentType: file.type,
+			Body: file,
+			Metadata: {
+				profile_id: profile_id
+			}
+		}).promise().then(() => deleteOld());
 	}
 
 	public uploadProfileAttachment(profile_id, file): Promise<{Bucket: string, Key: string, Location: string}> {

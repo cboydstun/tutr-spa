@@ -9,20 +9,20 @@ export const environment = {
 	/**
 	 * AWS API Gateway state root.
 	 */
-	apiRoot: 'https://gddsnutu31.execute-api.eu-west-1.amazonaws.com/dev',
+	apiRoot: '',
 
 	sts_endpoint: '',
 
 	/**
 	 * AWS Region
 	 */
-	region: 'eu-west-1',
+	region: '',
 
-	identityPoolId: 'eu-west-1:d435da2b-8c43-44b8-bb60-61228917a013',
+	identityPoolId: '',
 
-	userPoolId: 'eu-west-1_zjkf03A3P',
+	userPoolId: '',
 
-	clientId: '2cl566fffufst1m1kvtv7ao126',
+	clientId: '',
 
 	cognito_idp_endpoint: '',
 
@@ -67,24 +67,24 @@ export const environment = {
 	/**
 	 * UserContent S3 Bucket name.
 	 */
-	userContentBucket: 'dev-smartjob-com-ua-usercontent-p8blg-usercontent-1sajx6ohyzwvt',
+	userContentBucket: '',
 
 	/**
 	 * VideoPipelineInput S3 Bucket name.
 	 */
-	videoPipelineInputBucket: 'dev-smartjob-com-ua-videopipel-videopipelineinput-1w80q16smquvx',
+	videoPipelineInputBucket: '',
 
 	/**
 	 * VideoPipelineOutput S3 Bucket name.
 	 */
- 	videoPipelineOutputBucket: 'dev-smartjob-com-ua-videopipe-videopipelineoutput-1wgrwxr6vhrbb',
+ 	videoPipelineOutputBucket: '',
 
 	/**
 	 * Set to true when CloudSearch is created.
 	 */
 	searchEnabled: false,
 
-	wsServerAddress: 'ws://localhost:8080/',
+	wsServerAddress: '',
 
-	disqusShortName: 'tutrio'
+	disqusShortName: ''
 };
